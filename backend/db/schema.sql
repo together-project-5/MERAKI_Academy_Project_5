@@ -37,4 +37,8 @@ CREATE TABLE comments(
     comment VARCHAR(255),
     date DATETIME,
     PRIMARY KEY (_IdComment)
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> 5245afe8779164f7a0cc78b76f69f41ea1bd2dec
