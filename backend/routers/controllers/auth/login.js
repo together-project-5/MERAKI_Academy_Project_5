@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const db = require("./../../../db/db")
+const bcrypt = require("bcrypt");
 
 const login = (req, res) => {
   const email = req.body.email;

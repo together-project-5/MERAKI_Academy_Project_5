@@ -1,4 +1,3 @@
-USE MERAKI_Academy_Project_5;
 CREATE TABLE user(
     _IdUser INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(255),
@@ -12,12 +11,13 @@ CREATE TABLE Post  (
     _IdPost INT AUTO_INCREMENT NOT NULL,
     userId INT,
     FOREIGN KEY (userId) REFERENCES user(_IdUser),
+    type VARCHAR(255) NOT NULL,
     title VARCHAR(255) NOT NULL,
     description VARCHAR(255) NOT NULL,
     likes int (3),
-   report int (3),
-    video_url VARCHAR(255) NOT NULL,
-    Archive iNT(3) DEFAULT 0,
+    report int (3),
+    url VARCHAR(255) NOT NULL,
+    archive iNT(3) DEFAULT 0,
     PRIMARY KEY (_IdPost)
 );
 CREATE TABLE favorite  (
@@ -37,8 +37,9 @@ CREATE TABLE comments(
     comment VARCHAR(255),
     date DATETIME,
     PRIMARY KEY (_IdComment)
-<<<<<<< HEAD
 );
-=======
-);
->>>>>>> 5245afe8779164f7a0cc78b76f69f41ea1bd2dec
+
+
+
+
+
