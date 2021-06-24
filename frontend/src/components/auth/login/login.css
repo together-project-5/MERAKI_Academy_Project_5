@@ -1,0 +1,33 @@
+.loginBody {
+  display: flex;
+  text-align: -webkit-center;
+  justify-content: center;
+}
+
+.loginMain {
+  width: 200px;
+  height: 400px;
+  margin-top: 15%;
+}
+
+.loginButton {
+  border: none;
+  color: white;
+  text-align: center;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  background-color: #3e1e8a;
+  padding: 10px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+.loginButton:hover {
+  opacity: 1;
+}
+.registration {
+  margin-top: 50px;
+  font-size: 15px;
+}
