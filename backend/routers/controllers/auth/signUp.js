@@ -10,7 +10,6 @@ const createUser = async (req, res) => {
     db.query(query, [name, email, password, age, gender], (err, result) => {
         if (err) throw err;
         res.json(result).status(201)
-        // console.log(res);
     });
 };
 
