@@ -1,9 +1,9 @@
 const express = require('express');
 
-const { getPostById } = require('./../../routers/controllers/post2');
+const { getPostById, getPostByTitle } = require('./../../routers/controllers/post2');
 
 const postRouter = express.Router();
 
-postRouter.get('/post/:id', getPostById);
-
+postRouter.get('/post/id/:id', getPostById);
+postRouter.get('/post/title/:title', getPostByTitle);
 module.exports = postRouter;

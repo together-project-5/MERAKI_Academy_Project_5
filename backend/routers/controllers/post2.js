@@ -12,7 +12,18 @@ const getPostById = async (req, res) => {
         res.json(result).status(200)
     });
 };
+const getPostByTitle = async (req, res) => {
+    const title = req.params.title;
+    const query = `SELECT * FROM post WHERE title = ?`;
+    const data = [title];
+    db.query(query,data, (err, result) => {
+        if (err) throw err;
+        res.json(result).status(200)
+    });
+};
+
 
 module.exports = {
-    getPostById
+    getPostById,
+    getPostByTitle 
 };
