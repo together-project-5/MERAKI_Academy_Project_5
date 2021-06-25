@@ -21,9 +21,19 @@ const getPostByTitle = async (req, res) => {
         res.json(result).status(200)
     });
 };
+const deletePost = async (req, res) => {
+    const id = req.params.id;
+    const query = `DELETE FROM post WHERE _IdPost = ?`;
+    const data = [id];
+    db.query(query,data, (err, result) => {
+        if (err) throw err;
+        res.json("succes deleted").status(200)
+    });
+};
 
 
 module.exports = {
     getPostById,
-    getPostByTitle 
+    getPostByTitle ,
+    deletePost
 };
