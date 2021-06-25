@@ -6,8 +6,9 @@ import Register from "./components/register/index";
 function App() {
   return (
     <div className="App">
+      <p>welcome </p>
       <Route path="/login" component={Login} />
-	  <Route path="/register" component={Register} />
+      <Route path="/register" component={Register} />
     </div>
   );
 }
