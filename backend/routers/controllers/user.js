@@ -18,9 +18,20 @@ const getUserById = async (req, res) => {
   });
 };
 
+const getUserByName = async (req, res) => {
+  const name = req.params.name;
+  const query = `SELECT * FROM user WHERE name = ?`;
+  // const data = [name];
+  db.query(query, [name], (err, result) => {
+    if (err) throw err;
+    res.json(result).status(200);
+  });
+};
+
 
 module.exports = {
   getAllUser,
   getUserById,
+  getUserByName
 };
 
