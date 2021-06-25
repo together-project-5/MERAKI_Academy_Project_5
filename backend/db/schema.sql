@@ -1,4 +1,3 @@
-USE MERAKI_Academy_Project_5;
 CREATE TABLE user(
     _IdUser INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(255),
@@ -39,3 +38,8 @@ CREATE TABLE comments(
     date DATETIME,
     PRIMARY KEY (_IdComment)
 );
+
+
+
+
+

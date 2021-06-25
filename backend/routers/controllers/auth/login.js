@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const db = require("./../../../db/db")
+const bcrypt = require("bcrypt");
 
 const login = (req, res) => {
   const email = req.body.email;
@@ -9,7 +10,7 @@ const login = (req, res) => {
 
   db.query(query, data, (err, result) => {
     if (!result[0]) {
-      return res.status(404).json("the email dosnt exist");
+      return res.json("the email dosnt exist");
     }
     const confirm = bcrypt.compare(password, result[0].password);
     if (confirm) {
