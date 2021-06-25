@@ -5,6 +5,8 @@ const db = require('./db/db');
 const userRouter = require("./routers/routes/user");
 const registerRouter = require('./routers/routes/auth/signUp')
 const authRouter = require("./routers/routes/auth/login");
+const postRouter = require("./routers/routes/post");
+
 
 
 const app = express();
@@ -23,8 +25,9 @@ app.use(cors());
 
 
 //app routers
-app.use('/user', userRouter,registerRouter);
-app.use('/user', authRouter);
+app.use('/user', userRouter,registerRouter,authRouter);
+app.use( '/post',postRouter);
+
 
 const PORT = process.env.PORT || 5000;
 

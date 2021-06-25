@@ -5,7 +5,7 @@ import { createPost } from './../../reducers/post';
 
 const CreatePost = () => {
     const [createPosts, setCreatePosts] = useState('');
-    let title, description, url,type;
+    let title, description, url, type;
     const dispatch = useDispatch();
 
     const state = useSelector((state) => {
@@ -16,7 +16,7 @@ const CreatePost = () => {
     const createPost = () => {
         axios.post(
             `http://localhost:5000/post/create`,
-            { createPosts },
+            { title, description, url, type },
         ).then((res) => {
             dispatch(createPost(res.data));
         }).catch((err) => {
@@ -39,9 +39,9 @@ const CreatePost = () => {
                     <option value="english">english</option>
                 </select>
                 <input type="text" placeholder=" Title" onChange={(e) => { title = (e.target.value) }} />
-                <textarea placeholder=" Description" onChange={(e) => { description = (e.target.value) }}/>
+                <textarea placeholder=" Description" onChange={(e) => { description = (e.target.value) }} />
                 <input type="text" placeholder=" URL" onChange={(e) => { url = (e.target.value) }} />
-                <button onClick={createPost}>Create</button>
+                <button onClick={createPost}>Post</button>
             </div>
         </>
     )
