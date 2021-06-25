@@ -17,10 +17,9 @@ const ShowPosts = () => {
             posts: state.posts.posts
         };
     });
-};
-
-return (
-    <>
+    
+    return (
+        <>
         <div>
             {state.posts.map((elem, i) => {
                 return <div key={i}>
@@ -36,4 +35,5 @@ return (
     </>
 )
 
+};
 export default ShowPosts;
