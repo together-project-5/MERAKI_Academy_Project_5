@@ -2,8 +2,8 @@ const express = require('express');
 
 const { getPostById } = require('./../../routers/controllers/post2');
 
-const postByIdRouter = express.Router();
+const postRouter = express.Router();
 
-userRouter.get('/:id', getPostById);
+postRouter.get('/post/:id', getPostById);
 
-module.exports = postByIdRouter;
+module.exports = postRouter;

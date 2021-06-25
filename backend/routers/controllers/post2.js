@@ -5,7 +5,7 @@ const app =express()
 
 const getPostById = async (req, res) => {
     const id = req.params.id;
-    const query = `SELECT * FROM post WHERE id = ?`;
+    const query = `SELECT * FROM post WHERE _IdPost = ?`;
     const data = [id];
     db.query(query,data, (err, result) => {
         if (err) throw err;
