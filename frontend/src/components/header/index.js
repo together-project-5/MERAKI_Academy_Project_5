@@ -17,7 +17,7 @@ export const Header = () => {
 
   const searchPost = (e) => {
     axios.get(
-      `http://localhost:5000/post/${search}`
+      `http://localhost:5000/post/title/${search}`
     ).then((res) => {
       console.log("res", res.data);
     }).catch((err) => {
