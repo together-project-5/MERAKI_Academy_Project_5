@@ -1,10 +1,11 @@
 CREATE TABLE user(
     _IdUser INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(255),
-    email VARCHAR(255),
+    email VARCHAR(255) UNIQUE,
     password VARCHAR(255),
     age INT(3),
     gender VARCHAR(255),
+    picture TEXT,
     PRIMARY KEY (_IdUser)
 );
 CREATE TABLE Post  (
