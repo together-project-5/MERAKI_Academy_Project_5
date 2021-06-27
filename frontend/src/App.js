@@ -4,12 +4,13 @@ import Login from "./components/auth/login/index";
 import ShowPosts from "./components/post";
 import CreatePosts from "./components/post/postCreate";
 import Register from "./components/auth/signUp/index";
+import { Header } from "./components/header/index";
 import Main from "./components/main/index";
-
 
 const App = () => {
   return (
     <>
+      <Route path='/' component={Header} />
       <Route path="main" component={ShowPosts} />
       <Route path="/login" component={Login} />
       <Route path="/createPost" component={CreatePosts} />
