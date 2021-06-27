@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./signUp.css";
+import GoogleLogin from "./../../Google/google";
 
 const User = () => {
   let name;
@@ -80,6 +81,9 @@ const User = () => {
           <button className="register-button" onClick={createUser}>
             Sign Up
           </button>
+          <br />
+          <GoogleLogin />
+          <br />
         </div>
       </div>
     </>

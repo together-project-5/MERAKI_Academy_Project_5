@@ -1,7 +1,8 @@
 const db = require("./../../../db/db");
 const bcrypt = require("bcrypt");
+const { request } = require('express');
 const salt = Number(process.env.SALT);
-
+ 
 const createUser = async (req, res) => {
   const query = `INSERT INTO user (name ,email,password,age,gender,picture) VALUES (?,?,?,?,?,?)`;
   let { name, email, password, age, gender,picture } = req.body;

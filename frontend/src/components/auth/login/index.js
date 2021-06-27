@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import TextField from "@material-ui/core/TextField";
 import axios from "axios";
 import login from "./login.css";
+import GoogleLogin from "../../Google/google";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -27,7 +28,9 @@ const Login = () => {
       if (response.data.message !== "valid login") {
         setMessage(response.data);
       } else {
+
         history.push("/");
+
       }
     });
   };
@@ -36,6 +39,7 @@ const Login = () => {
     <>
       <div className="loginBody">
         <div className="loginMain">
+          <h3>Login</h3>
           <TextField
             type="email"
             placeholder="email here"
@@ -54,12 +58,16 @@ const Login = () => {
           {message && <div>{message}</div>}
 
           <p className="registration">
-            You don't have account ?{" "}
+            If you don't have account ?{" "}
             <Link to="/register">
               {" "}
               <br />
               Sign up here
             </Link>
+            <br />
+            or
+            <br />
+            <GoogleLogin />
           </p>
         </div>
       </div>
