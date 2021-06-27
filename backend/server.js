@@ -6,6 +6,7 @@ const userRouter = require("./routers/routes/user");
 const registerRouter = require("./routers/routes/auth/signUp");
 const authRouter = require("./routers/routes/auth/login");
 const postRouter = require("./routers/routes/post");
+const google = require("./routers/controllers/google/google")
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(cors());
 //app routers
 app.use("/user", userRouter, registerRouter, authRouter);
 app.use("/post", postRouter);
+app.use(google);
 
 const PORT = process.env.PORT || 5000;
 
