@@ -8,11 +8,11 @@ const login = (req, res) => {
   const query = `SELECT * FROM user WHERE email = ? ;`
   const data = [email];
 
-  db.query(query, data, (err, result) => {
+  db.query(query, data,async (err, result) => {
     if (!result[0]) {
       return res.json("the email dosnt exist");
     }
-    const confirm = bcrypt.compare(password, result[0].password);
+    const confirm = await bcrypt.compare(password, result[0].password);
     if (confirm) {
       const payload = {
         name: result[0].name,

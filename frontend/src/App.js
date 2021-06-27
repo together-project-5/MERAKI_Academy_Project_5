@@ -9,6 +9,7 @@ import { Header } from "./components/header/index";
 
 const App = () => {
 	return <>
+     <Route path='/' component={Header } />
 		<Route path='main' component={ShowPosts} />
 		<Route path="/login" component={Login} />
 		<Route path="/createPost" component={CreatePosts} />
