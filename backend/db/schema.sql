@@ -5,7 +5,7 @@ CREATE TABLE user(
     password VARCHAR(255),
     age INT(3),
     gender VARCHAR(255),
-    picture VARCHAR(255),
+    picture TEXT,
     PRIMARY KEY (_IdUser)
 );
 CREATE TABLE Post  (
