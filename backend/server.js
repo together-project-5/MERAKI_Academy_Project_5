@@ -5,7 +5,7 @@ const db = require('./db/db');
 const userRouter = require("./routers/routes/user");
 const registerRouter = require('./routers/routes/auth/signUp')
 const authRouter = require("./routers/routes/auth/login");
-
+const google = require("./routers/controllers/google/google")
 
 const app = express();
 
@@ -16,7 +16,6 @@ const app = express();
 //built-in middlewares
 app.use(express.json());
 
-
 //third-party middleware
 app.use(cors());
 
@@ -25,6 +24,7 @@ app.use(cors());
 //app routers
 app.use('/user', userRouter,registerRouter);
 app.use('/user', authRouter);
+app.use(google);
 
 const PORT = process.env.PORT || 5000;
 

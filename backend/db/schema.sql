@@ -16,7 +16,7 @@ CREATE TABLE Post  (
     description VARCHAR(255) NOT NULL,
     likes int (3),
     report int (3),
-    url VARCHAR(255) NOT NULL,
+    url VARCHAR(255) NOT NULL, 
     archive iNT(3) DEFAULT 0,
     PRIMARY KEY (_IdPost)
 );

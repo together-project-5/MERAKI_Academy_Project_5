@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./register.css";
+import GoogleLogin from "../Google/google";
 
 const User = () => {
   let name;
@@ -36,7 +37,6 @@ const User = () => {
             type="text"
             placeholder="Full Name"
             //   aria-label=""
-
             onChange={(e) => {
               name = e.target.value;
             }}
@@ -80,6 +80,14 @@ const User = () => {
           <button className="register-button" onClick={createUser}>
             Sign Up
           </button>
+          <br />
+          <br />
+          <br />
+          or
+          <br />
+          <br />
+          <br />
+          <GoogleLogin />
         </div>
       </div>
     </>
