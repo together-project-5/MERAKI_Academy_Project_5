@@ -8,11 +8,11 @@ const login = (req, res) => {
   const query = `SELECT * FROM user WHERE email = ? ;`;
   const data = [email];
 
-  db.query(query, data, (err, result) => {
+  db.query(query, data,async (err, result) => {
     if (!result[0]) {
       return res.json("the email doesn't exist");
     }
-    const confirm = bcrypt.compare(password, result[0].password);
+    const confirm = await bcrypt.compare(password, result[0].password);
     if (confirm) {
       const payload = {
         name: result[0].name,
@@ -21,14 +21,14 @@ const login = (req, res) => {
       const options = {
         expiresIn: "1d",
       };
-      res.status(200).json({
-        token: jwt.sign(payload, process.env.SECRET, options),
-        message: "valid login",
-        user: result[0],
-      });
-    } else {
-      res.status(403).json("The password is not correct");
-    }
+      res
+        .status(200)
+        .json({
+          token: jwt.sign(payload, process.env.SECRET, options),
+          message: "valid login",
+          user: result[0],
+        });
+    } else return res.status(403).json("The password is not correct");
   });
 };
 
