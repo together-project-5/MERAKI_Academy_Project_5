@@ -27,29 +27,28 @@ const GetPost = () => {
 
     }, [])
 
-    const likesFunction = () =>{
+    const likesFunction = () => {
 
     }
 
-    const commentsFunction = () =>{
-        
+    const commentsFunction = () => {
+
     }
 
-    const saveFunction = () =>{
-        
+    const saveFunction = () => {
+
     }
 
     return (
         <>
-            {state.posts.map((post) => {
-                return <div className="postDiv">
+            {state.posts.map((post,i) => {
+                return <div className="postDiv" key={i}>
                     <img className="profilePic" src='https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg' />
                     <p className="postTitle">{post.title}</p>
                     <p className="postDescription">{post.description}</p>
                     <img onClick={likesFunction} className="likeIcon" src={likes} />
                     <img onClick={commentsFunction} className="commentIcon" src={comments} />
                     <img onClick={saveFunction} className="saveIcon" src={save} />
-
                 </div>
             })}
         </>
