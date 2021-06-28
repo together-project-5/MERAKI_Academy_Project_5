@@ -16,6 +16,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    marginRight:'40px' ,
   },
   paper: {
     marginRight: theme.spacing(2),
@@ -57,7 +58,7 @@ export default function MenuListComposition() {
   }, [open]);
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root}  >
       {/* <Paper className={classes.paper}>
         <MenuList>
           <MenuItem>Profile</MenuItem>
@@ -65,7 +66,7 @@ export default function MenuListComposition() {
           <MenuItem>Logout</MenuItem>
         </MenuList>
       </Paper> */}
-      <div>
+      <div >
         <IconButton
           ref={anchorRef}
           aria-controls={open ? 'menu-list-grow' : undefined}
@@ -83,9 +84,14 @@ export default function MenuListComposition() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
+                    <MenuItem onClick={handleClose}>my profile</MenuItem>
+                    <MenuItem onClick={handleClose}>my favoritet</MenuItem>
+                    <MenuItem onClick={handleClose}>create new post</MenuItem>
+                    <MenuItem onClick={handleClose}>my archive</MenuItem>
+                    <MenuItem onClick={handleClose}>edit my profile</MenuItem>
+                    <hr></hr>
                     <MenuItem onClick={handleClose}>Logout</MenuItem>
+
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
@@ -97,8 +103,8 @@ export default function MenuListComposition() {
   );
 }
 // my favorite
-// create new post
-// edit my profile
-// my archive
+// 
+// 
+// 
 // log out
       
