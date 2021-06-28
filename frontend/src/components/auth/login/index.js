@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import { setToken } from "./../../../reducers/login";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,11 +23,14 @@ const Login = () => {
   const cheakLogin = () => {
     const login = { email, password };
     axios.post(`http://localhost:5000/user/login`, login).then((response) => {
+     localStorage.setItem("token",response.data.token)
       dispatch(setToken(response.data.token));
       if (response.data.message !== "valid login") {
         setMessage(response.data);
       } else {
-        history.push("/Main");
+
+        history.push("/");
+
       }
     });
   };
