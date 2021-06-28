@@ -2,7 +2,7 @@ const db = require("./../../../backend/db/db");
 
 const createPost = (req, res) => {
   const query = `INSERT INTO post (userId  ,type ,title,description ,url) VALUES (?,?,?,?,?)`;
-  let { userId, type, title, description, url } = req.body;
+  let { userId, type, title, description, url } = req.body.toLowerCase()  ;
   const data = [userId, type, title, description, url];
   db.query(query, data, (err, result) => {
     if (err) return res.status(400).send("can't create post try again please ");
@@ -28,11 +28,12 @@ const getPostById = async (req, res) => {
   });
 };
 const getPostByTitle = async (req, res) => {
-  const title = req.params.title;
-  const query = `SELECT * FROM post WHERE title = ?`;
+  const title = req.params.title.toLowerCase();
+  const query = `SELECT * FROM post WHERE title LIKE '${title}%' `;
   const data = [title];
-  db.query(query, data, (err, result) => {
-    if (err) return res.status(400).send("post not found");
+  db.query(query, (err, result) => {
+    if (err){ console.log(err);
+      return res.status(400).send("post not found");}
     res.status(200).json(result);
   });
 };

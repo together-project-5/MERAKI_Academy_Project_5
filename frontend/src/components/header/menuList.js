@@ -5,9 +5,12 @@ import MenuItem from '@material-ui/core/MenuItem';
 import SettingsIcon from '@material-ui/icons/Settings';
 
 const options = [
-  'profile',
-  'Phobos',
-  'logout',
+  'my profile',
+  'my favorite',
+  'create new post',
+  'edit my profile',
+  'my archive',
+  'log out',
 ];
 
 const ITEM_HEIGHT = 48;
@@ -42,7 +45,7 @@ export default function LongMenu() {
         onClose={handleClose}
         PaperProps={{
           style: {
-            maxHeight: ITEM_HEIGHT * 4.5,
+            maxHeight: ITEM_HEIGHT * 5.0,
             width: '20ch',
           },
         }}
