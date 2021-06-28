@@ -10,16 +10,15 @@ import Main from "./components/main/index";
 const App = () => {
   return (
     <>
-      <Route path="/" component={GetPost} />
       <Route path='/' component={Header} />
-      <Route path="main" component={ShowPosts} />
+      <Route exact path="/" component={GetPost} />
       <Route path="/login" component={Login} />
       <Route path="/createPost" component={CreatePosts} />
-	  <Route path="/register" component={Register} />
-	  <Route path="/Main" component={Main} />
+      <Route path="/register" component={Register} />
+      <Route path="/Main" component={Main} />
     </>
-    
-    
+
+
   );
 };
 
