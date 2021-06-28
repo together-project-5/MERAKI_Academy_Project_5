@@ -13,7 +13,7 @@ const createPost = (req, res) => {
 const getAllPost = (req, res) => {
   const query = `SELECT * FROM POST WHERE archive=0`;
   db.query(query, (err, result) => {
-    if (err) return res.status(400).send("can't create post try again please ");
+    if (err) return res.status(400).send("posts not found try again please ");
     res.status(201).json(result);
   });
 };
@@ -78,6 +78,14 @@ const archivePost = (req, res) => {
   });
 };
 
+const getArchivePost =()=>{
+  const query = `SELECT * FROM POST WHERE archive=1`;
+  db.query(query, (err, result) => {
+    if (err) return res.status(400).send("post not found ");
+    res.status(201).json(result);
+  });
+}
+
 module.exports = {
   createPost,
   getAllPost,
@@ -86,5 +94,6 @@ module.exports = {
   deletePost,
   editPost,
   getPostByType,
-  archivePost
+  archivePost,
+  getArchivePost
 };
