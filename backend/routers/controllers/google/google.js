@@ -8,7 +8,6 @@ const jwt = require("jsonwebtoken");
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const client = new OAuth2Client(CLIENT_ID);
-console.log(CLIENT_ID);
 router.post("/login-google", async (req, res) => {
   let token = req.body.token;
   const ticket = await client.verifyIdToken({
