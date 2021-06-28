@@ -11,14 +11,14 @@ const createPost = (req, res) => {
 };
 
 const getAllPost = (req, res) => {
-  const query = `SELECT * FROM POST`;
+  const query = `SELECT * FROM POST WHERE archive=0`;
   db.query(query, (err, result) => {
     if (err) return res.status(400).send("can't create post try again please ");
     res.status(201).json(result);
   });
 };
 
-const getPostById = async (req, res) => {
+const getPostById = (req, res) => {
   const id = req.params.id;
   const query = `SELECT * FROM post WHERE _IdPost = ?`;
   const data = [id];
@@ -27,7 +27,7 @@ const getPostById = async (req, res) => {
     res.status(200).json(result);
   });
 };
-const getPostByTitle = async (req, res) => {
+const getPostByTitle = (req, res) => {
   const title = req.params.title;
   const query = `SELECT * FROM post WHERE title = ?`;
   const data = [title];
@@ -36,7 +36,7 @@ const getPostByTitle = async (req, res) => {
     res.status(200).json(result);
   });
 };
-const deletePost = async (req, res) => {
+const deletePost = (req, res) => {
   const id = req.params.id;
   const query = `DELETE FROM post WHERE _IdPost = ?`;
   const data = [id];
