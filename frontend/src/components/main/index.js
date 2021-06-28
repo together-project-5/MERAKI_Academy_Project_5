@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import main from "./main.css";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import posts, { setPost } from "../../reducers/post";
-import likes from './img/like.png'
-import comments from './img/comment.png'
-import save from './img/save.png'
+import likes from "./img/like.png";
+import comments from "./img/comment.png";
+import save from "./img/save.png";
+import "./main.css";
 
 const Main = () => {
   const dispatch = useDispatch();
@@ -38,41 +38,13 @@ const Main = () => {
     setPost({ ...posts, [e.target.name]: e.target.value });
   };
 
+  const likesFunction = () => {};
 
-  const likesFunction = () => {
+  const commentsFunction = () => {};
 
-  }
-
-  const commentsFunction = () => {
-
-  }
-
-  const saveFunction = () => {
-
-  }
+  const saveFunction = () => {};
   return (
     <div className="App">
-      {posts
-        ? posts.map((post, i) => {
-            return (
-              <div className="postDiv" key={i}>
-                <img
-                  className="profilePic"
-                  src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
-                />
-                <p className="postTitle">{post.title}</p>
-                <p className="postDescription">{post.description}</p>
-                <img onClick={likesFunction} className="likeIcon" src={likes} />
-                <img
-                  onClick={commentsFunction}
-                  className="commentIcon"
-                  src={comments}
-                />
-                <img onClick={saveFunction} className="saveIcon" src={save} />
-              </div>
-            );
-          })
-        : ""}
       <button
         className="contained"
         onChange={handleChange}
@@ -116,6 +88,27 @@ const Main = () => {
       <button className="post" onClick={handleClick}>
         Create Post
       </button>
+      {posts
+        ? posts.map((post, i) => {
+            return (
+              <div className="postDiv" key={i}>
+                <img
+                  className="profilePic"
+                  src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
+                />
+                <p className="postTitle">{post.title}</p>
+                <p className="postDescription">{post.description}</p>
+                <img onClick={likesFunction} className="likeIcon" src={likes} />
+                <img
+                  onClick={commentsFunction}
+                  className="commentIcon"
+                  src={comments}
+                />
+                <img onClick={saveFunction} className="saveIcon" src={save} />
+              </div>
+            );
+          })
+        : ""}
     </div>
   );
 };
