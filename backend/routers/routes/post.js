@@ -7,6 +7,7 @@ const {
   getPostByTitle,
   deletePost,
   editPost,
+  getPostByType
 } = require("./../../routers/controllers/post");
 
 const postRouter = express.Router();
@@ -17,5 +18,6 @@ postRouter.get("/:id", getPostById);
 postRouter.get("/title/:title", getPostByTitle);
 postRouter.delete("/:id", deletePost);
 postRouter.put("/edit/:id", editPost);
+postRouter.get("/filter/:type", getPostByType);
 
 module.exports = postRouter;

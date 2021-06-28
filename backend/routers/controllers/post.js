@@ -1,7 +1,7 @@
 const db = require("./../../../backend/db/db");
 
 const createPost = (req, res) => {
-  const query = `INSERT INTO post (userId  ,type ,title,description ,url) VALUES (?,?,?,?,?)`;
+  const query = `INSERT INTO post (userId ,type ,title,description ,url) VALUES (?,?,?,?,?)`;
   let { userId, type, title, description, url } = req.body;
   const data = [userId, type, title, description, url];
   db.query(query, data, (err, result) => {
@@ -46,6 +46,7 @@ const deletePost = (req, res) => {
   });
 };
 
+
 const editPost = (req, res) => {
   const id = req.params.id;
   const query = `UPDATE post SET title=?,description=?,likes=?,report=? WHERE _IdPost=${id}`;
@@ -54,6 +55,15 @@ const editPost = (req, res) => {
   db.query(query, data, (err, res) => {
     if (err) return res.status(400).send("can't update post try again please");
     console.log(res);
+
+const getPostByType = (req,res) =>{
+  const type= req.params.type;
+  const query = `SELECT * FROM post WHERE type = ?`;
+  const data = [type];
+  db.query(query, data, (err, result) => {
+    if (err) return res.status(400).send("post not found");
+    res.status(200).json(result);
+
   });
 }
 
@@ -63,5 +73,6 @@ module.exports = {
   getPostById,
   getPostByTitle,
   deletePost,
-  editPost
+  editPost,
+  getPostByType
 };
