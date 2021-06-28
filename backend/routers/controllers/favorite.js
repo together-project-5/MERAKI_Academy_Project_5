@@ -22,10 +22,10 @@ const getFavoritePost = (req, res) => {
 
 const deleteFavoritePost = (req, res) => {
     const id = req.params.id;
-    const query = `DELETE FROM favorite WHERE id=${id}`
+    const query = `DELETE FROM favorite WHERE postId=${id}`
     db.query(query, (err, result) => {
         if (err) return res.status(400).send("can't delete post from favorite");
-        console.log(result);
+        res.status(200).json(result);
     });
 };
 
