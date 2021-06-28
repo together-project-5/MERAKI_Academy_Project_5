@@ -10,7 +10,6 @@ import save from './img/save.png'
 const GetPost = () => {
     const dispatch = useDispatch();
 
-
     const state = useSelector((state) => {
         return {
             posts: state.posts.posts,
@@ -41,7 +40,7 @@ const GetPost = () => {
 
     return (
         <>
-            {state.posts.map((post,i) => {
+            {state.posts.map((post, i) => {
                 return <div className="postDiv" key={i}>
                     <img className="profilePic" src='https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg' />
                     <p className="postTitle">{post.title}</p>
