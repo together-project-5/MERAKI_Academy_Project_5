@@ -10,6 +10,17 @@ const insertFavorite = (req, res) => {
     });
 };
 
+const getFavoritePost = (req, res) => {
+    const id = req.params.id;
+    const query = `SELECT * FROM favorite WHERE userId=${id} `;
+    db.query(query, (err, result) => {
+        if (err) return res.status(400).send("can't get favorite posts");
+        res.status(200).json(result);
+    });
+};
+
+
 module.exports = {
-    insertFavorite
+    insertFavorite,
+    getFavoritePost
 }
