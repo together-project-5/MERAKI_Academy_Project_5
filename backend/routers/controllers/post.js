@@ -41,10 +41,21 @@ const deletePost = (req, res) => {
   const query = `DELETE FROM post WHERE _IdPost = ?`;
   const data = [id];
   db.query(query, data, (err, result) => {
-    if (err) return res.status(400).send("can;t delete post try again please");
+    if (err) return res.status(400).send("can't delete post try again please");
     res.status(200).json("success deleted");
   });
 };
+
+const editPost = (req, res) => {
+  const id = req.params.id;
+  const query = `UPDATE post SET title=?,description=?,likes=?,report=? WHERE _IdPost=${id}`;
+  const { title, description, likes, report } = req.body;
+  const data = [title, description, likes, report];
+  db.query(query, data, (err, res) => {
+    if (err) return res.status(400).send("can't update post try again please");
+    console.log(res);
+  });
+}
 
 module.exports = {
   createPost,
@@ -52,4 +63,5 @@ module.exports = {
   getPostById,
   getPostByTitle,
   deletePost,
+  editPost
 };
