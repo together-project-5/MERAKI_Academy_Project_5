@@ -1,13 +1,8 @@
 const db = require("./../../../backend/db/db");
 
 const createPost = (req, res) => {
-<<<<<<< HEAD
-  const query = `INSERT INTO post (userId  ,type ,title,description ,url) VALUES (?,?,?,?,?)`;
-  let { userId, type, title, description, url } = req.body.toLowerCase()  ;
-=======
   const query = `INSERT INTO post (userId ,type ,title,description ,url) VALUES (?,?,?,?,?)`;
   let { userId, type, title, description, url } = req.body;
->>>>>>> 6b2f0ab365cfc05eec10e65a155885168b0f0880
   const data = [userId, type, title, description, url];
   db.query(query, data, (err, result) => {
     if (err) return res.status(400).send("can't create post try again please ");
