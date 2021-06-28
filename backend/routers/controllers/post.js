@@ -67,6 +67,17 @@ const getPostByType = (req, res) => {
   });
 };
 
+const archivePost = (req, res) => {
+  const id = req.params.id;
+  const query = `UPDATE post SET archive=? WHERE _IdPost=${id}`;
+  const {archive} = req.body;
+  const data = [archive]
+  db.query(query, data, (err, res) => {
+    if (err) return res.status(400).send("can't add post to archive try again please");
+    console.log(res);
+  });
+};
+
 module.exports = {
   createPost,
   getAllPost,
@@ -75,4 +86,5 @@ module.exports = {
   deletePost,
   editPost,
   getPostByType,
+  archivePost
 };
