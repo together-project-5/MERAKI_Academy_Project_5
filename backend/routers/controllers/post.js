@@ -1,7 +1,7 @@
 const db = require("./../../../backend/db/db");
 
 const createPost = (req, res) => {
-  const query = `INSERT INTO post (userId  ,type ,title,description ,url) VALUES (?,?,?,?,?)`;
+  const query = `INSERT INTO post (userId ,type ,title,description ,url) VALUES (?,?,?,?,?)`;
   let { userId, type, title, description, url } = req.body;
   const data = [userId, type, title, description, url];
   db.query(query, data, (err, result) => {
@@ -46,10 +46,21 @@ const deletePost = (req, res) => {
   });
 };
 
+const getPostByType = (req,res) =>{
+  const type= req.params.type;
+  const query = `SELECT * FROM post WHERE type = ?`;
+  const data = [type];
+  db.query(query, data, (err, result) => {
+    if (err) return res.status(400).send("post not found");
+    res.status(200).json(result);
+  });
+}
+
 module.exports = {
   createPost,
   getAllPost,
   getPostById,
   getPostByTitle,
   deletePost,
+  getPostByType
 };
