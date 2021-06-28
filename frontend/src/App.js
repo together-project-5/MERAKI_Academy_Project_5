@@ -10,17 +10,12 @@ import Main from "./components/main/index";
 const App = () => {
   return (
     <>
-      <Route path="main" component={ShowPosts} />
       <Route path="/login" component={Login} />
       <Route path="/createPost" component={CreatePosts} />
-	  <Route path="/register" component={Register} />
-	  <Route path="/Main" component={Main} />
+      <Route path="/register" component={Register} />
+      <Route path="/main" component={Main} />
     </>
-    
-    
   );
 };
 
 export default App;
-
-
