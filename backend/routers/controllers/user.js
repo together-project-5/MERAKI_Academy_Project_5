@@ -1,4 +1,6 @@
 const db = require("./../../db/db");
+const bcrypt = require("bcrypt");
+const salt = Number(process.env.SALT);
 
 const getAllUser = (req, res) => {
   const query = `SELECT * FROM user`;
@@ -28,8 +30,21 @@ const getUserByName = (req, res) => {
   });
 };
 
+const editProfile = async (req, res) => {
+  const id = req.params.id;
+  const query = `UPDATE user SET name=?,password=? WHERE _IdUser=${id}`;
+  let { name, password } = req.body;
+  password = await bcrypt.hash(password, salt);
+  const data = [name, password];
+  db.query(query, data, (err, result) => {
+    if (err) return res.status(400).send("can't update your information try again please");
+    console.log(result);
+  });
+};
+
 module.exports = {
   getAllUser,
   getUserById,
   getUserByName,
+  editProfile
 };
