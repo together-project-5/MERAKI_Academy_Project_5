@@ -1,10 +1,7 @@
 
 import IconButton from '@material-ui/core/IconButton';
-
 import SettingsIcon from '@material-ui/icons/Settings';
-///////////////////////////////////////////////////
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
 import Paper from '@material-ui/core/Paper';
@@ -16,7 +13,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    marginRight:'40px' ,
+    marginRight: '40px',
   },
   paper: {
     marginRight: theme.spacing(2),
@@ -47,7 +44,6 @@ export default function MenuListComposition() {
     }
   }
 
-  // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(open);
   React.useEffect(() => {
     if (prevOpen.current === true && open === false) {
@@ -59,13 +55,6 @@ export default function MenuListComposition() {
 
   return (
     <div className={classes.root}  >
-      {/* <Paper className={classes.paper}>
-        <MenuList>
-          <MenuItem>Profile</MenuItem>
-          <MenuItem>My account</MenuItem>
-          <MenuItem>Logout</MenuItem>
-        </MenuList>
-      </Paper> */}
       <div >
         <IconButton
           ref={anchorRef}
@@ -73,7 +62,7 @@ export default function MenuListComposition() {
           aria-haspopup="true"
           onClick={handleToggle}
         >
-          < SettingsIcon /> 
+          < SettingsIcon />
         </IconButton>
         <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
@@ -91,7 +80,6 @@ export default function MenuListComposition() {
                     <MenuItem onClick={handleClose}>edit my profile</MenuItem>
                     <hr></hr>
                     <MenuItem onClick={handleClose}>Logout</MenuItem>
-
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
@@ -102,9 +90,4 @@ export default function MenuListComposition() {
     </div>
   );
 }
-// my favorite
-// 
-// 
-// 
-// log out
-      
+
