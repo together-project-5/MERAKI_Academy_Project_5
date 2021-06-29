@@ -9,7 +9,8 @@ const {
   editPost,
   getPostByType,
   archivePost,
-  getArchivePost
+  getArchivePost,
+  editLikePost
 } = require("./../../routers/controllers/post");
 
 const postRouter = express.Router();
@@ -23,5 +24,6 @@ postRouter.put("/edit/:id", editPost);
 postRouter.get("/filter/:type", getPostByType);
 postRouter.get("/archive/:id", archivePost);
 postRouter.get("/archive", getArchivePost);
+postRouter.put("/editLike/:id", editLikePost);
 
 module.exports = postRouter;
