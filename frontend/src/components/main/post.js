@@ -18,6 +18,7 @@ const GetPost = () => {
             posts: state.posts.posts,
         };
     });
+
     useEffect(() => {
         axios.get(
             `http://localhost:5000/post`).then((res) => {
@@ -26,10 +27,12 @@ const GetPost = () => {
                 console.log(err)
             })
     }, [])
+
     const likesFunction = () => {
     }
     const commentsFunction = () => {
     }
+
     const saveFunction = (postId, userId) => {
         setStatus(!status)
         if (status) {
@@ -41,12 +44,13 @@ const GetPost = () => {
                 })
         } else {
             axios.delete(
-                `http://localhost:5000/favorite/post`).then((res) => {
+                `http://localhost:5000/favorite/post/${postId}`).then((res) => {
                     dispatch(deleteFavorite(res.data));
                 }).catch((err) => {
                     console.log(err)
                 })
         }
+
     }
     return (
         <>
