@@ -7,6 +7,7 @@ import GetPost from "./components/main/post";
 import { Header } from "./components/header/index";
 import GetFavorites from "./components/favorite/favorite";
 import Main from "./components/main/index";
+import Archive from "./components/archive/index";
 import postList from "./components/main/postList";
 
 
@@ -20,6 +21,7 @@ const App = () => {
       <Route path="/login" component={Login} />
       <Route path="/createPost" component={CreatePosts} />
       <Route path="/register" component={Register} />
+      <Route path="/archive" component={Archive} />
       <Route path="/favorite" component={GetFavorites} />
       <Route path="/post" component={postList} />
     </>
