@@ -7,6 +7,9 @@ import GetPost from "./components/main/post";
 import { Header } from "./components/header/index";
 import GetFavorites from "./components/favorite/favorite";
 import Main from "./components/main/index";
+import postList from "./components/main/postList";
+
+
 
 const App = () => {
   return (
@@ -18,7 +21,7 @@ const App = () => {
       <Route path="/createPost" component={CreatePosts} />
       <Route path="/register" component={Register} />
       <Route path="/favorite" component={GetFavorites} />
-
+      <Route path="/post" component={postList} />
     </>
   );
 };
