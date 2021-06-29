@@ -27,17 +27,15 @@ const Archive = () => {
 }, [])
   return (
     <>
-    <h1>hi</h1>
-        {console.log("here" ,state.archives.archives )}
         {state.archives.map((post, i) => {
           return (
-            <div className="" key={i}>
+            <div className="postDiv" key={i}>
               <img
-                className=""
+                className="profilePic"
                 src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
               />
-              <p className="">{post.title}</p>
-              <p className="">{post.description}</p>
+              <p className="postTitle">{post.title}</p>
+              <p className="postDescription">{post.description}</p>
             </div>
           );
         })}

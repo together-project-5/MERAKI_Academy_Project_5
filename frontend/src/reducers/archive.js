@@ -1,5 +1,5 @@
 const initialState = {
-  archives: [],
+    archives: [],
 };
 
 const archives = (state = initialState, { type, payload }) => {
