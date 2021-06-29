@@ -31,8 +31,9 @@ const getPostByTitle = (req, res) => {
   const title = req.params.title;
   const query = `SELECT * FROM post WHERE title = ?`;
   const data = [title];
-  db.query(query, data, (err, result) => {
-    if (err) return res.status(400).send("post not found");
+  db.query(query, (err, result) => {
+    if (err){ console.log(err);
+      return res.status(400).send("post not found");}
     res.status(200).json(result);
   });
 };
