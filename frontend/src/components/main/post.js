@@ -54,7 +54,13 @@ const GetPost = () => {
             })
 
     }
-    
+    const disLikesFunction = (id,index) => {
+        setLike(like.map((post, i)=>{
+            console.log("post",post);
+            if( i===index ){return post=post - 1}
+            return post  ;
+        }))
+    }
     const commentsFunction = () => {
     }
     const saveFunction = (postId, userId) => {
@@ -84,7 +90,14 @@ const GetPost = () => {
                     <p className="postTitle">{post.title}</p>
                     <p className="postDescription">{post.description}</p>
                     <img onClick={()=>{
-                        likesFunction(post._IdPost,i);
+                        setAddLike(!addLike)
+                        if(addLike){
+                            likesFunction(post._IdPost,i);
+                        }
+                        else{
+                            disLikesFunction(post._IdPost,i)
+                        }
+                        
                         }} className="likeIcon" src={likes} />
                         <p className="postTitle">{like[i]}</p>
                     <img onClick={commentsFunction} className="commentIcon" src={comments} />
