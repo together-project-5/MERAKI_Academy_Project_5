@@ -58,7 +58,9 @@ const GetPost = () => {
                     <p className="postDescription">{post.description}</p>
                     <img onClick={likesFunction} className="likeIcon" src={likes} />
                     <img onClick={commentsFunction} className="commentIcon" src={comments} />
+                    <img onClick={saveFunction} className="saveIcon" src={save} />
                     <MenuItems/>
+
                     <img onClick={(e) => {
                         e.preventDefault();
                         saveFunction(post._IdPost, post.userId)

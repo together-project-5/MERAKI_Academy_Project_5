@@ -9,6 +9,7 @@ import Main from "./components/main/index";
 import postList from "./components/main/postList";
 
 
+
 const App = () => {
   return (
     <>
