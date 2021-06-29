@@ -16,7 +16,7 @@ const GetFavorites = () => {
 
     useEffect(() => {
         axios.get(
-            `http://localhost:5000/favorite/post`).then((res) => {
+            `http://localhost:5000/favorite/post/1`).then((res) => {
                 dispatch(setFavorite(res.data));
             }).catch((err) => {
                 console.log(err)
@@ -33,7 +33,7 @@ const GetFavorites = () => {
     }
     return (
         <>
-        {/* {console.log("aa",state.favorites)} */}
+            {/* {console.log("aa",state.favorites)} */}
             {state.favorites.map((post, i) => {
                 return <div className="postDiv" key={i}>
                     <img className="profilePic" src='https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg' />

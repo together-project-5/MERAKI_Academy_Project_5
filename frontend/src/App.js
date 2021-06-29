@@ -18,7 +18,6 @@ const App = () => {
       <Route path="/createPost" component={CreatePosts} />
       <Route path="/register" component={Register} />
       <Route path="/favorite" component={GetFavorites} />
-
     </>
   );
 };
