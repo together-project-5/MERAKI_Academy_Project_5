@@ -48,6 +48,7 @@ const GetPost = () => {
                     <img onClick={likesFunction} className="likeIcon" src={likes} />
                     <img onClick={commentsFunction} className="commentIcon" src={comments} />
                     <img onClick={saveFunction} className="saveIcon" src={save} />
+                    
                 </div>
             })}
         </>

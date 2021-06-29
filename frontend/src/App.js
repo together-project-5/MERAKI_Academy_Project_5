@@ -7,6 +7,7 @@ import GetPost from "./components/main/post";
 import { Header } from "./components/header/index";
 import Main from "./components/main/index";
 
+
 const App = () => {
   return (
     <>
