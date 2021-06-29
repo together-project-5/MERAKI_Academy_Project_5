@@ -13,7 +13,7 @@ const Archive = () => {
 
   const state = useSelector((state) => {
     return {
-      // archives: state.archives.archives,
+      archives: state.archives.archives,
     };
   });
 
@@ -28,7 +28,7 @@ const Archive = () => {
   return (
     <>
     <h1>hi</h1>
-        {/* {console.log("here" ,state.archives.archives )}
+        {console.log("here" ,state.archives.archives )}
         {state.archives.map((post, i) => {
           return (
             <div className="" key={i}>
@@ -40,7 +40,7 @@ const Archive = () => {
               <p className="">{post.description}</p>
             </div>
           );
-        })} */}
+        })}
     </>
   );
 };
