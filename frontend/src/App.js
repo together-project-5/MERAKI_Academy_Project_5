@@ -6,6 +6,8 @@ import Register from "./components/auth/signUp/index";
 import GetPost from "./components/main/post";
 import { Header } from "./components/header/index";
 import Main from "./components/main/index";
+import postList from "./components/main/postList";
+
 
 const App = () => {
   return (
@@ -16,6 +18,7 @@ const App = () => {
       <Route path="/login" component={Login} />
       <Route path="/createPost" component={CreatePosts} />
       <Route path="/register" component={Register} />
+      <Route path="/post" component={postList} />
     </>
   );
 };
