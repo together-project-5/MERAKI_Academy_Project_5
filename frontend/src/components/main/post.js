@@ -7,6 +7,7 @@ import "./main.css";
 import likes from './img/like.png'
 import comments from './img/comment.png'
 import save from './img/save.png'
+const [likes, setLikes] = useState(0)
 const GetPost = () => {
     const dispatch = useDispatch();
     const [status, setStatus] = useState(true)
@@ -23,9 +24,17 @@ const GetPost = () => {
                 console.log(err)
             })
     }, [])
-    const likesFunction = () => {
+    const likesFunction = (id) => {
+        console.log(id);
+      
+
         axios
-        .put()
+        .put(
+            `http://localhost:5000/post/editLike/${id}`,{likes:2}).then((res) => {
+                dispatch(setPost(res.data));
+            }).catch((err) => {
+                console.log(err)
+            })
 
     }
     const commentsFunction = () => {
@@ -57,7 +66,11 @@ const GetPost = () => {
                     <p className="postTitle">{post.title}</p>
                     <p className="postDescription">{post.description}</p>
                     <p className="postTitle">{post.likes}</p>
-                    <img onClick={()=>{likesFunction(post._IdPost)}} className="likeIcon" src={likes} />
+                    <img onClick={()=>{
+                        setLikes(post.likes)
+                        likesFunction(post._IdPost);
+                        
+                        }} className="likeIcon" src={likes} />
                     <img onClick={commentsFunction} className="commentIcon" src={comments} />
                     <img onClick={(e) => {
                         e.preventDefault();
