@@ -32,8 +32,10 @@ const getPostByTitle = (req, res) => {
   const query = `SELECT * FROM post WHERE title = ?`;
   const data = [title];
   db.query(query, (err, result) => {
-    if (err){ console.log(err);
-      return res.status(400).send("post not found");}
+    if (err) {
+      console.log(err);
+      return res.status(400).send("post not found");
+    }
     res.status(200).json(result);
   });
 };
@@ -71,7 +73,7 @@ const getPostByType = (req, res) => {
 const archivePost = (req, res) => {
   const id = req.params.id;
   const query = `UPDATE post SET archive=? WHERE _IdPost=${id}`;
-  const {archive} = req.body;
+  const { archive } = req.body;
   const data = [archive]
   db.query(query, data, (err, res) => {
     if (err) return res.status(400).send("can't add post to archive try again please");
@@ -79,21 +81,25 @@ const archivePost = (req, res) => {
   });
 };
 
-const getArchivePost =()=>{
-  const query = `SELECT * FROM POST WHERE archive=1`;
+const getArchivePost = () => {
+  const id = req.params.id;
+  const query = `SELECT * FROM POST WHERE archive=1 and _IdPost=${id} `;
   db.query(query, (err, result) => {
     if (err) return res.status(400).send("post not found ");
     res.status(201).json(result);
   });
 }
+
 const editLikePost = (req, res) => {
   const id = req.params.id;
-  const query = `UPDATE post SET likes=? WHERE _IdPost=${id}`;
-  const {likes} = req.body;
-  const data = [likes];
-  db.query(query, data, (err, res) => {
-    if (err) return res.status(400).send("can't update post try again please");
-    console.log(res);
+  const query = `UPDATE post SET likes=? WHERE _IdPost=${id} `;
+  const  likes  =req.body.likes
+  console.log("likes",likes)
+  console.log(id)
+   const data = [likes]
+  db.query(query ,data, (err, res) => {
+    if (err) return res.status(400).send("post not found");
+    console.log("result",res);
   });
 };
 
