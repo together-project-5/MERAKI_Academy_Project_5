@@ -98,7 +98,7 @@ const editLikePost = (req, res) => {
   console.log(id)
    const data = [likes]
   db.query(query ,data, (err, res) => {
-    if (err) return res.status(400).send("post not found");
+    if (err) return res.status(400);
     console.log("result",res);
   });
 };
