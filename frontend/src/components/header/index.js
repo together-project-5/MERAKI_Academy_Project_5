@@ -13,6 +13,7 @@ export const Header = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
+    history.push("/")
   };
 
   const searchPost = (e) => {
