@@ -27,22 +27,22 @@ const GetPost = () => {
     }
     const commentsFunction = () => {
     }
-    const saveFunction = (postId,userId) => {
+    const saveFunction = (postId, userId) => {
         setStatus(!status)
         if (status) {
             axios.post(
-                `http://localhost:5000/favorite/post`,{postId,userId}).then((res) => {
+                `http://localhost:5000/favorite/post`, { postId, userId }).then((res) => {
                     dispatch(setFavorite(res.data));
                 }).catch((err) => {
                     console.log(err)
                 })
         } else {
-            // axios.delete(
-            //     `http://localhost:5000/post`).then((res) => {
-            //         dispatch(deleteFavorite(res.data));
-            //     }).catch((err) => {
-            //         console.log(err)
-            //     })
+            axios.delete(
+                `http://localhost:5000/favorite/post`).then((res) => {
+                    dispatch(deleteFavorite(res.data));
+                }).catch((err) => {
+                    console.log(err)
+                })
         }
     }
     return (
@@ -56,7 +56,7 @@ const GetPost = () => {
                     <img onClick={commentsFunction} className="commentIcon" src={comments} />
                     <img onClick={(e) => {
                         e.preventDefault();
-                        saveFunction(post._IdPost,post.userId)
+                        saveFunction(post._IdPost, post.userId)
                     }} className="saveIcon" src={save} />
                 </div>
             })}
