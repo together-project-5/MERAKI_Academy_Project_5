@@ -21,10 +21,7 @@ const App = () => {
       <Route path="/createPost" component={CreatePosts} />
       <Route path="/register" component={Register} />
       <Route path="/favorite" component={GetFavorites} />
-<<<<<<< HEAD
-=======
       <Route path="/post" component={postList} />
->>>>>>> 48a6300984108f786313abb24b2e316587ba4c5e
     </>
   );
 };
