@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
-import { setToken } from "./../../../reducers/login";
+import { setToken, setUser } from "./../../../reducers/login";
 import { useDispatch, useSelector } from "react-redux";
 import TextField from "@material-ui/core/TextField";
 import axios from "axios";
@@ -16,21 +16,27 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const state = useSelector((state) => {
-    return {
-      token: state.login.token,
-    };
+    return (
+      {
+        token: state.login.token,
+      },
+      {
+        user: state.login.user,
+      }
+    );
   });
   const cheakLogin = () => {
     const login = { email, password };
     axios.post(`http://localhost:5000/user/login`, login).then((response) => {
-     localStorage.setItem("token",response.data.token)
+      console.log("res :  ", response.data);
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("user", response.data.user);
       dispatch(setToken(response.data.token));
+      dispatch(setUser(response.data.user));
       if (response.data.message !== "valid login") {
         setMessage(response.data);
       } else {
-
         history.push("/");
-
       }
     });
   };
