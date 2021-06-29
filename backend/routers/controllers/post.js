@@ -86,6 +86,17 @@ const getArchivePost =()=>{
     res.status(201).json(result);
   });
 }
+const editLikePost = (req, res) => {
+  const id = req.params.id;
+  const query = `UPDATE post SET likes=? WHERE _IdPost=${id}`;
+  const {likes} = req.body;
+  const data = [likes];
+  db.query(query, data, (err, res) => {
+    if (err) return res.status(400).send("can't update post try again please");
+    console.log(res);
+  });
+};
+
 
 module.exports = {
   createPost,
@@ -96,5 +107,6 @@ module.exports = {
   editPost,
   getPostByType,
   archivePost,
-  getArchivePost
+  getArchivePost,
+  editLikePost
 };

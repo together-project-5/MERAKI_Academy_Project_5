@@ -24,6 +24,9 @@ const GetPost = () => {
             })
     }, [])
     const likesFunction = () => {
+        axios
+        .put()
+
     }
     const commentsFunction = () => {
     }
@@ -48,11 +51,13 @@ const GetPost = () => {
     return (
         <>
             {state.posts.map((post, i) => {
+                console.log("post:",post._IdPost);
                 return <div className="postDiv" key={i}>
                     <img className="profilePic" src='https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg' />
                     <p className="postTitle">{post.title}</p>
                     <p className="postDescription">{post.description}</p>
-                    <img onClick={likesFunction} className="likeIcon" src={likes} />
+                    <p className="postTitle">{post.likes}</p>
+                    <img onClick={()=>{likesFunction(post._IdPost)}} className="likeIcon" src={likes} />
                     <img onClick={commentsFunction} className="commentIcon" src={comments} />
                     <img onClick={(e) => {
                         e.preventDefault();
