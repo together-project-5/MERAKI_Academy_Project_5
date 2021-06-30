@@ -42,10 +42,9 @@ const GetPost = () => {
 
         setStatus(!status)
         let ID = state.user._IdUser;
-        console.log("post", postId);
         if (status) {
             axios.post(
-                `http://localhost:5000/favorite/post`, { postId, ID }).then((res) => {
+                `http://localhost:5000/favorite/post`, { postId, userId:ID }).then((res) => {
                     dispatch(setFavorite(res.data));
                 }).catch((err) => {
                     console.log(err)
