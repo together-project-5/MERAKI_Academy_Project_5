@@ -87,7 +87,6 @@ const GetPost = () => {
             }
             return post  ;
         }))
-        // $ git commit -m "change the value of likes in data base"
         axios
         .put(
             `http://localhost:5000/post/editLike/${id}`,{likes:value}).then((res) => {
@@ -141,7 +140,8 @@ const GetPost = () => {
                         }
                         
                         }} className="likeIcon" src={likes} />
-                        <p className="postTitle">{like[i]}</p>
+                       { like[i] !== 0 && <p className="postTitle">{like[i]}</p>}
+                        
                     <img onClick={commentsFunction} className="commentIcon" src={comments} />
                     <img onClick={saveFunction} className="saveIcon" src={save} />
                     <MenuItems/>
