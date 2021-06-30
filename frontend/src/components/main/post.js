@@ -5,7 +5,6 @@ import { setPost } from "../../reducers/post";
 import { setFavorite, deleteFavorite } from "../../reducers/favorite";
 import "./main.css";
 import MenuItem from "./postList"
-import MenuItems from "./listProfile"
 import likes from './img/like.png'
 import comments from './img/comment.png'
 import save from './img/save.png'
@@ -63,8 +62,6 @@ const GetPost = () => {
                     <img onClick={likesFunction} className="likeIcon" src={likes} />
                     <img onClick={commentsFunction} className="commentIcon" src={comments} />
                     <img onClick={saveFunction} className="saveIcon" src={save} />
-                    <MenuItems/>
-
                     <img onClick={(e) => {
                         e.preventDefault();
                         saveFunction(post._IdPost, post.userId)
