@@ -5,22 +5,22 @@ import { setPost } from "../../reducers/post";
 import { setFavorite, deleteFavorite } from "../../reducers/favorite";
 import "./main.css";
 import MenuItem from "./postList";
-import MenuItems from "./listProfile";
+// import MenuItems from "./listProfile";
 import likes from "./img/like.png";
 import comments from "./img/comment.png";
 import save from "./img/save.png";
 
 const GetPost = () => {
-   const [addLike, setAddLike] = useState([])
-    const [like, setLike] = useState([])
+  const [addLike, setAddLike] = useState([]);
+  const [like, setLike] = useState([]);
   const dispatch = useDispatch();
   const [status, setStatus] = useState(true);
   const [commentId, setCommentId] = useState("");
   const [show, setShow] = useState(false);
-  
-    const ar = []
-    const likeNum=[]
-    
+
+  const ar = [];
+  const likeNum = [];
+
   const state = useSelector((state) => {
     return {
       posts: state.posts.posts,
@@ -38,7 +38,7 @@ const GetPost = () => {
       });
   }, []);
 
-  const likesFunction = () => {};
+//   const likesFunction = () => {};
   //   const commentsFunction = () => {};
 
   const saveFunction = (postId, userId) => {
@@ -61,80 +61,89 @@ const GetPost = () => {
         .catch((err) => {
           console.log(err);
         });
-      
-    useEffect(() => {
-        axios.get(
-            `http://localhost:5000/post`).then((res) => {
-               
-                res.data.forEach((post, i)=>{
-                    console.log("post like",post.likes);
-                    likeNum.push(true)
-                    ar.push(post.likes) 
-                })
-                dispatch(setPost(res.data));
-                //   console.log(res.data);
-
-                //    setLike([...like,res.data.likes])
-            }).catch((err) => {
-                console.log(err)
-            })
-            console.log("arrrrrr",ar);
-            setLike(ar)
-            setAddLike(likeNum)
-    }, [])
-    const likesFunction = (id,index) => {
-        console.log(addLike);
-        let value ;
-        setAddLike(like.map((val, i)=>{
-            if( i===index ){
-                return val = false ;
-            }
-            return val ;
-        }))
-        setLike(like.map((post, i)=>{
-            console.log("post",post);
-            if( i===index ){
-                value=  post + 1
-                return post=post + 1;
-
-            }
-            return post  ;
-        }))
-        axios
-        .put(
-            `http://localhost:5000/post/editLike/${id}`,{likes:value}).then((res) => {
-            }).catch((err) => {
-                console.log(err)
-            })
-
     }
-    const disLikesFunction = (id,index) => {
-        let value ;
-        setAddLike(like.map((val, i)=>{
-            if( i===index ){
-                return val = true ;
-            }
-            return val ;
-        }))
-        
-        setLike(like.map((post, i)=>{
-            
-            console.log("post",post);
-            if( i===index ){
-                value = post - 1;
-                return post=post - 1;
-            }
-            return post  ;
-        }))
-        axios
-        .put(
-            `http://localhost:5000/post/editLike/${id}`,{likes:value}).then((res) => {
-            }).catch((err) => {
-                console.log(err)
-            })
-    }
-    const commentsFunction = () => {
-    }
+  };
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/post`)
+      .then((res) => {
+        res.data.forEach((post, i) => {
+          console.log("post like", post.likes);
+          likeNum.push(true);
+          ar.push(post.likes);
+        });
+        dispatch(setPost(res.data));
+        //   console.log(res.data);
+
+        //    setLike([...like,res.data.likes])
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    console.log("arrrrrr", ar);
+    setLike(ar);
+    setAddLike(likeNum);
+  }, []);
+
+  const likesFunction = (id, index) => {
+    console.log(addLike);
+    let value;
+    setAddLike(
+      like.map((val, i) => {
+        if (i === index) {
+          return (val = false);
+        }
+        return val;
+      })
+    );
+    setLike(
+      like.map((post, i) => {
+        console.log("post", post);
+        if (i === index) {
+          value = post + 1;
+          return (post = post + 1);
+        }
+        return post;
+      })
+    );
+    axios
+      .put(`http://localhost:5000/post/editLike/${id}`, { likes: value })
+      .then((res) => {})
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const disLikesFunction = (id, index) => {
+    let value;
+    setAddLike(
+      like.map((val, i) => {
+        if (i === index) {
+          return (val = true);
+        }
+        return val;
+      })
+    );
+
+    setLike(
+      like.map((post, i) => {
+        console.log("post", post);
+        if (i === index) {
+          value = post - 1;
+          return (post = post - 1);
+        }
+        return post;
+      })
+    );
+    axios
+      .put(`http://localhost:5000/post/editLike/${id}`, { likes: value })
+      .then((res) => {})
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+//   const commentsFunction = () => {};
 
   const showComment = (id) => {
     setCommentId(id);
@@ -165,23 +174,27 @@ const GetPost = () => {
               />
               <p className="postTitle">{post.title}</p>
               <p className="postDescription">{post.description}</p>
-            <img onClick={()=>{
-                         setLike(like.map((val, index)=>{
-                            if( i===index ){
-                                return val=false;
-                            }
-                            return post  ;
-                        }))
-                        if(addLike[i]){
-                            likesFunction(post._IdPost,i);
-                        }
-                        else{
-                            disLikesFunction(post._IdPost,i)
-                        }
-                        
-                        }} className="likeIcon" src={likes} />
-                       { like[i] !== 0 && <p className="postTitle">{like[i]}</p>}
-                        
+              <img
+                onClick={() => {
+                  setLike(
+                    like.map((val, index) => {
+                      if (i === index) {
+                        return (val = false);
+                      }
+                      return post;
+                    })
+                  );
+                  if (addLike[i]) {
+                    likesFunction(post._IdPost, i);
+                  } else {
+                    disLikesFunction(post._IdPost, i);
+                  }
+                }}
+                className="likeIcon"
+                src={likes}
+              />
+              {like[i] !== 0 && <p className="postTitle">{like[i]}</p>}
+
               <img
                 onClick={() => {
                   showComment(post._IdPost);
@@ -219,5 +232,5 @@ const GetPost = () => {
     </>
   );
 };
-export default GetPost;
 
+export default GetPost;
