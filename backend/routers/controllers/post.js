@@ -98,6 +98,12 @@ const addComment =()=>{
   const data = [userId ,postId , comment];
   db.query(query, data, (err, result) => {
     if (err) return res.status(400).send("can't comment try again please ");
+
+const getArchivePost = () => {
+  const id = req.params.id;
+  const query = `SELECT * FROM POST WHERE archive=1 and _IdPost=${id} `;
+  db.query(query, (err, result) => {
+    if (err) return res.status(400).send("post not found ");
     res.status(201).json(result);
   });
 }
@@ -111,6 +117,19 @@ const showComment =()=>{
   });
 } 
 
+const editLikePost = (req, res) => {
+  const id = req.params.id;
+  const query = `UPDATE post SET likes=? WHERE _IdPost=${id} `;
+  const  likes  =req.body.likes
+  console.log("likes",likes)
+  console.log(id)
+   const data = [likes]
+  db.query(query ,data, (err, res) => {
+    if (err) return res.status(400);
+    console.log("result",res);
+  });
+};
+
 module.exports = {
   createPost,
   getAllPost,
@@ -123,4 +142,5 @@ module.exports = {
   archivePost,
   addComment,
   showComment
+  editLikePost
 };
