@@ -5,7 +5,7 @@ const initialState = {
 
 const comments = (state = initialState, { type, payload }) => {
     switch (type) {
-      case "SET_ARCHIVE":
+      case "SET_COMMENT":
         return { comments: [...payload] };
   
       default:
@@ -14,9 +14,9 @@ const comments = (state = initialState, { type, payload }) => {
   };
   export default comments;
   
-  export const setArchive = (comments) => {
+  export const setComments = (comments) => {
     return {
-      type: "SET_ARCHIVE",
+      type: "SET_COMMENT",
       payload: comments,
     };
   };
