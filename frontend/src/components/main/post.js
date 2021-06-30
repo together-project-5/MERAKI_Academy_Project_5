@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "../../reducers/post";
 import { setFavorite, deleteFavorite } from "../../reducers/favorite";
 import "./main.css";
+import MenuItem from "./postList"
+import MenuItems from "./listProfile"
 import likes from './img/like.png'
 import comments from './img/comment.png'
 import save from './img/save.png'
@@ -20,6 +22,7 @@ const GetPost = () => {
             posts: state.posts.posts,
         };
     });
+
     useEffect(() => {
         axios.get(
             `http://localhost:5000/post`).then((res) => {
@@ -94,6 +97,7 @@ const GetPost = () => {
     }
     const commentsFunction = () => {
     }
+
     const saveFunction = (postId, userId) => {
         setStatus(!status)
         if (status) {
@@ -105,18 +109,20 @@ const GetPost = () => {
                 })
         } else {
             axios.delete(
-                `http://localhost:5000/favorite/post`).then((res) => {
+                `http://localhost:5000/favorite/post/${postId}`).then((res) => {
                     dispatch(deleteFavorite(res.data));
                 }).catch((err) => {
                     console.log(err)
                 })
         }
+
     }
     return (
         <>
         {console.log(like)}
             {state.posts.map((post, i) => {
                 return <div className="postDiv" key={i}>
+                    <MenuItem/>
                     <img className="profilePic" src='https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg' />
                     <p className="postTitle">{post.title}</p>
                     <p className="postDescription">{post.description}</p>
@@ -137,6 +143,9 @@ const GetPost = () => {
                         }} className="likeIcon" src={likes} />
                         <p className="postTitle">{like[i]}</p>
                     <img onClick={commentsFunction} className="commentIcon" src={comments} />
+                    <img onClick={saveFunction} className="saveIcon" src={save} />
+                    <MenuItems/>
+
                     <img onClick={(e) => {
                         e.preventDefault();
                         saveFunction(post._IdPost, post.userId)

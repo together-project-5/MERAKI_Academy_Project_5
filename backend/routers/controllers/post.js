@@ -70,13 +70,23 @@ const getPostByType = (req, res) => {
   });
 };
 
+const getArchivePost = (req, res) => {
+  const query = `SELECT * FROM post WHERE archive=?`;
+  const data =[1];
+  db.query(query, data, (err, result) => {
+    if (err) res.status(400).send("post not found");
+    res.status(200).json(result);
+  });
+};
+
 const archivePost = (req, res) => {
   const id = req.params.id;
   const query = `UPDATE post SET archive=? WHERE _IdPost=${id}`;
   const { archive } = req.body;
-  const data = [archive]
+  const data = [archive];
   db.query(query, data, (err, res) => {
-    if (err) return res.status(400).send("can't add post to archive try again please");
+    if (err)
+      return res.status(400).send("can't add post to archive try again please");
     console.log(res);
   });
 };
@@ -112,7 +122,7 @@ module.exports = {
   deletePost,
   editPost,
   getPostByType,
-  archivePost,
   getArchivePost,
+  archivePost,
   editLikePost
 };
