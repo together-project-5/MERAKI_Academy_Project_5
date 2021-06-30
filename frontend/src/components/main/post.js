@@ -202,5 +202,6 @@ const sendComment = () => {
             })}
         </>
     );
-
+        }
+        
 export default GetPost;
