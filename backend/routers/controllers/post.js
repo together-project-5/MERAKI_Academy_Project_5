@@ -93,16 +93,14 @@ const archivePost = (req, res) => {
 
 const addComment =()=>{
   const id = req.params.id;
-  const query = `INSERT INTO comment (userId ,postId , comment) VALUES (?,?,?)`;
+  const query = `INSERT INTO comments (userId ,postId , comment) VALUES (?,?,?)`;
   let { userId ,postId , comment } = req.body;
   const data = [userId ,postId , comment];
   db.query(query, data, (err, result) => {
     if (err) return res.status(400).send("can't comment try again please ");
     res.status(201).json(result);
   });
-
 }
-
 module.exports = {
   createPost,
   getAllPost,
@@ -113,5 +111,5 @@ module.exports = {
   getPostByType,
   getArchivePost,
   archivePost,
-  addComment
+  addComment,
 };
