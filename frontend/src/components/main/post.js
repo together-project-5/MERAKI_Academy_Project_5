@@ -9,11 +9,12 @@ import comments from './img/comment.png'
 import save from './img/save.png'
 
 const GetPost = () => {
-    const [addLike, setAddLike] = useState(true)
+    const [addLike, setAddLike] = useState([])
     const [like, setLike] = useState([])
     const dispatch = useDispatch();
     const [status, setStatus] = useState(true)
     const ar = []
+    const likeNum=[]
     const state = useSelector((state) => {
         return {
             posts: state.posts.posts,
@@ -25,6 +26,7 @@ const GetPost = () => {
                
                 res.data.forEach((post, i)=>{
                     console.log("post like",post.likes);
+                    likeNum.push(true)
                     ar.push(post.likes) 
                 })
                 dispatch(setPost(res.data));
@@ -36,30 +38,59 @@ const GetPost = () => {
             })
             console.log("arrrrrr",ar);
             setLike(ar)
+            setAddLike(likeNum)
     }, [])
     const likesFunction = (id,index) => {
+        console.log(addLike);
+        let value ;
+        setAddLike(like.map((val, i)=>{
+            if( i===index ){
+                return val = false ;
+            }
+            return val ;
+        }))
         setLike(like.map((post, i)=>{
             console.log("post",post);
-            if( i===index ){return post=post + 1}
+            if( i===index ){
+                value=  post + 1
+                return post=post + 1;
+
+            }
             return post  ;
         }))
-         console.log("like22",like);
-         console.log(index)
-         console.log("aeee",ar);
         axios
         .put(
-            `http://localhost:5000/post/editLike/${id}`,{likes:2}).then((res) => {
+            `http://localhost:5000/post/editLike/${id}`,{likes:value}).then((res) => {
             }).catch((err) => {
                 console.log(err)
             })
 
     }
     const disLikesFunction = (id,index) => {
+        let value ;
+        setAddLike(like.map((val, i)=>{
+            if( i===index ){
+                return val = true ;
+            }
+            return val ;
+        }))
+        
         setLike(like.map((post, i)=>{
+            
             console.log("post",post);
-            if( i===index ){return post=post - 1}
+            if( i===index ){
+                value = post - 1;
+                return post=post - 1;
+            }
             return post  ;
         }))
+        // $ git commit -m "change the value of likes in data base"
+        axios
+        .put(
+            `http://localhost:5000/post/editLike/${id}`,{likes:value}).then((res) => {
+            }).catch((err) => {
+                console.log(err)
+            })
     }
     const commentsFunction = () => {
     }
@@ -90,8 +121,13 @@ const GetPost = () => {
                     <p className="postTitle">{post.title}</p>
                     <p className="postDescription">{post.description}</p>
                     <img onClick={()=>{
-                        setAddLike(!addLike)
-                        if(addLike){
+                         setLike(like.map((val, index)=>{
+                            if( i===index ){
+                                return val=false;
+                            }
+                            return post  ;
+                        }))
+                        if(addLike[i]){
                             likesFunction(post._IdPost,i);
                         }
                         else{
