@@ -98,15 +98,9 @@ const addComment =()=>{
   const data = [userId ,postId , comment];
   db.query(query, data, (err, result) => {
     if (err) return res.status(400).send("can't comment try again please ");
-
-const getArchivePost = () => {
-  const id = req.params.id;
-  const query = `SELECT * FROM POST WHERE archive=1 and _IdPost=${id} `;
-  db.query(query, (err, result) => {
-    if (err) return res.status(400).send("post not found ");
     res.status(201).json(result);
   });
-}
+  }
 
 const showComment =()=>{
   const query = `SELECT * FROM comments WHERE userId=? AND postId=?`;
@@ -141,6 +135,6 @@ module.exports = {
   getArchivePost,
   archivePost,
   addComment,
-  showComment
-  editLikePost
+  showComment,
+  editLikePost,
 };
