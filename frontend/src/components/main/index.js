@@ -6,6 +6,7 @@ import likes from "./img/like.png";
 import comments from "./img/comment.png";
 import save from "./img/save.png";
 import "./main.css";
+import MenuItem from "./postList"
 
 const Main = () => {
   const history = useHistory();
@@ -24,7 +25,6 @@ const Main = () => {
   const handleClick = () => {
     history.push("/createPost");
   };
-
 
   const likesFunction = () => {};
 
@@ -76,6 +76,7 @@ const Main = () => {
         ? posts.map((post, i) => {
             return (
               <div className="postDiv" key={i}>
+                <MenuItem />
                 <img
                   className="profilePic"
                   src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
