@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -11,6 +11,7 @@ const ITEM_HEIGHT = 48;
 
 export default function LongMenu() {
   const history = useHistory();
+  const [postId, setPostId] = useState("");
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -29,7 +30,7 @@ export default function LongMenu() {
     axios
       .put(`http://localhost:5000/post/edit/${postId}`)
       .then((res) => {
-        postId(res.data);
+        setPostId(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -40,26 +41,26 @@ export default function LongMenu() {
     axios
       .get(`http://localhost:5000/post/archive/${postId}`)
       .then((res) => {
-        postId(res.data);
+        setPostId(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  const deletePost = (postId) => {
+  const deletePost = (_IdPost) => {
     axios
-      .delete(`http://localhost:5000/post/${postId}`)
+      .delete(`http://localhost:5000/post/${_IdPost}`)
       .then((res) => {
-        postId(res.data);
+        setPostId(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-  {
-    // postId
-    //   ? postId.map((postId) => {
+
+ 
+
           return (
             <div>
               <IconButton
@@ -122,7 +123,4 @@ export default function LongMenu() {
               </Menu>
             </div>
           );
-      //   })
-      // : "";
-  }
 }
