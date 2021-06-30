@@ -10,7 +10,6 @@ const {
   getPostByType,
   getArchivePost,
   archivePost,
-  getAllPostArchived
 } = require("../controllers/post");
 
 const postRouter = express.Router();
