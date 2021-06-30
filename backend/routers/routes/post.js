@@ -10,6 +10,7 @@ const {
   getPostByType,
   getArchivePost,
   archivePost,
+  addComment
 } = require("../controllers/post");
 
 const postRouter = express.Router();
@@ -23,6 +24,8 @@ postRouter.put("/edit/:id", editPost);
 postRouter.get("/filter/:type", getPostByType);
 postRouter.post("/archive/:id", archivePost);
 postRouter.get("/:id", getPostById);
+postRouter.put("/comment/:id", addComment);
+
 
 module.exports = postRouter;
 
