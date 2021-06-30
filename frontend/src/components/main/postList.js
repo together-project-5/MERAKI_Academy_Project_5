@@ -23,99 +23,100 @@ export default function LongMenu() {
     setAnchorEl(null);
   };
 
-  const reportPost = () => {
+  const reportPost = () => {};
 
-  };
-
-  const editPost = () => {
+  const editPost = (postId) => {
     axios
-      .delete(`http://localhost:5000/edit/:id`)
+      .put(`http://localhost:5000/edit/${postId}`)
       .then((res) => {})
       .catch((err) => {
         console.log(err);
       });
   };
 
-  const archivePost = () => {
+  const archivePost = (postId) => {
     axios
-      .delete(`http://localhost:5000/archive`)
+      .get(`http://localhost:5000/archive/${postId}`)
       .then((res) => {})
       .catch((err) => {
         console.log(err);
       });
   };
 
-  const deletePost = (_IdPost) => {
+  const deletePost = (postId) => {
     axios
-      .delete(`http://localhost:5000/:id`)
-      .then((res) => {})
+      .delete(`http://localhost:5000/12`)
+      .then((res) => {
+        // dispatch( (res.data))
+      })
       .catch((err) => {
         console.log(err);
       });
   };
-
-  return (
-    <div>
-      <IconButton
-        aria-label="more"
-        aria-controls="long-menu"
-        aria-haspopup="true"
-        onClick={handleClick}
-      >
-        <MoreVertIcon />
-      </IconButton>
-      <Menu
-        id="long-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={open}
-        onClose={handleClose}
-        PaperProps={{
-          style: {
-            maxHeight: ITEM_HEIGHT * 4.5,
-            width: "20ch",
-          },
-        }}
-      >
-        <MenuItem
-          onClick={(e) => {
-            e.preventDefault();
-            handleClose();
-            reportPost();
-          }}
-        >
-          Report
-        </MenuItem>
-        <MenuItem
-          onClick={(e) => {
-            e.preventDefault();
-            handleClose();
-            editPost();
-          }}
-        >
-          Edit Post
-        </MenuItem>
-        <MenuItem
-          onClick={(e) => {
-            e.preventDefault();
-            handleClose();
-            archivePost();
-          }}
-        >
-          Archive
-        </MenuItem>
-        <MenuItem
-          onClick={(e) => {
-            e.preventDefault();
-            handleClose();
-            deletePost();
-          }}
-        >
-          Delete
-        </MenuItem>
-      </Menu>
-    </div>
-  );
-}
-
-// onClick={deletePost}
+  // {postId
+  //     ? postId.map((postId) => {
+          return (
+            <div>
+              <IconButton
+                aria-label="more"
+                aria-controls="long-menu"
+                aria-haspopup="true"
+                onClick={handleClick}
+              >
+                <MoreVertIcon />
+              </IconButton>
+              <Menu
+                id="long-menu"
+                anchorEl={anchorEl}
+                keepMounted
+                open={open}
+                onClose={handleClose}
+                PaperProps={{
+                  style: {
+                    maxHeight: ITEM_HEIGHT * 4.5,
+                    width: "20ch",
+                  },
+                }}
+              >
+                <MenuItem
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleClose();
+                    reportPost();
+                  }}
+                >
+                  Report
+                </MenuItem>
+                <MenuItem
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleClose();
+                    editPost();
+                  }}
+                >
+                  Edit Post
+                </MenuItem>
+                <MenuItem
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleClose();
+                    archivePost();
+                  }}
+                >
+                  Archive
+                </MenuItem>
+                <MenuItem
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleClose();
+                    deletePost();
+                  }}
+                >
+                  Delete
+                </MenuItem>
+              </Menu>
+            </div>
+          );
+      //   })
+      // : "";
+  }
