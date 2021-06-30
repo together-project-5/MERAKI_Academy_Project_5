@@ -138,6 +138,7 @@ const GetPost = () => {
         setShow(!show);
     };
 
+    
     const sendComment = (id) => {
    let userId =   state.user._IdUser
    let postId =   id
