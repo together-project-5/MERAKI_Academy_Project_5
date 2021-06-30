@@ -16,6 +16,7 @@ const GetPost = () => {
     const state = useSelector((state) => {
         return {
             posts: state.posts.posts,
+            user: state.login.user
         };
     });
 
@@ -33,11 +34,14 @@ const GetPost = () => {
     const commentsFunction = () => {
     }
 
-    const saveFunction = (postId, userId) => {
+    const saveFunction = (postId) => {
+
         setStatus(!status)
+        let ID = state.user._IdUser;
+        console.log("post", postId);
         if (status) {
             axios.post(
-                `http://localhost:5000/favorite/post`, { postId, userId }).then((res) => {
+                `http://localhost:5000/favorite/post`, { postId, ID }).then((res) => {
                     dispatch(setFavorite(res.data));
                 }).catch((err) => {
                     console.log(err)
@@ -56,19 +60,21 @@ const GetPost = () => {
         <>
             {state.posts.map((post, i) => {
                 return <div className="postDiv" key={i}>
-                    <MenuItem/>
+                    <MenuItem />
                     <img className="profilePic" src='https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg' />
                     <p className="postTitle">{post.title}</p>
                     <p className="postDescription">{post.description}</p>
                     <img onClick={likesFunction} className="likeIcon" src={likes} />
                     <img onClick={commentsFunction} className="commentIcon" src={comments} />
-                    <img onClick={saveFunction} className="saveIcon" src={save} />
-                    <MenuItems/>
-
-                    <img onClick={(e) => {
-                        e.preventDefault();
-                        saveFunction(post._IdPost, post.userId)
+                    <img onClick={() => {
+                        console.log("post._IdPost", post._IdPost);
+                        saveFunction(post._IdPost)
                     }} className="saveIcon" src={save} />
+                    <MenuItems />
+                    {/* <img onClick={() => {
+                        console.log("post._IdPost",post._IdPost);
+                        saveFunction(post._IdPost)
+                    }} className="saveIcon" src={save} /> */}
                 </div>
             })}
         </>

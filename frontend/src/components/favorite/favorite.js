@@ -10,13 +10,15 @@ const GetFavorites = () => {
     const dispatch = useDispatch();
     const state = useSelector((state) => {
         return {
+            posts: state.posts.posts,
             favorites: state.favorites.favorites,
+            user: state.login.user
         };
     });
 
     useEffect(() => {
         axios.get(
-            `http://localhost:5000/favorite/post/1`).then((res) => {
+            `http://localhost:5000/favorite/post/${state.user._IdUser}`).then((res) => {
                 dispatch(setFavorite(res.data));
             }).catch((err) => {
                 console.log(err)
