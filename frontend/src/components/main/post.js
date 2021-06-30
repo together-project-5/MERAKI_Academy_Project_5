@@ -138,7 +138,21 @@ const GetPost = () => {
         setShow(!show);
     };
 
-    
+    const showAllComment = (id)=>{
+        let postId =   id
+        console.log(postId);
+        axios
+        .get(`http://localhost:5000/post/comment/${postId}`,{postId})
+        .then((res) => {
+            console.log("res.data",res.data);
+            console.log(res);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+
+
     const sendComment = (id) => {
    let userId =   state.user._IdUser
    let postId =   id
@@ -181,6 +195,7 @@ const GetPost = () => {
                             <img
                                 onClick={() => {
                                     showComment(post._IdPost);
+                                  { show && showAllComment(post._IdPost)}
                                 }}
                                 className="commentIcon"
                                 src={comments}

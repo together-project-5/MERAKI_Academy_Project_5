@@ -103,8 +103,9 @@ const addComment = (req,res) => {
 }
 
 const showComment = (req,res) => {
-  const query = `SELECT * FROM comments WHERE userId=? AND postId=?`;
-  const data = [userId, postId];
+  const id = req.params.id;
+  const query = `SELECT * FROM comments WHERE postId=?`;
+  const data = [id];
   db.query(query, data, (err, result) => {
     if (err) res.status(400).send("post not found");
     res.status(200).json(result);
