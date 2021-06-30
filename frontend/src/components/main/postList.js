@@ -23,37 +23,36 @@ export default function LongMenu() {
     setAnchorEl(null);
   };
 
-  const reportPost = () => {
+  const reportPost = () => {};
 
-  };
-
-  const editPost = () => {
+  const editPost = (postId) => {
     axios
-      .delete(`http://localhost:5000/edit/:id`)
+      .put(`http://localhost:5000/edit/${postId}`)
       .then((res) => {})
       .catch((err) => {
         console.log(err);
       });
   };
 
-  const archivePost = () => {
+  const archivePost = (postId) => {
     axios
-      .delete(`http://localhost:5000/archive`)
+      .get(`http://localhost:5000/post/archive/35`)
       .then((res) => {})
       .catch((err) => {
         console.log(err);
       });
   };
 
-  const deletePost = (_IdPost) => {
+  const deletePost = (postId) => {
     axios
-      .delete(`http://localhost:5000/:id`)
+      .delete(`http://localhost:5000/post/34`)
       .then((res) => {})
       .catch((err) => {
         console.log(err);
       });
   };
-
+  // {postId
+  //     ? postId.map((postId) => {
   return (
     <div>
       <IconButton
@@ -116,6 +115,6 @@ export default function LongMenu() {
       </Menu>
     </div>
   );
+  //   })
+  // : "";
 }
-
-// onClick={deletePost}
