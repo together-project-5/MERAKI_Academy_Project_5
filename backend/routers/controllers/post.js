@@ -91,7 +91,7 @@ const archivePost = (req, res) => {
   });
 };
 
-const addComment = () => {
+const addComment = (req,res) => {
   const id = req.params.id;
   const query = `INSERT INTO comments (userId ,postId , comment) VALUES (?,?,?)`;
   let { userId, postId, comment } = req.body;
@@ -102,7 +102,7 @@ const addComment = () => {
   });
 }
 
-const showComment = () => {
+const showComment = (req,res) => {
   const query = `SELECT * FROM comments WHERE userId=? AND postId=?`;
   const data = [userId, postId];
   db.query(query, data, (err, result) => {

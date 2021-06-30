@@ -28,7 +28,7 @@ postRouter.put("/archive/:id", archivePost);
 postRouter.put("/editLike/:id", editLikePost);
 postRouter.get("/:id", getPostById);
 postRouter.get("/comment", showComment);
-postRouter.put("/comment/:id", addComment);
+postRouter.post("/comment/:id", addComment);
 
 
 

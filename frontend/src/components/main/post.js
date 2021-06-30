@@ -19,6 +19,7 @@ const GetPost = () => {
     const [show, setShow] = useState(false);
     const ar = [];
     const likeNum = [];
+    const [comment, setComment] = useState("")
 
     const state = useSelector((state) => {
         return {
@@ -137,9 +138,11 @@ const GetPost = () => {
         setShow(!show);
     };
 
-    const sendComment = () => {
+    const sendComment = (id) => {
+   let userId =   state.user._IdUser
+   let postId =   id
         axios
-            .get(`http://localhost:5000/post/comment`)
+            .post(`http://localhost:5000/post/comment/${userId}`,{userId,postId,comment})
             .then((res) => {
                 console.log(res);
             })
@@ -192,8 +195,10 @@ const GetPost = () => {
                         </div>
                         {commentId === post._IdPost && show && (
                             <div className="post-comment-div">
-                                <input type="text" placeholder="comment" />
-                                <button onClick={sendComment}>send</button>
+                                <input onChange={(e)=>{
+                                    setComment(e.target.value)
+                                }} type="text" placeholder="comment" />
+                                <button onClick={()=>{sendComment(post._IdPost)}}>send</button>
                             </div>
                         )}
                     </div>
