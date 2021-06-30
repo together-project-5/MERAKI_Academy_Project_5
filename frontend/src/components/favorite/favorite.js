@@ -15,8 +15,8 @@ const GetFavorites = () => {
             user: state.login.user
         };
     });
-
     useEffect(() => {
+        console.log("state.user._IdUser", state.user._IdUser);
         axios.get(
             `http://localhost:5000/favorite/post/${state.user._IdUser}`).then((res) => {
                 dispatch(setFavorite(res.data));
@@ -25,7 +25,7 @@ const GetFavorites = () => {
             })
     }, [])
 
-    const saveFunction = (postId, userId) => {
+    const saveFunction = (postId) => {
         axios.delete(
             `http://localhost:5000/favorite/post/${postId}`).then((res) => {
                 dispatch(deleteFavorite(res.data));
@@ -44,7 +44,7 @@ const GetFavorites = () => {
                     <img className="likeIcon" src={likes} />
                     <img onClick={(e) => {
                         e.preventDefault();
-                        saveFunction(post._IdPost, post.userId)
+                        saveFunction(post._IdPost)
                     }} className="saveIcon" src={save} />
                 </div>
             })}
