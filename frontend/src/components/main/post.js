@@ -61,7 +61,7 @@ const GetPost = () => {
         .catch((err) => {
           console.log(err);
         });
-      
+    }}
     useEffect(() => {
         axios.get(
             `http://localhost:5000/post`).then((res) => {
@@ -219,5 +219,6 @@ const GetPost = () => {
     </>
   );
 };
+  
 export default GetPost;
 

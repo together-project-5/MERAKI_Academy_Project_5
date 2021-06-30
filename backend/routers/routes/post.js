@@ -11,7 +11,7 @@ const {
   getArchivePost,
   archivePost,
   addComment,
-  showComment
+  showComment,
   editLikePost
 } = require("../controllers/post");
 
