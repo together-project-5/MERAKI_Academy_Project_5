@@ -203,5 +203,4 @@ const GetPost = () => {
         </>
     );
 };
-
 export default GetPost;
