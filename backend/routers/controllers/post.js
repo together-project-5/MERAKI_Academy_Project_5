@@ -72,7 +72,7 @@ const getPostByType = (req, res) => {
 
 const getArchivePost = (req, res) => {
   const query = `SELECT * FROM post WHERE archive=?`;
-  const data =[1];
+  const data = [1];
   db.query(query, data, (err, result) => {
     if (err) res.status(400).send("post not found");
     res.status(200).json(result);
@@ -91,36 +91,34 @@ const archivePost = (req, res) => {
   });
 };
 
-const addComment =()=>{
+const addComment = () => {
   const id = req.params.id;
   const query = `INSERT INTO comments (userId ,postId , comment) VALUES (?,?,?)`;
-  let { userId ,postId , comment } = req.body;
-  const data = [userId ,postId , comment];
+  let { userId, postId, comment } = req.body;
+  const data = [userId, postId, comment];
   db.query(query, data, (err, result) => {
     if (err) return res.status(400).send("can't comment try again please ");
     res.status(201).json(result);
   });
-  }
+}
 
-const showComment =()=>{
+const showComment = () => {
   const query = `SELECT * FROM comments WHERE userId=? AND postId=?`;
-  const data =[userId,postId];
+  const data = [userId, postId];
   db.query(query, data, (err, result) => {
     if (err) res.status(400).send("post not found");
     res.status(200).json(result);
   });
-} 
+}
 
 const editLikePost = (req, res) => {
   const id = req.params.id;
   const query = `UPDATE post SET likes=? WHERE _IdPost=${id} `;
-  const  likes  =req.body.likes
-  console.log("likes",likes)
-  console.log(id)
-   const data = [likes]
-  db.query(query ,data, (err, res) => {
+  const likes = req.body.likes
+  const data = [likes]
+  db.query(query, data, (err, res) => {
     if (err) return res.status(400);
-    console.log("result",res);
+    console.log("result", res);
   });
 };
 
