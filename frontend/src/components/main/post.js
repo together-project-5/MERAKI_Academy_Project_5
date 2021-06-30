@@ -90,7 +90,7 @@ const GetPost = () => {
     console.log(addLike);
     let value;
     setAddLike(
-      like.map((val, i) => {
+        addLike.map((val, i) => {
         if (i === index) {
           return (val = false);
         }
@@ -117,7 +117,7 @@ const GetPost = () => {
   const disLikesFunction = (id, index) => {
     let value;
     setAddLike(
-      like.map((val, i) => {
+        addLike.map((val, i) => {
         if (i === index) {
           return (val = true);
         }
@@ -176,14 +176,14 @@ const GetPost = () => {
               <p className="postDescription">{post.description}</p>
               <img
                 onClick={() => {
-                  setLike(
-                    like.map((val, index) => {
-                      if (i === index) {
-                        return (val = false);
-                      }
-                      return post;
-                    })
-                  );
+                //   setLike(
+                //     like.map((val, index) => {
+                //       if (i === index) {
+                //         return (val = false);
+                //       }
+                //       return post;
+                //     })
+                //   );
                   if (addLike[i]) {
                     likesFunction(post._IdPost, i);
                   } else {
