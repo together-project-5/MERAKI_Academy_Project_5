@@ -27,7 +27,7 @@ export default function LongMenu() {
 
   const editPost = (postId) => {
     axios
-      .put(`http://localhost:5000/edit/${postId}`)
+      .put(`http://localhost:5000/post/edit/${postId}`)
       .then((res) => {})
       .catch((err) => {
         console.log(err);
@@ -36,7 +36,7 @@ export default function LongMenu() {
 
   const archivePost = (postId) => {
     axios
-      .get(`http://localhost:5000/post/archive/35`)
+      .get(`http://localhost:5000/post/archive/${postId}`)
       .then((res) => {})
       .catch((err) => {
         console.log(err);
@@ -45,7 +45,7 @@ export default function LongMenu() {
 
   const deletePost = (postId) => {
     axios
-      .delete(`http://localhost:5000/post/34`)
+      .delete(`http://localhost:5000/post/${postId}`)
       .then((res) => {})
       .catch((err) => {
         console.log(err);
