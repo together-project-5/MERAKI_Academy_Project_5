@@ -150,15 +150,13 @@ const GetPost = () => {
     console.log("idddddddddd", id);
     console.log("iiiiiiiiiiiiiiiiiiiiiiiii", i);
     allComments.forEach((elm, i) => {
-      if (elm) {
+      if (elm.id === id) {
         setCommentId(id);
-        setShow(!show);
+        setShow(elm.yes);
+        elm.yse = !elm.yes
         setShows(!shows);
       }
     });
-  };
-
-  const showAllComment = (id) => {
     let postId = id;
     console.log(postId);
     axios
@@ -174,6 +172,23 @@ const GetPost = () => {
         console.log(err);
       });
   };
+
+//   const showAllComment = (id) => {
+//     let postId = id;
+//     console.log(postId);
+//     axios
+//       .get(`http://localhost:5000/post/comment/${postId}`, { postId })
+//       .then((res) => {
+//         console.log("res.data", res.data);
+//         dispatch(setComments(res.data));
+//         setAllComment(res.data);
+//         console.log("allComment", allComment);
+//         console.log(res);
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+//   };
 
   const sendComment = (id) => {
     let userId = state.user._IdUser;
@@ -221,11 +236,11 @@ const GetPost = () => {
 
               <img
                 onClick={() => {
-                  allComments.push(true);
-                  showComment(post._IdPost, i);
-                  {
-                    shows && showAllComment(post._IdPost);
-                  }
+                  allComments.push({yes:true,id:post._IdPost});
+                  showComment(post._IdPost);
+                //   {
+                //     shows && showAllComment(post._IdPost);
+                //   }
                 }}
                 className="commentIcon"
                 src={comments}
