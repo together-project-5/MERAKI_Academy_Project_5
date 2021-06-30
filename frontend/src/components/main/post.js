@@ -137,8 +137,8 @@ const GetPost = () => {
         setCommentId(id);
         setShow(!show);
     };
-
-    const sendComment = () => {
+  
+const sendComment = () => {
         axios
             .get(`http://localhost:5000/post/comment`)
             .then((res) => {
@@ -202,6 +202,5 @@ const GetPost = () => {
             })}
         </>
     );
-};
 
 export default GetPost;
