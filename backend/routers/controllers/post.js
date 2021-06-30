@@ -101,6 +101,16 @@ const addComment =()=>{
     res.status(201).json(result);
   });
 }
+
+const showComment =()=>{
+  const query = `SELECT * FROM comments WHERE userId=? AND postId=?`;
+  const data =[userId,postId];
+  db.query(query, data, (err, result) => {
+    if (err) res.status(400).send("post not found");
+    res.status(200).json(result);
+  });
+} 
+
 module.exports = {
   createPost,
   getAllPost,
@@ -112,4 +122,5 @@ module.exports = {
   getArchivePost,
   archivePost,
   addComment,
+  showComment
 };
