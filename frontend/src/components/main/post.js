@@ -18,7 +18,6 @@ const GetPost = () => {
   const [show, setShow] = useState(false);
   const ar = [];
   const likeNum = [];
-  // const [idPost, setIdPost] = useState("");
   const [_IdPost, set_IdPost] = useState("");
 
   const state = useSelector((state) => {
@@ -42,7 +41,6 @@ const GetPost = () => {
   const saveFunction = (postId) => {
     setStatus(!status);
     let ID = state.user._IdUser;
-    console.log("post", postId);
     if (status) {
       axios
         .post(`http://localhost:5000/favorite/post`, { postId, ID })
@@ -164,14 +162,13 @@ const GetPost = () => {
                   return set_IdPost(post._IdPost);
                 }}
               />
-              {console.log("test", post._IdPost)}
               <img
                 className="profilePic"
                 src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
               />
               <p className="postTitle">{post.title}</p>
-              <p className="ppp">{post._IdPost}</p>
               <p className="postDescription">{post.description}</p>
+              <p className="ppp">{post._IdPost}</p>
               <img
                 onClick={() => {
                   if (addLike[i]) {
