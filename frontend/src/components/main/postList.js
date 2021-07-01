@@ -10,10 +10,9 @@ import axios from "axios";
 const ITEM_HEIGHT = 48;
 
 export default function LongMenu({ id }) {
-  // console.log('post id', id)
   const history = useHistory();
-  // const [idPost, setIdPost] = useState("");
   const [_IdPost, set_IdPost] = useState("");
+  const [report, setReport] = useState(0);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -26,24 +25,23 @@ export default function LongMenu({ id }) {
     setAnchorEl(null);
   };
 
-  const reportPost = () => {
-    
+  const reportPost = (_IdPost) => {
+    setReport(report + 1);
+    axios
+      .post(`http://localhost:5000/post/report/${_IdPost}`, { report })
+      .then((res) => {
+        set_IdPost(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const editPost = () => {
     history.push("/editPost");
-    // axios
-    //   .put(`http://localhost:5000/post/edit/${_IdPost}`)
-    //   .then((res) => {
-    //     set_IdPost(res.data);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
   };
 
   const archivePost = (_IdPost) => {
-    console.log("id of post we want to archive", _IdPost);
     let archive = 1;
     axios
       .post(`http://localhost:5000/post/archive/${_IdPost}`, { archive })
@@ -56,7 +54,6 @@ export default function LongMenu({ id }) {
   };
 
   const deletePost = (_IdPost) => {
-    console.log("id of post we want to delete", _IdPost);
     axios
       .delete(`http://localhost:5000/post/${_IdPost}`)
       .then((res) => {

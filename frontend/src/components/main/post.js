@@ -158,8 +158,13 @@ const GetPost = () => {
         return (
           <div className="postDiv" key={i}>
             <div>
-              <MenuItem id={post._IdPost} onClick={()=>{return set_IdPost(post._IdPost)}} />
-              {console.log("test",post._IdPost)}
+              <MenuItem
+                id={post._IdPost}
+                onClick={() => {
+                  return set_IdPost(post._IdPost);
+                }}
+              />
+              {console.log("test", post._IdPost)}
               <img
                 className="profilePic"
                 src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"

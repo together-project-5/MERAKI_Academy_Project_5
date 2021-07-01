@@ -12,7 +12,8 @@ const {
   archivePost,
   addComment,
   showComment,
-  editLikePost
+  editLikePost,
+  reportPost
 } = require("../controllers/post");
 
 const postRouter = express.Router();
@@ -29,6 +30,7 @@ postRouter.put("/editLike/:id", editLikePost);
 postRouter.get("/:id", getPostById);
 postRouter.get("/comment", showComment);
 postRouter.put("/comment/:id", addComment);
+postRouter.post("/report/:id", reportPost);
 
 
 
