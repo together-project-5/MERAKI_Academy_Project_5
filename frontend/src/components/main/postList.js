@@ -6,14 +6,21 @@ import MenuList from "@material-ui/core/MenuList";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 const ITEM_HEIGHT = 48;
 
-export default function LongMenu({ id }) {
+export default function LongMenu({ id, userIdP }) {
   const history = useHistory();
   const [_IdPost, set_IdPost] = useState("");
   const [report, setReport] = useState(0);
-  const [userId, setUserId] = useState("");
+
+  const state = useSelector((state) => {
+    return {
+      user: state.login.user,
+    };
+  });
+  let ID = state.user._IdUser;
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -64,115 +71,103 @@ export default function LongMenu({ id }) {
         console.log(err);
       });
   };
-
-
-
-
-
-
-
-
-
-
-  
-  if (_IdPost === userId) {
-    return (
-      <div>
-        <IconButton
-          aria-label="more"
-          aria-controls="long-menu"
-          aria-haspopup="true"
-          onClick={handleClick}
-        >
-          <MoreVertIcon />
-        </IconButton>
-        <Menu
-          id="long-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={open}
-          onClose={handleClose}
-          PaperProps={{
-            style: {
-              maxHeight: ITEM_HEIGHT * 4.5,
-              width: "20ch",
-            },
-          }}
-        >
-          <MenuItem
-            onClick={(e) => {
-              e.preventDefault();
-              handleClose();
-              editPost(id);
+  return (
+    <>
+      {userIdP === ID ? (
+        <div>
+          <IconButton
+            aria-label="more"
+            aria-controls="long-menu"
+            aria-haspopup="true"
+            onClick={handleClick}
+          >
+            <MoreVertIcon />
+          </IconButton>
+          <Menu
+            id="long-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={open}
+            onClose={handleClose}
+            PaperProps={{
+              style: {
+                maxHeight: ITEM_HEIGHT * 4.5,
+                width: "20ch",
+              },
             }}
           >
-            Edit Post
-          </MenuItem>
-          <MenuItem
-            onClick={(e) => {
-              e.preventDefault();
-              handleClose();
-              archivePost(id);
+            <MenuItem
+              onClick={(e) => {
+                e.preventDefault();
+                handleClose();
+                editPost(id);
+              }}
+            >
+              Edit Post
+            </MenuItem>
+            <MenuItem
+              onClick={(e) => {
+                e.preventDefault();
+                handleClose();
+                archivePost(id);
+              }}
+            >
+              Archive
+            </MenuItem>
+            <MenuItem
+              onClick={(e) => {
+                e.preventDefault();
+                handleClose();
+                deletePost(id);
+              }}
+            >
+              Delete
+            </MenuItem>
+          </Menu>
+        </div>
+      ) : (
+        <div>
+          <IconButton
+            aria-label="more"
+            aria-controls="long-menu"
+            aria-haspopup="true"
+            onClick={handleClick}
+          >
+            <MoreVertIcon />
+          </IconButton>
+          <Menu
+            id="long-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={open}
+            onClose={handleClose}
+            PaperProps={{
+              style: {
+                maxHeight: ITEM_HEIGHT * 4.5,
+                width: "20ch",
+              },
             }}
           >
-            Archive
-          </MenuItem>
-          <MenuItem
-            onClick={(e) => {
-              e.preventDefault();
-              handleClose();
-              deletePost(id);
-            }}
-          >
-            Delete
-          </MenuItem>
-        </Menu>
-      </div>
-    );
-  } else {
-    <div>
-      <IconButton
-        aria-label="more"
-        aria-controls="long-menu"
-        aria-haspopup="true"
-        onClick={handleClick}
-      >
-        <MoreVertIcon />
-      </IconButton>
-      <Menu
-        id="long-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={open}
-        onClose={handleClose}
-        PaperProps={{
-          style: {
-            maxHeight: ITEM_HEIGHT * 4.5,
-            width: "20ch",
-          },
-        }}
-      >
-        <MenuItem
-          onClick={(e) => {
-            e.preventDefault();
-            handleClose();
-            reportPost(id);
-          }}
-        >
-          Report
-        </MenuItem>
-      </Menu>
-    </div>;
-  }
+            <MenuItem
+              onClick={(e) => {
+                e.preventDefault();
+                handleClose();
+                reportPost(id);
+              }}
+            >
+              Report
+            </MenuItem>
+          </Menu>
+        </div>
+      )}
+    </>
+  );
+}
 
+//original code
 
-//test
-
-
-
-// if (_IdPost === userId) {
-//   return (
-//     <div>
+// return (
+//   <div>
 //     <IconButton
 //       aria-label="more"
 //       aria-controls="long-menu"
@@ -203,128 +198,33 @@ export default function LongMenu({ id }) {
 //       >
 //         Report
 //       </MenuItem>
-//     </Menu>
-//   </div>
-//   );
-// } else {
-
-// <div>
-//       <IconButton
-//         aria-label="more"
-//         aria-controls="long-menu"
-//         aria-haspopup="true"
-//         onClick={handleClick}
-//       >
-//         <MoreVertIcon />
-//       </IconButton>
-//       <Menu
-//         id="long-menu"
-//         anchorEl={anchorEl}
-//         keepMounted
-//         open={open}
-//         onClose={handleClose}
-//         PaperProps={{
-//           style: {
-//             maxHeight: ITEM_HEIGHT * 4.5,
-//             width: "20ch",
-//           },
+//       <MenuItem
+//         onClick={(e) => {
+//           e.preventDefault();
+//           handleClose();
+//           editPost(id);
 //         }}
 //       >
-//         <MenuItem
-//           onClick={(e) => {
-//             e.preventDefault();
-//             handleClose();
-//             editPost(id);
-//           }}
-//         >
-//           Edit Post
-//         </MenuItem>
-//         <MenuItem
-//           onClick={(e) => {
-//             e.preventDefault();
-//             handleClose();
-//             archivePost(id);
-//           }}
-//         >
-//           Archive
-//         </MenuItem>
-//         <MenuItem
-//           onClick={(e) => {
-//             e.preventDefault();
-//             handleClose();
-//             deletePost(id);
-//           }}
-//         >
-//           Delete
-//         </MenuItem>
-//       </Menu>
-//     </div>
-  
-// }
-
-//original code
-
-
-  // return (
-  //   <div>
-  //     <IconButton
-  //       aria-label="more"
-  //       aria-controls="long-menu"
-  //       aria-haspopup="true"
-  //       onClick={handleClick}
-  //     >
-  //       <MoreVertIcon />
-  //     </IconButton>
-  //     <Menu
-  //       id="long-menu"
-  //       anchorEl={anchorEl}
-  //       keepMounted
-  //       open={open}
-  //       onClose={handleClose}
-  //       PaperProps={{
-  //         style: {
-  //           maxHeight: ITEM_HEIGHT * 4.5,
-  //           width: "20ch",
-  //         },
-  //       }}
-  //     >
-  //       <MenuItem
-  //         onClick={(e) => {
-  //           e.preventDefault();
-  //           handleClose();
-  //           reportPost(id);
-  //         }}
-  //       >
-  //         Report
-  //       </MenuItem>
-  //       <MenuItem
-  //         onClick={(e) => {
-  //           e.preventDefault();
-  //           handleClose();
-  //           editPost(id);
-  //         }}
-  //       >
-  //         Edit Post
-  //       </MenuItem>
-  //       <MenuItem
-  //         onClick={(e) => {
-  //           e.preventDefault();
-  //           handleClose();
-  //           archivePost(id);
-  //         }}
-  //       >
-  //         Archive
-  //       </MenuItem>
-  //       <MenuItem
-  //         onClick={(e) => {
-  //           e.preventDefault();
-  //           handleClose();
-  //           deletePost(id);
-  //         }}
-  //       >
-  //         Delete
-  //       </MenuItem>
-  //     </Menu>
-  //   </div>
-  // );
-}
+//         Edit Post
+//       </MenuItem>
+//       <MenuItem
+//         onClick={(e) => {
+//           e.preventDefault();
+//           handleClose();
+//           archivePost(id);
+//         }}
+//       >
+//         Archive
+//       </MenuItem>
+//       <MenuItem
+//         onClick={(e) => {
+//           e.preventDefault();
+//           handleClose();
+//           deletePost(id);
+//         }}
+//       >
+//         Delete
+//       </MenuItem>
+//     </Menu>
+//   </div>
+// );

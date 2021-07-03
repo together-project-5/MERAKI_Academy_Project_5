@@ -19,6 +19,7 @@ const GetPost = () => {
   const ar = [];
   const likeNum = [];
   const [_IdPost, set_IdPost] = useState("");
+  const [userId, setUserId] = useState("");
 
   const state = useSelector((state) => {
     return {
@@ -161,6 +162,10 @@ const GetPost = () => {
                 onClick={() => {
                   return set_IdPost(post._IdPost);
                 }}
+                userIdP={post.userId}
+                onClick={() => {
+                  return setUserId(post.userId);
+                }}
               />
               <img
                 className="profilePic"
@@ -169,6 +174,7 @@ const GetPost = () => {
               <p className="postTitle">{post.title}</p>
               <p className="postDescription">{post.description}</p>
               <p className="ppp">{post._IdPost}</p>
+
               <img
                 onClick={() => {
                   if (addLike[i]) {
