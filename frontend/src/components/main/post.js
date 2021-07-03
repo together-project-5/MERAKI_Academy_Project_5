@@ -173,7 +173,6 @@ const GetPost = () => {
               />
               <p className="postTitle">{post.title}</p>
               <p className="postDescription">{post.description}</p>
-              <p className="ppp">{post._IdPost}</p>
 
               <img
                 onClick={() => {

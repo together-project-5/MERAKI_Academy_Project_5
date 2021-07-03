@@ -63,7 +63,6 @@ export const Header = () => {
               </div>
             )
           }
-          <Link to="/favorite">favorite</Link>
         </div>
       </form>
 

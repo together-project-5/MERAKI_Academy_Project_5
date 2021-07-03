@@ -17,10 +17,13 @@
 .postDiv {
   display: flex;
   border: solid black 0.2px;
-  width: 60vw;
+  width: 45vw;
   height: 40vh;
   margin-top: 2px;
   margin-bottom: 3px;
+  margin-left: 250px;
+  margin-top: 50px;
+
 }
 .post-comment-div {
   border: solid black 0.2px;
@@ -32,6 +35,7 @@
 .profilePic {
   width: 50px;
   height: 50px;
+  margin-top: -36px;
 }
 .postTitle {
   font-family: "Times New Roman", Times, serif;
@@ -46,4 +50,8 @@
 }
 .commentIcon {
   padding-left: 10px;
+}
+.menuList{
+  margin-left: 625px;
+  margin-top: 15px;
 }

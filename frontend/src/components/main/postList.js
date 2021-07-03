@@ -7,6 +7,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import "./main.css";
 
 const ITEM_HEIGHT = 48;
 
@@ -73,6 +74,8 @@ export default function LongMenu({ id, userIdP }) {
   };
   return (
     <>
+        <div className="menuList">
+
       {userIdP === ID ? (
         <div>
           <IconButton
@@ -160,6 +163,8 @@ export default function LongMenu({ id, userIdP }) {
           </Menu>
         </div>
       )}
+        </div>
+
     </>
   );
 }

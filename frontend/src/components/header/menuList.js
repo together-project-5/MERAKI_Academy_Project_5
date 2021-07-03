@@ -12,7 +12,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 import { makeStyles } from "@material-ui/core/styles";
 import { setArchive } from "../../reducers/archive";
-
+import List from "./menuList";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,8 +60,7 @@ export default function MenuListComposition() {
   }, [open]);
 
   const showArchive = async () => {
-   await
-    axios
+    await axios
       .get(`http://localhost:5000/post/archive`)
       .then((res) => {
         dispatch(setArchive(res.data));
@@ -70,9 +69,17 @@ export default function MenuListComposition() {
       .catch((err) => {
         console.log(err);
       });
-    history.push("/archive")
+    history.push("/archive");
   };
 
+  const showFavorite = () => {
+    history.push("/favorite");
+  };
+  const showCreatePost = () => {
+    history.push("/createPost");
+  };
+
+  
   return (
     <div className={classes.root}>
       <div>
@@ -107,8 +114,8 @@ export default function MenuListComposition() {
                     onKeyDown={handleListKeyDown}
                   >
                     <MenuItem onClick={handleClose}>my profile</MenuItem>
-                    <MenuItem onClick={handleClose}>my favorite</MenuItem>
-                    <MenuItem onClick={handleClose}>create new post</MenuItem>
+                    <MenuItem onClick={showFavorite}>my favorite</MenuItem>
+                    <MenuItem onClick={showCreatePost}>create new post</MenuItem>
                     <MenuItem onClick={showArchive}>my archive</MenuItem>
                     <MenuItem onClick={handleClose}>edit my profile</MenuItem>
                     <hr></hr>
