@@ -47,7 +47,15 @@ const Like = ({ id, i }) => {
             userId: localStorage.getItem("user")._idUser,
             postId: id
           }).then((result) => {
-            
+            setLike(
+              like.map((post, i) => {
+                if (i === index) {
+                  value = post + 1;
+                  return (post = post + 1);
+                }
+                return post;
+              })
+            );
             
         }
       }
