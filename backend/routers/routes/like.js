@@ -7,4 +7,6 @@ const {
 
 const likeRouter = express.Router();
 
-likeRouter.post("/user/like", createLike);
+likeRouter.post("/create/like", createLike);
+likeRouter.post("/user/like", getLikePost);
+likeRouter.delete("/user/like", deleteUserLike);
