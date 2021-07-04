@@ -21,6 +21,14 @@ CREATE TABLE Post  (
     archive iNT(3) DEFAULT 0,
     PRIMARY KEY (_IdPost)
 );
+CREATE TABLE userLike(
+    _IdLike INT AUTO_INCREMENT NOT NULL,
+    userId INT,
+    FOREIGN KEY (userId) REFERENCES user(_IdUser),
+    postId INT,
+    FOREIGN KEY (postId) REFERENCES Post(_IdPost),
+    PRIMARY KEY (_IdLike)
+);
 CREATE TABLE favorite  (
     _IdFavorite INT AUTO_INCREMENT NOT NULL,
     userId INT,
