@@ -17,17 +17,20 @@
 .postDiv {
   display: flex;
   border: solid black 0.2px;
-  width: 45vw;
-  height: 40vh;
+  width: 60vw;
+  height: 65vh;
   margin-top: 2px;
   margin-bottom: 3px;
   margin-left: 250px;
   margin-top: 50px;
 }
+.a{
+  display: flex;
+}
 .post-comment-div {
   border: solid black 0.2px;
   width: 30vw;
-  height: 15vh;
+  height: 30vh;
   margin-top: 2px;
   margin-bottom: 3px;
 }
@@ -57,4 +60,9 @@
 .button {
   margin-left: 230px;
   margin-top: 50px;
+}
+
+.postImage{
+  width: 400px;
+  height: 200px;
 }

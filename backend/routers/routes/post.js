@@ -18,7 +18,7 @@ const {
 
 const postRouter = express.Router();
 
-postRouter.post("/create", createPost);
+postRouter.post("/api/upload", createPost);
 postRouter.get("/", getAllPost);
 postRouter.get("/archive", getArchivePost);
 postRouter.get("/title/:title", getPostByTitle);
@@ -28,9 +28,14 @@ postRouter.get("/filter/:type", getPostByType);
 postRouter.post("/archive/:id", archivePost);
 postRouter.put("/editLike/:id", editLikePost);
 postRouter.get("/:id", getPostById);
+<<<<<<< HEAD
 postRouter.get("/comment", showComment);
 postRouter.put("/comment/:id", addComment);
 postRouter.post("/report/:id", reportPost);
+=======
+postRouter.get("/comment/:id", showComment);
+postRouter.post("/comment/:id", addComment);
+>>>>>>> 8411b148bf14c1b8fa638a91a87ae43277b74e26
 
 
 
