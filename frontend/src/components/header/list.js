@@ -12,7 +12,7 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { useHistory } from "react-router-dom";
 import "./header.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setTokenOut, setUserOut } from "./../../reducers/login";
 
 const useStyles = makeStyles({
@@ -25,6 +25,12 @@ const useStyles = makeStyles({
 });
 
 export default function TemporaryDrawer() {
+  const state_2 = useSelector((state_2) => {
+    return {
+      user: state_2.login.user,
+    };
+  });
+
   const history = useHistory();
   const classes = useStyles();
   const [state, setState] = React.useState({
@@ -73,8 +79,8 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List onClick={profile}>
-        {["Profile"].map((text, index) => (
-          <ListItem button key={text}>
+        {[`${localStorage.getItem("name")}`].map((text, index) => (
+          <ListItem button key={text} >
             <ListItemText primary={text} />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -179,7 +185,7 @@ export default function TemporaryDrawer() {
 
   return (
     <div>
-      {["right"].map((anchor) => (
+      {[`right`].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
           <Drawer

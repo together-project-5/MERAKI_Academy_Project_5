@@ -50,6 +50,7 @@ const AllPost = () => {
                 className="profilePic"
                 src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
               />
+              <p className="postTitle">{post.name}</p>
               <p className="postTitle">{post.title}</p>
               <p className="postDescription">{post.description}</p>
               <img className="postImage" src={post.url} />
