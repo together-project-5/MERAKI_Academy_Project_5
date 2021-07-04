@@ -32,6 +32,7 @@ const Login = () => {
     axios.post(`http://localhost:5000/user/login`, login).then((response) => {
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", response.data.user);
+      localStorage.setItem("name", response.data.user.name);
       dispatch(setToken(response.data.token));
       dispatch(setUser(response.data.user));
       if (response.data.message !== "valid login") {
