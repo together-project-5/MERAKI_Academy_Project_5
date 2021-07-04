@@ -67,7 +67,7 @@ export default function LongMenu({ id, userIdP }) {
   return (
     <>
       <div className="menuList">
-        {userIdP === ID ? (
+        {localStorage.getItem("user")._IdUser === ID ? (
           <div>
             <IconButton
               aria-label="more"
