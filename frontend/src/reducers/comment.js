@@ -1,12 +1,12 @@
 const initialState = {
-    comments: [],
+    comment: [],
 };
 
 
 const comments = (state = initialState, { type, payload }) => {
     switch (type) {
       case "SET_COMMENT":
-        return { comments: [...payload] };
+        return { comment: [...state.comment ,...payload] };
   
       default:
         return state;
@@ -14,9 +14,9 @@ const comments = (state = initialState, { type, payload }) => {
   };
   export default comments;
   
-  export const setComments = (comments) => {
+  export const setComments = (comment) => {
     return {
       type: "SET_COMMENT",
-      payload: comments,
+      payload: comment,
     };
   };

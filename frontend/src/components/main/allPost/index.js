@@ -13,7 +13,6 @@ const AllPost = () => {
     return {
       posts: state.posts.posts,
       user: state.login.user,
-      comments: state.comments.comments,
     };
   });
 

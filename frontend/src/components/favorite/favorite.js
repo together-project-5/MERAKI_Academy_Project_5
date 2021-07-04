@@ -39,7 +39,6 @@ const GetFavorites = () => {
   };
   return (
     <>
-      {/* {console.log("aa",state.favorites)} */}
       {state.favorites.map((post, i) => {
         return (
           <div className="postDiv" key={i}>
