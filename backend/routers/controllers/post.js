@@ -1,13 +1,25 @@
 const db = require("./../../../backend/db/db");
+const  {cloudinary}  = require('../../utils/cloudinary');
 
-const createPost = (req, res) => {
-  const query = `INSERT INTO post (userId ,type ,title,description ,url) VALUES (?,?,?,?,?)`;
-  let { userId, type, title, description, url } = req.body;
-  const data = [userId, type, title, description, url];
-  db.query(query, data, (err, result) => {
-    if (err) return res.status(400).send("can't create post try again please ");
-    res.status(201).json(result);
-  });
+
+const createPost =async (req, res) => {
+  try {
+    const fileStr = req.body.data;
+    const uploadResponse = await cloudinary.uploader.upload(fileStr, {
+      upload_preset: 'ml_default',
+    });
+    const query = `INSERT INTO post (userId ,type ,title,description ,url) VALUES (?,?,?,?,?)`;
+    let { userId, type, title, description } = req.body.post;
+    const data = [userId, type, title, description, uploadResponse.url];
+    db.query(query, data, (err, result) => {
+      if (err) return res.status(400).send("can't create post try again please ");
+      res.status(201).json(result);
+    });
+    // res.status(201).json({ uploadResponse });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ err: 'Something went wrong' });
+  }
 };
 
 const getAllPost = (req, res) => {
@@ -72,7 +84,7 @@ const getPostByType = (req, res) => {
 
 const getArchivePost = (req, res) => {
   const query = `SELECT * FROM post WHERE archive=?`;
-  const data =[1];
+  const data = [1];
   db.query(query, data, (err, result) => {
     if (err) res.status(400).send("post not found");
     res.status(200).json(result);
@@ -91,36 +103,35 @@ const archivePost = (req, res) => {
   });
 };
 
-const addComment =()=>{
+const addComment = (req,res) => {
   const id = req.params.id;
   const query = `INSERT INTO comments (userId ,postId , comment) VALUES (?,?,?)`;
-  let { userId ,postId , comment } = req.body;
-  const data = [userId ,postId , comment];
+  let { userId, postId, comment } = req.body;
+  const data = [userId, postId, comment];
   db.query(query, data, (err, result) => {
     if (err) return res.status(400).send("can't comment try again please ");
     res.status(201).json(result);
   });
-  }
+}
 
-const showComment =()=>{
-  const query = `SELECT * FROM comments WHERE userId=? AND postId=?`;
-  const data =[userId,postId];
+const showComment = (req,res) => {
+  const id = req.params.id;
+  const query = `SELECT * FROM comments WHERE postId=?`;
+  const data = [id];
   db.query(query, data, (err, result) => {
     if (err) res.status(400).send("post not found");
     res.status(200).json(result);
   });
-} 
+}
 
 const editLikePost = (req, res) => {
   const id = req.params.id;
   const query = `UPDATE post SET likes=? WHERE _IdPost=${id} `;
-  const  likes  =req.body.likes
-  console.log("likes",likes)
-  console.log(id)
-   const data = [likes]
-  db.query(query ,data, (err, res) => {
+  const likes = req.body.likes
+  const data = [likes]
+  db.query(query, data, (err, res) => {
     if (err) return res.status(400);
-    console.log("result",res);
+    console.log("result", res);
   });
 };
 
