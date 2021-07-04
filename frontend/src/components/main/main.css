@@ -1,5 +1,5 @@
 .contained {
-  margin: 35px;
+  margin: 20px;
   padding-left: 25px;
   padding-right: 25px;
   padding-bottom: 10px;
@@ -12,7 +12,7 @@
   padding-right: 25px;
   padding-bottom: 10px;
   padding-top: 10px;
-  margin-left: 650px;
+  margin-left: 650px; 
 }
 .postDiv {
   display: flex;
@@ -21,6 +21,8 @@
   height: 65vh;
   margin-top: 2px;
   margin-bottom: 3px;
+  margin-left: 250px;
+  margin-top: 50px;
 }
 .a{
   display: flex;
@@ -35,6 +37,7 @@
 .profilePic {
   width: 50px;
   height: 50px;
+  margin-top: -36px;
 }
 .postTitle {
   font-family: "Times New Roman", Times, serif;
@@ -50,6 +53,14 @@
 .commentIcon {
   padding-left: 10px;
 }
+.menuList {
+  margin-left: 850px;
+  margin-top: 15px;
+}
+/* .button {
+  margin-left: 230px;
+  margin-top: 50px;
+} */
 
 .postImage{
   width: 400px;
