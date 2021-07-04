@@ -17,7 +17,7 @@ const {
 
 const postRouter = express.Router();
 
-postRouter.post("/create", createPost);
+postRouter.post("/api/upload", createPost);
 postRouter.get("/", getAllPost);
 postRouter.get("/archive", getArchivePost);
 postRouter.get("/title/:title", getPostByTitle);
