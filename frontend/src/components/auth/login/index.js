@@ -6,6 +6,7 @@ import TextField from "@material-ui/core/TextField";
 import axios from "axios";
 import login from "./login.css";
 import GoogleLogin from "../../Google/google";
+import User from "../signUp/index"
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -25,10 +26,10 @@ const Login = () => {
       }
     );
   });
-  const cheakLogin = () => {
+  const checkLogin = (e) => {
+    e.preventDefault();
     const login = { email, password };
     axios.post(`http://localhost:5000/user/login`, login).then((response) => {
-      console.log("res :  ", response.data);
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", response.data.user);
       dispatch(setToken(response.data.token));
@@ -41,42 +42,63 @@ const Login = () => {
     });
   };
 
+  const signupButton = document.getElementById('signup-button'),
+    userForms = document.getElementById('user_options-forms'),
+    loginButton = document.getElementById('login-button')
+
+  const register = () => {
+    userForms.classList.remove('bounceRight')
+    userForms.classList.add('bounceLeft')
+  }
+
+  const loginA = () => {
+    userForms.classList.remove('bounceLeft')
+    userForms.classList.add('bounceRight')
+  }
+
   return (
     <>
-      <div className="loginBody">
-        <div className="loginMain">
-          <h3>Login</h3>
-          <TextField
-            type="email"
-            placeholder="email here"
-            onChange={(e) => setEmail(e.target.value)}
-          />
+      <section class="user">
+        <div class="user_options-container">
+          <div class="user_options-text">
+            <div class="user_options-unregistered">
+              <h2 class="user_unregistered-title">Don't have an account?</h2>
+              <p class="user_unregistered-text">Banjo tote bag bicycle rights, High Life sartorial cray craft beer whatever street art fap.</p>
+              <button class="user_unregistered-signup" id="signup-button" onClick={register}>Sign up</button>
+            </div>
 
-          <TextField
-            type="password"
-            placeholder="password here"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-
-          <button className="loginButton" onClick={cheakLogin}>
-            Login
-          </button>
-          {message && <div>{message}</div>}
-
-          <p className="registration">
-            If you don't have account ?{" "}
-            <Link to="/register">
-              {" "}
-              <br />
-              Sign up here
-            </Link>
-            <br />
-            or
-            <br />
-            <GoogleLogin />
-          </p>
+            <div class="user_options-registered">
+              <h2 class="user_registered-title">Have an account?</h2>
+              <p class="user_registered-text">Banjo tote bag bicycle rights, High Life sartorial cray craft beer whatever street art fap.</p>
+              <button class="user_registered-login" id="login-button" onClick={loginA}>Login</button>
+            </div>
+          </div>
+          <div class="user_options-forms" id="user_options-forms">
+            <div class="user_forms-login">
+              <h2 class="forms_title">Login</h2>
+              <form class="forms_form">
+                <fieldset class="forms_fieldset">
+                  <div class="forms_field">
+                    <input type="email" placeholder="Email" class="forms_field-input" required autofocus
+                      onChange={(e) => setEmail(e.target.value)} />
+                  </div>
+                  <div class="forms_field">
+                    <input type="password" placeholder="Password" class="forms_field-input" required
+                      onChange={(e) => setPassword(e.target.value)} />
+                  </div>
+                </fieldset>
+                <div class="forms_buttons">
+                  <button class="forms_buttons-action" onClick={checkLogin} >Log In</button>
+                </div><br/><br/><br/>
+                  <GoogleLogin />
+              </form>
+            </div>
+            <div class="user_forms-signup">
+                <User/>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
