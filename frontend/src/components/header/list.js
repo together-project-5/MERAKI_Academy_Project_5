@@ -12,6 +12,8 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { useHistory } from "react-router-dom";
 import "./header.css";
+import { useDispatch } from "react-redux";
+import { setTokenOut, setUserOut } from "./../../reducers/login";
 
 const useStyles = makeStyles({
   list: {
@@ -54,6 +56,15 @@ export default function TemporaryDrawer() {
   const archive = (event) => {
     history.push("/archive");
   };
+  const dispatch = useDispatch();
+  const Logout = (event) => {
+    localStorage.setItem("token", "");
+    localStorage.setItem("user", "");
+    dispatch(setTokenOut(""));
+    dispatch(setUserOut({}));
+    history.push("/login");
+  };
+
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {})}
@@ -120,7 +131,6 @@ export default function TemporaryDrawer() {
           </ListItem>
         ))}
       </List>
-   
       <List onClick={archive}>
         {["Archive"].map((text, index) => (
           <ListItem button key={text}>
@@ -157,7 +167,7 @@ export default function TemporaryDrawer() {
         ))}
       </List>
       <Divider />
-      <List>
+      <List onClick={Logout}>
         {["Logout"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemText primary={text} />
