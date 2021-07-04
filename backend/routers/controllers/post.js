@@ -23,7 +23,7 @@ const createPost =async (req, res) => {
 };
 
 const getAllPost = (req, res) => {
-  const query = `SELECT * FROM POST WHERE archive=0`;
+  const query = `SELECT * FROM post INNER JOIN user ON userId = _idUser And archive = 0 ;`;
   db.query(query, (err, result) => {
     if (err) return res.status(400).send("posts not found try again please ");
     res.status(201).json(result);

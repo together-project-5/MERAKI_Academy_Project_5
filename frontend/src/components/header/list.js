@@ -12,6 +12,8 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { useHistory } from "react-router-dom";
 import "./header.css";
+import { useDispatch, useSelector } from "react-redux";
+import { setTokenOut, setUserOut } from "./../../reducers/login";
 
 const useStyles = makeStyles({
   list: {
@@ -23,6 +25,12 @@ const useStyles = makeStyles({
 });
 
 export default function TemporaryDrawer() {
+  const state_2 = useSelector((state_2) => {
+    return {
+      user: state_2.login.user,
+    };
+  });
+
   const history = useHistory();
   const classes = useStyles();
   const [state, setState] = React.useState({
@@ -54,6 +62,15 @@ export default function TemporaryDrawer() {
   const archive = (event) => {
     history.push("/archive");
   };
+  const dispatch = useDispatch();
+  const Logout = (event) => {
+    localStorage.setItem("token", "");
+    localStorage.setItem("user", "");
+    dispatch(setTokenOut(""));
+    dispatch(setUserOut({}));
+    history.push("/login");
+  };
+
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {})}
@@ -62,8 +79,8 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List onClick={profile}>
-        {["Profile"].map((text, index) => (
-          <ListItem button key={text}>
+        {[`${localStorage.getItem("name")}`].map((text, index) => (
+          <ListItem button key={text} >
             <ListItemText primary={text} />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +137,6 @@ export default function TemporaryDrawer() {
           </ListItem>
         ))}
       </List>
-   
       <List onClick={archive}>
         {["Archive"].map((text, index) => (
           <ListItem button key={text}>
@@ -157,7 +173,7 @@ export default function TemporaryDrawer() {
         ))}
       </List>
       <Divider />
-      <List>
+      <List onClick={Logout}>
         {["Logout"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemText primary={text} />
@@ -169,7 +185,7 @@ export default function TemporaryDrawer() {
 
   return (
     <div>
-      {["right"].map((anchor) => (
+      {[`right`].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
           <Drawer
