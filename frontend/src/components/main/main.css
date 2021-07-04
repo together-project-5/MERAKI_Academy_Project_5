@@ -18,14 +18,17 @@
   display: flex;
   border: solid black 0.2px;
   width: 60vw;
-  height: 40vh;
+  height: 70vh;
   margin-top: 2px;
   margin-bottom: 3px;
+}
+.a{
+  display: flex;
 }
 .post-comment-div {
   border: solid black 0.2px;
   width: 30vw;
-  height: 15vh;
+  height: 30vh;
   margin-top: 2px;
   margin-bottom: 3px;
 }
