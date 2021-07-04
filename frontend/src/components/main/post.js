@@ -161,6 +161,7 @@ const GetPost = () => {
                             />
                             <p className="postTitle">{post.title}</p>
                             <p className="postDescription">{post.description}</p>
+                            <img className="postImage" src={post.url}/>
                             <img
                                 onClick={() => {
                                     if (addLike[i]) {
