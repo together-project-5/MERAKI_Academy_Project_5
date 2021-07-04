@@ -10,7 +10,7 @@ body {
   margin: 0;
 }
 
-button {
+.btn {
   background-color: transparent;
   padding: 0;
   border: 0;
