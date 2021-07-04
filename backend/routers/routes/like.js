@@ -4,4 +4,7 @@ const {
     deleteUserLike,
     getLikePost
 } = require("../controllers/like");
-const postRouter = express.Router();
+
+const likeRouter = express.Router();
+
+likeRouter.post("/user/like", createLike);
