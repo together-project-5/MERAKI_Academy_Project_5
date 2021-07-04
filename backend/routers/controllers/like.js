@@ -1,3 +1,5 @@
+const db = require("./../../../backend/db/db");
+
 const createLike =async (req, res) => {
     const query = `INSERT INTO post (userId  , postId) VALUES (?,?)`;
     let { userId, postId } = req.body;
@@ -27,3 +29,8 @@ const getLikePost = (req, res) => {
         res.status(201).json(result);
       });
   };
+
+  module.exports = {
+    createLike,
+    deleteUserLike,
+    getLikePost,};
