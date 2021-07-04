@@ -112,7 +112,7 @@ const addComment = (req,res) => {
     if (err) return res.status(400).send("can't comment try again please ");
     res.status(201).json(result);
   });
-}
+};
 
 const showComment = (req,res) => {
   const id = req.params.id;
@@ -122,16 +122,28 @@ const showComment = (req,res) => {
     if (err) res.status(400).send("post not found");
     res.status(200).json(result);
   });
-}
+};
 
 const editLikePost = (req, res) => {
   const id = req.params.id;
   const query = `UPDATE post SET likes=? WHERE _IdPost=${id} `;
-  const likes = req.body.likes
-  const data = [likes]
+  const likes = req.body.likes;
+  const data = [likes];
   db.query(query, data, (err, res) => {
     if (err) return res.status(400);
     console.log("result", res);
+  });
+};
+
+const reportPost = (req, res) => {
+  const id = req.params.id;
+  const query = `UPDATE post SET report=? WHERE _IdPost=${id}`;
+  const { report } = req.body;
+  const data = [report];
+  db.query(query, data, (err, result) => {
+    if (err)
+      return res.status(400).send("can't add post to report try again please");
+    res.json(result);
   });
 };
 
@@ -148,4 +160,5 @@ module.exports = {
   addComment,
   showComment,
   editLikePost,
+  reportPost,
 };
