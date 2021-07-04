@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "../../../reducers/post";
 import Comment from "../comment/index";
 import Like from "../like/index";
-import Save from "../../favorite/favorite";
+import Save from "../save/index";
 import MenuItem from "../postList";
 
 
@@ -16,7 +16,6 @@ const AllPost = () => {
     return {
       posts: state.posts.posts,
       user: state.login.user,
-      comments: state.comments.comments,
     };
   });
 
@@ -54,9 +53,12 @@ const AllPost = () => {
               <p className="postTitle">{post.title}</p>
               <p className="postDescription">{post.description}</p>
               <img className="postImage" src={post.url} />
-              <Like id={post._IdPost} i={i} />
-              <Comment id={post._IdPost} i={i} />
-              <Save id={post._IdPost} i={i} />
+              <div>
+                <Like id={post._IdPost} i={i} />
+                <Comment id={post._IdPost} i={i} />
+                <Save id={post._IdPost} i={i} />
+              </div>
+
             </div>
           </div>
         );
