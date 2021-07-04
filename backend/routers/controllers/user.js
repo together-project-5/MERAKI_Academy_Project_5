@@ -32,10 +32,10 @@ const getUserByName = (req, res) => {
 
 const editProfile = async (req, res) => {
   const id = req.params.id;
-  const query = `UPDATE user SET name=?,password=? WHERE _IdUser=${id}`;
-  let { name, password } = req.body;
+  const query = `UPDATE user SET name=?,password=? ,picture=? WHERE _IdUser=${id}`;
+  let { name, password, picture } = req.body;
   password = await bcrypt.hash(password, salt);
-  const data = [name, password];
+  const data = [name, password, picture];
   db.query(query, data, (err, result) => {
     if (err) return res.status(400).send("can't update your information try again please");
     console.log(result);
