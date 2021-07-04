@@ -5,11 +5,9 @@ import likes from "../img/like.png";
 import { setPost } from "../../../reducers/post";
 
 const Like = ({ id, i }) => {
-  const [addLike, setAddLike] = useState([]);
   const [like, setLike] = useState([]);
   const dispatch = useDispatch();
   const ar = [];
-  const likeNum = [];
 
   const state = useSelector((state) => {
     return {
@@ -20,11 +18,12 @@ const Like = ({ id, i }) => {
   });
 
   useEffect(() => {
+    
     axios
       .get(`http://localhost:5000/post`)
       .then((res) => {
         res.data.forEach((post, i) => {
-          likeNum.push(true);
+
           ar.push(post.likes);
         });
         dispatch(setPost(res.data));
@@ -33,11 +32,33 @@ const Like = ({ id, i }) => {
         console.log(err);
       });
     setLike(ar);
-    setAddLike(likeNum);
+
   }, []);
 
   const likesFunction = (id, index) => {
-    console.log(addLike);
+    axios
+      .get(`http://localhost:5000/user/like`, {
+        userId: localStorage.getItem("user")._idUser,
+        postId: id
+      }).then((result) => {
+        
+      })
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  console.log(addLike);
     let value;
     setAddLike(
       addLike.map((val, i) => {
@@ -58,7 +79,7 @@ const Like = ({ id, i }) => {
     );
     axios
       .put(`http://localhost:5000/post/editLike/${id}`, { likes: value })
-      .then((res) => {})
+      .then((res) => { })
       .catch((err) => {
         console.log(err);
       });
@@ -85,7 +106,7 @@ const Like = ({ id, i }) => {
     );
     axios
       .put(`http://localhost:5000/post/editLike/${id}`, { likes: value })
-      .then((res) => {})
+      .then((res) => { })
       .catch((err) => {
         console.log(err);
       });
