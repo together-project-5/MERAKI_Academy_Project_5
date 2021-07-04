@@ -91,14 +91,25 @@ const archivePost = (req, res) => {
   });
 };
 
-const getArchivePost = () => {
+const addComment =()=>{
   const id = req.params.id;
-  const query = `SELECT * FROM POST WHERE archive=1 and _IdPost=${id} `;
-  db.query(query, (err, result) => {
-    if (err) return res.status(400).send("post not found ");
+  const query = `INSERT INTO comments (userId ,postId , comment) VALUES (?,?,?)`;
+  let { userId ,postId , comment } = req.body;
+  const data = [userId ,postId , comment];
+  db.query(query, data, (err, result) => {
+    if (err) return res.status(400).send("can't comment try again please ");
     res.status(201).json(result);
   });
-}
+  }
+
+const showComment =()=>{
+  const query = `SELECT * FROM comments WHERE userId=? AND postId=?`;
+  const data =[userId,postId];
+  db.query(query, data, (err, result) => {
+    if (err) res.status(400).send("post not found");
+    res.status(200).json(result);
+  });
+} 
 
 const editLikePost = (req, res) => {
   const id = req.params.id;
@@ -113,7 +124,6 @@ const editLikePost = (req, res) => {
   });
 };
 
-
 module.exports = {
   createPost,
   getAllPost,
@@ -124,5 +134,7 @@ module.exports = {
   getPostByType,
   getArchivePost,
   archivePost,
-  editLikePost
+  addComment,
+  showComment,
+  editLikePost,
 };

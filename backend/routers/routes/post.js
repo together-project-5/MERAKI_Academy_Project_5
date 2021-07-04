@@ -10,6 +10,8 @@ const {
   getPostByType,
   getArchivePost,
   archivePost,
+  addComment,
+  showComment,
   editLikePost
 } = require("../controllers/post");
 
@@ -22,9 +24,13 @@ postRouter.get("/title/:title", getPostByTitle);
 postRouter.delete("/:id", deletePost);
 postRouter.put("/edit/:id", editPost);
 postRouter.get("/filter/:type", getPostByType);
-postRouter.get("/archive/:id", archivePost);
+postRouter.put("/archive/:id", archivePost);
 postRouter.put("/editLike/:id", editLikePost);
 postRouter.get("/:id", getPostById);
+postRouter.get("/comment", showComment);
+postRouter.put("/comment/:id", addComment);
+
+
 
 module.exports = postRouter;
 
