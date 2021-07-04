@@ -4,9 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import likes from "../img/like.png";
 import { setPost } from "../../../reducers/post";
 
-
-
-const Like = ({id ,i}) => {
+const Like = ({ id, i }) => {
   const [addLike, setAddLike] = useState([]);
   const [like, setLike] = useState([]);
   const dispatch = useDispatch();

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "../../../reducers/post";
 import Comment from "../comment/index";
 import Like from "../like/index";
-
+import Save from "../../favorite/favorite";
 import MenuItem from "../postList";
 
 const AllPost = () => {
@@ -43,6 +43,7 @@ const AllPost = () => {
               <p className="postDescription">{post.description}</p>
               <Like id={post._IdPost} i={i} />
               <Comment id={post._IdPost} i={i} />
+              <Save id={post._IdPost} i={i} />
             </div>
           </div>
         );

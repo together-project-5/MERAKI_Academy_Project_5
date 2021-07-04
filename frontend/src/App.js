@@ -11,8 +11,6 @@ import Archive from "./components/archive/index";
 import postList from "./components/main/postList";
 // import AllPost from "./components/allPost/index";
 
-
-
 const App = () => {
   return (
     <>
