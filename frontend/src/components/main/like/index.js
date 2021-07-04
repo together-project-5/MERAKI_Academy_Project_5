@@ -41,12 +41,27 @@ const Like = ({ id, i }) => {
         userId: localStorage.getItem("user")._idUser,
         postId: id
       }).then((result) => {
-        
-      })
+        if(result.length){
+          axios
+          .post(`http://localhost:5000/create/like`, {
+            userId: localStorage.getItem("user")._idUser,
+            postId: id
+          }).then((result) => {
+            
+            
+        }
+      }
+    })
     
     
     
-    
+      // axios
+      // .delete(`http://localhost:5000/user/like`, {
+      //   userId: localStorage.getItem("user")._idUser,
+      //   postId: id
+      // }).then((result) => {
+
+      // })
     
     
     
@@ -59,15 +74,8 @@ const Like = ({ id, i }) => {
     
     
   console.log(addLike);
-    let value;
-    setAddLike(
-      addLike.map((val, i) => {
-        if (i === index) {
-          return (val = false);
-        }
-        return val;
-      })
-    );
+    
+    
     setLike(
       like.map((post, i) => {
         if (i === index) {
