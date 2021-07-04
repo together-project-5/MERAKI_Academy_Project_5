@@ -175,8 +175,6 @@ export default function PrimarySearchAppBar() {
             color="inherit"
             aria-label="open drawer"
           >
-            {/* <MenuIcon /> */}
-            <TemporaryDrawer />
 
           </IconButton>
           <Typography
@@ -187,6 +185,7 @@ export default function PrimarySearchAppBar() {
           >
             Together
           </Typography>
+
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -212,15 +211,8 @@ export default function PrimarySearchAppBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+          <TemporaryDrawer  />
+
           </div>
           <div className={classes.sectionMobile}>
         

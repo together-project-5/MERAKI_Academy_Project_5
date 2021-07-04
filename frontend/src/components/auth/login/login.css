@@ -9,22 +9,22 @@ body {
   line-height: 1em;
   margin: 0;
 }
-
+/* 
 button {
   background-color: transparent;
   padding: 0;
   border: 0;
   outline: 0;
   cursor: pointer;
-}
+} */
 
-input {
+/* input {
   background-color: transparent;
   padding: 0;
   border: 0;
   outline: 0;
-}
-
+} */
+/* 
 input[type="submit"] {
   cursor: pointer;
 }
@@ -35,7 +35,7 @@ input::placeholder {
   font-weight: 300;
   letter-spacing: 0.1rem;
   color: #ccc;
-}
+} */
 
 /**
 * Bounce to the left side

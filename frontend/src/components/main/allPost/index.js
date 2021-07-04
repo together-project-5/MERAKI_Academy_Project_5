@@ -7,6 +7,7 @@ import Like from "../like/index";
 import Save from "../../favorite/favorite";
 import MenuItem from "../postList";
 
+
 const AllPost = () => {
   const dispatch = useDispatch();
   const [_IdPost, set_IdPost] = useState("");
@@ -36,7 +37,7 @@ const AllPost = () => {
         return (
           <div className="postDiv" key={i}>
             <div>
-            <MenuItem
+              <MenuItem
                 id={post._IdPost}
                 onClick={() => {
                   return set_IdPost(post._IdPost);
@@ -45,12 +46,14 @@ const AllPost = () => {
                 onClick={() => {
                   return setUserId(post.userId);
                 }}
-              />              <img
+              />{" "}
+              <img
                 className="profilePic"
                 src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
               />
               <p className="postTitle">{post.title}</p>
               <p className="postDescription">{post.description}</p>
+              <img className="postImage" src={post.url} />
               <Like id={post._IdPost} i={i} />
               <Comment id={post._IdPost} i={i} />
               <Save id={post._IdPost} i={i} />
