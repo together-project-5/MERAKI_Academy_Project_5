@@ -8,6 +8,7 @@ const authRouter = require("./routers/routes/auth/login");
 const postRouter = require("./routers/routes/post");
 const favoriteRouter = require("./routers/routes/favorite")
 const google = require("./routers/controllers/google/google")
+const likeRouter = require("./routers/routes/like")
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use("/user", userRouter, registerRouter, authRouter);
 app.use("/post", postRouter);
 app.use("/favorite", favoriteRouter)
 app.use(google);
+app.use(likeRouter)
 
 const PORT = process.env.PORT || 5000;
 
