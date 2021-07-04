@@ -32,28 +32,28 @@ export const Header = () => {
 
         <div className="navBar">
           <div className="headerLeftNavBar">
-            <p onClick={handleClick} className="websiteName">
+            {/* <p onClick={handleClick} className="websiteName">
               website name
-            </p>
+            </p> */}
           </div>
 
           {localStorage.getItem("token") ? (
             <div className="headerLeftNavBar">
-              <input
+              {/* <input
                 className="headerSearch-bar"
                 onChange={(e) => {
                   search = e.target.value;
                 }}
                 placeholder="Search"
-              />
-              <button
+              /> */}
+              {/* <button
                 className="headerSearch-button"
                 onClick={(e) => {
                   searchPost();
                 }}
-              >search</button>
+              >search</button> */}
               {/* <img src=(url) /> */}
-              <p className="display-name">{`Welcome,user`}</p>
+              {/* <p className="display-name">{`Welcome,user`}</p> */}
               <List />
             </div>
           ) :

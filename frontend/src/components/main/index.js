@@ -33,6 +33,15 @@ const Main = () => {
   const saveFunction = () => {};
   return (
     <div className="App">
+         <button
+        className="contained"
+        onClick={(e) => {
+          e.preventDefault();
+          buttonPost("random");
+        }}
+      >
+        random
+      </button>
       <button
         className="contained"
         onClick={(e) => {

@@ -6,17 +6,13 @@ import Register from "./components/auth/signUp/index";
 import GetPost from "./components/main/post";
 import { Header } from "./components/header/index";
 import GetFavorites from "./components/favorite/favorite";
-import Main from "./components/main/index";
 import Archive from "./components/archive/index";
 import postList from "./components/main/postList";
-
-
 
 const App = () => {
   return (
     <>
       <Route path="/" component={Header} />
-      <Route path="/main" component={Main} />
       <Route exact path="/" component={GetPost} />
       <Route path="/login" component={Login} />
       <Route path="/createPost" component={CreatePosts} />

@@ -8,7 +8,7 @@ import MenuItem from "./postList";
 import likes from "./img/like.png";
 import comments from "./img/comment.png";
 import save from "./img/save.png";
-
+import Main from "./../main/index"
 const GetPost = () => {
   const [addLike, setAddLike] = useState([]);
   const [like, setLike] = useState([]);
@@ -153,6 +153,7 @@ const GetPost = () => {
 
   return (
     <>
+    <Main/>
       {state.posts.map((post, i) => {
         return (
           <div className="postDiv" key={i}>

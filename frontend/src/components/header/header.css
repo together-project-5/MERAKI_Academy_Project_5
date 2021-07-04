@@ -1,4 +1,4 @@
-.rightNavBar a,
+/* .rightNavBar a,
 .rightNavBar a,
 .rightNavBar a,
 .headerRightNavBar a {
@@ -36,7 +36,6 @@
   display: flex;
   gap: 3px;
   padding-left: 15px;
-  /* height: 30px; */
 }
 
 .headerRightNavBar {
@@ -81,4 +80,18 @@
 
 .display-name:hover {
   color: black;
+} */
+
+.websiteName {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 40px;
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+}
+
+.websiteName:hover {
+  cursor: pointer;
+  color: #050505;
 }

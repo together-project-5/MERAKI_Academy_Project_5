@@ -39,6 +39,8 @@ const CreatePosts = () => {
             <option value="programming">programming</option>
             <option value="sport">sport</option>
             <option value="english">english</option>
+            <option value="cook">cook</option>
+
           </select>
           <textarea
             name="description"
