@@ -8,8 +8,8 @@ import GetFavorites from "./components/favorite/favorite";
 import Main from "./components/main/index";
 import Archive from "./components/archive/index";
 import postList from "./components/main/postList";
-import Upload from './components/upload'
-
+import Upload from './components/upload';
+// import AllPost from "./components/allPost/index";
 
 const App = () => {
   return (
