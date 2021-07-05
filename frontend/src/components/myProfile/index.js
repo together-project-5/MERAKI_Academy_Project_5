@@ -7,9 +7,9 @@ import MyInfo from "./myInfo";
 const MyProfile = () => {
   const history = useHistory();
 
-    const handleClick = () => {
-        history.push("/createPost");
-      };
+  const handleClick = () => {
+    history.push("/createPost");
+  };
 
   return (
     <>
