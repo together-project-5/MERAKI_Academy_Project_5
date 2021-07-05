@@ -87,13 +87,13 @@ const Login = () => {
                 id="login-button"
                 onClick={loginA}
               >
-                Sign in
+                Log in
               </button>
             </div>
           </div>
           <div class="user_options-forms" id="user_options-forms">
             <div class="user_forms-login">
-              <h2 class="forms_title">Login</h2>
+              <h2 class="forms_title">Log in</h2>
               <form class="forms_form">
                 <fieldset class="forms_fieldset">
                   <div class="forms_field">
@@ -118,7 +118,7 @@ const Login = () => {
                 </fieldset>
                 <div class="forms_buttons">
                   <button class="forms_buttons-action" onClick={checkLogin}>
-                    Log In
+                     Log In
                   </button>
                 </div>
                 <br />
