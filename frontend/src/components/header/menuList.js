@@ -107,14 +107,14 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
           >
 
-          </IconButton>
+          </IconButton> */}
           <Typography
             onClick={handleClick}
             className="websiteName"
