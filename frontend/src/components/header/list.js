@@ -67,6 +67,8 @@ export default function TemporaryDrawer() {
   const Logout = (event) => {
     localStorage.setItem("token", "");
     localStorage.setItem("user", "");
+    localStorage.setItem("name", "");
+    localStorage.setItem("_IdUser", "");
     dispatch(setTokenOut(""));
     dispatch(setUserOut({}));
     history.push("/login");
