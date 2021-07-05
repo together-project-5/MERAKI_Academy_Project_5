@@ -70,7 +70,7 @@ const Login = () => {
                 beer whatever street art fap.
               </p>
               <button
-                class="user_unregistered-signup"
+                class="user_unregistered-signup button-login-reg"
                 id="signup-button"
                 onClick={register}
               >
@@ -85,7 +85,7 @@ const Login = () => {
                 beer whatever street art fap.
               </p>
               <button
-                class="user_registered-login"
+                class="user_registered-login button-login-reg"
                 id="login-button"
                 onClick={loginA}
               >
@@ -102,7 +102,7 @@ const Login = () => {
                     <input
                       type="email"
                       placeholder="Email"
-                      class="forms_field-input"
+                      class="forms_field-input input-login-reg"
                       required
                       autofocus
                       onChange={(e) => setEmail(e.target.value)}
@@ -112,7 +112,7 @@ const Login = () => {
                     <input
                       type="password"
                       placeholder="Password"
-                      class="forms_field-input"
+                      class="forms_field-input input-login-reg"
                       required
                       onChange={(e) => setPassword(e.target.value)}
                     />
@@ -126,7 +126,9 @@ const Login = () => {
                 <br />
                 <br />
                 <br />
-                <GoogleLogin />
+                <div className="login-with-Google">
+                  <GoogleLogin className="login-with-Google" />
+                </div>
               </form>
             </div>
             <div class="user_forms-signup">
