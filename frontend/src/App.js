@@ -10,6 +10,7 @@ import postList from "./components/main/postList";
 import Upload from "./components/upload";
 // import AllPost from "./components/allPost/index";
 import Main from "./components/main/index";
+import  MyProfile from "./components/myProfile/index";
 import EditProfile from "./components/user/editProfile"
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Route path="/" component={Header} />
       <Route exact path="/" component={Main} />
       <Route exact path="/" component={GetPost} />
+      <Route path="/profile" component={MyProfile} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
       <Route path="/archive" component={Archive} />

@@ -11,6 +11,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { useHistory } from "react-router-dom";
+import Avatar from '@material-ui/core/Avatar';
 import "./header.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setTokenOut, setUserOut } from "./../../reducers/login";
@@ -66,6 +67,8 @@ export default function TemporaryDrawer() {
   const Logout = (event) => {
     localStorage.setItem("token", "");
     localStorage.setItem("user", "");
+    localStorage.setItem("name", "");
+    localStorage.setItem("_IdUser", "");
     dispatch(setTokenOut(""));
     dispatch(setUserOut({}));
     history.push("/login");
@@ -82,20 +85,7 @@ export default function TemporaryDrawer() {
         {[`${localStorage.getItem("name")}`].map((text, index) => (
           <ListItem button key={text} >
             <ListItemText primary={text} />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="26"
-              height="26"
-              fill="currentColor"
-              class="bi bi-person-circle"
-              viewBox="0 0 16 16"
-            >
-              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-              <path
-                fill-rule="evenodd"
-                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-              />
-            </svg>{" "}
+            <Avatar alt="Remy Sharp" src="" />{" "}
           </ListItem>
         ))}
       </List>
