@@ -101,7 +101,7 @@ const Like = ({ id, i }) => {
             disLikesFunction(id, i);
           }
         }}
-        className="likeIcon"
+        className="like-icon"
         src={likes}
       />
       {like[i] !== 0 && <p className="postTitle">{like[i]}</p>}

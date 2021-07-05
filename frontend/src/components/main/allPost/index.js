@@ -6,7 +6,7 @@ import Comment from "../comment/index";
 import Like from "../like/index";
 import Save from "../save/index";
 import MenuItem from "../postList";
-
+import "./allPost.css";
 
 const AllPost = () => {
   const dispatch = useDispatch();
@@ -19,9 +19,6 @@ const AllPost = () => {
     };
   });
 
-
-
-
   useEffect(() => {
     axios
       .get(`http://localhost:5000/post`)
@@ -31,7 +28,6 @@ const AllPost = () => {
       .catch((err) => {
         console.log(err);
       });
-      
   }, []);
 
   useEffect(() => {
@@ -43,15 +39,21 @@ const AllPost = () => {
       .catch((err) => {
         console.log(err);
       });
-      
   }, [state.posts]);
 
   return (
     <>
       {state.posts.map((post, i) => {
         return (
-          <div className="postDiv" key={i}>
-            <div>
+          <div className="post-div" key={i}>
+            <div className="user-information-list">
+             <div className="user-information">
+              <img
+                className="profile-picture"
+                src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
+              />
+              <p className="post-title">{post.name}</p>
+              </div>
               <MenuItem
                 id={post._IdPost}
                 onClick={() => {
@@ -61,21 +63,19 @@ const AllPost = () => {
                 onClick={() => {
                   return setUserId(post.userId);
                 }}
-              />{" "}
-              <img
-                className="profilePic"
-                src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
               />
-              <p className="postTitle">{post.name}</p>
-              <p className="postTitle">{post.title}</p>
-              <p className="postDescription">{post.description}</p>
-              <img className="postImage" src={post.url} />
-              <div>
-                <Like id={post._IdPost} i={i} />
-                <Comment id={post._IdPost} i={i} />
-                <Save id={post._IdPost} i={i} />
-              </div>
+            </div>
 
+            <div className="post-information">
+              <p className="post-title">{post.title}</p>
+              <p className="post-description">{post.description}</p>
+              <img className="post-image" src={post.url} />
+            </div>
+
+            <div className="post-reaction">
+              <Like id={post._IdPost} i={i} />
+              <Save id={post._IdPost} i={i} />
+              <Comment id={post._IdPost} i={i} />
             </div>
           </div>
         );
