@@ -16,9 +16,8 @@ const GetFavorites = () => {
     };
   });
   useEffect(() => {
-    console.log("state.user._IdUser", state.user._IdUser);
     axios
-      .get(`http://localhost:5000/favorite/post/${state.user._IdUser}`)
+      .get(`http://localhost:5000/favorite/post/${localStorage.getItem("_IdUser")}`)
       .then((res) => {
         dispatch(setFavorite(res.data));
       })
@@ -52,7 +51,7 @@ const GetFavorites = () => {
             <img
               onClick={(e) => {
                 e.preventDefault();
-                saveFunction(post._IdPost);
+                saveFunction(post.postId);
               }}
               className="saveIcon"
               src={save}

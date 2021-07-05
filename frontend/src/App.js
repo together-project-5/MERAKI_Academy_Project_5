@@ -11,6 +11,7 @@ import Upload from "./components/upload";
 // import AllPost from "./components/allPost/index";
 import Main from "./components/main/index";
 import  MyProfile from "./components/myProfile/index";
+import EditProfile from "./components/user/editProfile"
 const App = () => {
   return (
     <>
@@ -24,6 +25,8 @@ const App = () => {
       <Route path="/favorite" component={GetFavorites} />
       <Route path="/post" component={postList} />
       <Route path="/createPost" component={Upload} />
+      <Route path="/editProfile" component={EditProfile} />
+
     </>
   );
 };
