@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { setPost } from "../../../reducers/post";
-import Comment from "../comment/index";
-import Like from "../like/index";
-import Save from "../save/index";
-import MenuItem from "../postList";
+import { setPost } from "../../reducers/post";
+import Comment from "../main/comment/index";
+import Like from "../main/like/index";
+import Save from "../main/save/index";
+import MenuItem from "../main/postList";
 
-
-const AllPost = () => {
+const MyPost = () => {
   const dispatch = useDispatch();
   const [_IdPost, set_IdPost] = useState("");
   const [userId, setUserId] = useState("");
@@ -21,7 +20,7 @@ const AllPost = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/post`)
+      .get(`http://localhost:5000/post/`)
       .then((res) => {
         dispatch(setPost(res.data));
       })
@@ -33,39 +32,40 @@ const AllPost = () => {
   return (
     <>
       {state.posts.map((post, i) => {
-        return (
-          <div className="postDiv" key={i}>
-            <div>
-              <MenuItem
-                id={post._IdPost}
-                onClick={() => {
-                  return set_IdPost(post._IdPost);
-                }}
-                userIdP={post.userId}
-                onClick={() => {
-                  return setUserId(post.userId);
-                }}
-              />{" "}
-              <img
-                className="profilePic"
-                src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
-              />
-              <p className="postTitle">{post.name}</p>
-              <p className="postTitle">{post.title}</p>
-              <p className="postDescription">{post.description}</p>
-              <img className="postImage" src={post.url} />
+        // if (post.userId === localStorage.getItem("user")._IdPost) {
+          return (
+            <div className="postDiv" key={i}>
               <div>
-                <Like id={post._IdPost} i={i} />
-                <Comment id={post._IdPost} i={i} />
-                <Save id={post._IdPost} i={i} />
+                <MenuItem
+                  id={post._IdPost}
+                  onClick={() => {
+                    return set_IdPost(post._IdPost);
+                  }}
+                  userIdP={post.userId}
+                  onClick={() => {
+                    return setUserId(post.userId);
+                  }}
+                />{" "}
+                <img
+                  className="profilePic"
+                  src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
+                />
+                <p className="postTitle">{post.name}</p>
+                <p className="postTitle">{post.title}</p>
+                <p className="postDescription">{post.description}</p>
+                <img className="postImage" src={post.url} />
+                <div>
+                  <Like id={post._IdPost} i={i} />
+                  <Comment id={post._IdPost} i={i} />
+                  <Save id={post._IdPost} i={i} />
+                </div>
               </div>
-
             </div>
-          </div>
-        );
+          );
+        // }
       })}
     </>
   );
 };
 
-export default AllPost;
+export default MyPost;

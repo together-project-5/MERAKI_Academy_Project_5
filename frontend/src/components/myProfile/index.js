@@ -1,12 +1,12 @@
 import React from "react";
-import AllPost from "./../main/allPost/index";
+import MyPost from "./myPost";
 import MyInfo from "./myInfo";
 
 const MyProfile = () => {
   return (
     <>
       <MyInfo />
-      <AllPost />
+      <MyPost />
     </>
   );
 };
