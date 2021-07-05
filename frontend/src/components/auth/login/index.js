@@ -33,6 +33,7 @@ const Login = () => {
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", response.data.user);
       localStorage.setItem("name", response.data.user.name);
+      localStorage.setItem("_IdUser", response.data.user._IdUser);
       dispatch(setToken(response.data.token));
       dispatch(setUser(response.data.user));
       if (response.data.message !== "valid login") {
