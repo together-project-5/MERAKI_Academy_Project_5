@@ -12,15 +12,13 @@ const AllPost = () => {
   const dispatch = useDispatch();
   const [_IdPost, set_IdPost] = useState("");
   const [userId, setUserId] = useState("");
+ 
   const state = useSelector((state) => {
     return {
       posts: state.posts.posts,
       user: state.login.user,
     };
   });
-
-
-
 
   useEffect(() => {
     axios
@@ -34,11 +32,15 @@ const AllPost = () => {
       
   }, []);
 
+
+  // console.log(state.posts);
+
+
+
   useEffect(() => {
     axios
       .get(`http://localhost:5000/post`)
       .then((res) => {
-        // dispatch(setPost(res.data));
       })
       .catch((err) => {
         console.log(err);
@@ -48,7 +50,7 @@ const AllPost = () => {
 
   return (
     <>
-      {state.posts.map((post, i) => {
+      {state.posts.length && state.posts.map((post, i) => {
         return (
           <div className="postDiv" key={i}>
             <div>
