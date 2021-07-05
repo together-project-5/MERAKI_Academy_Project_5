@@ -9,7 +9,8 @@
 
 .websiteName:hover {
   cursor: pointer;
-  color: #050505;
+  color: #dbc3c3;
+  transform: scale(1.08);
 }
 .MuiButton-label {
   width: 100%;
@@ -17,9 +18,14 @@
   align-items: inherit;
   justify-content: inherit;
   margin-top: 7px;
+  color: white;
+}
+.MuiButton-label:hover {
+  cursor: pointer;
+  color: #dbc3c3;
+  transform: scale(1.08);
 }
 .MuiToolbar-regular {
   min-height: 64px;
   background-color: #970000;
 }
-
