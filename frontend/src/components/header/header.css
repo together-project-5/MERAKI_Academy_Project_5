@@ -18,4 +18,8 @@
   justify-content: inherit;
   margin-top: 7px;
 }
+.MuiToolbar-regular {
+  min-height: 64px;
+  background-color: #970000;
+}
 
