@@ -64,10 +64,9 @@ const Login = () => {
         <div class="user_options-container">
           <div class="user_options-text">
             <div class="user_options-unregistered">
-              <h2 class="user_unregistered-title">Don't have an account?</h2>
+              <h2 class="user_unregistered-title">Don't Have An Account?</h2>
               <p class="user_unregistered-text">
-                Banjo tote bag bicycle rights, High Life sartorial cray craft
-                beer whatever street art fap.
+              Welcome To Together Socialmedia Platform   
               </p>
               <button
                 class="user_unregistered-signup button-login-reg"
@@ -79,17 +78,16 @@ const Login = () => {
             </div>
 
             <div class="user_options-registered">
-              <h2 class="user_registered-title">Have an account?</h2>
+              <h2 class="user_registered-title">Have An Account?</h2>
               <p class="user_registered-text">
-                Banjo tote bag bicycle rights, High Life sartorial cray craft
-                beer whatever street art fap.
+             Login Right Now
               </p>
               <button
                 class="user_registered-login button-login-reg"
                 id="login-button"
                 onClick={loginA}
               >
-                Login
+                Sign in
               </button>
             </div>
           </div>
