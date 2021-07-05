@@ -7,7 +7,6 @@ import { Header } from "./components/header/index";
 import GetFavorites from "./components/favorite/favorite";
 import Archive from "./components/archive/index";
 import postList from "./components/main/postList";
-// import AllPost from "./components/allPost/index";
 import Main from "./components/main/index";
 import  MyProfile from "./components/myProfile/index";
 import EditProfile from "./components/user/editProfile"
