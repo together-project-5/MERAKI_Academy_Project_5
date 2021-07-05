@@ -144,67 +144,54 @@ const Main = () => {
 
   return (
     <>
-    <div className="navBar-filter">
-         <div className="left-2en-navBar">
-         <button
-        className="filter-button"
-        onClick={(e) => {
-          e.preventDefault();
-          buttonPost("random");
-        }}
-      >
-        random
-      </button>
-
-    <div>
-   
-
-      <button
-        className="filter-button"
-        onClick={(e) => {
-          e.preventDefault();
-          buttonPost("sport");
-        }}
-      >
-        Sport
-      </button>
-      <button
-        className="filter-button"
-        onClick={(e) => {
-          e.preventDefault();
-          buttonPost("programming");
-        }}
-      >
-        programming
-      </button>
-      <button
-        className="filter-button"
-        onClick={(e) => {
-          e.preventDefault();
-          buttonPost("cook");
-        }}
-      >
-        Cook
-      </button>
-      <button
-        className="filter-button"
-        onClick={(e) => {
-          e.preventDefault();
-          buttonPost("english");
-        }}
-      >
-        English
-      </button>
+      <div className="navBar-filter">
+        <div className="left-2en-navBar">
+          <button
+            className="filter-button"
+            onClick={(e) => {
+              e.preventDefault();
+              buttonPost("sport");
+            }}
+          >
+            Sport
+          </button>
+          <button
+            className="filter-button"
+            onClick={(e) => {
+              e.preventDefault();
+              buttonPost("programming");
+            }}
+          >
+            programming
+          </button>
+          <button
+            className="filter-button"
+            onClick={(e) => {
+              e.preventDefault();
+              buttonPost("cook");
+            }}
+          >
+            Cook
+          </button>
+          <button
+            className="filter-button"
+            onClick={(e) => {
+              e.preventDefault();
+              buttonPost("english");
+            }}
+          >
+            English
+          </button>
+        </div>
       </div>
       <div className="right-2en-navBar">
-      <button className="filter-button" onClick={handleClick}>
-        Create Post
-      </button>
+        <button className="filter-button" onClick={handleClick}>
+          Create Post
+        </button>
+      </div>
 
-      </div>
-      </div>
       <div>
-      {posts
+        {/* {posts
         ? posts.map((post, i) => {
             return (
               <div className="postDiv" key={i}>
@@ -221,9 +208,9 @@ const Main = () => {
                   className="commentIcon"
                   src={comments}
                 />
-                <img onClick={saveFunction} className="saveIcon" src={save} />
+                <img onClick={saveFunction} className="saveIcon" src={save} /> */}
 
-      {/* {state.posts.map((post, i) => {
+        {/* {state.posts.map((post, i) => {
         return (
           <div className="postDiv" key={i}>
             <div>
@@ -246,7 +233,7 @@ const Main = () => {
           </div>
         );
       })} */}
-    </div>
+      </div>
     </>
   );
 };
