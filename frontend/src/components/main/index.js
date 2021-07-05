@@ -32,9 +32,11 @@ const Main = () => {
 
   const saveFunction = () => {};
   return (
-    <div className="App">
+    <>
+    <div className="navBar-filter">
+         <div className="left-2en-navBar">
          <button
-        className="contained"
+        className="filter-button"
         onClick={(e) => {
           e.preventDefault();
           buttonPost("random");
@@ -43,7 +45,7 @@ const Main = () => {
         random
       </button>
       <button
-        className="contained"
+        className="filter-button"
         onClick={(e) => {
           e.preventDefault();
           buttonPost("sport");
@@ -52,7 +54,7 @@ const Main = () => {
         Sport
       </button>
       <button
-        className="contained"
+        className="filter-button"
         onClick={(e) => {
           e.preventDefault();
           buttonPost("programming");
@@ -61,7 +63,7 @@ const Main = () => {
         programming
       </button>
       <button
-        className="contained"
+        className="filter-button"
         onClick={(e) => {
           e.preventDefault();
           buttonPost("cook");
@@ -70,7 +72,7 @@ const Main = () => {
         Cook
       </button>
       <button
-        className="contained"
+        className="filter-button"
         onClick={(e) => {
           e.preventDefault();
           buttonPost("english");
@@ -78,9 +80,14 @@ const Main = () => {
       >
         English
       </button>
-      <button className="post" onClick={handleClick}>
+      </div>
+      <div className="right-2en-navBar">
+      <button className="filter-button" onClick={handleClick}>
         Create Post
       </button>
+      </div>
+      </div>
+      <div>
       {posts
         ? posts.map((post, i) => {
             return (
@@ -104,6 +111,7 @@ const Main = () => {
           })
         : ""}
     </div>
+    </>
   );
 };
 export default Main;
