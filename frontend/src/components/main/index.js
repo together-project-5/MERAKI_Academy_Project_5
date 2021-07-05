@@ -143,10 +143,24 @@ const Main = () => {
   };
 
   return (
+    <>
+    <div className="navBar-filter">
+         <div className="left-2en-navBar">
+         <button
+        className="filter-button"
+        onClick={(e) => {
+          e.preventDefault();
+          buttonPost("random");
+        }}
+      >
+        random
+      </button>
+
     <div>
    
+
       <button
-        className="contained"
+        className="filter-button"
         onClick={(e) => {
           e.preventDefault();
           buttonPost("sport");
@@ -155,7 +169,7 @@ const Main = () => {
         Sport
       </button>
       <button
-        className="contained"
+        className="filter-button"
         onClick={(e) => {
           e.preventDefault();
           buttonPost("programming");
@@ -164,7 +178,7 @@ const Main = () => {
         programming
       </button>
       <button
-        className="contained"
+        className="filter-button"
         onClick={(e) => {
           e.preventDefault();
           buttonPost("cook");
@@ -173,7 +187,7 @@ const Main = () => {
         Cook
       </button>
       <button
-        className="contained"
+        className="filter-button"
         onClick={(e) => {
           e.preventDefault();
           buttonPost("english");
@@ -181,9 +195,33 @@ const Main = () => {
       >
         English
       </button>
-      <button className="post" onClick={handleClick}>
+      </div>
+      <div className="right-2en-navBar">
+      <button className="filter-button" onClick={handleClick}>
         Create Post
       </button>
+
+      </div>
+      </div>
+      <div>
+      {posts
+        ? posts.map((post, i) => {
+            return (
+              <div className="postDiv" key={i}>
+                <MenuItem />
+                <img
+                  className="profilePic"
+                  src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
+                />
+                <p className="postTitle">{post.title}</p>
+                <p className="postDescription">{post.description}</p>
+                <img onClick={likesFunction} className="likeIcon" src={likes} />
+                <img
+                  onClick={commentsFunction}
+                  className="commentIcon"
+                  src={comments}
+                />
+                <img onClick={saveFunction} className="saveIcon" src={save} />
 
       {/* {state.posts.map((post, i) => {
         return (
@@ -202,12 +240,14 @@ const Main = () => {
                 <Like id={post._IdPost} i={i} />
                 <Comment id={post._IdPost} i={i} />
                 <Save id={post._IdPost} i={i} />
+
               </div>
             </div>
           </div>
         );
       })} */}
     </div>
+    </>
   );
 };
 
