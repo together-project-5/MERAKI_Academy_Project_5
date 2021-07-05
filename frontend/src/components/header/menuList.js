@@ -123,7 +123,7 @@ export default function PrimarySearchAppBar() {
           >
             Together
           </Typography>
-
+{/* 
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -136,7 +136,38 @@ export default function PrimarySearchAppBar() {
               }}
               inputProps={{ "aria-label": "search" }}
             />
+          </div> */}
+            <form onSubmit={handleSubmit}>
+        <div className="navBar">
+          <div className="headerLeftNavBar">
+            <input
+              className="headerSearch-bar"
+              onChange={(e) => {
+                search = e.target.value;
+              }}
+              placeholder="Search"
+            />
+            <button
+              className="headerSearch-button"
+              onClick={(e) => {
+                searchPost();
+              }}
+            >
+              search
+            </button>
           </div>
+
+          {localStorage.getItem("token") ? (
+            <div className="headerLeftNavBar">
+              <List />
+            </div>
+          ) : (
+            <div className="headerRightNavBar">
+              <Link to="/login">login</Link>
+            </div>
+          )}
+        </div>
+      </form>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
 
