@@ -52,7 +52,7 @@ const AllPost = () => {
                 className="profile-picture"
                 src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
               />
-              <p className="post-title">{post.name}</p>
+              <p className="user-post-name">{post.name}</p>
               </div>
               <MenuItem
                 id={post._IdPost}
