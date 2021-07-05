@@ -19,6 +19,9 @@ const AllPost = () => {
     };
   });
 
+
+
+
   useEffect(() => {
     axios
       .get(`http://localhost:5000/post`)
@@ -28,7 +31,20 @@ const AllPost = () => {
       .catch((err) => {
         console.log(err);
       });
+      
   }, []);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/post`)
+      .then((res) => {
+        // dispatch(setPost(res.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      
+  }, [state.posts]);
 
   return (
     <>
