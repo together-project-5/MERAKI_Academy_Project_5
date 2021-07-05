@@ -11,21 +11,21 @@ const createLike =async (req, res) => {
 }
 
 const deleteUserLike = (req, res) => {
-    const query = `DELETE FROM userLike WHERE userId = ? AND postId = ?`;
-    let { userId, postId } = req.body;
-    const data = [userId,postId ]
-    db.query(query, data, (err, result) => {
-      if (err) return res.status(400);
+  let { userId, postId } = req.params;
+    const query = `DELETE FROM userLike WHERE userId = ${userId} AND postId = ${postId}`;
+    db.query(query,  (err, result) => {
+      if (err) return res.status(401).json(err);
       res.status(200).json("success deleted");
     });
   };
 
 const getLikePost = (req, res) => {
-    const query = `SELECT * FROM userLike WHERE userId = ? AND postId = ?`;
-    console.log("aaaaaaaa");
-    let { userId, postId } = req.body;
-    const data = [userId,postId ];
-    db.query(query, data, (err, result) => {
+  console.log("geeet")
+  let { userId, postId } = req.params;
+    const query = `SELECT * FROM userLike WHERE userId = ${userId} AND postId = ${postId}`;
+    // let { userId, postId } = req.body;
+    // const data = [userId,postId ];
+    db.query(query,  (err, result) => {
         if (err) return res.status(400).json(err)
         res.status(200).json(result);
       });

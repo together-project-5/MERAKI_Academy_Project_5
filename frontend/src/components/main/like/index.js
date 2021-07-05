@@ -18,7 +18,7 @@ const Like = ({ id, i }) => {
   });
 
   useEffect(() => {
-    
+
     axios
       .get(`http://localhost:5000/post`)
       .then((res) => {
@@ -32,111 +32,83 @@ const Like = ({ id, i }) => {
         console.log(err);
       });
     setLike(ar);
-
   }, []);
 
   const likesFunction = (id, index) => {
+    console.log("user id",index)
+    console.log("post id",id)
+    let value;
+
     axios
-      .get(`http://localhost:5000/user/like`, {
-        userId: localStorage.getItem("user")._idUser,
+      .get(`http://localhost:5000/user/like/${localStorage.getItem("_IdUser")}/${ id}`, {
+        userId: localStorage.getItem("_IdUser"),
         postId: id
       }).then((result) => {
-        if(result.length){
+        console.log("result", result.data)
+        if (result.data.length == 0) {
+          console.log("111100000")
           axios
-          .post(`http://localhost:5000/create/like`, {
-            userId: localStorage.getItem("user")._idUser,
-            postId: id
-          }).then((result) => {
-            setLike(
-              like.map((post, i) => {
-                if (i === index) {
-                  value = post + 1;
-                  return (post = post + 1);
-                }
-                return post;
-              })
-            );
-            
+            .post(`http://localhost:5000/create/like`, {
+              userId: localStorage.getItem("_IdUser"),
+              postId: id
+            }).then((result) => {
+              setLike(
+                like.map((post, i) => {
+                  if (i === index) {
+                    value = post + 1;
+                    return (post = post + 1);
+                  }
+                  return post;
+                })
+              );
+              axios
+                .put(`http://localhost:5000/post/editLike/${id}`, { likes: value })
+                .then((res) => { })
+                .catch((err) => {
+                  console.log(err);
+                });
+            })
         }
-      }
-    })
-    
-    
-    
-      // axios
-      // .delete(`http://localhost:5000/user/like`, {
-      //   userId: localStorage.getItem("user")._idUser,
-      //   postId: id
-      // }).then((result) => {
+        else {
+          console.log("000000000000000")
+          console.log("localStorage.getItem(_IdUser)",localStorage.getItem("_IdUser"));
+          console.log("aaaaaaaaaaaaaaaaa", id);
+          axios
+            .delete(`http://localhost:5000/user/like/${localStorage.getItem("_IdUser")}/${ id}`, {
+            }).then((result) => {
+              console.log(result);
+              setLike(
+                like.map((post, i) => {
+                  if (i === index) {
+                    value = post - 1;
+                    return (post = post - 1);
+                  }
+                  return post;
+                })
+              );
+              axios
+                .put(`http://localhost:5000/post/editLike/${id}`, { likes: value })
+                .then((res) => { })
+                .catch((err) => {
+                  console.log(err);
+                });
+            })
+        }
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
+  }
 
-      // })
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  console.log(addLike);
-    
-    
-    setLike(
-      like.map((post, i) => {
-        if (i === index) {
-          value = post + 1;
-          return (post = post + 1);
-        }
-        return post;
-      })
-    );
-    axios
-      .put(`http://localhost:5000/post/editLike/${id}`, { likes: value })
-      .then((res) => { })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-  const disLikesFunction = (id, index) => {
-    let value;
-    setAddLike(
-      addLike.map((val, i) => {
-        if (i === index) {
-          return (val = true);
-        }
-        return val;
-      })
-    );
 
-    setLike(
-      like.map((post, i) => {
-        if (i === index) {
-          value = post - 1;
-          return (post = post - 1);
-        }
-        return post;
-      })
-    );
-    axios
-      .put(`http://localhost:5000/post/editLike/${id}`, { likes: value })
-      .then((res) => { })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+
 
   return (
     <>
       <img
         onClick={() => {
-          if (addLike[i]) {
-            likesFunction(id, i);
-          } else {
-            disLikesFunction(id, i);
-          }
+          likesFunction(id, i);
+
         }}
         className="likeIcon"
         src={likes}
