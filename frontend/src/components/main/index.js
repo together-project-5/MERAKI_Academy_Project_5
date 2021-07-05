@@ -183,11 +183,11 @@ const Main = () => {
             English
           </button>
         </div>
-      </div>
-      <div className="right-2en-navBar">
-        <button className="filter-button" onClick={handleClick}>
-          Create Post
-        </button>
+        <div className="right-2en-navBar">
+          <button className="filter-button" onClick={handleClick}>
+            Create Post
+          </button>
+        </div>
       </div>
 
       <div>
