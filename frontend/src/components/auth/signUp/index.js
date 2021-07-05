@@ -41,7 +41,7 @@ const User = () => {
             </div>
           </fieldset>
           <div class="forms_buttons">
-            <button onClick={createUser} class="forms_buttons-action" >Register</button>
+            <button onClick={createUser} class="forms_buttons-action,btn" >Register</button>
           </div>
         </form>
       </div>
