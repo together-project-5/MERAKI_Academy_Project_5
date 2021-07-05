@@ -31,7 +31,23 @@ export const Header = () => {
     <>
       <form onSubmit={handleSubmit}>
         <div className="navBar">
-          <div className="headerLeftNavBar"></div>
+          <div className="headerLeftNavBar">
+            <input
+              className="headerSearch-bar"
+              onChange={(e) => {
+                search = e.target.value;
+              }}
+              placeholder="Search"
+            />
+            <button
+              className="headerSearch-button"
+              onClick={(e) => {
+                searchPost();
+              }}
+            >
+              search
+            </button>
+          </div>
 
           {localStorage.getItem("token") ? (
             <div className="headerLeftNavBar">

@@ -64,13 +64,12 @@ const Login = () => {
         <div class="user_options-container">
           <div class="user_options-text">
             <div class="user_options-unregistered">
-              <h2 class="user_unregistered-title">Don't have an account?</h2>
+              <h2 class="user_unregistered-title">Don't Have An Account?</h2>
               <p class="user_unregistered-text">
-                Banjo tote bag bicycle rights, High Life sartorial cray craft
-                beer whatever street art fap.
+              Welcome To Together Socialmedia Platform   
               </p>
               <button
-                class="user_unregistered-signup"
+                class="user_unregistered-signup button-login-reg"
                 id="signup-button"
                 onClick={register}
               >
@@ -79,30 +78,29 @@ const Login = () => {
             </div>
 
             <div class="user_options-registered">
-              <h2 class="user_registered-title">Have an account?</h2>
+              <h2 class="user_registered-title">Have An Account?</h2>
               <p class="user_registered-text">
-                Banjo tote bag bicycle rights, High Life sartorial cray craft
-                beer whatever street art fap.
+             Login Right Now
               </p>
               <button
-                class="user_registered-login"
+                class="user_registered-login button-login-reg"
                 id="login-button"
                 onClick={loginA}
               >
-                Login
+                Log in
               </button>
             </div>
           </div>
           <div class="user_options-forms" id="user_options-forms">
             <div class="user_forms-login">
-              <h2 class="forms_title">Login</h2>
+              <h2 class="forms_title">Log in</h2>
               <form class="forms_form">
                 <fieldset class="forms_fieldset">
                   <div class="forms_field">
                     <input
                       type="email"
                       placeholder="Email"
-                      class="forms_field-input"
+                      class="forms_field-input input-login-reg"
                       required
                       autofocus
                       onChange={(e) => setEmail(e.target.value)}
@@ -112,7 +110,7 @@ const Login = () => {
                     <input
                       type="password"
                       placeholder="Password"
-                      class="forms_field-input"
+                      class="forms_field-input input-login-reg"
                       required
                       onChange={(e) => setPassword(e.target.value)}
                     />
@@ -120,13 +118,15 @@ const Login = () => {
                 </fieldset>
                 <div class="forms_buttons">
                   <button class="forms_buttons-action" onClick={checkLogin}>
-                    Log In
+                     Log In
                   </button>
                 </div>
                 <br />
                 <br />
                 <br />
-                <GoogleLogin />
+                <div className="login-with-Google">
+                  <GoogleLogin className="login-with-Google" />
+                </div>
               </form>
             </div>
             <div class="user_forms-signup">

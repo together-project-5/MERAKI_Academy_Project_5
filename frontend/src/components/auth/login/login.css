@@ -9,33 +9,33 @@ body {
   line-height: 1em;
   margin: 0;
 }
-/* 
-button {
+ 
+.button-login-reg {
   background-color: transparent;
   padding: 0;
   border: 0;
   outline: 0;
   cursor: pointer;
-} */
+} 
 
-/* input {
+ .input-login-reg {
   background-color: transparent;
   padding: 0;
   border: 0;
   outline: 0;
-} */
-/* 
-input[type="submit"] {
+} 
+ 
+.input-login-reg[type="submit"] {
   cursor: pointer;
 }
 
-input::placeholder {
+.input-login-reg::placeholder {
   font-size: 0.85rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   letter-spacing: 0.1rem;
-  color: #ccc;
-} */
+  /* color: #ccc; */
+} 
 
 /**
 * Bounce to the left side
@@ -156,7 +156,7 @@ input::placeholder {
   left: 30px;
   width: calc(50% - 30px);
   min-height: 420px;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   border-radius: 3px;
   box-shadow: 2px 0 15px rgba(0, 0, 0, 0.25);
   overflow: hidden;
@@ -168,14 +168,20 @@ input::placeholder {
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
 }
 
+.login-with-Google{
+/* margin-left: 300px; */
+padding-left: 11px;
+}
+
 .user_options-forms .forms_title {
   margin-bottom: 45px;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1em;
   text-transform: uppercase;
-  color: #e8716d;
+  color: #970000;
   letter-spacing: 0.1rem;
+  padding-left: 11px;
 }
 
 .user_options-forms .forms_field:not(:last-of-type) {
@@ -218,7 +224,7 @@ input::placeholder {
 }
 
 .user_options-forms .forms_buttons-action {
-  background-color: #e8716d;
+  background-color: #970000;
   border-radius: 3px;
   padding: 10px 35px;
   font-size: 1rem;
@@ -233,7 +239,11 @@ input::placeholder {
 }
 
 .user_options-forms .forms_buttons-action:hover {
-  background-color: #e14641;
+  background-color: #970000;
+}
+
+.forms_fieldset{
+  border: none;
 }
 
 .user_options-forms .user_forms-signup,

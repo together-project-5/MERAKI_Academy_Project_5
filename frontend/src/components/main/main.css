@@ -1,19 +1,49 @@
-.contained {
-  margin: 20px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 10px;
-  padding-top: 10px;
+.navBar-filter {
+  /* border-top: solid white; */
+  background-color: rgba(34, 34, 34, 0.85);
+  height: 75px;
+  gap: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 27px;
+  padding-right: 33px;
+  align-items: center;
+  border: none;
+}
+.left-2en-navBar {
+  display: flex;
+  gap: 50px;
+}
+.filter-button {
+  height: 40px;
+  width: 100px;
+  padding: 0;
+  border: solid 1px white;
+  color: white;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight:400px;
+  background-color: transparent;
 }
 
-.post {
+.filter-button:hover{
+  transform: scale(1.20);
+  background-color: white;
+  color: rgba(34, 34, 34, 0.85);
+  font-weight: 600;
+  /* border-radius: 5px; */
+
+}
+
+/* .post {
   margin: 35px;
   padding-left: 25px;
   padding-right: 25px;
   padding-bottom: 10px;
   padding-top: 10px;
   margin-left: 650px; 
-}
+} */
 .postDiv {
   display: flex;
   border: solid black 0.2px;
@@ -24,9 +54,7 @@
   margin-left: 250px;
   margin-top: 50px;
 }
-.a{
-  display: flex;
-}
+
 .post-comment-div {
   border: solid black 0.2px;
   width: 30vw;
@@ -62,7 +90,7 @@
   margin-top: 50px;
 } */
 
-.postImage{
+.postImage {
   width: 400px;
   height: 200px;
 }
