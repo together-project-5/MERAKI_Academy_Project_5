@@ -1,5 +1,5 @@
 .navBar-filter {
-  border-top: solid white;
+  /* border-top: solid white; */
   background-color: rgba(34, 34, 34, 0.85);
   height: 75px;
   gap: 50px;
@@ -8,6 +8,7 @@
   padding-left: 27px;
   padding-right: 33px;
   align-items: center;
+  border: none;
 }
 .left-2en-navBar {
   display: flex;
