@@ -1,0 +1,36 @@
+.typePosts{
+    margin-top: 30px;
+    margin-left: 40%;
+
+}
+.descriptionPosts{
+    margin-top: 30px;
+    margin-left: 40%;
+}
+.MuiOutlinedInput-multiline-d {
+    width: 500px;
+    height: 100px;
+
+}
+.UserIdPosts{
+    margin-top: 30px;
+    margin-left: 40%;
+
+}
+.UserId{
+    margin-top: 75px;
+    margin-left: 40%;
+
+}
+.TitlePosts{
+    margin-top: 30px;
+    margin-left: 40%;
+
+}
+.uploadImg{
+    margin-top: 100px;
+    margin-left: 40%;
+}
+.MuiSelect-select.MuiSelect-select {
+    width: 100px;
+}
