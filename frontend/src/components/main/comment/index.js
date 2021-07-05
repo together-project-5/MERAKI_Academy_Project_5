@@ -60,7 +60,7 @@ const Comment = ({ id, i }) => {
           showComment(id);
           // showAllComment(id);
         }}
-        className="commentIcon"
+        className="comment-icon"
         src={comments}
       />
       {commentId === id && show && (

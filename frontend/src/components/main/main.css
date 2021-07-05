@@ -23,74 +23,28 @@
   outline: 0;
   cursor: pointer;
   border-radius: 3px;
-  font-weight:400px;
+  font-weight: 400px;
   background-color: transparent;
 }
 
-.filter-button:hover{
-  transform: scale(1.20);
+.filter-button:hover {
+  transform: scale(1.2);
   background-color: white;
   color: rgba(34, 34, 34, 0.85);
   font-weight: 600;
   /* border-radius: 5px; */
-
 }
 
-/* .post {
-  margin: 35px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  margin-left: 650px; 
-} */
-.postDiv {
-  display: flex;
-  border: solid black 0.2px;
-  width: 60vw;
-  height: 65vh;
-  margin-top: 2px;
-  margin-bottom: 3px;
-  margin-left: 250px;
-  margin-top: 50px;
+.like-icon {
+  width: 40px;
+  height: 40px;
+}
+.comment-icon {
+  width: 40px;
+  height: 40px;
 }
 
-.post-comment-div {
-  border: solid black 0.2px;
-  width: 30vw;
-  height: 30vh;
-  margin-top: 2px;
-  margin-bottom: 3px;
-}
-.profilePic {
-  width: 50px;
-  height: 50px;
-  margin-top: -36px;
-}
-.postTitle {
-  font-family: "Times New Roman", Times, serif;
-  padding-left: 10px;
-}
-.postDescription {
-  font-family: "Times New Roman", Times, serif;
-  padding-left: 10px;
-}
-.likeIcon {
-  padding-left: 10px;
-}
-.commentIcon {
-  padding-left: 10px;
-}
-.menuList {
-  margin-left: 850px;
-  margin-top: 15px;
-}
-/* .button {
-  margin-left: 230px;
-  margin-top: 50px;
-} */
-
-.postImage {
-  width: 400px;
-  height: 200px;
+.save-icon{
+  width: 40px;
+  height: 40px;
 }
