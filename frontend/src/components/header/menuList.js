@@ -17,9 +17,12 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { useHistory } from "react-router-dom";
 import "./header.css";
-
-import TemporaryDrawer from "./../header/list";
 import useStyles from "./style";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
+import useTheme from "../darkMode/useTheme";
+import ToggleMode from "../darkMode/ToggleMode";
+import style from "styled-theming";
+import TemporaryDrawer from "./../header/list";
 import { useDispatch } from "react-redux";
 import { setPost } from "../../reducers/post";
 
@@ -129,6 +132,8 @@ export default function PrimarySearchAppBar() {
   );
   let search = "";
 
+
+
   const searchPost = (e) => {
     axios
       .get(`http://localhost:5000/post/title/${search}`)
@@ -139,6 +144,28 @@ export default function PrimarySearchAppBar() {
         console.log(err);
       });
   };
+
+  const getBackground = style("mode", {
+    light: "#EEE",
+    dark: "#111",
+  });
+
+  const getForeground = style("mode", {
+    light: "#111",
+    dark: "#EEE",
+  });
+
+  const GlobalStyle = createGlobalStyle`
+body {
+  background-color: ${getBackground};
+  color: ${getForeground};
+}
+`;
+
+  const theme = useTheme();
+
+
+
   return (
     <div className={classes.grow}>
       <AppBar position="static">
@@ -180,6 +207,15 @@ export default function PrimarySearchAppBar() {
             >
               search
             </SearchIcon>
+
+          </div>
+          <div className="dark">
+            <ThemeProvider theme={theme}>
+              <GlobalStyle />
+              <ToggleMode />
+            </ThemeProvider>
+
+
           </div>
 
           <div className={classes.grow} />
@@ -194,8 +230,12 @@ export default function PrimarySearchAppBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+
+
             <TemporaryDrawer />
           </div>
+
+
           <div className={classes.sectionMobile}></div>
         </Toolbar>
       </AppBar>
