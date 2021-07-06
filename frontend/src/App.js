@@ -15,9 +15,9 @@ import Upload from "./components/upload/upload";
 const App = () => {
   return (
     <>
-      <Route exact path="/" component={Header} />
-      <Route path="/" component={GetPost} />
-      <Route path="/" component={Main} />
+      <Route path="/" component={Header} />
+      <Route exact path="/" component={Main} />
+      <Route exact path="/" component={GetPost} />
       <Route path="/profile" component={MyProfile} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
