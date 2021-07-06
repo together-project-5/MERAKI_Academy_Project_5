@@ -48,6 +48,24 @@ CREATE TABLE comments(
     PRIMARY KEY (_IdComment)
 );
 
+CREATE TABLE conversation(
+    _IdConversation INT AUTO_INCREMENT NOT NULL,
+    senderId VARCHAR(255),
+    receiverId VARCHAR(255),
+    time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (_IdConversation)
+);
+
+CREATE TABLE messages(
+    _IdMessage INT AUTO_INCREMENT NOT NULL,
+    conversationId INT,
+    userId INT,
+    messageText TEXT,
+    time TIMESTAMP ,
+    FOREIGN KEY (userId) REFERENCES user(_IdUser),  
+    FOREIGN KEY (conversationId) REFERENCES conversation(_IdConversation),
+    PRIMARY KEY (_IdMessage)
+);
 
 
 

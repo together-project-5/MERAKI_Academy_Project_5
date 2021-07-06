@@ -17,10 +17,8 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { useHistory } from "react-router-dom";
 import "./header.css";
-
 import TemporaryDrawer from "./../header/list";
 import useStyles from "./style";
-import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setPost } from "../../reducers/post";
 

@@ -18,8 +18,8 @@ const App = () => {
   return (
     <>
       <Header />
-
       <Route exact path="/" component={Main} />
+      <Route exact path="/" component={GetPost} />
       <Route path="/profile" component={MyProfile} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
