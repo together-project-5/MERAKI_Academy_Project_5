@@ -31,6 +31,7 @@
   min-height: 64px;
   background-color: #770000;
 }
+
 .dark{
   margin-left: 888px;
 }
@@ -38,3 +39,12 @@
   cursor: pointer;
 }
 
+
+.headerSearch-bar{
+  margin-left: 50px;
+}
+
+.headerSearch-button:hover{
+  cursor: pointer;
+
+}
