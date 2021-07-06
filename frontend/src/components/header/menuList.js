@@ -16,14 +16,20 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { useHistory } from "react-router-dom";
 import "./header.css";
-import TemporaryDrawer from "./../header/list"
-import useStyles from "./style"
+import TemporaryDrawer from "./../header/list";
+import useStyles from "./style";
+import axios from "axios";
+
+import { ThemeProvider, createGlobalStyle } from "styled-components";
+import useTheme from "../darkMode/useTheme";
+import ToggleMode from "../darkMode/ToggleMode";
+import style from "styled-theming";
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  
+
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const history = useHistory();
@@ -32,8 +38,6 @@ export default function PrimarySearchAppBar() {
     e.preventDefault();
     history.push("/");
   };
-
-
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
@@ -58,8 +62,7 @@ export default function PrimarySearchAppBar() {
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMenuOpen}
       onClose={handleMenuClose}
-    >
-    </Menu>
+    ></Menu>
   );
 
   const mobileMenuId = "primary-search-account-menu-mobile";
@@ -89,7 +92,7 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
-      <MenuItem >
+      <MenuItem>
         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
@@ -102,6 +105,37 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
+  let search = "";
+
+  const searchPost = (e) => {
+    axios
+      .get(`http://localhost:5000/post/title/${search}`)
+      .then((res) => {
+        console.log("res", res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const getBackground = style("mode", {
+    light: "#EEE",
+    dark: "#111",
+  });
+
+  const getForeground = style("mode", {
+    light: "#111",
+    dark: "#EEE",
+  });
+
+  const GlobalStyle = createGlobalStyle`
+body {
+  background-color: ${getBackground};
+  color: ${getForeground};
+}
+`;
+
+  const theme = useTheme();
 
   return (
     <div className={classes.grow}>
@@ -124,22 +158,35 @@ export default function PrimarySearchAppBar() {
             Together
           </Typography>
 
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
+          <div className="headerLeftNavBar">
             <InputBase
-              placeholder="Search…"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
-              inputProps={{ "aria-label": "search" }}
+              className="headerSearch-bar"
+              onChange={(e) => {
+                search = e.target.value;
+              }}
+              placeholder="Search"
             />
+            <SearchIcon
+              className="headerSearch-button"
+              onClick={(e) => {
+                searchPost();
+              }}
+            >
+              search
+            </SearchIcon>
+          </div>
+          <div className="dark">
+            <ThemeProvider theme={theme}>
+              <GlobalStyle />
+              <ToggleMode />
+            </ThemeProvider>
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
@@ -150,12 +197,11 @@ export default function PrimarySearchAppBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-          <TemporaryDrawer  />
 
+            <TemporaryDrawer />
           </div>
-          <div className={classes.sectionMobile}>
-        
-          </div>
+
+          <div className={classes.sectionMobile}></div>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
