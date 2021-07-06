@@ -44,7 +44,7 @@ const Save = ({ id, i }) => {
           e.preventDefault();
           saveFunction(id);
         }}
-        className="saveIcon"
+        className="save-icon"
         src={save}
       />
     </>

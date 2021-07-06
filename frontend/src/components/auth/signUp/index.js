@@ -28,20 +28,43 @@ const User = () => {
         <form class="forms_form">
           <fieldset class="forms_fieldset">
             <div class="forms_field">
-              <input type="text" placeholder="Full Name" class="forms_field-input" required
-                onChange={(e) => { name = e.target.value }} />
+              <input
+                type="text"
+                placeholder="Full Name"
+                class="forms_field-input input-login-reg"
+                required
+                onChange={(e) => {
+                  name = e.target.value;
+                }}
+              />
             </div>
             <div class="forms_field">
-              <input type="email" placeholder="Email" class="forms_field-input" required
-                onChange={(e) => { email = e.target.value }} />
+              <input
+                type="email"
+                placeholder="Email"
+                class="forms_field-input input-login-reg"
+                required
+                onChange={(e) => {
+                  email = e.target.value;
+                }}
+              />
             </div>
             <div class="forms_field">
-              <input type="password" placeholder="Password" class="forms_field-input" required
-                onChange={(e) => { password = e.target.value }} />
+              <input
+                type="password"
+                placeholder="Password"
+                class="forms_field-input input-login-reg"
+                required
+                onChange={(e) => {
+                  password = e.target.value;
+                }}
+              />
             </div>
           </fieldset>
           <div class="forms_buttons">
-            <button onClick={createUser} class="forms_buttons-action,btn" >Register</button>
+            <button onClick={createUser} class="forms_buttons-action">
+              Register
+            </button>
           </div>
         </form>
       </div>

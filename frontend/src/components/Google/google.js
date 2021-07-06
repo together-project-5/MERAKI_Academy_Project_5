@@ -22,7 +22,7 @@ const Google = () => {
     <div>
       <GoogleLogin
         clientId="700589332118-kt5mljv27k4g61a5c75qp5fpojdmk6ip.apps.googleusercontent.com"
-        buttonText="continue With Google"
+        buttonText="Continue With Google"
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
         cookiePolicy={"single_host_origin"}
