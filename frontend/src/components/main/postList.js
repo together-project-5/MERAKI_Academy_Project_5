@@ -46,8 +46,16 @@ export default function LongMenu({ id, userIdP }) {
       });
   };
 
-  const editPost = () => {
+  const editPost = (id) => {
     history.push("/editPost");
+    axios
+      .get(`http://localhost:5000/post/${_IdPost}`)
+      .then((result) => {
+        
+      })
+      .catch((err) => {
+         throw err
+      });
   };
 
   const archivePost = (_IdPost) => {

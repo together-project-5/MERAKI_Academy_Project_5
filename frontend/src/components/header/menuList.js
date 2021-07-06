@@ -187,7 +187,7 @@ body {
             Together
           </Typography>
 
-          <div className="headerLeftNavBar">
+          
             <InputBase
               classes={{
                 root: classes.inputRoot,
@@ -208,7 +208,7 @@ body {
               search
             </SearchIcon>
 
-          </div>
+          
           <div className="dark">
             <ThemeProvider theme={theme}>
               <GlobalStyle />
