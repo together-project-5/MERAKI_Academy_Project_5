@@ -17,18 +17,19 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { useHistory } from "react-router-dom";
 import "./header.css";
-import TemporaryDrawer from "./../header/list"
-import useStyles from "./style"
+
+import TemporaryDrawer from "./../header/list";
+import useStyles from "./style";
+import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setPost } from "../../reducers/post";
-
 
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  
+
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const history = useHistory();
@@ -61,8 +62,6 @@ export default function PrimarySearchAppBar() {
     history.push("/");
   };
 
-
-
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
@@ -86,8 +85,7 @@ export default function PrimarySearchAppBar() {
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMenuOpen}
       onClose={handleMenuClose}
-    >
-    </Menu>
+    ></Menu>
   );
 
   const mobileMenuId = "primary-search-account-menu-mobile";
@@ -117,7 +115,7 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
-      <MenuItem >
+      <MenuItem>
         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
@@ -130,7 +128,18 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
+  let search = "";
 
+  const searchPost = (e) => {
+    axios
+      .get(`http://localhost:5000/post/title/${search}`)
+      .then((res) => {
+        console.log("res", res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div className={classes.grow}>
       <AppBar position="static">
@@ -152,22 +161,30 @@ export default function PrimarySearchAppBar() {
             Together
           </Typography>
 
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
+          <div className="headerLeftNavBar">
             <InputBase
-              placeholder="Search…"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
-              inputProps={{ "aria-label": "search" }}
+              className="headerSearch-bar"
+              onChange={(e) => {
+                search = e.target.value;
+              }}
+              placeholder="Search"
             />
+            <SearchIcon
+              className="headerSearch-button"
+              onClick={(e) => {
+                searchPost();
+              }}
+            >
+              search
+            </SearchIcon>
           </div>
+
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
@@ -178,12 +195,9 @@ export default function PrimarySearchAppBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-          <TemporaryDrawer  />
-
+            <TemporaryDrawer />
           </div>
-          <div className={classes.sectionMobile}>
-        
-          </div>
+          <div className={classes.sectionMobile}></div>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}

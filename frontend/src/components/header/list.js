@@ -11,7 +11,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { useHistory } from "react-router-dom";
-import Avatar from '@material-ui/core/Avatar';
+import Avatar from "@material-ui/core/Avatar";
 import "./header.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setTokenOut, setUserOut } from "./../../reducers/login";
@@ -83,7 +83,7 @@ export default function TemporaryDrawer() {
     >
       <List onClick={profile}>
         {[`${localStorage.getItem("name")}`].map((text, index) => (
-          <ListItem button key={text} >
+          <ListItem button key={text}>
             <ListItemText primary={text} />
             <Avatar alt="Remy Sharp" src="" />{" "}
           </ListItem>
