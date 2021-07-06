@@ -8,18 +8,16 @@ import GetFavorites from "./components/favorite/favorite";
 import Archive from "./components/archive/index";
 import postList from "./components/main/postList";
 import Main from "./components/main/index";
-import  MyProfile from "./components/myProfile/index";
-import EditProfile from "./components/user/editProfile"
-
+import MyProfile from "./components/myProfile/index";
+import EditProfile from "./components/user/editProfile";
 import Upload from "./components/upload/upload";
-
 
 const App = () => {
   return (
     <>
-      <Header />
-
-      <Route exact path="/" component={Main} />
+      <Route exact path="/" component={Header} />
+      <Route path="/" component={GetPost} />
+      <Route path="/" component={Main} />
       <Route path="/profile" component={MyProfile} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
@@ -28,7 +26,6 @@ const App = () => {
       <Route path="/post" component={postList} />
       <Route path="/createPost" component={Upload} />
       <Route path="/editProfile" component={EditProfile} />
-
     </>
   );
 };
