@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -16,9 +17,13 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { useHistory } from "react-router-dom";
 import "./header.css";
+
 import TemporaryDrawer from "./../header/list";
 import useStyles from "./style";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setPost } from "../../reducers/post";
+
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
@@ -28,9 +33,32 @@ export default function PrimarySearchAppBar() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const history = useHistory();
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/post`)
+      .then((res) => {
+        dispatch(setPost(res.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      
+  }, []);
 
   const handleClick = (e) => {
     e.preventDefault();
+    axios
+    .get(`http://localhost:5000/post`)
+    .then((res) => {
+      dispatch(setPost(res.data));
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+    
     history.push("/");
   };
 

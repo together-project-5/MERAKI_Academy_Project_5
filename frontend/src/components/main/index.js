@@ -1,19 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import "./main.css";
 import { setPost } from "../../reducers/post";
+import GetPost from "./../../components/main/allPost";
 
 const Main = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-
-  const state = useSelector((state) => {
-    return {
-      posts: state.posts.posts,
-    };
-  });
 
   const buttonPost = (type) => {
     axios
@@ -25,11 +20,13 @@ const Main = () => {
         console.log(err);
       });
   };
+
   const handleClick = () => {
     history.push("/createPost");
   };
 
   return (
+
     <>
       <div className="navBar-filter">
         <div className="left-2en-navBar">
@@ -79,6 +76,7 @@ const Main = () => {
 
       <div></div>
     </>
+
   );
 };
 
