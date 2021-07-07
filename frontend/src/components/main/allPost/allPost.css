@@ -106,6 +106,16 @@ transform: scale(1.03);
   margin-bottom: 5vh;
 }
 .messege-post{
-  margin-left: -73vh;
+  margin-left: -63vh;
   margin-top: 7vh;
+}
+.time{
+  margin-left: -50vh;
+  margin-top: 7vh;
+
+}
+.timeh{
+  margin-left: -50vh;
+  margin-top: 7vh;
+
 }
