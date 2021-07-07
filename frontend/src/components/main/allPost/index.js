@@ -6,6 +6,8 @@ import Comment from "../comment/index";
 import Like from "../like/index";
 import Save from "../save/index";
 import MenuItem from "../postList";
+import ShowComment from "../comment/show";
+
 import "./allPost.css";
 import MainPage from "../mainPage";
 

@@ -5,6 +5,9 @@ import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setPost } from "../../reducers/getPost";
+
 import axios from "axios";
 import { useSelector } from "react-redux";
 import "./main.css";
@@ -15,10 +18,12 @@ export default function LongMenu({ id, userIdP }) {
   const history = useHistory();
   const [_IdPost, set_IdPost] = useState("");
   const [report, setReport] = useState(0);
+  const dispatch = useDispatch();
 
   const state = useSelector((state) => {
     return {
       user: state.login.user,
+      getPost: state.getPost.getPost,
     };
   });
   let ID = state.user._IdUser;
@@ -46,8 +51,16 @@ export default function LongMenu({ id, userIdP }) {
       });
   };
 
-  const editPost = () => {
+  const editPost = (id) => {
     history.push("/editPost");
+    axios
+      .get(`http://localhost:5000/post/${_IdPost}`)
+      .then((result) => {
+        dispatch(setPost(result.data));
+      })
+      .catch((err) => {
+        throw err;
+      });
   };
 
   const archivePost = (_IdPost) => {

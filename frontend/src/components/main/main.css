@@ -38,10 +38,12 @@
 .like-icon {
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
 .comment-icon {
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
 
 .save-icon {
@@ -152,3 +154,4 @@
 .descriptionn{
   margin-left: 21vh;
 }
+
