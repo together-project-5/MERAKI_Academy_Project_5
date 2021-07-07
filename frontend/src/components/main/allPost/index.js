@@ -14,6 +14,8 @@ const AllPost = () => {
   const dispatch = useDispatch();
   const [_IdPost, set_IdPost] = useState("");
   const [userId, setUserId] = useState("");
+  const [aref, setAref] = useState(false);
+  const [idPost, setIdPost] = useState("");
 
   const state = useSelector((state) => {
     return {
@@ -83,13 +85,19 @@ const AllPost = () => {
                   <div className="post-reaction">
                     <div className="post-reaction-2">
                       <Like id={post._IdPost} i={i} />
-                      <Comment id={post._IdPost} i={i} />
+                      <Comment
+                        setIdPost={setIdPost}
+                        setAref={setAref}
+                        aref={aref}
+                        id={post._IdPost}
+                        i={i}
+                      />
                     </div>
                     <Save id={post._IdPost} i={i} />
                   </div>
                 </div>
                 <div>
-                  <ShowComment />
+                  <ShowComment idPost={idPost} id={post._IdPost} aref={aref} />
                 </div>
               </div>
             </>
