@@ -26,7 +26,6 @@ import TemporaryDrawer from "./../header/list";
 import { useDispatch } from "react-redux";
 import { setPost } from "../../reducers/post";
 
-
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -37,7 +36,6 @@ export default function PrimarySearchAppBar() {
   const history = useHistory();
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     axios
       .get(`http://localhost:5000/post`)
@@ -47,20 +45,19 @@ export default function PrimarySearchAppBar() {
       .catch((err) => {
         console.log(err);
       });
-      
   }, []);
 
   const handleClick = (e) => {
     e.preventDefault();
     axios
-    .get(`http://localhost:5000/post`)
-    .then((res) => {
-      dispatch(setPost(res.data));
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-    
+      .get(`http://localhost:5000/post`)
+      .then((res) => {
+        dispatch(setPost(res.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
     history.push("/");
   };
 
@@ -89,7 +86,6 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     ></Menu>
   );
-
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
@@ -132,8 +128,6 @@ export default function PrimarySearchAppBar() {
   );
   let search = "";
 
-
-
   const searchPost = (e) => {
     axios
       .get(`http://localhost:5000/post/title/${search}`)
@@ -164,8 +158,6 @@ body {
 
   const theme = useTheme();
 
-
-
   return (
     <div className={classes.grow}>
       <AppBar position="static">
@@ -187,36 +179,36 @@ body {
             Together
           </Typography>
 
-            <InputBase
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              className="headerSearch-bar"
-              onChange={(e) => {
-                search = e.target.value;
-              }}
-              placeholder="Search"
-            />
-            <SearchIcon
-              className="headerSearch-button"
-              onClick={(e) => {
-                searchPost();
-              }}
-            >
-              search
-            </SearchIcon>
+          <InputBase
+            classes={{
+              root: classes.inputRoot,
+              input: classes.inputInput,
+            }}
+            className="headerSearch-bar"
+            onChange={(e) => {
+              search = e.target.value;
+            }}
+            placeholder="Search"
+          />
+          <SearchIcon
+            className="headerSearch-button"
+            onClick={(e) => {
+              searchPost();
+            }}
+          >
+            search
+          </SearchIcon>
           <div className="dark">
             <ThemeProvider theme={theme}>
               <GlobalStyle />
               <ToggleMode />
             </ThemeProvider>
-
-
           </div>
+        
 
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+            
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
@@ -228,10 +220,8 @@ body {
               </Badge>
             </IconButton>
 
-
             <TemporaryDrawer />
           </div>
-
 
           <div className={classes.sectionMobile}></div>
         </Toolbar>

@@ -51,6 +51,7 @@ const AllPost = () => {
 
   return (
     <>
+
       {state.posts.length &&
         state.posts.map((post, i) => {
           return (
