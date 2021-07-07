@@ -206,7 +206,6 @@ body {
             >
               search
             </SearchIcon>
-
           <div className="dark">
             <ThemeProvider theme={theme}>
               <GlobalStyle />

@@ -11,6 +11,7 @@ import Main from "./components/main/index";
 import MyProfile from "./components/myProfile/index";
 import EditProfile from "./components/user/editProfile";
 import Upload from "./components/upload/upload";
+import EditPost from "./components/editPost/index";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
       <Route path="/post" component={postList} />
       <Route path="/createPost" component={Upload} />
       <Route path="/editProfile" component={EditProfile} />
+      <Route path="/editPost" component={EditPost} />
     </>
   );
 };
