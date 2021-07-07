@@ -91,10 +91,10 @@ const Upload = () => {
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
               >
-                <MenuItem value={10}>programming</MenuItem>
-                <MenuItem value={20}>sport</MenuItem>
-                <MenuItem value={30}>english</MenuItem>
-                <MenuItem value={40}>cook</MenuItem>
+                <MenuItem value="programming">programming</MenuItem>
+                <MenuItem value="sport">sport</MenuItem>
+                <MenuItem value="english">english</MenuItem>
+                <MenuItem value="cook">cook</MenuItem>
               </Select>
             </FormControl>
           </div>

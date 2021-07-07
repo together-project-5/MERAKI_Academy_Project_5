@@ -14,7 +14,7 @@ CREATE TABLE Post  (
     FOREIGN KEY (userId) REFERENCES user(_IdUser),
     type VARCHAR(255) NOT NULL,
     title VARCHAR(255) NOT NULL,
-    description VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
     likes int (3),
     report int (3),
     url VARCHAR(255) NOT NULL, 
