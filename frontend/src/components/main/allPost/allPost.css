@@ -106,19 +106,22 @@ transform: scale(1.03);
   margin-bottom: -10vh;
 }
 .messege-post{
-  margin-left: -63vh;
+  margin-left: -65vh;
   margin-top: 7vh;
 }
 .time{
-  margin-left: -50vh;
+  margin-left: -52vh;
   margin-top: 7vh;
 
 }
 .timeh{
-  margin-left: -50vh;
+  margin-left: -52vh;
   margin-top: 7vh;
 
 }
 .post-td{
   margin-top: 3vh;
+}
+.user-pic{
+  margin-top: 2vh;
 }
