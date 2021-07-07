@@ -12,13 +12,19 @@ import MyProfile from "./components/myProfile/index";
 import EditProfile from "./components/user/editProfile";
 import Upload from "./components/upload/upload";
 import EditPost from "./components/editPost/index";
+import Erorr from "./components/error";
+import {Switch} from "react-router-dom"
+
 
 const App = () => {
   return (
     <>
       <Route path="/" component={Header} />
       <Route exact path="/" component={Main} />
+    
+      <Switch>
       <Route exact path="/" component={GetPost} />
+
       <Route path="/profile" component={MyProfile} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
@@ -28,6 +34,8 @@ const App = () => {
       <Route path="/createPost" component={Upload} />
       <Route path="/editProfile" component={EditProfile} />
       <Route path="/editPost" component={EditPost} />
+      <Route component={Erorr} />
+      </Switch>
     </>
   );
 };

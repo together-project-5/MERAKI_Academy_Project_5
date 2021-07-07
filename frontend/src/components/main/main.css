@@ -54,14 +54,16 @@
   margin-top: 3%;
   background-color: rgba(221, 221, 221, 0.692);
   width: 20%;
-  height: 15.4vh;
   background-repeat: no-repeat;
   background-size: auto;
-  top: 14vh;
   left: 0;
   position: fixed;
-
   z-index: 3000;
+  height: 15.4vh;
+  top: 14vh;
+  /* height: 20vh;
+  top: 3vh; */
+
 }
 .profile-navb-e:hover {
   cursor: pointer;
@@ -79,6 +81,11 @@
   left: 0;
   position: fixed;
   z-index: 3000;
+    height: 15.4vh;
+  top: 35vh;
+  /* height: 20vh;
+  top: 26vh; */
+
 }
 
 .profile-navb-p:hover {
@@ -90,13 +97,16 @@
   margin-top: 3%;
   background-color: rgba(221, 221, 221, 0.692);
   width: 20%;
-  height: 15.4vh;
   background-repeat: no-repeat;
   background-size: auto;
-  top: 56vh;
   left: 0;
   position: fixed;
   z-index: 3000;
+    height: 15.4vh;
+  top: 56vh;
+  /* height: 20vh;
+  top: 51vh; */
+
 }
 .profile-navb-s:hover {
   cursor: pointer;
@@ -107,14 +117,16 @@
   margin-top: 3%;
   background-color: rgba(221, 221, 221, 0.692);
   width: 20%;
-  height: 15.4vh;
   background-repeat: no-repeat;
   background-size: auto;
-  top: 77vh;
   left: 0;
   position: fixed;
   z-index: 3000;
-  
+  height: 15.4vh;
+  top: 77vh;
+  /* height: 20vh;
+  top: 77vh; */
+
 }
 .profile-navb-c:hover {
   cursor: pointer;
@@ -150,8 +162,43 @@
 .title-details{
   margin-left: 21vh;
   margin-top: -13vh;
+  /* margin-top: -18vh; */
+  
 }
 .descriptionn{
   margin-left: 21vh;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

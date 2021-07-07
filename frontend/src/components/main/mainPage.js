@@ -22,7 +22,6 @@ const MainPage = () => {
 
   return (
     <>
-      <div>
         <div className="main">
           <div className="profile-navb-e" onClick={english}>
           <img
@@ -67,7 +66,6 @@ const MainPage = () => {
           </div>
 
         </div>
-      </div>
     </>
   );
 };
