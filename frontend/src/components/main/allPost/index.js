@@ -7,7 +7,9 @@ import Like from "../like/index";
 import Save from "../save/index";
 import MenuItem from "../postList";
 import ShowComment from "../comment/show";
-
+import IconButton from "@material-ui/core/IconButton";
+import MailIcon from "@material-ui/icons/Mail";
+import Badge from "@material-ui/core/Badge";
 import "./allPost.css";
 
 const AllPost = () => {
@@ -62,6 +64,13 @@ const AllPost = () => {
                       />
                       <p className="user-post-name">{post.name}</p>
                     </div>
+                    <div className="messege-post">
+                    <IconButton color="inherit">
+                      <Badge color="secondary">
+                        <MailIcon />
+                      </Badge>
+                    </IconButton>
+                    </div>
                     <MenuItem
                       id={post._IdPost}
                       onClick={() => {
@@ -94,6 +103,7 @@ const AllPost = () => {
                       />
                     </div>
                     <Save id={post._IdPost} i={i} />
+                 
                   </div>
                 </div>
                 <div>

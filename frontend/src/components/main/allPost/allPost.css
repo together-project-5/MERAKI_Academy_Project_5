@@ -24,6 +24,8 @@
   font-size: 22px;
   font-weight: 600;
   color: #770000;
+  cursor: pointer;
+
 }
 .post-div {
   gap: 0px;
@@ -43,6 +45,8 @@
   width: 75px;
   height: 75px;
   border-radius: 7px;
+  cursor: pointer;
+
 }
 .profile-picture:hover {
   transform: scale(1.03);
@@ -100,4 +104,8 @@ transform: scale(1.03);
   display: flex;
   gap: 10px;
   margin-bottom: 5vh;
+}
+.messege-post{
+  margin-left: -73vh;
+  margin-top: 7vh;
 }
