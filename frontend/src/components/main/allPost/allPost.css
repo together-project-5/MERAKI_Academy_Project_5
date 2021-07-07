@@ -42,13 +42,7 @@
   background-color: rgba(228, 228, 228, 0.692);
 }
 
-.post-comment-div {
-  border: solid black 0.2px;
-  width: 30vw;
-  height: 30vh;
-  margin-top: 2px;
-  margin-bottom: 3px;
-}
+
 .profile-picture {
   width: 75px;
   height: 75px;
@@ -80,4 +74,12 @@
 .post-reaction {
   margin-left: 15px;
   gap: 10px;
+  display: flex;
+  /* justify-content: space-around; */
+}
+
+.div-post-comment{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5vh;
 }
