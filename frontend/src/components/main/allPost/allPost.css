@@ -108,21 +108,24 @@ transform: scale(1.03);
 .messege-post{
   margin-left: -65vh;
   margin-top: 7vh;
+  color: black;
 }
 .time{
   margin-left: -52vh;
   margin-top: 7vh;
-
+color: black;
 }
 .timeh{
   margin-left: -52vh;
   margin-top: 7vh;
-
+color: black;
 }
 .post-td{
   margin-top: 3vh;
+  color: black;
 }
 .user-pic{
   margin-top: 2vh;
   cursor: pointer;
+  color: black;
 }
