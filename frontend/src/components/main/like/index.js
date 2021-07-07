@@ -3,6 +3,8 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import likes from "../img/like.png";
 import { setPost } from "../../../reducers/post";
+import "./like.css";
+
 const ar = [];
 
 const Like = ({ id, i }) => {
@@ -105,6 +107,7 @@ const Like = ({ id, i }) => {
   
   return (
     <>
+    <div className="like-div">
       <img
         onClick={() => {
           likesFunction(id, i);
@@ -113,7 +116,9 @@ const Like = ({ id, i }) => {
         className="like-icon"
         src={likes}
       />
-      {like[i] !== 0 && <p className="postTitle">{like[i]}</p>}
+      {like[i] !== 0 && <p className="post-title">{like[i]}</p>}
+
+      </div>
     </>
   );
 };
