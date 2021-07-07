@@ -44,6 +44,9 @@
   height: 75px;
   border-radius: 7px;
 }
+.profile-picture:hover {
+  transform: scale(1.03);
+}
 
 .post-title {
   margin: 0;
@@ -71,7 +74,9 @@
   margin-left: 10px;
   border-radius: 7px;
 }
-
+.post-image:hover {
+transform: scale(1.03);
+}
 .post-reaction {
   align-content: center;
   text-align: center;
