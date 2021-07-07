@@ -187,7 +187,6 @@ body {
             Together
           </Typography>
 
-          
             <InputBase
               classes={{
                 root: classes.inputRoot,
@@ -207,8 +206,6 @@ body {
             >
               search
             </SearchIcon>
-
-          
           <div className="dark">
             <ThemeProvider theme={theme}>
               <GlobalStyle />
