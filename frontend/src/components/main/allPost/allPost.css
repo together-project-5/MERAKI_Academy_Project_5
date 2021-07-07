@@ -31,14 +31,14 @@
   gap: 0px;
   padding: 0;
   display: block;
-  /* border: solid black 0.2px; */
+  border: solid rgba(104, 104, 104, 0.233) 0.1px;
   border-radius: 5px;
   width: 40vw;
   height: 80vh;
   /* margin-bottom: 3px; */
   margin-left: 25px;
   margin-top: 25px;
-  background-color: rgba(228, 228, 228, 0.692);
+  background-color: white;
 }
 
 .profile-picture {
@@ -124,4 +124,5 @@ transform: scale(1.03);
 }
 .user-pic{
   margin-top: 2vh;
+  cursor: pointer;
 }

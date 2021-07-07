@@ -11,6 +11,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MailIcon from "@material-ui/icons/Mail";
 import Badge from "@material-ui/core/Badge";
 import "./allPost.css";
+import Divider from "@material-ui/core/Divider";
 
 const AllPost = () => {
   const dispatch = useDispatch();
@@ -58,22 +59,22 @@ const AllPost = () => {
                 <div className="post-div" key={i}>
                   <div className="user-information-list">
                     <div className="user-information">
-                    <div className="user-pic">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="55"
-                        height="55"
-                        fill="currentColor"
-                        class="bi bi-person-circle"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                        <path
-                          fill-rule="evenodd"
-                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-                        />
-                      </svg>
-                    </div>
+                      <div className="user-pic">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="55"
+                          height="55"
+                          fill="currentColor"
+                          class="bi bi-person-circle"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                          <path
+                            fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                          />
+                        </svg>
+                      </div>
 
                       <p className="user-post-name">{post.name}</p>
                     </div>
@@ -119,7 +120,8 @@ const AllPost = () => {
                     <img className="post-image" src={post.url} />
                     <div className="post-information-2"></div>
                   </div>
-
+                  <br/>
+                  <Divider />
                   <div className="post-reaction">
                     <div className="post-reaction-2">
                       <Like id={post._IdPost} i={i} />
