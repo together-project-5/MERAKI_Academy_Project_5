@@ -103,7 +103,7 @@ transform: scale(1.03);
 .div-post-comment {
   display: flex;
   gap: 10px;
-  margin-bottom: 5vh;
+  margin-bottom: -10vh;
 }
 .messege-post{
   margin-left: -63vh;
