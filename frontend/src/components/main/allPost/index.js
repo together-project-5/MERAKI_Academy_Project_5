@@ -84,10 +84,9 @@ const AllPost = () => {
                       </svg>
                     </div>
                     <div className="timeh">
-
                       <h5>3 min ago</h5>
                     </div>
-                      
+
                     <MenuItem
                       id={post._IdPost}
                       onClick={() => {
@@ -99,13 +98,13 @@ const AllPost = () => {
                       }}
                     />
                   </div>
-
+                  <div className="post-td">
+                    <p className="post-title">{post.title}</p>
+                    <p className="post-description">{post.description}</p>
+                  </div>
                   <div className="post-information">
                     <img className="post-image" src={post.url} />
-                    <div className="post-information-2">
-                      <p className="post-title">{post.title}</p>
-                      <p className="post-description">{post.description}</p>
-                    </div>
+                    <div className="post-information-2"></div>
                   </div>
 
                   <div className="post-reaction">

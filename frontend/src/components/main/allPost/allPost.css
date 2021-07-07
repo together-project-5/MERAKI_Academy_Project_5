@@ -34,7 +34,7 @@
   /* border: solid black 0.2px; */
   border-radius: 5px;
   width: 40vw;
-  height: 69vh;
+  height: 80vh;
   /* margin-bottom: 3px; */
   margin-left: 25px;
   margin-top: 25px;
@@ -67,17 +67,17 @@
   font-size: 15px;
   margin-right: 25px;
   height: 100%;
-  width: 10px;
   /* overflow: scroll;
   overflow-x: hidden;
   overflow-y: scroll; */
 }
 
 .post-image {
-  width: 400px;
+  width: 500px;
   height: 300px;
   margin-left: 10px;
   border-radius: 7px;
+  margin-top: 4vh;
 }
 .post-image:hover {
 transform: scale(1.03);
@@ -118,4 +118,7 @@ transform: scale(1.03);
   margin-left: -50vh;
   margin-top: 7vh;
 
+}
+.post-td{
+  margin-top: 3vh;
 }
