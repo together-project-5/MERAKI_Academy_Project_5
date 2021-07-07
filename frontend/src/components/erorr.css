@@ -1,12 +1,17 @@
-.img-err{
-    height: 714px;
-    width: 1100px;
-    margin-left: 25vh;
+.img-err {
+  height: 714px;
+  width: 1100px;
+  margin-left: 25vh;
 }
-.button-err{
- position: absolute;
- margin-top: 60vh;
- margin-left: -87vh;
- width: 25.5vh;
- height: 5vh;
+.button-err {
+  position: absolute;
+  margin-top: 60vh;
+  margin-left: -87vh;
+  width: 25.5vh;
+  height: 5vh;
+  background-color: #770000;
+  color: white;
+}
+.button-err:hover {
+  cursor: pointer;
 }
