@@ -10,13 +10,23 @@ const MyProfile = () => {
   const handleClick = () => {
     history.push("/createPost");
   };
+  const editProfile = () => {
+    history.push("/editProfile");
+  };
 
   return (
     <>
       <MyInfo />
-      <button className="post" onClick={handleClick}>
-        Create Post
-      </button>
+      <div className="p-button">
+        <div className="pr-button">
+          <button className="profile-button" onClick={handleClick}>
+            Create Post
+          </button>
+          <button className="profile-button" onClick={editProfile}>
+            Edit Profile
+          </button>
+        </div>
+      </div>
       <MyPost />
     </>
   );
