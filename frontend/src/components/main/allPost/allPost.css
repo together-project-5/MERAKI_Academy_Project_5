@@ -55,14 +55,14 @@
 }
 
 .post-description {
-  /* overflow: scroll;
-  overflow-x: hidden;
-  overflow-y: scroll; */
   font-family: "Times New Roman", Times, serif;
   padding-left: 10px;
   font-size: 15px;
   margin-right: 25px;
   height: 100%;
+  /* overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll; */
 }
 
 .post-image {
