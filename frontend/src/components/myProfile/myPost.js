@@ -48,7 +48,7 @@ const MyPost = () => {
           return (
             <>
               <div className="div-post-comment" key={i}>
-                <div className="post-div" key={i}>
+                <div className="post-div-profile" key={i}>
                   <div className="user-information-list">
                     <div className="user-information">
                       <img
