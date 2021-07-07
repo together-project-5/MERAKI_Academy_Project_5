@@ -11,12 +11,15 @@ import Main from "./components/main/index";
 import MyProfile from "./components/myProfile/index";
 import EditProfile from "./components/user/editProfile";
 import Upload from "./components/upload/upload";
+// import MainPage from "./components/main/mainPage";
+
 
 const App = () => {
   return (
     <>
       <Route path="/" component={Header} />
       <Route exact path="/" component={Main} />
+      {/* <Route exact path="/" component={MainPage} /> */}
       <Route exact path="/" component={GetPost} />
       <Route path="/profile" component={MyProfile} />
       <Route path="/login" component={Login} />

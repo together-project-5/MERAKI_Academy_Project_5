@@ -26,25 +26,26 @@
   transform: scale(1.08);
 }
 
-
 .MuiToolbar-regular {
-  min-height: 64px;
   background-color: #770000;
+  min-height: 64px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width:  100%;
 }
 
-.dark{
+.dark {
   margin-left: 888px;
 }
-.dark:hover{
+.dark:hover {
   cursor: pointer;
 }
 
-
-.headerSearch-bar{
+.headerSearch-bar {
   margin-left: 50px;
 }
 
-.headerSearch-button:hover{
+.headerSearch-button:hover {
   cursor: pointer;
-
 }
