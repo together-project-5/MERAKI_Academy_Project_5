@@ -110,23 +110,19 @@ transform: scale(1.03);
   gap: 10px;
   margin-bottom: 1vh;
 }
-.messege-post{
-  margin-left: -65vh;
-  margin-top: 7vh;
+.user-msg{
+  margin-left: -12vh;
+  margin-top: 5vh;
   color: black;
 }
-.time{
-  margin-left: -52vh;
-  margin-top: 7vh;
-color: black;
-}
-.timeh{
-  margin-left: -52vh;
-  margin-top: 7vh;
-color: black;
-}
+
 .post-td{
-  margin-top: 3vh;
+  margin-top: 5.2vh;
+  color: black;
+  margin-left: 1vh;
+}
+.post-tp{
+  margin-top: 7.6vh;
   color: black;
 }
 .user-pic{
