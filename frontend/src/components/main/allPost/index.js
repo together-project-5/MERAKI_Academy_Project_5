@@ -100,7 +100,7 @@ const AllPost = () => {
                         }}
                       />
                     </div>
-                    <div className="post-information">
+                    <div className="post-informations">
                       <p className="post-title">{post.title}</p>
                       <p className="post-description">{post.description}</p>
                     </div>
