@@ -1,6 +1,5 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-
 import MyPost from "./myPost";
 import MyInfo from "./myInfo";
 

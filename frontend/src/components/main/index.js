@@ -25,8 +25,8 @@ const Main = () => {
     history.push("/createPost");
   };
 
-  return (
 
+  return (
     <>
       <div className="navBar-filter">
         <div className="left-2en-navBar">
@@ -74,11 +74,8 @@ const Main = () => {
         </div>
       </div>
 
-      <div></div>
     </>
-
   );
 };
 
 export default Main;
-
