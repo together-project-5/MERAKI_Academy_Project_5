@@ -35,7 +35,7 @@
   border-radius: 5px;
   width: 40vw;
   height: 80vh;
-  /* margin-bottom: 3px; */
+  margin-bottom: 3px;
   margin-left: 25px;
   margin-top: 25px;
   background-color: white;
@@ -103,7 +103,7 @@ transform: scale(1.03);
 .div-post-comment {
   display: flex;
   gap: 10px;
-  margin-bottom: -10vh;
+  margin-bottom: 1vh;
 }
 .messege-post{
   margin-left: -65vh;
