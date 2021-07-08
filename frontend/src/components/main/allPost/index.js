@@ -9,6 +9,7 @@ import MenuItem from "../postList";
 import ShowComment from "../comment/show";  
 import "./allPost.css";
 import MainPage from "../mainPage";
+import Divider from "@material-ui/core/Divider";
 
 const AllPost = () => {
   const dispatch = useDispatch();
@@ -71,12 +72,20 @@ const AllPost = () => {
                       />
                     </div>
                     <div className="post-information">
+                    <p className="post-title">{post.title}</p>
+                        <p className="post-description">{post.description}</p>
+                    </div>
+
+                    <div className="post-information">
+
                       <img className="post-image" src={post.url} />
                       <div className="post-information-2">
-                        <p className="post-title">{post.title}</p>
-                        <p className="post-description">{post.description}</p>
+                  
                       </div>
                     </div>
+                    <br/>
+      <Divider />
+
                     <div className="post-reaction">
                       <div className="post-reaction-2">
                         <Like id={post._IdPost} i={i} />
@@ -106,4 +115,4 @@ const AllPost = () => {
     </>
   );
 };
-export default AllPost
+export default AllPost;
