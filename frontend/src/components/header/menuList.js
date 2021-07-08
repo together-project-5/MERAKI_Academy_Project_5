@@ -159,6 +159,7 @@ body {
   const theme = useTheme();
 
   return (
+    <div className="MuiToolbar-regular">
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
@@ -228,6 +229,7 @@ body {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
+    </div>
     </div>
   );
 }

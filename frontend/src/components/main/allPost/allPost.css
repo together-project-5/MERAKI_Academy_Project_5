@@ -48,9 +48,9 @@
   cursor: pointer;
 
 }
-.profile-picture:hover {
+/* .profile-picture:hover {
   transform: scale(1.03);
-}
+} */
 
 .post-title {
   margin: 0;
@@ -79,9 +79,9 @@
   border-radius: 7px;
   margin-top: 4vh;
 }
-.post-image:hover {
+/* .post-image:hover {
 transform: scale(1.03);
-}
+} */
 .post-reaction {
   align-content: center;
   text-align: center;

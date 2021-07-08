@@ -1,5 +1,4 @@
 .navBar-filter {
-  /* border-top: solid white; */
   background-color: rgba(34, 34, 34, 0.85);
   height: 75px;
   gap: 50px;
@@ -9,7 +8,9 @@
   padding-right: 33px;
   align-items: center;
   border: none;
+  margin-top: 8.9vh;
 }
+
 .left-2en-navBar {
   display: flex;
   gap: 50px;
@@ -32,7 +33,6 @@
   background-color: white;
   color: rgba(34, 34, 34, 0.85);
   font-weight: 600;
-  /* border-radius: 5px; */
 }
 
 .like-icon {
@@ -51,10 +51,160 @@
 .save-icon{
   width: 40px;
   height: 40px;
-  cursor: pointer;
+}
+.profile-navb-e {
+  margin-top: 3%;
+  background-color: rgba(221, 221, 221, 0.692);
+  width: 20%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  left: 0;
+  position: fixed;
+  z-index: 3000;
+  height: 15.4vh;
+  top: 14vh;
+  /* height: 20vh;
+  top: 3vh; */
 
+}
+.profile-navb-e:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+.profile-navb-p {
+  margin-top: 3%;
+  background-color: rgba(221, 221, 221, 0.692);
+  width: 28%;
+  height: 15.4vh;
+  background-repeat: no-repeat;
+  background-size: auto;
+  width: 20%;
+  top: 35vh;
+  left: 0;
+  position: fixed;
+  z-index: 3000;
+    height: 15.4vh;
+  top: 35vh;
+  /* height: 20vh;
+  top: 26vh; */
+
+}
+
+.profile-navb-p:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+
+}
+.profile-navb-s {
+  margin-top: 3%;
+  background-color: rgba(221, 221, 221, 0.692);
+  width: 20%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  left: 0;
+  position: fixed;
+  z-index: 3000;
+    height: 15.4vh;
+  top: 56vh;
+  /* height: 20vh;
+  top: 51vh; */
+
+}
+.profile-navb-s:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+
+}
+.profile-navb-c {
+  margin-top: 3%;
+  background-color: rgba(221, 221, 221, 0.692);
+  width: 20%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  left: 0;
+  position: fixed;
+  z-index: 3000;
+  height: 15.4vh;
+  top: 77vh;
+  /* height: 20vh;
+  top: 77vh; */
+
+}
+.profile-navb-c:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+
+}
+.mainPost {
+  height: 40px;
+  width: 100px;
+  padding: 0;
+  border: solid 1px rgb(62, 0, 231);
+  outline: 0;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 400px;
+  background-color: transparent;
+  margin-left: 45%;
+  margin-top: 5%;
+  background-color: rgb(5, 0, 53);
+}
+.mainPost:hover {
+  transform: scale(1.2);
+  background-color: rgb(5, 0, 53);
+  color: rgb(0, 235, 243);
+  font-weight: 600;
+}
+.img-ads {
+  height: 110px;
+  width: 110px;
+}
+
+.title-details{
+  margin-left: 21vh;
+  margin-top: -13vh;
+  /* margin-top: -18vh; */
+  
+}
+.descriptionn{
+  margin-left: 21vh;
 }
 .online{
   color: white;
   margin-left: 75vh;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
