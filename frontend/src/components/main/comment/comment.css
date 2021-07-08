@@ -1,6 +1,6 @@
 .post-comment-div {
   /* border: solid 0.2px; */
-  display: grid;
+  display: inline-block;
   margin-left: 5px;
   height: 68vh;
   width: 50ch;
@@ -16,6 +16,7 @@
 }
 
 .div-send-comment {
+  position: flex;
   display: flex;
   height: 10%;
   gap: 15px;

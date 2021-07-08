@@ -49,6 +49,7 @@
 .save-icon {
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
 .profile-navb-e {
   margin-top: 3%;
@@ -63,7 +64,6 @@
   top: 14vh;
   /* height: 20vh;
   top: 3vh; */
-
 }
 .profile-navb-e:hover {
   cursor: pointer;
@@ -81,17 +81,15 @@
   left: 0;
   position: fixed;
   z-index: 3000;
-    height: 15.4vh;
+  height: 15.4vh;
   top: 35vh;
   /* height: 20vh;
   top: 26vh; */
-
 }
 
 .profile-navb-p:hover {
   cursor: pointer;
   transform: scale(1.02);
-
 }
 .profile-navb-s {
   margin-top: 3%;
@@ -102,16 +100,14 @@
   left: 0;
   position: fixed;
   z-index: 3000;
-    height: 15.4vh;
+  height: 15.4vh;
   top: 56vh;
   /* height: 20vh;
   top: 51vh; */
-
 }
 .profile-navb-s:hover {
   cursor: pointer;
   transform: scale(1.02);
-
 }
 .profile-navb-c {
   margin-top: 3%;
@@ -126,12 +122,10 @@
   top: 77vh;
   /* height: 20vh;
   top: 77vh; */
-
 }
 .profile-navb-c:hover {
   cursor: pointer;
   transform: scale(1.02);
-
 }
 .mainPost {
   height: 40px;
@@ -159,46 +153,11 @@
   width: 110px;
 }
 
-.title-details{
+.title-details {
   margin-left: 21vh;
   margin-top: -13vh;
   /* margin-top: -18vh; */
-  
 }
-.descriptionn{
+.descriptionn {
   margin-left: 21vh;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
