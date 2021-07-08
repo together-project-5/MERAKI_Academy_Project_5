@@ -44,8 +44,11 @@ const AllPost = () => {
   }, [state.posts]);
   return (
     <>
-      <div>
+      <div className="allpost">
+          <div className="ads">
         <MainPage />
+        </div>
+  
         {state.posts.length &&
           state.posts.map((post, i) => {
             return (

@@ -25,7 +25,6 @@
   font-weight: 600;
   color: #770000;
   cursor: pointer;
-
 }
 .post-div {
   gap: 0px;
@@ -33,20 +32,24 @@
   display: block;
   border: solid rgba(104, 104, 104, 0.233) 0.1px;
   border-radius: 5px;
-  width: 40vw;
   height: 80vh;
   margin-bottom: 3px;
   margin-left: 25px;
   margin-top: 25px;
   background-color: white;
+  float: left ;
+  
 }
 
+.ads {
+  float: left;
+  width: 1px;
+}
 .profile-picture {
   width: 75px;
   height: 75px;
   border-radius: 7px;
   cursor: pointer;
-
 }
 /* .profile-picture:hover {
   transform: scale(1.03);
@@ -60,9 +63,8 @@
   font-weight: 600;
   margin-right: 15px;
   color: black;
-  
-  margin-top: 2vh;
 
+  margin-top: 2vh;
 }
 
 .post-description {
@@ -111,24 +113,24 @@ transform: scale(1.03);
   gap: 10px;
   margin-bottom: 1vh;
 }
-.user-msg{
+.user-msg {
   margin-left: -10.7vh;
   margin-top: 7vh;
   color: black;
   cursor: pointer;
 }
 
-.post-td{
+.post-td {
   margin-top: 5.2vh;
   color: black;
   margin-left: 1vh;
 }
-.post-tp{
+.post-tp {
   margin-top: 7.6vh;
   color: black;
   margin-left: 2vh;
 }
-.user-pic{
+.user-pic {
   margin-top: 2vh;
   cursor: pointer;
   color: black;
