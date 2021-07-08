@@ -21,15 +21,17 @@ const AllPost = () => {
   const [userId, setUserId] = useState("");
   const [aref, setAref] = useState(false);
   const [idPost, setIdPost] = useState("");
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 51a55bfd2f0bea20341a7a426c365e3aaf29cced
   const state = useSelector((state) => {
     return {
       posts: state.posts.posts,
       user: state.login.user,
     };
   });
-
   useEffect(() => {
     console.log("receiverId", state.receiverId);
     axios
@@ -41,7 +43,7 @@ const AllPost = () => {
         console.log(err);
       });
   }, []);
-
+  // console.log(state.posts);
   useEffect(() => {
     axios
       .get(`http://localhost:5000/post`)
@@ -50,7 +52,6 @@ const AllPost = () => {
         console.log(err);
       });
   }, [state.posts]);
-
   return (
     <>
       <div>
@@ -121,5 +122,4 @@ const AllPost = () => {
     </>
   );
 };
-
-export default AllPost;
+export default AllPost
