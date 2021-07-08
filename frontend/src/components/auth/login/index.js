@@ -66,7 +66,7 @@ const Login = () => {
             <div class="user_options-unregistered">
               <h2 class="user_unregistered-title">Don't Have An Account?</h2>
               <p class="user_unregistered-text">
-              Welcome To Together Socialmedia Platform   
+                Welcome To Together Socialmedia Platform
               </p>
               <button
                 class="user_unregistered-signup button-login-reg"
@@ -80,7 +80,7 @@ const Login = () => {
             <div class="user_options-registered">
               <h2 class="user_registered-title">Have An Account?</h2>
               <p class="user_registered-text">
-             Login Right Now
+                Login Right Now
               </p>
               <button
                 class="user_registered-login button-login-reg"
@@ -118,7 +118,7 @@ const Login = () => {
                 </fieldset>
                 <div class="forms_buttons">
                   <button class="forms_buttons-action" onClick={checkLogin}>
-                     Log In
+                    Log In
                   </button>
                 </div>
                 <br />

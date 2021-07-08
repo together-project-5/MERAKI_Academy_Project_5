@@ -17,17 +17,12 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { useHistory } from "react-router-dom";
 import "./header.css";
-<<<<<<< HEAD
-import TemporaryDrawer from "./../header/list";
-import useStyles from "./style";
-=======
 import useStyles from "./style";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import useTheme from "../darkMode/useTheme";
 import ToggleMode from "../darkMode/ToggleMode";
 import style from "styled-theming";
 import TemporaryDrawer from "./../header/list";
->>>>>>> afe22983ff5bbda2e9af52e0f8ffc42f7b1b421f
 import { useDispatch } from "react-redux";
 import { setPost } from "../../reducers/post";
 
