@@ -59,6 +59,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-right: 15px;
+  color: black;
   
   margin-top: 2vh;
 
@@ -72,6 +73,7 @@
   height: 100%;
   margin-left: -20vh;
   margin-top: 7vh;
+  color: black;
   /* overflow: scroll;
   overflow-x: hidden;
   overflow-y: scroll; */
