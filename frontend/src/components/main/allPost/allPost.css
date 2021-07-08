@@ -113,9 +113,10 @@ transform: scale(1.03);
   margin-bottom: 1vh;
 }
 .user-msg{
-  margin-left: -12vh;
-  margin-top: 5vh;
+  margin-left: -10.7vh;
+  margin-top: 7vh;
   color: black;
+  cursor: pointer;
 }
 
 .post-td{
@@ -126,6 +127,7 @@ transform: scale(1.03);
 .post-tp{
   margin-top: 7.6vh;
   color: black;
+  margin-left: 2vh;
 }
 .user-pic{
   margin-top: 2vh;
