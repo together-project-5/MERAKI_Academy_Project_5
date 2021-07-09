@@ -1,7 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Login from "./components/auth/login/index";
-import Register from "./components/auth/signUp/index";
 import GetPost from "./components/main/post";
 import { Header } from "./components/header/index";
 import GetFavorites from "./components/favorite/favorite";
