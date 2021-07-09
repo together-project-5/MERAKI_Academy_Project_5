@@ -6,7 +6,6 @@ import "./admin.css";
 
 const AdminBoard = () => {
     const dispatch = useDispatch();
-    const [report, setReport] = useState(0)
     const state = useSelector((state) => {
         return {
             reportingPost: state.reportingPost.reportingPost,
@@ -31,9 +30,9 @@ const AdminBoard = () => {
             .catch((err) => { throw err })
     }
 
-    const keepPost = (id, i) => {
+    const keepPost = (id) => {
         axios
-            .post(`http://localhost:5000/post/report/${id}`, { report:0 },)
+            .post(`http://localhost:5000/post/report/${id}`, { report: 0 },)
             .then((result) => { })
             .catch((err) => { throw err })
     }
