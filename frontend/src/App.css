@@ -42,23 +42,19 @@
   }
 }
 
-.ce-chat-subtitle-text{
+.ce-chat-subtitle-text {
   margin-top: 3vh;
-  color:#770000 ;
-
+  color: #770000;
 }
-.ce-chat-title-text{
-  color:#770000 ;
+.ce-chat-title-text {
+  color: #770000;
 }
-#ce-send-message-button{
-  background-color:#770000 ;
-
+#ce-send-message-button {
+  background-color: #770000;
 }
-.ce-chat-unread-dot{
-  background-color:#770000 ;
-
+.ce-chat-unread-dot {
+  background-color: #770000;
 }
-#new-chat-plus-button{
-  background-color:#770000 ;
-
+#new-chat-plus-button {
+  background-color: #770000;
 }

@@ -3,7 +3,7 @@ import axios from "axios";
 import GoogleLogin from "./../../Google/google";
 import login from "../login/login.css";
 
-const projectID = '25237e63-d052-4459-a86e-631bba96f16d';
+const projectID = "25237e63-d052-4459-a86e-631bba96f16d";
 
 const User = () => {
   let name;
@@ -11,7 +11,6 @@ const User = () => {
   let password;
   let username;
 
-  
   const createUser = (e) => {
     e.preventDefault();
     const register = { name, email, password, username };
@@ -24,28 +23,24 @@ const User = () => {
         console.log(err);
       });
 
+    const data = { username: username, secret: password, email: email };
 
-
-    const data = { 'username': username, 'secret': password,'email': email,};
-
-  
     var config = {
-        method: 'post',
-        url: 'https://api.chatengine.io/users/',
-        headers: {
-            'PRIVATE-KEY': 'f82e6cd5-77cd-4644-8702-be71c8da4a9f',
-        },
-        data : data
+      method: "post",
+      url: "https://api.chatengine.io/users/",
+      headers: {
+        "PRIVATE-KEY": "f82e6cd5-77cd-4644-8702-be71c8da4a9f",
+      },
+      data: data,
     };
-    
+
     axios(config)
-    .then(function (response) {
+      .then(function (response) {
         console.log(JSON.stringify(response.data));
-    })
-    .catch(function (error) {
+      })
+      .catch(function (error) {
         console.log(error);
-    });
-    
+      });
   };
 
   return (
@@ -98,7 +93,6 @@ const User = () => {
                 }}
               />
             </div>
-            
           </fieldset>
           <div class="forms_buttons">
             <button onClick={createUser} class="forms_buttons-action">
@@ -111,7 +105,3 @@ const User = () => {
   );
 };
 export default User;
-
-
-
-

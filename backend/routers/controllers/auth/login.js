@@ -8,7 +8,7 @@ const login = (req, res) => {
   const query = `SELECT * FROM user WHERE username = ? ;`;
   const data = [username];
 
-  db.query(query, data,async (err, result) => {
+  db.query(query, data, async (err, result) => {
     if (!result[0]) {
       return res.json("the username doesn't exist");
     }
@@ -21,13 +21,11 @@ const login = (req, res) => {
       const options = {
         expiresIn: "1d",
       };
-      res
-        .status(200)
-        .json({
-          token: jwt.sign(payload, process.env.SECRET, options),
-          message: "valid login",
-          user: result[0],
-        });
+      res.status(200).json({
+        token: jwt.sign(payload, process.env.SECRET, options),
+        message: "valid login",
+        user: result[0],
+      });
     } else return res.status(403).json("The password is not correct");
   });
 };

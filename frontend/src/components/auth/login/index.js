@@ -8,7 +8,7 @@ import login from "./login.css";
 import GoogleLogin from "../../Google/google";
 import User from "../signUp/index";
 
-const projectID = '25237e63-d052-4459-a86e-631bba96f16d';
+const projectID = "25237e63-d052-4459-a86e-631bba96f16d";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -45,12 +45,15 @@ const Login = () => {
         history.push("/");
       }
     });
-    const authObject = { 'Project-ID': projectID, 'User-Name': username, 'User-Secret': password };
+    const authObject = {
+      "Project-ID": projectID,
+      "User-Name": username,
+      "User-Secret": password,
+    };
 
-       axios.get('https://api.chatengine.io/chats', { headers: authObject });
-      localStorage.setItem('username', username);
-      localStorage.setItem('password', password);
-
+    axios.get("https://api.chatengine.io/chats", { headers: authObject });
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
   };
 
   const signupButton = document.getElementById("signup-button"),
@@ -75,7 +78,7 @@ const Login = () => {
             <div class="user_options-unregistered">
               <h2 class="user_unregistered-title">Don't Have An Account?</h2>
               <p class="user_unregistered-text">
-              Welcome To Together Socialmedia Platform   
+                Welcome To Together Socialmedia Platform
               </p>
               <button
                 class="user_unregistered-signup button-login-reg"
@@ -88,9 +91,7 @@ const Login = () => {
 
             <div class="user_options-registered">
               <h2 class="user_registered-title">Have An Account?</h2>
-              <p class="user_registered-text">
-              Sign in Right Now
-              </p>
+              <p class="user_registered-text">Sign in Right Now</p>
               <button
                 class="user_registered-login button-login-reg"
                 id="login-button"
@@ -127,7 +128,7 @@ const Login = () => {
                 </fieldset>
                 <div class="forms_buttons">
                   <button class="forms_buttons-action" onClick={checkLogin}>
-                  Sign In
+                    Sign In
                   </button>
                 </div>
                 <br />
@@ -149,12 +150,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-
-
-
-
-
-
-
