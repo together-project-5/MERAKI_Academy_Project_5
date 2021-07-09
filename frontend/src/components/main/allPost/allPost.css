@@ -50,11 +50,8 @@
   width: 75px;
   height: 75px;
   border-radius: 7px;
-  cursor: pointer;
 }
-/* .profile-picture:hover {
-  transform: scale(1.03);
-} */
+
 
 .post-title {
   margin: 0;
