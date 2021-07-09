@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { setToken, setUser } from "./../../../reducers/login";
 import { useDispatch, useSelector } from "react-redux";
-import TextField from "@material-ui/core/TextField";
 import axios from "axios";
-import login from "./login.css";
 import GoogleLogin from "../../Google/google";
 import User from "../signUp/index";
 

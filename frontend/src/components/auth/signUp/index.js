@@ -1,7 +1,5 @@
 import React from "react";
 import axios from "axios";
-import GoogleLogin from "./../../Google/google";
-import login from "../login/login.css";
 
 const projectID = "25237e63-d052-4459-a86e-631bba96f16d";
 
