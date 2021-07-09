@@ -12,7 +12,7 @@ import MyProfile from "./components/myProfile/index";
 import EditProfile from "./components/user/editProfile";
 import Upload from "./components/upload/upload";
 import EditPost from "./components/editPost/index";
-import Erorr from "./components/error";
+import Erorr from "./components/404/error";
 import { Switch } from "react-router-dom";
 import Chat from "./chat";
 import PrimarySearchAppBarc from "./components/header/menuchat";
