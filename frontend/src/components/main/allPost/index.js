@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "../../../reducers/post";
-import { setId } from "../../../reducers/chat";
 import Comment from "../comment/index";
 import Like from "../like/index";
 import Save from "../save/index";
@@ -10,8 +9,6 @@ import MenuItem from "../postList";
 import ShowComment from "../comment/show";
 import "./allPost.css";
 import MainPage from "../mainPage";
-import chat from "../img/chat.png"
-import Chat from "../../chat/index";
 import { useHistory } from "react-router-dom";
 
 const AllPost = () => {
@@ -21,11 +18,6 @@ const AllPost = () => {
   const [userId, setUserId] = useState("");
   const [aref, setAref] = useState(false);
   const [idPost, setIdPost] = useState("");
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 51a55bfd2f0bea20341a7a426c365e3aaf29cced
   const state = useSelector((state) => {
     return {
       posts: state.posts.posts,
@@ -99,11 +91,6 @@ const AllPost = () => {
                           i={i}
                         />
                       </div>
-                      {/* {false && <Chat id={post.userId} />} */}
-                      <img src={chat} onClick={(e) => {
-                        history.push("/chat")
-                        dispatch(setId(post._IdPost));
-                      }} />
                       <Save id={post._IdPost} i={i} />
                     </div>
                   </div>
