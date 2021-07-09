@@ -25,6 +25,7 @@
   font-weight: 600;
   color: #770000;
   cursor: pointer;
+  margin-top: 2vh;
 }
 .post-div {
   gap: 0px;
@@ -115,18 +116,18 @@ transform: scale(1.03);
 }
 .user-msg {
   margin-left: -8vh;
-  margin-top: 5vh;
+  margin-top: 5.9vh;
   color: black;
   cursor: pointer;
 }
 
 .post-td {
-  margin-top: 5.2vh;
+  margin-top: 6.6vh;
   color: black;
   margin-left: 1vh;
 }
 .post-tp {
-  margin-top: 5vh;
+  margin-top: 6.6vh;
   color: black;
   margin-left: 2vh;
 }
