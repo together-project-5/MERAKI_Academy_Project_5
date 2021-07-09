@@ -13,18 +13,17 @@ import EditProfile from "./components/user/editProfile";
 import Upload from "./components/upload/upload";
 import EditPost from "./components/editPost/index";
 import Erorr from "./components/error";
-import Chat from "./components/chat/index"
 import {Switch} from "react-router-dom"
+import AdminBoard from "./components/admin/admin"
 
 
 const App = () => {
   return (
     <>
-      {/* <Route path="/" component={Header} /> */}
+      <Route path="/" component={Header} />
       <Route exact path="/" component={Main} />
     
       <Switch>
-      <Route path="/chat" component={Chat} />
       <Route exact path="/" component={GetPost} />
       <Route path="/profile" component={MyProfile} />
       <Route path="/login" component={Login} />
@@ -35,6 +34,7 @@ const App = () => {
       <Route path="/createPost" component={Upload} />
       <Route path="/editProfile" component={EditProfile} />
       <Route path="/editPost" component={EditPost} />
+      <Route path="/admin" component={AdminBoard} />
       <Route component={Erorr} />
       </Switch>
     </>
