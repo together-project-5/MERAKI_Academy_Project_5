@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import GoogleLogin from "../../Google/google";
 import User from "../signUp/index";
+import "./login.css"
 
 const projectID = "25237e63-d052-4459-a86e-631bba96f16d";
 
