@@ -8,8 +8,10 @@ import login from "./login.css";
 import GoogleLogin from "../../Google/google";
 import User from "../signUp/index";
 
+const projectID = '25237e63-d052-4459-a86e-631bba96f16d';
+
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
@@ -28,7 +30,8 @@ const Login = () => {
   });
   const checkLogin = (e) => {
     e.preventDefault();
-    const login = { email, password };
+    const login = { username, password };
+
     axios.post(`http://localhost:5000/user/login`, login).then((response) => {
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", JSON.stringify(response.data.user));
@@ -42,6 +45,12 @@ const Login = () => {
         history.push("/");
       }
     });
+    const authObject = { 'Project-ID': projectID, 'User-Name': username, 'User-Secret': password };
+
+       axios.get('https://api.chatengine.io/chats', { headers: authObject });
+      localStorage.setItem('username', username);
+      localStorage.setItem('password', password);
+
   };
 
   const signupButton = document.getElementById("signup-button"),
@@ -80,30 +89,30 @@ const Login = () => {
             <div class="user_options-registered">
               <h2 class="user_registered-title">Have An Account?</h2>
               <p class="user_registered-text">
-             Login Right Now
+              Sign in Right Now
               </p>
               <button
                 class="user_registered-login button-login-reg"
                 id="login-button"
                 onClick={loginA}
               >
-                Log in
+                Sign in
               </button>
             </div>
           </div>
           <div class="user_options-forms" id="user_options-forms">
             <div class="user_forms-login">
-              <h2 class="forms_title">Log in</h2>
+              <h2 class="forms_title">Sign in</h2>
               <form class="forms_form">
                 <fieldset class="forms_fieldset">
                   <div class="forms_field">
                     <input
-                      type="email"
-                      placeholder="Email"
+                      type="username"
+                      placeholder="username"
                       class="forms_field-input input-login-reg"
                       required
                       autofocus
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={(e) => setUsername(e.target.value)}
                     />
                   </div>
                   <div class="forms_field">
@@ -118,7 +127,7 @@ const Login = () => {
                 </fieldset>
                 <div class="forms_buttons">
                   <button class="forms_buttons-action" onClick={checkLogin}>
-                     Log In
+                  Sign In
                   </button>
                 </div>
                 <br />
@@ -140,3 +149,12 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
+
+
+
+
+
+

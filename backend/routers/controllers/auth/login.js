@@ -3,14 +3,14 @@ const db = require("./../../../db/db");
 const bcrypt = require("bcrypt");
 
 const login = (req, res) => {
-  const email = req.body.email;
+  const username = req.body.username;
   const password = req.body.password;
-  const query = `SELECT * FROM user WHERE email = ? ;`;
-  const data = [email];
+  const query = `SELECT * FROM user WHERE username = ? ;`;
+  const data = [username];
 
   db.query(query, data,async (err, result) => {
     if (!result[0]) {
-      return res.json("the email doesn't exist");
+      return res.json("the username doesn't exist");
     }
     const confirm = await bcrypt.compare(password, result[0].password);
     if (confirm) {
