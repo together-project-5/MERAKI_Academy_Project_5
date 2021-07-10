@@ -4,12 +4,14 @@ import { useDispatch } from "react-redux";
 import setUser from "../../reducers/login";
 import TextField from "@material-ui/core/TextField";
 import editProfile from "./editProfile.css";
+import { useHistory } from "react-router-dom";
 
 const EditProfile = () => {
   const [userData, setUserData] = useState({});
   const dispatch = useDispatch();
   const [fileInputState, setFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState();
+  const history = useHistory();
 
   const handleChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -30,10 +32,14 @@ const EditProfile = () => {
 
   const handleSubmitFile = (e) => {
     e.preventDefault();
-    if (!previewSource) return;
-    uploadImage(previewSource);
-    // const reader = new FileReader();
-    // reader.readAsDataURL(selectedFile);
+    const handleSubmitFile = (e) => {
+      e.preventDefault();
+      if (!previewSource) return;
+      uploadImage(previewSource);
+      // const reader = new FileReader();
+      // reader.readAsDataURL(selectedFile);
+    };
+  
   };
   const uploadImage = async (base64EncodedImage) => {
     try {
@@ -60,40 +66,43 @@ const EditProfile = () => {
       <div>
         <form>
           <div className="UserIdPosts">
-          <TextField
-            id="outlined-textarea"
-            label="User Name"
-            multiline
-            variant="outlined"
-            onChange={handleChange}
-            name="name"
-          />
+            <TextField
+              id="outlined-textarea"
+              label="User Name"
+              multiline
+              variant="outlined"
+              onChange={handleChange}
+              name="name"
+            />
           </div>
           <div className="typePosts">
-          <TextField
-            id="outlined-textarea"
-            label="Password"
-            multiline
-            variant="outlined"
-            onChange={handleChange}
-            name="password"
-          />
+            <TextField
+              id="outlined-textarea"
+              label="Password"
+              multiline
+              variant="outlined"
+              onChange={handleChange}
+              name="password"
+            />
           </div>
           <div className="uploadImgg">
-        <input
-          type="file"
-          name="image"
-          onChange={handleFileInputChange}
-          value={fileInputState}
-        />
-        {previewSource && (
-          <img src={previewSource} alt="chosen" style={{ height: "300px" }} />
-        )}
-      </div>
-      <div className="submitt">
-
-      <button onClick={handleSubmitFile}>Submit</button>
-      </div>
+            <input
+              type="file"
+              name="image"
+              onChange={handleFileInputChange}
+              value={fileInputState}
+            />
+            {previewSource && (
+              <img
+                src={previewSource}
+                alt="chosen"
+                style={{ height: "300px" }}
+              />
+            )}
+          </div>
+          <div className="submitt">
+            <button onClick={handleSubmitFile}>Submit</button>
+          </div>
         </form>
       </div>
     </>
