@@ -35,6 +35,7 @@ const App = () => {
       <Route path="/createPost" component={Upload} />
       <Route path="/editProfile" component={EditProfile} />
       <Route path="/editPost" component={EditPost} />
+      <Route path="/search" component={SearchTitle} />
       <Route path="/admin" component={AdminBoard} />
       <Route component={Erorr} />
       </Switch>
