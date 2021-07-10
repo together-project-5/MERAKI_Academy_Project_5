@@ -8,7 +8,7 @@ CREATE TABLE user(
     gender VARCHAR(255),
     picture TEXT,
     PRIMARY KEY (_IdUser)
-);
+); 
 CREATE TABLE Post  (
     _IdPost INT AUTO_INCREMENT NOT NULL,
     userId INT,
