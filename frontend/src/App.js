@@ -15,6 +15,8 @@ import EditPost from "./components/editPost/index";
 import Erorr from "./components/error";
 import { Switch } from "react-router-dom";
 import { useSelector } from "react-redux";
+import AdminBoard from "./components/admin/admin"
+
 const App = () => {
 
   const token = useSelector((state) => {
@@ -30,6 +32,7 @@ console.log(token.user);
         <Route path="/" component={Header} />
         <Route exact path="/" component={Main} />
 
+
         <Switch>
           <Route exact path="/" component={GetPost} />
           <Route path="/profile" component={MyProfile} />
@@ -42,6 +45,8 @@ console.log(token.user);
           <Route path="/editProfile" component={EditProfile} />
           <Route path="/editPost" component={EditPost} />
           <Route component={Erorr} />
+      <Route path="/admin" component={AdminBoard} />
+
         </Switch>
       </>
     );
@@ -54,6 +59,6 @@ console.log(token.user);
       </>
     )
   }
-};
+}
 
 export default App;
