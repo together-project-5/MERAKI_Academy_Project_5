@@ -108,7 +108,7 @@ const Login = () => {
                   <div class="forms_field">
                     <input
                       type="username"
-                      placeholder="username"
+                      placeholder="email or username"
                       class="forms_field-input input-login-reg"
                       required={true}
                       autofocus

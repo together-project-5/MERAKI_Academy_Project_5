@@ -26,6 +26,7 @@ const App = () => {
     };
   });
   console.log("aaaaaaaaaaa", token.user);
+  
   if (token.user) {
     return (
       <>
@@ -37,8 +38,8 @@ const App = () => {
           <Route exact path="/" component={GetPost} />
           <Route path="/profile" component={MyProfile} />
           <Route exact path="/Chat" component={Chat} />
-        <Route path="/admin" component={AdminBoard} />
-          <Route path="/login" component={Login} />
+          <Route path="/admin" component={AdminBoard} />
+          <Route path="/sign" component={Login} />
           <Route path="/archive" component={Archive} />
           <Route path="/favorite" component={GetFavorites} />
           <Route path="/post" component={postList} />
@@ -53,11 +54,10 @@ const App = () => {
   } else {
     return (
       <>
-        <Route path="/login" component={Login} />
+        <Route path="/sign" component={Login} />
       </>
     );
   }
-
 };
 
 export default App;
