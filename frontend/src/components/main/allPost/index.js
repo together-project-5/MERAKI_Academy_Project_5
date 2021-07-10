@@ -21,11 +21,7 @@ const AllPost = () => {
   const [userId, setUserId] = useState("");
   const [aref, setAref] = useState(false);
   const [idPost, setIdPost] = useState("");
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 51a55bfd2f0bea20341a7a426c365e3aaf29cced
   const state = useSelector((state) => {
     return {
       posts: state.posts.posts,

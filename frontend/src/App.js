@@ -20,7 +20,7 @@ import {Switch} from "react-router-dom"
 const App = () => {
   return (
     <>
-      {/* <Route path="/" component={Header} /> */}
+      <Route path="/" component={Header} />
       <Route exact path="/" component={Main} />
     
       <Switch>
