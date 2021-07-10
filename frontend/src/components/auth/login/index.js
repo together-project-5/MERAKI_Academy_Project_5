@@ -114,6 +114,8 @@ const Login = () => {
                     />
                   </div>
                 </fieldset>
+                {message&&<p className="messegee">{message}</p>}
+
                 <div class="forms_buttons">
                   <button class="forms_buttons-action" onClick={checkLogin}>
                     Log In
@@ -122,7 +124,6 @@ const Login = () => {
                 <br />
                 <br />
                 <br />
-                {message&&<p className="messegee">{message}</p>}
                 <div className="login-with-Google">
                   <GoogleLogin className="login-with-Google" />
                 </div>

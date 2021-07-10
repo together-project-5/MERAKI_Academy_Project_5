@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import GoogleLogin from "./../../Google/google";
 import login from "../login/login.css";
 
 const User = () => {
-  let name;
-  let email;
-  let password;
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
 
   const createUser = (e) => {
     e.preventDefault();
@@ -14,7 +15,7 @@ const User = () => {
     axios
       .post(`http://localhost:5000/user/register`, register)
       .then((res) => {
-        console.log(res);
+        setMessage(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -34,7 +35,7 @@ const User = () => {
                 class="forms_field-input input-login-reg"
                 required
                 onChange={(e) => {
-                  name = e.target.value;
+                  setName(e.target.value);
                 }}
               />
             </div>
@@ -45,7 +46,7 @@ const User = () => {
                 class="forms_field-input input-login-reg"
                 required
                 onChange={(e) => {
-                  email = e.target.value;
+                  setEmail(e.target.value);
                 }}
               />
             </div>
@@ -56,7 +57,7 @@ const User = () => {
                 class="forms_field-input input-login-reg"
                 required
                 onChange={(e) => {
-                  password = e.target.value;
+                  setPassword(e.target.value);
                 }}
               />
             </div>
@@ -65,6 +66,11 @@ const User = () => {
             <button onClick={createUser} class="forms_buttons-action">
               Register
             </button>
+            <br />  
+            <br />
+            <br />
+
+            {message && <p className="msggg">{message}</p>}
           </div>
         </form>
       </div>
