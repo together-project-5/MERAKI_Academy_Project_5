@@ -194,7 +194,7 @@ body {
           <SearchIcon
             className="headerSearch-button"
             onClick={(e) => {
-              <SerachTitle title={search}/>
+              <SearchTitl title={search}/>
               history.push("/search");
 
             }}

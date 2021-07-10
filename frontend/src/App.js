@@ -14,30 +14,32 @@ import Upload from "./components/upload/upload";
 import EditPost from "./components/editPost/index";
 import Erorr from "./components/error";
 import SearchTitle from "./components/search/index"
-import {Switch} from "react-router-dom"
+import { Switch } from "react-router-dom"
 import AdminBoard from "./components/admin/admin"
 
 
 const App = () => {
   return (
     <>
+     
       <Route path="/" component={Header} />
       <Route exact path="/" component={Main} />
-    
+
       <Switch>
-      <Route exact path="/" component={GetPost} />
-      <Route path="/profile" component={MyProfile} />
-      <Route path="/login" component={Login} />
-      <Route path="/register" component={Register} />
-      <Route path="/archive" component={Archive} />
-      <Route path="/favorite" component={GetFavorites} />
-      <Route path="/post" component={postList} />
-      <Route path="/createPost" component={Upload} />
-      <Route path="/editProfile" component={EditProfile} />
-      <Route path="/editPost" component={EditPost} />
       <Route path="/search" component={SearchTitle} />
-      <Route path="/admin" component={AdminBoard} />
-      <Route component={Erorr} />
+        <Route exact path="/" component={GetPost} />
+        <Route path="/profile" component={MyProfile} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+        <Route path="/archive" component={Archive} />
+        <Route path="/favorite" component={GetFavorites} />
+        <Route path="/post" component={postList} />
+        <Route path="/createPost" component={Upload} />
+        <Route path="/editProfile" component={EditProfile} />
+        <Route path="/editPost" component={EditPost} />
+         
+        <Route path="/admin" component={AdminBoard} />
+        <Route component={Erorr} />
       </Switch>
     </>
   );
