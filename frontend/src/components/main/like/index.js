@@ -83,8 +83,8 @@ const Like = ({ id, i }) => {
               setLike(
                 like.map((post, i) => {
                   if (i === index) {
-                    value = post - 1;
-                    return post - 1;
+                    value = post -1;
+                    return post -1 ;
                   }
                   return post;
                 })

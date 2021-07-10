@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 import "./main.css";
 import { setPost } from "../../reducers/post";
 import GetPost from "./../../components/main/allPost";
-import RadioButtonsGroup from "../header/status"; 
 
 
 const Main = () => {
@@ -70,7 +69,6 @@ const Main = () => {
           </button>
         </div>
         <div className="online">
-        <RadioButtonsGroup />
         </div>
 
         <div className="right-2en-navBar">

@@ -33,7 +33,6 @@ app.use("/post", postRouter);
 app.use("/favorite", favoriteRouter)
 app.use(google);
 app.use(likeRouter)
-app.use(messengerRouter)
 app.use(adminRouter)
 
 const PORT = process.env.PORT || 5000;
