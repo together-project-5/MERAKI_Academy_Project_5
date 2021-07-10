@@ -79,20 +79,21 @@ const EditProfile = () => {
             name="password"
           />
           </div>
-          <div className="uploadImg">
-
-          <input
-            type="file"
-            name="image"
-            onChange={handleFileInputChange}
-            value={fileInputState}
-          />
-          <button onClick={handleSubmitFile}>Submit</button>
-          {previewSource && (
-            <img src={previewSource} alt="chosen" style={{ height: "300px" }} />
-          )}
+          <div className="uploadImgg">
+        <input
+          type="file"
+          name="image"
+          onChange={handleFileInputChange}
+          value={fileInputState}
+        />
+        {previewSource && (
+          <img src={previewSource} alt="chosen" style={{ height: "300px" }} />
+        )}
       </div>
+      <div className="submitt">
 
+      <button onClick={handleSubmitFile}>Submit</button>
+      </div>
         </form>
       </div>
     </>
