@@ -48,7 +48,7 @@ const Like = ({ id, i }) => {
     let value;
 
     axios
-      .get(`http://localhost:5000/user/like/${localStorage.getItem("_IdUser")}/${ id}`, {
+      .get(`http://localhost:5000/user/like/${localStorage.getItem("_IdUser")}/${id}`, {
         userId: localStorage.getItem("_IdUser"),
         postId: id
       }).then((result) => {
@@ -79,12 +79,12 @@ const Like = ({ id, i }) => {
         }
         else {
           axios
-            .delete(`http://localhost:5000/user/like/${localStorage.getItem("_IdUser")}/${ id}`, {
+            .delete(`http://localhost:5000/user/like/${localStorage.getItem("_IdUser")}/${id}`, {
             }).then((result) => {
               setLike(
                 like.map((post, i) => {
                   if (i === index) {
-                    value = post - 1;
+                    value = post -1;
                     return post -1 ;
                   }
                   return post;

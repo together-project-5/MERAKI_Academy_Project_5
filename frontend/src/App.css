@@ -50,11 +50,16 @@
   color: #770000;
 }
 #ce-send-message-button {
-  background-color: #770000;
+  background-color: #770000 !important;
 }
 .ce-chat-unread-dot {
   background-color: #770000;
 }
 #new-chat-plus-button {
-  background-color: #770000;
+  background-color: #770000 !important;
+}
+
+.ce-message-bubble.ce-my-message-bubble{
+  background-color: #770000 !important;
+
 }
