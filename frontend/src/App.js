@@ -15,23 +15,21 @@ import EditPost from "./components/editPost/index";
 import Erorr from "./components/error";
 import { Switch } from "react-router-dom";
 import { useSelector } from "react-redux";
-import AdminBoard from "./components/admin/admin"
+import AdminBoard from "./components/admin/admin";
 
 const App = () => {
-
   const token = useSelector((state) => {
     return {
       token: state.login.token,
       user: state.login.user,
     };
   });
-console.log(token.user);
+  console.log("aaaaaaaaaaa", token.user);
   if (token.user) {
     return (
       <>
         <Route path="/" component={Header} />
         <Route exact path="/" component={Main} />
-
 
         <Switch>
           <Route exact path="/" component={GetPost} />
@@ -45,20 +43,17 @@ console.log(token.user);
           <Route path="/editProfile" component={EditProfile} />
           <Route path="/editPost" component={EditPost} />
           <Route component={Erorr} />
-      <Route path="/admin" component={AdminBoard} />
-
+          <Route path="/admin" component={AdminBoard} />
         </Switch>
       </>
     );
   } else {
     return (
       <>
-          <Route path="/login" component={Login} />
-
-
+        <Route path="/login" component={Login} />
       </>
-    )
+    );
   }
-}
+};
 
 export default App;
