@@ -28,7 +28,7 @@ const login = (req, res) => {
           message: "valid login",
           user: result[0],
         });
-    } else return res.status(403).json("The password is not correct");
+    } else return res.json("The password is not correct");
   });
 };
 

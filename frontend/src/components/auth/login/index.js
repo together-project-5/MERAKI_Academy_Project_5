@@ -12,7 +12,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-
+  
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -32,13 +32,13 @@ const Login = () => {
     axios.post(`http://localhost:5000/user/login`, login).then((response) => {
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", JSON.stringify(response.data.user));
-      localStorage.setItem("name", response.data.user.name);
-      localStorage.setItem("_IdUser", response.data.user._IdUser);
       dispatch(setToken(response.data.token));
       dispatch(setUser(response.data.user));
       if (response.data.message !== "valid login") {
         setMessage(response.data);
       } else {
+        localStorage.setItem("name", response.data.user.name);
+        localStorage.setItem("_IdUser", response.data.user._IdUser);
         history.push("/");
       }
     });
@@ -66,7 +66,7 @@ const Login = () => {
             <div class="user_options-unregistered">
               <h2 class="user_unregistered-title">Don't Have An Account?</h2>
               <p class="user_unregistered-text">
-              Welcome To Together Socialmedia Platform   
+                Welcome To Together Socialmedia Platform
               </p>
               <button
                 class="user_unregistered-signup button-login-reg"
@@ -79,9 +79,7 @@ const Login = () => {
 
             <div class="user_options-registered">
               <h2 class="user_registered-title">Have An Account?</h2>
-              <p class="user_registered-text">
-             Login Right Now
-              </p>
+              <p class="user_registered-text">Login Right Now</p>
               <button
                 class="user_registered-login button-login-reg"
                 id="login-button"
@@ -101,7 +99,7 @@ const Login = () => {
                       type="email"
                       placeholder="Email"
                       class="forms_field-input input-login-reg"
-                      required
+                      required={true}
                       autofocus
                       onChange={(e) => setEmail(e.target.value)}
                     />
@@ -111,19 +109,20 @@ const Login = () => {
                       type="password"
                       placeholder="Password"
                       class="forms_field-input input-login-reg"
-                      required
+                      required={true}
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
                 </fieldset>
                 <div class="forms_buttons">
                   <button class="forms_buttons-action" onClick={checkLogin}>
-                     Log In
+                    Log In
                   </button>
                 </div>
                 <br />
                 <br />
                 <br />
+                {message&&<p className="messegee">{message}</p>}
                 <div className="login-with-Google">
                   <GoogleLogin className="login-with-Google" />
                 </div>
