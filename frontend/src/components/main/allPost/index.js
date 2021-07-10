@@ -9,9 +9,11 @@ import MenuItem from "../postList";
 import ShowComment from "../comment/show";
 import "./allPost.css";
 import MainPage from "../mainPage";
+import { useHistory } from "react-router-dom";
 import Divider from "@material-ui/core/Divider";
 
 const AllPost = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const [_IdPost, set_IdPost] = useState("");
   const [userId, setUserId] = useState("");
@@ -24,6 +26,7 @@ const AllPost = () => {
     };
   });
   useEffect(() => {
+    console.log("receiverId", state.receiverId);
     axios
       .get(`http://localhost:5000/post`)
       .then((res) => {
@@ -37,7 +40,7 @@ const AllPost = () => {
   useEffect(() => {
     axios
       .get(`http://localhost:5000/post`)
-      .then((res) => {})
+      .then((res) => { })
       .catch((err) => {
         console.log(err);
       });

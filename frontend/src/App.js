@@ -15,6 +15,7 @@ import Erorr from "./components/404/error";
 import { Switch } from "react-router-dom";
 import Chat from "./chat";
 import PrimarySearchAppBarc from "./components/header/menuchat";
+import AdminBoard from "./components/admin/admin";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/createPost" component={Upload} />
         <Route path="/editProfile" component={EditProfile} />
         <Route path="/editPost" component={EditPost} />
+        <Route path="/admin" component={AdminBoard} />
         <Route component={Erorr} />
       </Switch>
     </>

@@ -9,6 +9,10 @@ const postRouter = require("./routers/routes/post");
 const favoriteRouter = require("./routers/routes/favorite")
 const google = require("./routers/controllers/google/google")
 const likeRouter = require("./routers/routes/like")
+const messengerRouter = require("./routers/routes/messenger")
+const adminRouter = require("./routers/routes/admin")
+const socket = require('socket.io');
+
 
 const app = express();
 
@@ -30,9 +34,35 @@ app.use("/post", postRouter);
 app.use("/favorite", favoriteRouter)
 app.use(google);
 app.use(likeRouter)
+app.use(messengerRouter)
+app.use(adminRouter)
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server On ${PORT}`);
+});
+
+const io = socket(server, {
+  cors: {
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'DELETE', 'PUT'],
+  },
+});
+
+io.on('connection', (socket) => {
+  console.log(socket.id);
+
+  socket.on('join_room', (data) => {
+    socket.join(data);
+    console.log('user joined Room:', data);
+  });
+
+  socket.on('send_message', (data) => {
+    socket.to(data.room).emit('receive_message', data.content);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
 });

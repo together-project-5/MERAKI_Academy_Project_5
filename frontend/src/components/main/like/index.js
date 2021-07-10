@@ -10,7 +10,7 @@ const ar = [];
 const Like = ({ id, i }) => {
   const [like, setLike] = useState([]);
   const dispatch = useDispatch();
-  
+
 
   const state = useSelector((state) => {
     return {
@@ -34,7 +34,7 @@ const Like = ({ id, i }) => {
       .catch((err) => {
         console.log(err);
       });
-   
+
   }, []);
 
   useEffect(() => {
@@ -42,9 +42,9 @@ const Like = ({ id, i }) => {
   }, []);
 
   const likesFunction = (id, index) => {
-    console.log("user id",index)
-    console.log("post id",id)
-    console.log("aaaaaaaaaaaaaaaa",ar[0])
+    console.log("user id", index)
+    console.log("post id", id)
+    console.log("aaaaaaaaaaaaaaaa", ar[0])
     let value;
 
     axios
@@ -63,8 +63,7 @@ const Like = ({ id, i }) => {
                 like.map((post, i) => {
                   if (i === index) {
                     value = post + 1;
-                   
-                    return post+1;
+                    return post + 1;
                   }
                   return post;
                 })
@@ -99,24 +98,24 @@ const Like = ({ id, i }) => {
             })
         }
       })
-      .catch((err)=>{
+      .catch((err) => {
         console.log(err)
       })
-      console.log("ae ashe")
+    console.log("ae ashe")
   }
-  
+
   return (
     <>
-    <div className="like-div">
-      <img
-        onClick={() => {
-          likesFunction(id, i);
+      <div className="like-div">
+        <img
+          onClick={() => {
+            likesFunction(id, i);
 
-        }}
-        className="like-icon"
-        src={likes}
-      />
-      {like[i] !== 0 && <p className="post-title">{like[i]}</p>}
+          }}
+          className="like-icon"
+          src={likes}
+        />
+        {like[i] !== 0 && <p className="post-title">{like[i]}</p>}
 
       </div>
     </>
