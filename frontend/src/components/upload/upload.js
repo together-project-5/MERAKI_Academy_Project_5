@@ -131,11 +131,15 @@ const Upload = () => {
           onChange={handleFileInputChange}
           value={fileInputState}
         />
-        <button onClick={handleSubmitFile}>Submit</button>
         {previewSource && (
           <img src={previewSource} alt="chosen" style={{ height: "300px" }} />
         )}
       </div>
+      <div className="submit">
+
+      <button onClick={handleSubmitFile}>Submit</button>
+      </div>
+
     </div>
   );
 };
