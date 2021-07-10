@@ -9,8 +9,6 @@ import MenuItem from "../postList";
 import ShowComment from "../comment/show";
 import "./allPost.css";
 import MainPage from "../mainPage";
-import chat from "../img/chat.png"
-import Chat from "../../chat/index";
 import { useHistory } from "react-router-dom";
 import Divider from "@material-ui/core/Divider";
 
