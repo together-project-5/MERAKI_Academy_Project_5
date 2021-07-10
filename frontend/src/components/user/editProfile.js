@@ -32,15 +32,14 @@ const EditProfile = () => {
 
   const handleSubmitFile = (e) => {
     e.preventDefault();
-    const handleSubmitFile = (e) => {
-      e.preventDefault();
       if (!previewSource) return;
       uploadImage(previewSource);
       // const reader = new FileReader();
       // reader.readAsDataURL(selectedFile);
     };
+ 
   
-  };
+  
   const uploadImage = async (base64EncodedImage) => {
     try {
       await fetch(
@@ -109,3 +108,4 @@ const EditProfile = () => {
   );
 };
 export default EditProfile;
+

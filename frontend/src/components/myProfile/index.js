@@ -15,7 +15,7 @@ const MyProfile = () => {
 
   return (
     <>
-      {/* <MyInfo/> */}
+      <MyInfo/>
       <div className="p-button">
         <div className="pr-button">
           <button className="profile-button" onClick={handleClick}>
