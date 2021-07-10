@@ -1,7 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Login from "./components/auth/login/index";
-import Register from "./components/auth/signUp/index";
 import GetPost from "./components/main/post";
 import { Header } from "./components/header/index";
 import GetFavorites from "./components/favorite/favorite";
@@ -12,10 +11,12 @@ import MyProfile from "./components/myProfile/index";
 import EditProfile from "./components/user/editProfile";
 import Upload from "./components/upload/upload";
 import EditPost from "./components/editPost/index";
-import Erorr from "./components/error";
+import Erorr from "./components/404/error";
 import { Switch } from "react-router-dom";
 import { useSelector } from "react-redux";
 import AdminBoard from "./components/admin/admin";
+import Chat from "./chat";
+import PrimarySearchAppBarc from "./components/header/menuchat";
 
 const App = () => {
   const token = useSelector((state) => {
@@ -30,12 +31,14 @@ const App = () => {
       <>
         <Route path="/" component={Header} />
         <Route exact path="/" component={Main} />
+        <Route path="/Chat" component={PrimarySearchAppBarc} />
 
         <Switch>
           <Route exact path="/" component={GetPost} />
           <Route path="/profile" component={MyProfile} />
+          <Route exact path="/Chat" component={Chat} />
+        <Route path="/admin" component={AdminBoard} />
           <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
           <Route path="/archive" component={Archive} />
           <Route path="/favorite" component={GetFavorites} />
           <Route path="/post" component={postList} />
@@ -54,6 +57,7 @@ const App = () => {
       </>
     );
   }
+
 };
 
 export default App;

@@ -24,7 +24,7 @@
   font-size: 22px;
   font-weight: 600;
   color: #770000;
-  cursor: pointer;
+  margin-top: 2vh;
 }
 .post-div {
   gap: 0px;
@@ -49,11 +49,8 @@
   width: 75px;
   height: 75px;
   border-radius: 7px;
-  cursor: pointer;
 }
-/* .profile-picture:hover {
-  transform: scale(1.03);
-} */
+
 
 .post-title {
   margin: 0;
@@ -113,22 +110,16 @@ transform: scale(1.03);
   gap: 10px;
   margin-bottom: 1vh;
 }
-.user-msg {
-  margin-left: -10.7vh;
-  margin-top: 7vh;
-  color: black;
-  cursor: pointer;
-}
 
 .post-td {
-  margin-top: 5.2vh;
+  margin-top: 6.6vh;
   color: black;
   margin-left: 1vh;
 }
 .post-tp {
-  margin-top: 7.6vh;
+  margin-top: 6.6vh;
   color: black;
-  margin-left: 2vh;
+  margin-left: -7.5vh;
 }
 .user-pic {
   margin-top: 2vh;
