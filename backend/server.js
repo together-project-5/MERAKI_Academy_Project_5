@@ -10,6 +10,7 @@ const favoriteRouter = require("./routers/routes/favorite")
 const google = require("./routers/controllers/google/google")
 const likeRouter = require("./routers/routes/like")
 const messengerRouter = require("./routers/routes/messenger")
+const adminRouter = require("./routers/routes/admin")
 const socket = require('socket.io');
 
 
@@ -34,6 +35,7 @@ app.use("/favorite", favoriteRouter)
 app.use(google);
 app.use(likeRouter)
 app.use(messengerRouter)
+app.use(adminRouter)
 
 const PORT = process.env.PORT || 5000;
 

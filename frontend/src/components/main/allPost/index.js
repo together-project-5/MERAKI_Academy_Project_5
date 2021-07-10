@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "../../../reducers/post";
-import { setId } from "../../../reducers/chat";
 import Comment from "../comment/index";
 import Like from "../like/index";
 import Save from "../save/index";
@@ -22,7 +21,7 @@ const AllPost = () => {
   const [userId, setUserId] = useState("");
   const [aref, setAref] = useState(false);
   const [idPost, setIdPost] = useState("");
-
+  
   const state = useSelector((state) => {
     return {
       posts: state.posts.posts,
@@ -133,11 +132,6 @@ const AllPost = () => {
                           i={i}
                         />
                       </div>
-                      {/* {false && <Chat id={post.userId} />} */}
-                      <img src={chat} onClick={(e) => {
-                        history.push("/chat")
-                        dispatch(setId(post._IdPost));
-                      }} />
                       <Save id={post._IdPost} i={i} />
                     </div>
                   </div>
