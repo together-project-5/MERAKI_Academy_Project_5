@@ -31,14 +31,15 @@ const Login = () => {
     const login = { email, password };
     axios.post(`http://localhost:5000/user/login`, login).then((response) => {
       localStorage.setItem("token", response.data.token);
-      localStorage.setItem("user", JSON.stringify(response.data.user));
-      localStorage.setItem("name", response.data.user.name);
-      localStorage.setItem("_IdUser", response.data.user._IdUser);
+      
       dispatch(setToken(response.data.token));
       dispatch(setUser(response.data.user));
       if (response.data.message !== "valid login") {
         setMessage(response.data);
       } else {
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+      localStorage.setItem("name", response.data.user.name);
+      localStorage.setItem("_IdUser", response.data.user._IdUser);
         history.push("/");
       }
     });

@@ -13,6 +13,7 @@ import EditProfile from "./components/user/editProfile";
 import Upload from "./components/upload/upload";
 import EditPost from "./components/editPost/index";
 import Erorr from "./components/error";
+import SearchTitle from "./components/search/index"
 import {Switch} from "react-router-dom"
 
 
@@ -33,6 +34,7 @@ const App = () => {
       <Route path="/createPost" component={Upload} />
       <Route path="/editProfile" component={EditProfile} />
       <Route path="/editPost" component={EditPost} />
+      <Route path="/search" component={SearchTitle} />
       <Route component={Erorr} />
       </Switch>
     </>

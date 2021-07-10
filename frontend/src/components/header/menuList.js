@@ -25,7 +25,7 @@ import style from "styled-theming";
 import TemporaryDrawer from "./../header/list";
 import { useDispatch } from "react-redux";
 import { setPost } from "../../reducers/post";
-
+import SearchTitl from "../search/index"
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -194,7 +194,8 @@ body {
           <SearchIcon
             className="headerSearch-button"
             onClick={(e) => {
-              searchPost();
+              <SearchTitl title ={search}/>
+              history.push("/search");
             }}
           >
             search

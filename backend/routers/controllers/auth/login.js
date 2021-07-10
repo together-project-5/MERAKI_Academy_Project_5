@@ -3,6 +3,7 @@ const db = require("./../../../db/db");
 const bcrypt = require("bcrypt");
 
 const login = (req, res) => {
+ console.log("aaaaaaaaaaaaaaaaaaaaaaaaa");
   const email = req.body.email;
   const password = req.body.password;
   const query = `SELECT * FROM user WHERE email = ? ;`;
@@ -28,7 +29,7 @@ const login = (req, res) => {
           message: "valid login",
           user: result[0],
         });
-    } else return res.status(403).json("The password is not correct");
+    } else return res.json("The password is not correct");
   });
 };
 
