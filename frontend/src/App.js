@@ -14,6 +14,7 @@ import Upload from "./components/upload/upload";
 import EditPost from "./components/editPost/index";
 import Erorr from "./components/error";
 import {Switch} from "react-router-dom"
+import AdminBoard from "./components/admin/admin"
 
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
       <Route path="/createPost" component={Upload} />
       <Route path="/editProfile" component={EditProfile} />
       <Route path="/editPost" component={EditPost} />
+      <Route path="/admin" component={AdminBoard} />
       <Route component={Erorr} />
       </Switch>
     </>
