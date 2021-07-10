@@ -26,7 +26,7 @@ import TemporaryDrawer from "./../header/list";
 import { useDispatch } from "react-redux";
 import { setPost } from "../../reducers/post";
 
-export default function PrimarySearchAppBar() {
+export default function PrimarySearchAppBarc() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -162,7 +162,7 @@ body {
   const theme = useTheme();
 
   return (
-    <div className="MuiToolbar-regular">
+    <div className="MuiToolbar-chat">
       <div className={classes.grow}>
         <AppBar position="static">
           <Toolbar>
