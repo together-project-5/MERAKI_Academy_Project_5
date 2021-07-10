@@ -25,8 +25,8 @@ import style from "styled-theming";
 import TemporaryDrawer from "./../header/list";
 import { useDispatch } from "react-redux";
 import { setPost } from "../../reducers/post";
-import SearchTitl from "../search/index"
-export default function PrimarySearchAppBar() {
+
+export default function PrimarySearchAppBarc() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -162,7 +162,7 @@ body {
   const theme = useTheme();
 
   return (
-    <div className="MuiToolbar-regular">
+    <div className="MuiToolbar-chat">
       <div className={classes.grow}>
         <AppBar position="static">
           <Toolbar>
@@ -197,8 +197,7 @@ body {
             <SearchIcon
               className="headerSearch-button"
               onClick={(e) => {
-                <SearchTitl title={search} />
-                history.push("/search");
+                searchPost();
               }}
             >
               search

@@ -8,10 +8,10 @@
   width: 250px;
   height: 250px;
   margin-left: 40%;
-  margin-top: 3%;
+  margin-top: 8%;
 }
 .name {
-  margin-left: 45%;
+  margin-left: 46%;
   margin-top: 3%;
 }
 .profile-button {
@@ -45,19 +45,9 @@
 .profile-nav{
     background-color: rgba(221, 221, 221, 0.692);
 }
-.video-call{
-  margin-top: 1%;
+.emaill{
+  margin-left: 95vh;
+  margin-top: 4vh;
+}
 
-  margin-left: 45%;
-}
-.call{
-  margin-left: 2%;
-
-}
-.video-call:hover{
-  cursor: pointer;
-}
-.call:hover{
-  cursor: pointer;
-}
 
