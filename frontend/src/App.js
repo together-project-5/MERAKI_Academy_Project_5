@@ -13,7 +13,7 @@ import EditProfile from "./components/user/editProfile";
 import Upload from "./components/upload/upload";
 import EditPost from "./components/editPost/index";
 import Erorr from "./components/error";
-
+import SearchTitle from "./components/search/index"
 import {Switch} from "react-router-dom"
 import AdminBoard from "./components/admin/admin"
 
