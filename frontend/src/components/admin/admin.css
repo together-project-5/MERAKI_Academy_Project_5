@@ -1,0 +1,56 @@
+.reportingPost {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-information {
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  border: 1px black solid;
+}
+
+.post-image {
+  width: 500px;
+  height: 300px;
+  margin-left: 10px;
+  border-radius: 7px;
+  margin-top: 4vh;
+}
+
+.post-title {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  padding-left: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 15px;
+}
+
+.post-description {
+  font-family: "Times New Roman", Times, serif;
+  padding-left: 10px;
+  font-size: 15px;
+  margin-right: 25px;
+  height: 100%;
+}
+.keepButton {
+  background-color: rgb(18, 77, 18);
+  font-size: 20px;
+  color: white;
+}
+.deleteButton {
+  background-color: rgb(95, 25, 25);
+  font-size: 20px;
+  color: white;
+}
+
+.adminButtons{
+  margin-top: 5px;
+  padding-left: 5px;
+  width:29%;
+  display: flex;
+  justify-content:space-between;
+}
