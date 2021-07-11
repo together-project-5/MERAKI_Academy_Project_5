@@ -197,6 +197,7 @@ body {
             <SearchIcon
               className="headerSearch-button"
               onClick={(e) => {
+                {console.log(search)}
                 <SearchTitl title={search} />
                 history.push("/search");
               }}

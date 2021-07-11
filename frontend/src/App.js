@@ -27,7 +27,6 @@ const App = () => {
       <Route path="/Chat" component={PrimarySearchAppBarc} />
       <Switch>
         <Route path="/search" component={SearchTitle} />
-        <Route path="/register" component={Register} />
         <Route exact path="/" component={GetPost} />
         <Route exact path="/Chat" component={Chat} />
         <Route path="/profile" component={MyProfile} />
@@ -38,9 +37,9 @@ const App = () => {
         <Route path="/createPost" component={Upload} />
         <Route path="/editProfile" component={EditProfile} />
         <Route path="/editPost" component={EditPost} />
-      <Route path="/admin" component={AdminBoard} />
-      <Route component={Erorr} />
-    </Switch>
+        <Route path="/admin" component={AdminBoard} />
+        <Route component={Erorr} />
+      </Switch>
     </>
   );
 };
