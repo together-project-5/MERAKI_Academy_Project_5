@@ -10,7 +10,7 @@ const Features = () => {
         <>
             <div className="features">
                 <div className="row">
-                    <div className="col-1-of-4">
+                    <div className="col-1-of-3">
                         <div className="features-box">
                             <img src={earth} />
                             <h3 className="heading-bOne">
