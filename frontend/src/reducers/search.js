@@ -15,3 +15,9 @@ const searchTitle = (state = initialState, { type, payload }) => {
 
 export default searchTitle ;
 
+export const setSearchTitle = (title) => {
+    return {
+        type: 'SET_TITLE',
+        payload: title,
+    };
+};
