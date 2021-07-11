@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding-top: 5rem;
+  box-sizing: border-box;
+}
+
+.togetherSections{
+  background-color: rgb(238, 226, 226);
+}
+
+.firstBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-image: linear-gradient(to right bottom, #d56f6fcb, #e00f0fd8),
+    url(./img/social.jpg);
+  height: 140vh;
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  position: relative;
+  margin-bottom: -25rem;
+
+}
+
+
+.firstHeader {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  padding-top: 25rem;
+}
+
+.mainText {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 2s;
+}
+
+.subText {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.74rem;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.features {
+  padding: 4rem 0;
+  background-image: linear-gradient(to right bottom, #d56f6fcb, #e00f0fd8),
+    url(./img/features.jpg);
+  background-size: cover;
+  clip-path: polygon(100% 12%, 100% 100%, 0 97%, 0 0);
+  height: 95vh;
+}
+
+.features-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  margin: 2rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  width: 20rem;
+}
+
+.heading-bOne {
+  font-family: "Times New Roman", Times, serif;
+  color: #da8145;
+  padding-bottom: 1rem;
+}
+
+.features-box__text{
+    font-family: "Times New Roman", Times, serif;
+    color: #000;
+    font-weight: 700;
+}
+
+.col-1-of-3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.features-box:hover {
+  transform: translateY(-1.5rem) scale(1.3);
+}
