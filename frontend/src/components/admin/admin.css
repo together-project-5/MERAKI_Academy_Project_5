@@ -8,8 +8,7 @@
   width: max-content;
   display: flex;
   justify-content: center;
-  margin-top: 100px;
-  border: 1px black solid;
+  margin-top: 10px;
 }
 
 .post-image {
@@ -35,6 +34,7 @@
   font-size: 15px;
   margin-right: 25px;
   height: 100%;
+  margin-top: 5px;
 }
 .keepButton {
   background-color: rgb(18, 77, 18);
