@@ -39,8 +39,9 @@ const Login = () => {
       if (response.data.message !== "valid login") {
         setMessage(response.data);
       } else {
-        localStorage.setItem("name", response.data.user.name);
-        localStorage.setItem("_IdUser", response.data.user._IdUser);
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+      localStorage.setItem("name", response.data.user.name);
+      localStorage.setItem("_IdUser", response.data.user._IdUser);
         history.push("/");
       }
     });

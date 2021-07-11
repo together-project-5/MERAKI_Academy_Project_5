@@ -17,49 +17,34 @@ import { useSelector } from "react-redux";
 import AdminBoard from "./components/admin/admin";
 import Chat from "./chat";
 import PrimarySearchAppBarc from "./components/header/menuchat";
-import google from "./components/Google/google"
+import Together from './components/together/index'
+import Features from "./components/together/features"
+import SearchTitle from "./components/search/index"
 
 const App = () => {
-  const token = useSelector((state) => {
-    return {
-      token: state.login.token,
-      user: state.login.user,
-    };
-  });
-  console.log("aaaaaaaaaaa", token.user);
-  
-  if (token.user) {
-    return (
-      <>
-        <Route path="/" component={Header} />
-        <Route exact path="/" component={Main} />
-        <Route path="/Chat" component={PrimarySearchAppBarc} />
+  return (
+    <>
 
-        <Switch>
-          <Route exact path="/" component={GetPost} />
-          <Route path="/profile" component={MyProfile} />
-          <Route path="/google" component={google}/>
-          <Route exact path="/Chat" component={Chat} />
-          <Route path="/admin" component={AdminBoard} />
-          <Route path="/sign" component={Login} />
-          <Route path="/archive" component={Archive} />
-          <Route path="/favorite" component={GetFavorites} />
-          <Route path="/post" component={postList} />
-          <Route path="/createPost" component={Upload} />
-          <Route path="/editProfile" component={EditProfile} />
-          <Route path="/editPost" component={EditPost} />
-          <Route component={Erorr} />
-          <Route path="/admin" component={AdminBoard} />
-        </Switch>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <Route path="/sign" component={Login} />
-      </>
-    );
-  }
+      <Route path="/" component={Header} />
+      <Route exact path="/" component={Main} />
+      <Route path="/Chat" component={PrimarySearchAppBarc} />
+      <Switch>
+        <Route path="/search" component={SearchTitle} />
+        <Route exact path="/" component={GetPost} />
+        <Route exact path="/Chat" component={Chat} />
+        <Route path="/profile" component={MyProfile} />
+        <Route path="/archive" component={Archive} />
+        <Route path="/favorite" component={GetFavorites} />
+        <Route path="/post" component={postList} />
+        <Route path="/createPost" component={Upload} />
+        <Route path="/editProfile" component={EditProfile} />
+        <Route path="/editPost" component={EditPost} />
+        <Route path="/admin" component={AdminBoard} />
+        <Route exact path="/together" component={Together} />
+        <Route component={Erorr} />
+      </Switch>
+    </>
+  );
 };
 
 export default App;
