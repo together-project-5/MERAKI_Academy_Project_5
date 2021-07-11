@@ -9,8 +9,12 @@ body {
   font-weight: 400;
   line-height: 1.7;
   color: #777;
-  padding-top: 10rem;
+  padding-top: 5rem;
   box-sizing: border-box;
+}
+
+.togetherSections{
+  background-color: rgb(238, 226, 226);
 }
 
 .firstBox {
@@ -21,19 +25,21 @@ body {
   text-align: center;
   background-image: linear-gradient(to right bottom, #d56f6fcb, #e00f0fd8),
     url(./img/social.jpg);
-  height: 95vh;
+  height: 140vh;
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
   position: relative;
+  margin-bottom: -25rem;
+
 }
+
 
 .firstHeader {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
-  margin-bottom: 6rem;
-  padding-top: 9rem;
+  padding-top: 25rem;
 }
 
 .mainText {
@@ -71,7 +77,7 @@ body {
   background-image: linear-gradient(to right bottom, #d56f6fcb, #e00f0fd8),
     url(./img/features.jpg);
   background-size: cover;
-  clip-path: polygon(100% 0, 99% 100%, 0 90%, 0 0);
+  clip-path: polygon(100% 12%, 100% 100%, 0 97%, 0 0);
   height: 95vh;
 }
 
