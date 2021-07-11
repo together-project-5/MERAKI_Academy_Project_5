@@ -7,6 +7,8 @@ const Together = () => {
 
     return (
         <>
+                <div className="togetherSections">
+
             <section>
                 <body>
                     <div className="firstBox">
@@ -25,7 +27,7 @@ const Together = () => {
             <section>
                 <Login />
             </section>
-
+            </div>
         </>
     )
 
