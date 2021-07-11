@@ -17,6 +17,7 @@ import { useSelector } from "react-redux";
 import AdminBoard from "./components/admin/admin";
 import Chat from "./chat";
 import PrimarySearchAppBarc from "./components/header/menuchat";
+import google from "./components/Google/google"
 
 const App = () => {
   const token = useSelector((state) => {
@@ -37,6 +38,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={GetPost} />
           <Route path="/profile" component={MyProfile} />
+          <Route path="/google" component={google}/>
           <Route exact path="/Chat" component={Chat} />
           <Route path="/admin" component={AdminBoard} />
           <Route path="/sign" component={Login} />
