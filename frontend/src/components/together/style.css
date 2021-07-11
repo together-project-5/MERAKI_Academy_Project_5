@@ -1,9 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding-top: 10rem;
+  box-sizing: border-box;
+}
+
 .firstBox {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  background-image: linear-gradient(to right bottom, #d56f6fcb, #e00f0fd8),
+    url(./img/social.jpg);
+  height: 95vh;
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  position: relative;
 }
 
 .firstHeader {
@@ -11,6 +33,7 @@
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem;
+  padding-top: 9rem;
 }
 
 .mainText {
@@ -27,4 +50,18 @@
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.74rem;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
