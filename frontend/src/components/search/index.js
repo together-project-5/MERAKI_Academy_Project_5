@@ -35,7 +35,7 @@ const SearchTitl = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [state.title]);
   return (
     <>
       <div className="allpost">
