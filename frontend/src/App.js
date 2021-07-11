@@ -29,7 +29,6 @@ const App = () => {
         <Route exact path="/" component={GetPost} />
         <Route exact path="/Chat" component={Chat} />
         <Route path="/profile" component={MyProfile} />
-        <Route path="/sign" component={Login} />
         <Route path="/archive" component={Archive} />
         <Route path="/favorite" component={GetFavorites} />
         <Route path="/post" component={postList} />
