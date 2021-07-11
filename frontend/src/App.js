@@ -16,6 +16,8 @@ import { Switch } from "react-router-dom";
 import Chat from "./chat";
 import PrimarySearchAppBarc from "./components/header/menuchat";
 import AdminBoard from "./components/admin/admin";
+import Together from './components/together/index'
+import Features from "./components/together/features"
 
 const App = () => {
   return (
@@ -27,7 +29,6 @@ const App = () => {
         <Route exact path="/" component={GetPost} />
         <Route exact path="/Chat" component={Chat} />
         <Route path="/profile" component={MyProfile} />
-        <Route path="/sign" component={Login} />
         <Route path="/archive" component={Archive} />
         <Route path="/favorite" component={GetFavorites} />
         <Route path="/post" component={postList} />
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/editProfile" component={EditProfile} />
         <Route path="/editPost" component={EditPost} />
         <Route path="/admin" component={AdminBoard} />
+        <Route exact path="/together" component={Together} />
         <Route component={Erorr} />
       </Switch>
     </>
