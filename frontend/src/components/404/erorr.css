@@ -15,3 +15,21 @@
 .button-err:hover {
   cursor: pointer;
 }
+.err-dev {
+  margin-left: 70vh;
+  margin-top: 12vh;
+
+  color: black;
+}
+.err-oops {
+  font-size: 4vh;
+}
+.err-exist {
+  font-size: 3vh;
+}
+.err-page {
+  font-size: 2.1vh;
+}
+.err-moved {
+  font-size: 2vh;
+}

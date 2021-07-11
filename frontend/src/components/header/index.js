@@ -18,7 +18,8 @@ export const Header = () => {
             </div>
           ) : (
             <div className="headerRightNavBar">
-              <Link to="/login">login</Link>
+              <Link to="/together">login</Link>
+
             </div>
           )}
         </div>
