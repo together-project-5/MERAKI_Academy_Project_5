@@ -14,14 +14,7 @@ const Erorr = () => {
   return (
     <>
       <div className="err-dev">
-        {/* <img
-          className="img-err"
-          src="https://uicookies.com/wp-content/uploads/2020/04/Colorlib-404-v18.jpg"
-        />{" "}
-        <button className="button-err" onClick={back}>
-          {" "}
-          Back to homepage
-        </button> */}
+      
       <div className="err-oops">
 
         <h1>oops</h1>
