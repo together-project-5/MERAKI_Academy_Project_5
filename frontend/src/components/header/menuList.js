@@ -25,12 +25,10 @@ import style from "styled-theming";
 import TemporaryDrawer from "./../header/list";
 import { useDispatch } from "react-redux";
 import { setPost } from "../../reducers/post";
-import SearchTitl from "../search/index"
-import { useDispatch, useSelector } from "react-redux";
+import SearchTitl from "../search/index";
+import { setSearchTitle } from "../../reducers/admin";
 
 export default function PrimarySearchAppBar() {
-
-  const dispatch = useDispatch();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
