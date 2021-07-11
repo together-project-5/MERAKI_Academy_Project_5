@@ -26,7 +26,7 @@ import TemporaryDrawer from "./../header/list";
 import { useDispatch } from "react-redux";
 import { setPost } from "../../reducers/post";
 import SearchTitl from "../search/index";
-import { setSearchTitle } from "../../reducers/admin";
+import { setSearchTitle } from "../../reducers/search";
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
@@ -192,7 +192,7 @@ body {
               }}
               className="headerSearch-bar"
               onChange={(e) => {
-                search = e.target.value;
+                dispatch(setSearchTitle(e.target.value));
               }}
               placeholder="Search"
             />
