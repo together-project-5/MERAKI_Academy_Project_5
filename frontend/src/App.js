@@ -18,14 +18,17 @@ import PrimarySearchAppBarc from "./components/header/menuchat";
 import AdminBoard from "./components/admin/admin";
 import Together from './components/together/index'
 import Features from "./components/together/features"
+import SearchTitle from "./components/search/index"
 
 const App = () => {
   return (
     <>
+
       <Route path="/" component={Header} />
       <Route exact path="/" component={Main} />
       <Route path="/Chat" component={PrimarySearchAppBarc} />
       <Switch>
+        <Route path="/search" component={SearchTitle} />
         <Route exact path="/" component={GetPost} />
         <Route exact path="/Chat" component={Chat} />
         <Route path="/profile" component={MyProfile} />
