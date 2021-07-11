@@ -92,6 +92,12 @@ body {
   padding-bottom: 1rem;
 }
 
+.features-box__text{
+    font-family: "Times New Roman", Times, serif;
+    color: #000;
+    font-weight: 700;
+}
+
 .col-1-of-3 {
   display: flex;
   justify-content: space-between;
