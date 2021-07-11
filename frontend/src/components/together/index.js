@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css"
 import Features from "./features";
+import Login from "./../auth/login/index"
 
 const Together = () => {
 
@@ -21,7 +22,9 @@ const Together = () => {
                 <Features />
             </section>
 
-
+            <section>
+                <Login />
+            </section>
 
         </>
     )
