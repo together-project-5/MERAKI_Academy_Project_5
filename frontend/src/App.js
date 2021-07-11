@@ -19,7 +19,7 @@ import AdminBoard from "./components/admin/admin";
 import Together from './components/together/index'
 import Features from "./components/together/features"
 import SearchTitle from "./components/search/index"
-import PrimarySearchAppBarErr from "./components/header/menu404";
+// import PrimarySearchAppBarErr from "./components/header/menu404";
 
 
 
@@ -32,7 +32,7 @@ const App = () => {
       <Route path="/Chat" component={PrimarySearchAppBarc} />
 
       <Switch>
-      <Route path="/aaaa" component={PrimarySearchAppBarErr} />
+      {/* <Route path="/aaaa" component={PrimarySearchAppBarErr} /> */}
         <Route path="/search" component={SearchTitle} />
         <Route exact path="/" component={GetPost} />
         <Route exact path="/Chat" component={Chat} />
