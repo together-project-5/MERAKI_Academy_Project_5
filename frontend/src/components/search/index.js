@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-
-
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import Comment from "../main/comment/index";
+import Like from "../main/like/index";
+import Save from "../main/save/index";
+import MenuItem from "../main/postList";
+import ShowComment from "../main/comment/show";
+import "../main/allPost/allPost.css";
+import MainPage from "../main/mainPage";
+import { useHistory } from "react-router-dom";
+import Divider from "@material-ui/core/Divider";
 
 const SearchTitl = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const [_IdPost, set_IdPost] = useState("");
+  const [userId, setUserId] = useState("");
+  const [aref, setAref] = useState(false);
+  const [idPost, setIdPost] = useState("");
   const [posts, setPosts] = useState([]);
   const state = useSelector((state) => {
     return {
@@ -25,6 +38,7 @@ const SearchTitl = () => {
   }, []);
   return (
     <>
+      {console.log("posts",posts)}
       <div className="aaa" ><h1>aaaaa</h1></div>
     </>
 
