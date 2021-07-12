@@ -15,7 +15,7 @@ const Upload = () => {
   const [fileInputState, setFileInputState] = useState("");
   const [selectedFile, setSelectedFile] = useState("");
   const [previewSource, setPreviewSource] = useState();
-  const [post, setPost] = useState({});
+  const [post, setPost] = useState({userId:localStorage.getItem("_IdUser")});
 
   const dispatch = useDispatch();
 
@@ -64,7 +64,7 @@ const Upload = () => {
   return (
     <div>
       <div className="createPostStyle">
-        <div className="UserIdPosts">
+        {/* <div className="UserIdPosts">
           <Grid container spacing={1} alignItems="flex-end">
             <Grid item>
               <AccountCircle />
@@ -78,7 +78,7 @@ const Upload = () => {
               />
             </Grid>
           </Grid>
-        </div>
+        </div> */}
 
         <form>
           <div className="typePosts">
