@@ -21,12 +21,14 @@ const login = (req, res) => {
       const options = {
         expiresIn: "1d",
       };
-      res.status(200).json({
-        token: jwt.sign(payload, process.env.SECRET, options),
-        message: "valid login",
-        user: result[0],
-      });
-    } else return res.status(403).json("The password is not correct");
+      res
+        .status(200)
+        .json({
+          token: jwt.sign(payload, process.env.SECRET, options),
+          message: "valid login",
+          user: result[0],
+        });
+    } else return res.json("The password is not correct");
   });
 };
 
