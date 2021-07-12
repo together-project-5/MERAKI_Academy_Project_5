@@ -13,7 +13,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-
+  
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -33,7 +33,7 @@ const Login = () => {
 
     axios.post(`http://localhost:5000/user/login`, login).then((response) => {
       localStorage.setItem("token", response.data.token);
-      
+      localStorage.setItem("user", JSON.stringify(response.data.user));
       dispatch(setToken(response.data.token));
       dispatch(setUser(response.data.user));
       if (response.data.message !== "valid login") {
@@ -109,9 +109,9 @@ const Login = () => {
                   <div class="forms_field">
                     <input
                       type="username"
-                      placeholder="username"
+                      placeholder="email or username"
                       class="forms_field-input input-login-reg"
-                      required
+                      required={true}
                       autofocus
                       onChange={(e) => setUsername(e.target.value)}
                     />
@@ -121,11 +121,13 @@ const Login = () => {
                       type="password"
                       placeholder="Password"
                       class="forms_field-input input-login-reg"
-                      required
+                      required={true}
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
                 </fieldset>
+                {message&&<p className="messegee">{message}</p>}
+
                 <div class="forms_buttons">
                   <button class="forms_buttons-action" onClick={checkLogin}>
                     Sign In

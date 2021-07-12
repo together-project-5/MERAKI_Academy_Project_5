@@ -19,7 +19,7 @@ const Main = () => {
       })
       .catch((err) => {
         console.log(err);
-      });
+      }); 
   };
 
   const handleClick = () => {

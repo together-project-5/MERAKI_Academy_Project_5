@@ -12,12 +12,15 @@ const Google = () => {
         token: response.tokenId,
       })
       .then((result) => {
+        localStorage.setItem("token", result.data.token);
+        localStorage.setItem("user", result.data.user);
+
         console.log("result",result);
       });
     history.push("/");
   };
 
-
+  
   return (
     <div>
       <GoogleLogin

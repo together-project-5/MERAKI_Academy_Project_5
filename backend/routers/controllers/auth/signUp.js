@@ -10,7 +10,7 @@ const createUser = async (req, res) => {
   email = await email.toLowerCase();
   const data = [name, email, password, username];
   db.query(query, data, (err, result) => {
-    if (err) res.send("can't register try again please");
+    if (err) res.send("Please fill all text");
     res.status(201).json(result);
   });
 };
