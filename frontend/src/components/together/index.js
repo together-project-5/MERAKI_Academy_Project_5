@@ -23,7 +23,8 @@ const Together = () => {
             <section>
                 <Features />
             </section>
-
+            <h1 className="waitingHeader">What are you waiting for ?</h1>
+            
             <section>
             </section>
             </div>
