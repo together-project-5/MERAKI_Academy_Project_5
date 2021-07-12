@@ -112,3 +112,9 @@ body {
 .features-box:hover {
   transform: translateY(-1.5rem) scale(1.3);
 }
+
+.lastSection{
+  margin-top: 7rem;
+  display:block;
+  text-align: center;
+}
