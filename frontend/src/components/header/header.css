@@ -91,3 +91,6 @@
 .err-moved {
   font-size: 2vh;
 }
+.MuiMenu-paper{
+margin-left: -11vh;
+}
