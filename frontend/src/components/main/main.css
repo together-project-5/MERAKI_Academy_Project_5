@@ -39,16 +39,14 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
-
 }
 .comment-icon {
   width: 40px;
   height: 40px;
   cursor: pointer;
-
 }
 
-.save-icon{
+.save-icon {
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -64,12 +62,8 @@
   top: 14vh;
   /* height: 20vh;
   top: 3vh; */
-<<<<<<< HEAD
-=======
-width: 50vh;
-margin-top: 2vh;
-
->>>>>>> c1cfff4a0489ce4b93ac65568a1f874aab5b3310
+  width: 50vh;
+  margin-top: 2vh;
 }
 .profile-navb-e:hover {
   cursor: pointer;
@@ -90,11 +84,7 @@ margin-top: 2vh;
   top: 35vh;
   /* height: 20vh;
   top: 26vh; */
-<<<<<<< HEAD
-=======
   margin-top: 5vh;
-
->>>>>>> c1cfff4a0489ce4b93ac65568a1f874aab5b3310
 }
 
 .profile-navb-p:hover {
@@ -113,11 +103,7 @@ margin-top: 2vh;
   top: 56vh;
   /* height: 20vh;
   top: 51vh; */
-<<<<<<< HEAD
-=======
   margin-top: 5vh;
-
->>>>>>> c1cfff4a0489ce4b93ac65568a1f874aab5b3310
 }
 .profile-navb-s:hover {
   cursor: pointer;
@@ -135,10 +121,7 @@ margin-top: 2vh;
   top: 77vh;
   /* height: 20vh;
   top: 77vh; */
-<<<<<<< HEAD
-=======
-margin-top: 5vh;
->>>>>>> c1cfff4a0489ce4b93ac65568a1f874aab5b3310
+  margin-top: 5vh;
 }
 .profile-navb-c:hover {
   cursor: pointer;
@@ -170,58 +153,15 @@ margin-top: 5vh;
   width: 110px;
 }
 
-<<<<<<< HEAD
 .title-details {
-  margin-left: 21vh;
+  margin-left: 18vh;
   margin-top: -13vh;
-  /* margin-top: -18vh; */
 }
 .descriptionn {
-  margin-left: 21vh;
-=======
-.title-details{
-  margin-left: 18vh;
-  margin-top: -13vh;
-}
-.descriptionn{
   margin-top: 1vh;
   margin-left: 18vh;
->>>>>>> c1cfff4a0489ce4b93ac65568a1f874aab5b3310
 }
-.online{
+.online {
   color: white;
   margin-left: 75vh;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
