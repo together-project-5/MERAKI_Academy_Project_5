@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const projectID = "25237e63-d052-4459-a86e-631bba96f16d";
 
 const User = () => {
-  let name;
-  let email;
-  let password;
-  let username;
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [username, setUsername] = useState("");
 
   const createUser = (e) => {
     e.preventDefault();
@@ -15,7 +16,7 @@ const User = () => {
     axios
       .post(`http://localhost:5000/user/register`, register)
       .then((res) => {
-        console.log(res);
+        setMessage(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -54,7 +55,7 @@ const User = () => {
                 class="forms_field-input input-login-reg"
                 required
                 onChange={(e) => {
-                  name = e.target.value;
+                  setName(e.target.value);
                 }}
               />
             </div>
@@ -65,7 +66,7 @@ const User = () => {
                 class="forms_field-input input-login-reg"
                 required
                 onChange={(e) => {
-                  email = e.target.value;
+                  setEmail(e.target.value);
                 }}
               />
             </div>
@@ -76,10 +77,11 @@ const User = () => {
                 class="forms_field-input input-login-reg"
                 required
                 onChange={(e) => {
-                  password = e.target.value;
+                  setPassword(e.target.value);
                 }}
               />
             </div>
+           
             <div class="forms_field">
               <input
                 type="username"
@@ -87,7 +89,7 @@ const User = () => {
                 class="forms_field-input input-login-reg"
                 required
                 onChange={(e) => {
-                  username = e.target.value;
+                  setUsername(e.target.value);
                 }}
               />
             </div>
@@ -96,6 +98,11 @@ const User = () => {
             <button onClick={createUser} class="forms_buttons-action">
               Sign up
             </button>
+            <br />  
+            <br />
+            <br />
+
+            {message && <p className="msggg">{message}</p>}
           </div>
         </form>
       </div>

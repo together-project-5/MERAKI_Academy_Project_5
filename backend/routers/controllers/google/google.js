@@ -15,17 +15,17 @@ router.post("/login-google", async (req, res) => {
     audience: CLIENT_ID,
   });
   const query = `SELECT * FROM user WHERE email = ? ;`;
-  let { name, email, password } = ticket.getPayload();
+  let { name, email, password,username,picture} = ticket.getPayload();
   const data = [email];
 
   db.query(query, data, async (err, result) => {
     if (!result[0]) {
-      const query = `INSERT INTO user (name ,email,password) VALUES (?,?,?)`;
+      const query = `INSERT INTO user (name ,email,password,username,picture) VALUES (?,?,?,?,?)`;
       if (password) {
         await bcrypt.hash(password, salt);
       }
       email = await email.toLowerCase();
-      db.query(query, [name, email, password], (err, result) => {
+      db.query(query, [name, email, password,username,picture], (err, result) => {
         if (err) throw err;
         res.status(201).json(result);
       });
@@ -33,6 +33,8 @@ router.post("/login-google", async (req, res) => {
       const payload = {
         name,
         password,
+        username,
+        picture,
       };
       const options = {
         expiresIn: "1d",

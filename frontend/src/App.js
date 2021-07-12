@@ -13,11 +13,14 @@ import Upload from "./components/upload/upload";
 import EditPost from "./components/editPost/index";
 import Erorr from "./components/404/error";
 import { Switch } from "react-router-dom";
+import { useSelector } from "react-redux";
+import AdminBoard from "./components/admin/admin";
 import Chat from "./chat";
 import PrimarySearchAppBarc from "./components/header/menuchat";
-import AdminBoard from "./components/admin/admin";
 import Together from "./components/together/index";
 import SearchTitle from "./components/search/index";
+
+
 
 const App = () => {
   return (
@@ -25,6 +28,7 @@ const App = () => {
       <Route path="/" component={Header} />
       <Route exact path="/" component={Main} />
       <Route path="/Chat" component={PrimarySearchAppBarc} />
+
       <Switch>
         <Route path="/search" component={SearchTitle} />
         <Route exact path="/" component={GetPost} />

@@ -70,9 +70,12 @@ export default function TemporaryDrawer() {
     localStorage.setItem("user", "");
     localStorage.setItem("name", "");
     localStorage.setItem("_IdUser", "");
+    localStorage.setItem("password", "");
+    localStorage.setItem("username", "");
+    localStorage.setItem("theme", "");
     dispatch(setTokenOut(""));
     dispatch(setUserOut({}));
-    history.push("/sign");
+    history.push("/together");
   };
 
   const list = (anchor) => (
