@@ -1,9 +1,9 @@
 CREATE TABLE user(
     _IdUser INT AUTO_INCREMENT NOT NULL,
-    name VARCHAR(255),
-    email VARCHAR(255) UNIQUE,
-    username VARCHAR(255) UNIQUE,
-    password VARCHAR(255),
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    username VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
     age INT(3),
     gender VARCHAR(255),
     picture TEXT,

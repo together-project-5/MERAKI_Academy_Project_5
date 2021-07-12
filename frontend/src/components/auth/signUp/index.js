@@ -19,7 +19,7 @@ const User = () => {
         setMessage(res.data);
       })
       .catch((err) => {
-        console.log(err);
+        throw err
       });
 
     const data = { username: username, secret: password, email: email };
@@ -38,7 +38,7 @@ const User = () => {
         console.log(JSON.stringify(response.data));
       })
       .catch(function (error) {
-        console.log(error);
+        throw error
       });
   };
 
@@ -53,7 +53,7 @@ const User = () => {
                 type="text"
                 placeholder="Full Name"
                 class="forms_field-input input-login-reg"
-                required
+                
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
@@ -64,7 +64,7 @@ const User = () => {
                 type="email"
                 placeholder="Email"
                 class="forms_field-input input-login-reg"
-                required
+                
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
@@ -75,7 +75,7 @@ const User = () => {
                 type="password"
                 placeholder="Password"
                 class="forms_field-input input-login-reg"
-                required
+                
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
@@ -87,7 +87,7 @@ const User = () => {
                 type="username"
                 placeholder="username"
                 class="forms_field-input input-login-reg"
-                required
+                
                 onChange={(e) => {
                   setUsername(e.target.value);
                 }}
