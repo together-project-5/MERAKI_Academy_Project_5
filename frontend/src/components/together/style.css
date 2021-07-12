@@ -118,3 +118,9 @@ body {
   display:block;
   text-align: center;
 }
+
+.waitingHeader{
+  font-size: 5rem;
+  color: #fd5050cb;
+  font-weight: bolder;
+}
