@@ -1,3 +1,10 @@
+/* *{
+  margin: 0;
+} */
+
+.MuiToolbar-r{
+  margin-top: -12.7vh;
+}
 .websiteName {
   margin-top: 0;
   margin-bottom: 0;
@@ -27,19 +34,20 @@
 }
 
 .MuiToolbar-regular {
-  background-color: #770000;
+  background-color: #fd5050cb;
+
   min-height: 64px;
   top: 0;
   left: 0;
   position: fixed;
-  width:  100%;
+  width: 100%;
 }
 .MuiToolbar-chat {
-  background-color: #770000;
+  background-color: #fd5050cb;
   min-height: 64px;
   margin-top: -10vh;
   left: 0;
-  width:  100%;
+  width: 100%;
 }
 
 .dark {
@@ -67,7 +75,8 @@
   margin-left: -87vh;
   width: 25.5vh;
   height: 5vh;
-  background-color: #770000;
+  background-color: #fd5050cb
+  ;
   color: white;
 }
 .button-err:hover {
