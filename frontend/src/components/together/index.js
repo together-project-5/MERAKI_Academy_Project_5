@@ -25,7 +25,7 @@ const Together = () => {
             </section>
             <div className="lastSection">
             <h1 className="waitingHeader">What are you waiting for ?</h1>
-            <button className="loginButton">Join Us Now!</button>
+            <button className="joinButton">Join Us Now!</button>
             </div>
             <section>
             </section>
