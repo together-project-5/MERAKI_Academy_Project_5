@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { setToken, setUser } from "./../../../reducers/login";
 import { useDispatch, useSelector } from "react-redux";
-import TextField from "@material-ui/core/TextField";
 import axios from "axios";
-import login from "./login.css";
 import GoogleLogin from "../../Google/google";
 import User from "../signUp/index";
+import "./login.css"
+
+const projectID = "25237e63-d052-4459-a86e-631bba96f16d";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
@@ -28,20 +29,31 @@ const Login = () => {
   });
   const checkLogin = (e) => {
     e.preventDefault();
-    const login = { email, password };
+    const login = { username, password };
+
     axios.post(`http://localhost:5000/user/login`, login).then((response) => {
       localStorage.setItem("token", response.data.token);
-      localStorage.setItem("user", JSON.stringify(response.data.user));
-      localStorage.setItem("name", response.data.user.name);
-      localStorage.setItem("_IdUser", response.data.user._IdUser);
+      
       dispatch(setToken(response.data.token));
       dispatch(setUser(response.data.user));
       if (response.data.message !== "valid login") {
         setMessage(response.data);
       } else {
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+      localStorage.setItem("name", response.data.user.name);
+      localStorage.setItem("_IdUser", response.data.user._IdUser);
         history.push("/");
       }
     });
+    const authObject = {
+      "Project-ID": projectID,
+      "User-Name": username,
+      "User-Secret": password,
+    };
+
+    axios.get("https://api.chatengine.io/chats", { headers: authObject });
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
   };
 
   const signupButton = document.getElementById("signup-button"),
@@ -66,7 +78,7 @@ const Login = () => {
             <div class="user_options-unregistered">
               <h2 class="user_unregistered-title">Don't Have An Account?</h2>
               <p class="user_unregistered-text">
-              Welcome To Together Socialmedia Platform   
+                Welcome To Together Socialmedia Platform
               </p>
               <button
                 class="user_unregistered-signup button-login-reg"
@@ -79,31 +91,29 @@ const Login = () => {
 
             <div class="user_options-registered">
               <h2 class="user_registered-title">Have An Account?</h2>
-              <p class="user_registered-text">
-             Login Right Now
-              </p>
+              <p class="user_registered-text">Sign in Right Now</p>
               <button
                 class="user_registered-login button-login-reg"
                 id="login-button"
                 onClick={loginA}
               >
-                Log in
+                Sign in
               </button>
             </div>
           </div>
           <div class="user_options-forms" id="user_options-forms">
             <div class="user_forms-login">
-              <h2 class="forms_title">Log in</h2>
+              <h2 class="forms_title">Sign in</h2>
               <form class="forms_form">
                 <fieldset class="forms_fieldset">
                   <div class="forms_field">
                     <input
-                      type="email"
-                      placeholder="Email"
+                      type="username"
+                      placeholder="username"
                       class="forms_field-input input-login-reg"
                       required
                       autofocus
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={(e) => setUsername(e.target.value)}
                     />
                   </div>
                   <div class="forms_field">
@@ -118,7 +128,7 @@ const Login = () => {
                 </fieldset>
                 <div class="forms_buttons">
                   <button class="forms_buttons-action" onClick={checkLogin}>
-                     Log In
+                    Sign In
                   </button>
                 </div>
                 <br />

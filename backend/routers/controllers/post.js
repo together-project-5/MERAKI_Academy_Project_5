@@ -66,7 +66,7 @@ const editPost = (req, res) => {
   const query = `UPDATE post SET title=?,description=?,likes=?,report=? WHERE _IdPost=${id}`;
   const { title, description, likes, report } = req.body;
   const data = [title, description, likes, report];
-  db.query(query, data, (err, res) => {
+  db.query(query, data, (err, result) => {
     if (err) return res.status(400).send("can't update post try again please");
     console.log(res);
   });

@@ -34,6 +34,13 @@
   position: fixed;
   width:  100%;
 }
+.MuiToolbar-chat {
+  background-color: #770000;
+  min-height: 64px;
+  top: 0;
+  left: 0;
+  width:  100%;
+}
 
 .dark {
   margin-left: 888px;

@@ -2,12 +2,13 @@ CREATE TABLE user(
     _IdUser INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(255),
     email VARCHAR(255) UNIQUE,
+    username VARCHAR(255) UNIQUE,
     password VARCHAR(255),
     age INT(3),
     gender VARCHAR(255),
     picture TEXT,
     PRIMARY KEY (_IdUser)
-);
+); 
 CREATE TABLE Post  (
     _IdPost INT AUTO_INCREMENT NOT NULL,
     userId INT,
@@ -48,6 +49,24 @@ CREATE TABLE comments(
     PRIMARY KEY (_IdComment)
 );
 
+CREATE TABLE conversation(
+    _IdConversation INT AUTO_INCREMENT NOT NULL,
+    senderId VARCHAR(255),
+    receiverId VARCHAR(255),
+    time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (_IdConversation)
+);
+
+CREATE TABLE messages(
+    _IdMessage INT AUTO_INCREMENT NOT NULL,
+    conversationId INT,
+    userId INT,
+    messageText TEXT,
+    time TIMESTAMP ,
+    FOREIGN KEY (userId) REFERENCES user(_IdUser),  
+    FOREIGN KEY (conversationId) REFERENCES conversation(_IdConversation),
+    PRIMARY KEY (_IdMessage)
+);
 
 
 
