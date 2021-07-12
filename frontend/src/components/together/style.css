@@ -114,7 +114,7 @@ body {
 }
 
 .lastSection{
-  margin-top: 7rem;
+  margin-top: 10rem;
   display:block;
   text-align: center;
 }
@@ -123,4 +123,10 @@ body {
   font-size: 5rem;
   color: #fd5050cb;
   font-weight: bolder;
+}
+
+.joinButton{
+  margin-bottom: 10rem;
+  width: 20vw;
+  height: 7.5vh;
 }

@@ -17,7 +17,6 @@ import Chat from "./chat";
 import PrimarySearchAppBarc from "./components/header/menuchat";
 import AdminBoard from "./components/admin/admin";
 import Together from "./components/together/index";
-import Features from "./components/together/features";
 import SearchTitle from "./components/search/index";
 
 const App = () => {
@@ -39,6 +38,7 @@ const App = () => {
         <Route path="/editPost" component={EditPost} />
         <Route path="/admin" component={AdminBoard} />
         <Route exact path="/together" component={Together} />
+        <Route exact path="/login" component={Login} />
         <Route component={Erorr} />
       </Switch>
     </>
