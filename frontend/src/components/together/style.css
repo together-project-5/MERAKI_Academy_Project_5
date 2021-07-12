@@ -121,7 +121,7 @@ body {
 
 .waitingHeader{
   font-size: 5rem;
-  color: #fd5050cb;
+  color:rgba(0, 0, 0, 0.664) ;
   font-weight: bolder;
   margin-bottom: 2.5rem;
 }
@@ -130,4 +130,9 @@ body {
   margin-bottom: 10rem;
   width: 20vw;
   height: 7.5vh;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #fd5050cb;
+  color: #fff;
+  border: #fff;
 }
