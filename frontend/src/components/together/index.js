@@ -25,7 +25,6 @@ const Together = () => {
             </section>
 
             <section>
-                <Login />
             </section>
             </div>
         </>
