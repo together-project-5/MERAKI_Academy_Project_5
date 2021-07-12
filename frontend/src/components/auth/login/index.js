@@ -137,7 +137,7 @@ const Login = () => {
                 <br />
                 <br />
                 <div className="login-with-Google">
-                  {/* <GoogleLogin className="login-with-Google" /> */}
+                  <GoogleLogin className="login-with-Google" />
                 </div>
               </form>
             </div>
