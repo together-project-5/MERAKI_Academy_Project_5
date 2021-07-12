@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setComments } from "../../../reducers/comment";
 import "./comment.css";
 
-const ShowComment = ({ id, i,aref,idPost }) => {
+const ShowComment = ({ id, i, aref, idPost }) => {
   const [commentId, setCommentId] = useState("");
   const [comment, setComment] = useState("");
   const dispatch = useDispatch();
@@ -18,6 +18,32 @@ const ShowComment = ({ id, i,aref,idPost }) => {
     };
   });
 
+  // useEffect(() => {
+  //   let postId = id;
+  //   axios
+  //     .get(`http://localhost:5000/post/comment/${postId}`)
+  //     .then((res) => {
+  //       // dispatch(setComments(res.data));
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, [commentId]);
+
+
+  useEffect(() => {
+    let postId = id;
+    axios
+      .get(`http://localhost:5000/post/comment/${postId}`)
+      .then((res) => {
+        dispatch(setComments(res.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+
   const sendComment = (id) => {
     let userId = localStorage.getItem("_IdUser");
     console.log(userId);
@@ -30,7 +56,8 @@ const ShowComment = ({ id, i,aref,idPost }) => {
       })
       .then((res) => {
         dispatch(setComments(res.data));
-        console.log(res);
+        setCommentId(res.data)
+        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -39,7 +66,7 @@ const ShowComment = ({ id, i,aref,idPost }) => {
 
   return (
     <>
-      {idPost === id&&aref && (
+      {idPost === id && aref && (
         <div className="post-comment-div">
           {console.log("state.comment", state.comment)}
           {state.comment
@@ -47,7 +74,14 @@ const ShowComment = ({ id, i,aref,idPost }) => {
               return comment.postId === id;
             })
             .map((comment, i) => {
-              return <p>{comment.comment}</p>;
+              return (
+                <>
+                  <div className="comments">
+                    <p className="commenter-name">{comment.name}:</p>
+                    <p className="comment-commenter">{comment.comment}</p>
+                  </div>
+                </>
+              );
             })}
           <div className="div-send-comment">
             <input
