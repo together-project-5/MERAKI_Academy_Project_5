@@ -17,14 +17,13 @@ import { useSelector } from "react-redux";
 import AdminBoard from "./components/admin/admin";
 import Chat from "./chat";
 import PrimarySearchAppBarc from "./components/header/menuchat";
-import Together from './components/together/index'
-import Features from "./components/together/features"
-import SearchTitle from "./components/search/index"
+import Together from "./components/together/index";
+import Features from "./components/together/features";
+import SearchTitle from "./components/search/index";
 
 const App = () => {
   return (
     <>
-
       <Route path="/" component={Header} />
       <Route exact path="/" component={Main} />
       <Route path="/Chat" component={PrimarySearchAppBarc} />

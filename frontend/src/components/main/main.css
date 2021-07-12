@@ -39,18 +39,17 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
-
 }
 .comment-icon {
   width: 40px;
   height: 40px;
   cursor: pointer;
-
 }
 
-.save-icon{
+.save-icon {
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
 .profile-navb-e {
   margin-top: 3%;
@@ -63,9 +62,8 @@
   top: 14vh;
   /* height: 20vh;
   top: 3vh; */
-width: 50vh;
-margin-top: 2vh;
-
+  width: 50vh;
+  margin-top: 2vh;
 }
 .profile-navb-e:hover {
   cursor: pointer;
@@ -82,18 +80,16 @@ margin-top: 2vh;
   top: 35vh;
   left: 0;
   z-index: 3000;
-    height: 15.4vh;
+  height: 15.4vh;
   top: 35vh;
   /* height: 20vh;
   top: 26vh; */
   margin-top: 5vh;
-
 }
 
 .profile-navb-p:hover {
   cursor: pointer;
   transform: scale(1.02);
-
 }
 .profile-navb-s {
   margin-top: 3%;
@@ -103,17 +99,15 @@ margin-top: 2vh;
   background-size: auto;
   left: 0;
   z-index: 3000;
-    height: 15.4vh;
+  height: 15.4vh;
   top: 56vh;
   /* height: 20vh;
   top: 51vh; */
   margin-top: 5vh;
-
 }
 .profile-navb-s:hover {
   cursor: pointer;
   transform: scale(1.02);
-
 }
 .profile-navb-c {
   margin-top: 3%;
@@ -127,12 +121,11 @@ margin-top: 2vh;
   top: 77vh;
   /* height: 20vh;
   top: 77vh; */
-margin-top: 5vh;
+  margin-top: 5vh;
 }
 .profile-navb-c:hover {
   cursor: pointer;
   transform: scale(1.02);
-
 }
 .mainPost {
   height: 40px;
@@ -160,48 +153,15 @@ margin-top: 5vh;
   width: 110px;
 }
 
-.title-details{
+.title-details {
   margin-left: 18vh;
   margin-top: -13vh;
 }
-.descriptionn{
+.descriptionn {
   margin-top: 1vh;
   margin-left: 18vh;
 }
-.online{
+.online {
   color: white;
   margin-left: 75vh;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

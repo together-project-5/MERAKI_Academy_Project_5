@@ -116,7 +116,7 @@ const addComment = (req,res) => {
 
 const showComment = (req,res) => {
   const id = req.params.id;
-  const query = `SELECT * FROM comments WHERE postId=?`;
+  const query = `SELECT * FROM comments INNER JOIN user ON postId=? AND userId = _idUser;`;
   const data = [id];
   db.query(query, data, (err, result) => {
     if (err) res.status(400).send("post not found");

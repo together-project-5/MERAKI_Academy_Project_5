@@ -1,6 +1,6 @@
 .post-comment-div {
   /* border: solid 0.2px; */
-  display: grid;
+  display: inline-block;
   margin-left: 5px;
   height: 79vh;
   width: 50ch;
@@ -14,13 +14,25 @@
 .post-comment-div:hover {
   transform: scale(1.01);
 }
+.commenter-name {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
 
+}
+.comment-commenter {
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+
+}
 .div-send-comment {
   display: flex;
   height: 10%;
   gap: 15px;
 }
-
+.comments {
+  gap: 3px;
+  display: flex;
+}
 .write-comment {
   outline: none;
   border: solid 1px white;
