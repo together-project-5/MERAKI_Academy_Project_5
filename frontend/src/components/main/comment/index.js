@@ -14,17 +14,17 @@ const Comment = ({ id, i, aref, setAref, setIdPost }) => {
     setShow(!show);
   };
 
-  useEffect(() => {
-    let postId = id;
-    axios
-      .get(`http://localhost:5000/post/comment/${postId}`, { postId })
-      .then((res) => {
-        dispatch(setComments(res.data));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   let postId = id;
+  //   axios
+  //     .get(`http://localhost:5000/post/comment/${postId}`, { postId })
+  //     .then((res) => {
+  //       dispatch(setComments(res.data));
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   return (
     <>
