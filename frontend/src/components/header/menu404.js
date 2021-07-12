@@ -14,7 +14,7 @@ export default function PrimarySearchAppBarErr() {
   };
 
   return (
-    <div className="MuiToolbar-regular">
+    <div className="MuiToolbar-r">
       <AppBar position="static">
         <Toolbar>
           <Typography
