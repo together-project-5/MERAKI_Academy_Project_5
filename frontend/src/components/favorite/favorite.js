@@ -17,7 +17,6 @@ const GetFavorites = () => {
     };
   });
   useEffect(() => {
-    console.log("lo",localStorage.getItem("_IdUser"));
     if(status){
       setStatus(!status)
     axios
@@ -49,22 +48,25 @@ const GetFavorites = () => {
   return (
     <>
       {state.favorites.map((post, i) => {
-        console.log("pp",post);
         return (
           <div className="postDiv" key={i}>
             <div className="title_description">
+              <div className="userData">
             <img
               className="profilePic"
               src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
             />
+            <p className="user-post-name">{post.name}</p>
+            </div>
             <p className="postTitle">{post.title}</p>
             <p className="postDescription">{post.description}</p>
+            <img src={post.url} className="saveImage"/> <br></br>
             <img 
               onClick={(e) => {
                 e.preventDefault();
-                saveFunction(post._IdPost);
+                saveFunction(post.postId);
               }}
-              className="saveIcon"
+              className="save-icon"
               src={save}
               />
               </div>
