@@ -25,8 +25,9 @@ const Like = ({ id, i }) => {
     axios
       .get(`http://localhost:5000/post`)
       .then((res) => {
+        console.log("post.likes",res);
         res.data.forEach((post, i) => {
-
+       
           ar.push(post.likes);
         });
         dispatch(setPost(res.data));
@@ -42,9 +43,6 @@ const Like = ({ id, i }) => {
   }, []);
 
   const likesFunction = (id, index) => {
-    console.log("user id", index)
-    console.log("post id", id)
-    console.log("aaaaaaaaaaaaaaaa", ar[0])
     let value;
 
     axios

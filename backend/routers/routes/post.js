@@ -20,7 +20,7 @@ const postRouter = express.Router();
 const authentication = require("./../middlewares/authentication");
 
 postRouter.post("/api/upload", createPost);
-postRouter.get("/",authentication, getAllPost);
+postRouter.get("/", getAllPost);
 postRouter.get("/archive", getArchivePost);
 postRouter.get("/title/:title", getPostByTitle);
 postRouter.delete("/:id", deletePost);
