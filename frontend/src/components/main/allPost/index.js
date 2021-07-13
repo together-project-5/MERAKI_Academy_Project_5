@@ -19,7 +19,7 @@ const AllPost = () => {
   const [userId, setUserId] = useState("");
   const [aref, setAref] = useState(false);
   const [idPost, setIdPost] = useState("");
-  
+
   const state = useSelector((state) => {
     return {
       posts: state.posts.posts,
@@ -29,7 +29,10 @@ const AllPost = () => {
   useEffect(() => {
     console.log("receiverId", state.receiverId);
     axios
-      .get(`http://localhost:5000/post`)
+      .get(`http://localhost:5000/post`,{
+        headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },})
       .then((res) => {
         dispatch(setPost(res.data));
       })
@@ -41,7 +44,7 @@ const AllPost = () => {
   useEffect(() => {
     axios
       .get(`http://localhost:5000/post`)
-      .then((res) => { })
+      .then((res) => {})
       .catch((err) => {
         console.log(err);
       });
@@ -49,10 +52,10 @@ const AllPost = () => {
   return (
     <>
       <div className="allpost">
-          <div className="ads">
-        <MainPage />
+        <div className="ads">
+          <MainPage />
         </div>
-  
+
         {state.posts.length &&
           state.posts.map((post, i) => {
             return (
@@ -66,10 +69,6 @@ const AllPost = () => {
                           src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
                         />
                         <p className="user-post-name">{post.name}</p>
-                        
-                     
-
-                      
                       </div>
 
                       <MenuItem

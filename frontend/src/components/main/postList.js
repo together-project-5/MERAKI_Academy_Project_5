@@ -47,8 +47,9 @@ export default function LongMenu({ id, userIdP }) {
   const editPost = (id) => {
     history.push("/editPost");
     axios
-      .get(`http://localhost:5000/post/${_IdPost}`)
+      .get(`http://localhost:5000/post/${id}`)
       .then((result) => {
+        console.log("result",result)
         dispatch(setPost(result.data));
       })
       .catch((err) => {

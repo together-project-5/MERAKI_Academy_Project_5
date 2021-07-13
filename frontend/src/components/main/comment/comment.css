@@ -3,12 +3,13 @@
   display: inline-block;
   margin-left: 5px;
   height: 79vh;
-  width: 54ch;
+  width: 64ch;
   margin-top: 4vh;
   border-radius: 5px;
   background-color: rgba(228, 228, 228, 0.692);
   gap: 5px;
   padding: 2vh;
+  margin-right: 5px;
 }
 
 .post-comment-div:hover {
@@ -17,12 +18,10 @@
 .commenter-name {
   font-family: "Times New Roman", Times, serif;
   font-size: 15px;
-
 }
 .comment-commenter {
   font-size: 15px;
   font-family: "Times New Roman", Times, serif;
-
 }
 .div-send-comment {
   display: flex;
@@ -35,24 +34,28 @@
 }
 .write-comment {
   outline: none;
-  border: solid 1px white;
+  border: solid 1px rgb(138, 137, 137);
   background-color: transparent;
   font-weight: 400px;
   color: black;
   border-radius: 1px;
   width: 250px;
+  height: 40px;
+  border-radius: 3px;
 }
 .write-comment:hover {
   border: solid 1px rgba(34, 34, 34, 0.85);
   transform: scale(1.08);
 }
 .send-comment-button {
-  border: solid 1px white;
+  border: solid 1px rgb(138, 137, 137);
   outline: 0;
   cursor: pointer;
   border-radius: 3px;
   font-weight: 400px;
   background-color: transparent;
+  width: 50px;
+  height: 40px;
 }
 .send-comment-button:hover {
   background-color: rgba(34, 34, 34, 0.85);
