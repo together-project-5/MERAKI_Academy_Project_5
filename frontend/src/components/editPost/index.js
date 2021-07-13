@@ -14,6 +14,9 @@ const EditPost = () => {
   const handleChangeTitle = (e) => {
       setTitle(e.target.value);
     };
+    const handleChangeDescription = (e) => {
+      setDescription(e.target.value);
+    };
   const edit = () => {
     axios
       .put(`http://localhost:5000/post/edit/${state.post[0]._IdPost}`,
@@ -35,7 +38,8 @@ const EditPost = () => {
       <div>
         <input type="text" placeholder="Title" 
          onChange={handleChangeTitle}/>
-        <input type="text" placeholder="description" />
+        <input type="text" placeholder="description"
+         onChange={handleChangeDescription} />
         <button>Submit</button>
       </div>
     </>
