@@ -13,7 +13,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  
+
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -40,8 +40,8 @@ const Login = () => {
         setMessage(response.data);
       } else {
         localStorage.setItem("user", JSON.stringify(response.data.user));
-      localStorage.setItem("name", response.data.user.name);
-      localStorage.setItem("_IdUser", response.data.user._IdUser);
+        localStorage.setItem("name", response.data.user.name);
+        localStorage.setItem("_IdUser", response.data.user._IdUser);
         history.push("/");
       }
     });
@@ -52,7 +52,7 @@ const Login = () => {
     };
 
     axios.get("https://api.chatengine.io/chats", { headers: authObject });
-    
+
   };
 
   const signupButton = document.getElementById("signup-button"),
@@ -125,7 +125,7 @@ const Login = () => {
                     />
                   </div>
                 </fieldset>
-                {message&&<p className="messegee">{message}</p>}
+                {message && <p className="messegee">{message}</p>}
 
                 <div class="forms_buttons">
                   <button class="forms_buttons-action" onClick={checkLogin}>

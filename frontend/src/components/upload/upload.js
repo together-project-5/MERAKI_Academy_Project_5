@@ -53,7 +53,9 @@ const Upload = () => {
       await fetch("http://localhost:5000/post/api/upload", {
         method: "post",
         body: JSON.stringify({ data: base64EncodedImage, post: post }),
-        headers: { "Content-type": "application/json" },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
       }).then((result) => {
         console.log("result", result);
       });
