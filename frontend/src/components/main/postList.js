@@ -18,15 +18,9 @@ export default function LongMenu({ id, userIdP }) {
   const history = useHistory();
   const [_IdPost, set_IdPost] = useState("");
   const [report, setReport] = useState(0);
+
   const dispatch = useDispatch();
 
-  const state = useSelector((state) => {
-    return {
-      user: state.login.user,
-      getPost: state.getPost.getPost,
-    };
-  });
-  let ID = state.user._IdUser;
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -65,30 +59,40 @@ export default function LongMenu({ id, userIdP }) {
   };
 
   const archivePost = (_IdPost) => {
-    history.push("/archive");
-  };
-
-  const deletePost = (_IdPost) => {
+let archive = 1 ;
     axios
-      .delete(`http://localhost:5000/post/${_IdPost}`)
-      .then((res) => {
-        set_IdPost(res.data);
+    .post(`http://localhost:5000/post/archive/${_IdPost}`,{ archive })
+    .then((res) => {
+      set_IdPost(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-  return (
-    <>
+
+  const deletePost = (_IdPost) => {
+    axios
+    .delete(`http://localhost:5000/post/${_IdPost}`)
+    .then((res) => {
+      set_IdPost(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    };
+    return (
+      <>
       <div className="menuList">
-        {localStorage.getItem("user")._IdUser === ID ? (
+        {console.log(localStorage.getItem("_IdUser"))}
+        {localStorage.getItem("_IdUser") == userIdP ? (
+ 
           <div>
             <IconButton
               aria-label="more"
               aria-controls="long-menu"
               aria-haspopup="true"
               onClick={handleClick}
-            >
+              >
               <MoreVertIcon />
             </IconButton>
             <Menu
@@ -103,14 +107,14 @@ export default function LongMenu({ id, userIdP }) {
                   width: "20ch",
                 },
               }}
-            >
+              >
               <MenuItem
                 onClick={(e) => {
                   e.preventDefault();
                   handleClose();
                   editPost(id);
                 }}
-              >
+                >
                 Edit Post
               </MenuItem>
               <MenuItem
@@ -119,7 +123,7 @@ export default function LongMenu({ id, userIdP }) {
                   handleClose();
                   archivePost(id);
                 }}
-              >
+                >
                 Archive
               </MenuItem>
               <MenuItem
@@ -128,7 +132,7 @@ export default function LongMenu({ id, userIdP }) {
                   handleClose();
                   deletePost(id);
                 }}
-              >
+                >
                 Delete
               </MenuItem>
             </Menu>
@@ -140,7 +144,7 @@ export default function LongMenu({ id, userIdP }) {
               aria-controls="long-menu"
               aria-haspopup="true"
               onClick={handleClick}
-            >
+              >
               <MoreVertIcon />
             </IconButton>
             <Menu
@@ -155,14 +159,14 @@ export default function LongMenu({ id, userIdP }) {
                   width: "20ch",
                 },
               }}
-            >
+              >
               <MenuItem
                 onClick={(e) => {
                   e.preventDefault();
                   handleClose();
                   reportPost(id);
                 }}
-              >
+                >
                 Report
               </MenuItem>
             </Menu>

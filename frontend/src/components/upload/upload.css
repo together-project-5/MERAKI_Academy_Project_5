@@ -1,5 +1,4 @@
 .typePosts {
-  margin-top: 30px;
   margin-left: 40%;
 }
 .descriptionPosts {
@@ -38,4 +37,21 @@
 .submit {
   margin-left: 84.3vh;
   margin-top: 10vh;
+}
+.img-upload{
+  height: 240px !important;
+  width: 400px;
+}
+
+.buttonSubmit {
+  margin-left: 85vh;
+  height: 40px;
+  width: 100px;
+  border: solid 1px rgb(53, 51, 51);
+  color:rgb(53, 51, 51);
+  outline: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 400px;
+  background-color: transparent;
 }

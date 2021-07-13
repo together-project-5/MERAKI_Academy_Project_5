@@ -75,7 +75,7 @@ const editPost = (req, res) => {
 
 const getPostByType = (req, res) => {
   const type = req.params.type;
-  const query = `SELECT * FROM post WHERE type = ?`;
+  const query = `SELECT * FROM post INNER JOIN user ON userId = _idUser And type = ?`;
   const data = [type];
   db.query(query, data, (err, result) => {
     if (err) return res.status(400).send("post not found");
