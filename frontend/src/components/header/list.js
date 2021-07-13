@@ -75,7 +75,7 @@ export default function TemporaryDrawer() {
     localStorage.setItem("theme", "");
     dispatch(setTokenOut(""));
     dispatch(setUserOut({}));
-    history.push("/together");
+    history.push("/login");
   };
 
   const list = (anchor) => (
