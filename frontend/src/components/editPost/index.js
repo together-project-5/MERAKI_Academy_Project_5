@@ -40,7 +40,7 @@ const EditPost = () => {
          onChange={handleChangeTitle}/>
         <input type="text" placeholder="description"
          onChange={handleChangeDescription} />
-        <button>Submit</button>
+        <button onClick={edit}>Submit</button>
       </div>
     </>
   );
