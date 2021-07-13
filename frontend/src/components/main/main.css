@@ -166,3 +166,30 @@
   color: white;
   margin-left: 75vh;
 }
+
+.profilePic {
+  width: 8vw;
+  height: 5vh;
+}
+
+.postDiv {
+  display: flex;
+  border: black solid 1px;
+  width: 50vw;
+  height: 50vh;
+}
+
+.title_description {
+  display: block;
+  margin-left: 10px;
+}
+
+.postTitle {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 25px;
+}
+.postDescription {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+
