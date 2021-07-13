@@ -83,6 +83,7 @@ const EditProfile = () => {
               variant="outlined"
               onChange={handleChange}
               name="password"
+              defaultValue={localStorage.getItem("password")}
             />
           </div>
           <div className="uploadImgg">
