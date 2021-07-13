@@ -40,7 +40,10 @@ const AllPost = () => {
   // console.log(state.posts);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/post`)
+      .get(`http://localhost:5000/post`,{
+        headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },})
       .then((res) => { })
       .catch((err) => {
         console.log(err);
