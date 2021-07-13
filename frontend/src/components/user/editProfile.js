@@ -72,7 +72,7 @@ const EditProfile = () => {
               variant="outlined"
               onChange={handleChange}
                name="name"
-              
+              defaultValue={localStorage.getItem("name")}
             />
           </div>
           <div className="typePosts">
@@ -83,7 +83,6 @@ const EditProfile = () => {
               variant="outlined"
               onChange={handleChange}
               name="password"
-              
             />
           </div>
           <div className="uploadImgg">
