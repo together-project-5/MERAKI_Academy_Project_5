@@ -50,7 +50,7 @@ export default function LongMenu({ id, userIdP }) {
     axios
       .get(`http://localhost:5000/post/${id}`)
       .then((result) => {
-        console.log("result",result)
+        console.log("result", result)
         dispatch(setPost(result.data));
       })
       .catch((err) => {
@@ -59,11 +59,11 @@ export default function LongMenu({ id, userIdP }) {
   };
 
   const archivePost = (_IdPost) => {
-let archive = 1 ;
+    let archive = 1;
     axios
-    .post(`http://localhost:5000/post/archive/${_IdPost}`,{ archive })
-    .then((res) => {
-      set_IdPost(res.data);
+      .post(`http://localhost:5000/post/archive/${_IdPost}`, { archive })
+      .then((res) => {
+        set_IdPost(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -72,27 +72,26 @@ let archive = 1 ;
 
   const deletePost = (_IdPost) => {
     axios
-    .delete(`http://localhost:5000/post/${_IdPost}`)
-    .then((res) => {
-      set_IdPost(res.data);
+      .delete(`http://localhost:5000/post/${_IdPost}`)
+      .then((res) => {
+        set_IdPost(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
-    };
-    return (
-      <>
+  };
+  return (
+    <>
       <div className="menuList">
-        {console.log(localStorage.getItem("_IdUser"))}
         {localStorage.getItem("_IdUser") == userIdP ? (
- 
+
           <div>
             <IconButton
               aria-label="more"
               aria-controls="long-menu"
               aria-haspopup="true"
               onClick={handleClick}
-              >
+            >
               <MoreVertIcon />
             </IconButton>
             <Menu
@@ -107,14 +106,14 @@ let archive = 1 ;
                   width: "20ch",
                 },
               }}
-              >
+            >
               <MenuItem
                 onClick={(e) => {
                   e.preventDefault();
                   handleClose();
                   editPost(id);
                 }}
-                >
+              >
                 Edit Post
               </MenuItem>
               <MenuItem
@@ -123,7 +122,7 @@ let archive = 1 ;
                   handleClose();
                   archivePost(id);
                 }}
-                >
+              >
                 Archive
               </MenuItem>
               <MenuItem
@@ -132,7 +131,7 @@ let archive = 1 ;
                   handleClose();
                   deletePost(id);
                 }}
-                >
+              >
                 Delete
               </MenuItem>
             </Menu>
@@ -144,7 +143,7 @@ let archive = 1 ;
               aria-controls="long-menu"
               aria-haspopup="true"
               onClick={handleClick}
-              >
+            >
               <MoreVertIcon />
             </IconButton>
             <Menu
@@ -159,14 +158,14 @@ let archive = 1 ;
                   width: "20ch",
                 },
               }}
-              >
+            >
               <MenuItem
                 onClick={(e) => {
                   e.preventDefault();
                   handleClose();
                   reportPost(id);
                 }}
-                >
+              >
                 Report
               </MenuItem>
             </Menu>

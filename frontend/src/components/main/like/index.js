@@ -25,9 +25,8 @@ const Like = ({ id, i }) => {
     axios
       .get(`http://localhost:5000/post`)
       .then((res) => {
-        console.log("post.likes",res);
         res.data.forEach((post, i) => {
-       
+
           ar.push(post.likes);
         });
         dispatch(setPost(res.data));
@@ -81,8 +80,8 @@ const Like = ({ id, i }) => {
               setLike(
                 like.map((post, i) => {
                   if (i === index) {
-                    value = post -1;
-                    return post -1 ;
+                    value = post - 1;
+                    return post - 1;
                   }
                   return post;
                 })
