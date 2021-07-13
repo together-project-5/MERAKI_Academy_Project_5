@@ -29,7 +29,10 @@ const AllPost = () => {
   useEffect(() => {
     console.log("receiverId", state.receiverId);
     axios
-      .get(`http://localhost:5000/post`)
+      .get(`http://localhost:5000/post`,{
+        headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },})
       .then((res) => {
         dispatch(setPost(res.data));
       })
@@ -40,10 +43,7 @@ const AllPost = () => {
   // console.log(state.posts);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/post`,{
-        headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },})
+      .get(`http://localhost:5000/post`)
       .then((res) => { })
       .catch((err) => {
         console.log(err);
