@@ -133,3 +133,60 @@
   color: white;
   margin-left: 75vh;
 }
+
+.profilePic {
+  width: 75px;
+  height: 75px;
+  border-radius: 7px;
+}
+
+.postDiv {
+  border: black solid 1px;
+  width: 35vw;
+  height: 70vh;
+  margin-left: 10px;
+}
+
+.title_description {
+  display: block;
+  margin-left: 10px;
+}
+
+.postTitle {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  padding-left: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 15px;
+  color: black;
+}
+.postDescription {
+  font-family: "Times New Roman", Times, serif;
+  padding-left: 10px;
+  font-size: 15px;
+  margin-right: 25px;
+  height: 100%;
+  margin-top: 3vh;
+  color: black;
+}
+.saveImage{
+  width: 500px;
+  height: 300px;
+  margin-left: 10px;
+  border-radius: 7px;
+  margin-top: 3vh;
+}
+
+.userData{
+  display: flex;
+}
+
+.user-post-name {
+  margin-left: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fd5050cb;
+  margin-top: 2vh;
+}
+

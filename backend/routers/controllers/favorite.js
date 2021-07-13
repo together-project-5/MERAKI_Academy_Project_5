@@ -12,7 +12,7 @@ const insertFavorite = (req, res) => {
 
 const getFavoritePost = (req, res) => {
     const id = req.params.id;
-    const query = `SELECT favorite.userId,favorite.postId ,post.title ,post.description,post.likes FROM favorite INNER JOIN post ON favorite.userId=${id} `;
+    const query = `SELECT * FROM favorite INNER JOIN post ON favorite.userId=${id} INNER JOIN user ON favorite.userId=_IdUser `;
     db.query(query, (err, result) => {
         if (err) return res.status(400).send("can't get favorite posts");
         res.status(200).json(result);
