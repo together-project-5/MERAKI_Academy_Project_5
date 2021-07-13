@@ -16,6 +16,7 @@ const Upload = () => {
   const [selectedFile, setSelectedFile] = useState("");
   const [previewSource, setPreviewSource] = useState();
   const [post, setPost] = useState({ userId: localStorage.getItem("_IdUser") });
+  const [message, setMessage] = useState("");
 
   const dispatch = useDispatch();
 
@@ -56,8 +57,9 @@ const Upload = () => {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-      }).then((result) => {
+      }).then((result,res) => {
         console.log("result", result);
+          setMessage(res.data);
       });
     } catch (error) {
       console.error(error);
@@ -125,9 +127,11 @@ const Upload = () => {
             style={{ height: "300px" }}
           />
         )}
-        <button onClick={handleSubmitFile}>Submit</button>
       </div>
+
+        <button className="buttonSubmit" onClick={handleSubmitFile}>Submit</button>
     </div>
+
   );
 };
 export default Upload;
