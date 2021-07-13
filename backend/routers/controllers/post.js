@@ -3,33 +3,23 @@ const  {cloudinary}  = require('../../utils/cloudinary');
 
 
 const createPost =async (req, res) => {
-
-    try {
-      const fileStr = req.body.data;
-      const uploadResponse = await cloudinary.uploader.upload(fileStr, {
-        upload_preset: 'ml_default',
-      });
-      const query = `INSERT INTO post (userId ,type ,title,description ,url) VALUES (?,?,?,?,?)`;
-      let { userId, type, title, description } = req.body.post;
+  try {
+    const fileStr = req.body.data;
+    const uploadResponse = await cloudinary.uploader.upload(fileStr, {
+      upload_preset: 'ml_default',
+    });
+    const query = `INSERT INTO post (userId ,type ,title,description ,url) VALUES (?,?,?,?,?)`;
+    let { userId, type, title, description } = req.body.post;
     const data = [userId, type, title, description, uploadResponse.url];
     db.query(query, data, (err, result) => {
-      if (!type) {
-        res.status(500).send("please fill type text");
-      }
-      if (!title) {
-        res.status(500).send("please fill title text");
-      }
-      if (!description) {
-        res.status(500).send("please fill description text");
-      }
-      if (err) return res.status(500).send("can't create post try again please ");
+      if (err) return res.status(400).send("can't create post try again please ");
       res.status(201).json(result);
     });
     // res.status(201).json({ uploadResponse });
   } catch (err) {
     console.error(err);
     res.status(500).json({ err: 'Something went wrong' });
-}
+  }
 };
 
 const getAllPost = (req, res) => {
