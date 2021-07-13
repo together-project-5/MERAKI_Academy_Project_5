@@ -131,18 +131,6 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
-  let search = "";
-
-  const searchPost = (e) => {
-    axios
-      .get(`http://localhost:5000/post/title/${search}`)
-      .then((res) => {
-        console.log("res", res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   const getBackground = style("mode", {
     light: "#EEE",
