@@ -156,14 +156,6 @@ body {
       <div className={classes.grow}>
         <AppBar position="static">
           <Toolbar>
-            {/* <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-
-          </IconButton> */}
             <Typography
               onClick={handleClick}
               className="websiteName"
