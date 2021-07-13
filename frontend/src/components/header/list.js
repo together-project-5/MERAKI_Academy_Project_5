@@ -92,7 +92,7 @@ export default function TemporaryDrawer() {
           <ListItem button key={text}>
             <ListItemText primary={text} />
             {/* <Avatar alt="Remy Sharp" src="" />{" "} */}
-            <img  src={userInfo.picture} />
+            <img className="profile-picture" src={userInfo.picture} />
           </ListItem>
         ))}
       </List>
