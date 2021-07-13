@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-const EditPost = (props) => {
-  console.log("props",props)
+const EditPost = () => {
+  const state = useSelector((state) => {
+    return {
+      post: state.getPost.getPost,
+
+    };
+  });
+  
   return (
     <>
       <div>
