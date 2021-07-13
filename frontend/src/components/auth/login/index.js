@@ -52,8 +52,7 @@ const Login = () => {
     };
 
     axios.get("https://api.chatengine.io/chats", { headers: authObject });
-    localStorage.setItem("username", username);
-    localStorage.setItem("password", password);
+    
   };
 
   const signupButton = document.getElementById("signup-button"),
