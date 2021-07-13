@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-const EditPost = () => {
+const EditPost = (props) => {
+  console.log("props",props)
   return (
     <>
       <div>
