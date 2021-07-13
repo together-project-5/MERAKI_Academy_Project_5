@@ -15,7 +15,7 @@ const Upload = () => {
   const [fileInputState, setFileInputState] = useState("");
   const [selectedFile, setSelectedFile] = useState("");
   const [previewSource, setPreviewSource] = useState();
-  const [post, setPost] = useState({userId:localStorage.getItem("_IdUser")});
+  const [post, setPost] = useState({ userId: localStorage.getItem("_IdUser") });
 
   const dispatch = useDispatch();
 
@@ -108,17 +108,22 @@ const Upload = () => {
           </div>
         </form>
       </div>
-      <div className="uploadImg">
+      <div className="div-upload-picture">
         <input
           type="file"
           name="image"
           onChange={handleFileInputChange}
           value={fileInputState}
         />
-        <button onClick={handleSubmitFile}>Submit</button>
         {previewSource && (
-          <img src={previewSource} alt="chosen" style={{ height: "300px" }} />
+          <img
+            className="img-upload"
+            src={previewSource}
+            alt="chosen"
+            style={{ height: "300px" }}
+          />
         )}
+        <button onClick={handleSubmitFile}>Submit</button>
       </div>
     </div>
   );
