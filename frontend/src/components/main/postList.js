@@ -18,6 +18,7 @@ export default function LongMenu({ id, userIdP }) {
   const history = useHistory();
   const [_IdPost, set_IdPost] = useState("");
   const [report, setReport] = useState(0);
+
   const dispatch = useDispatch();
 
 
@@ -58,7 +59,15 @@ export default function LongMenu({ id, userIdP }) {
   };
 
   const archivePost = (_IdPost) => {
-    history.push("/archive");
+let archive = 1 ;
+    axios
+    .post(`http://localhost:5000/post/archive/${_IdPost}`,{ archive })
+    .then((res) => {
+      set_IdPost(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const deletePost = (_IdPost) => {
