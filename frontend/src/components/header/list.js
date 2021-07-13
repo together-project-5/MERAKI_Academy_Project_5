@@ -65,6 +65,8 @@ export default function TemporaryDrawer() {
     history.push("/archive");
   };
   const dispatch = useDispatch();
+  let userInfo = localStorage.getItem("user")
+  console.log(userInfo);
   const Logout = (event) => {
     localStorage.setItem("token", "");
     localStorage.setItem("user", "");
@@ -89,9 +91,8 @@ export default function TemporaryDrawer() {
         {[`${localStorage.getItem("name")}`].map((text, index) => (
           <ListItem button key={text}>
             <ListItemText primary={text} />
-            <Avatar alt="Remy Sharp" src="" />{" "}
-            {/* <img className="post-image" src={post.url} /> */}
-            
+            {/* <Avatar alt="Remy Sharp" src="" />{" "} */}
+            <img  src={userInfo.picture} />
           </ListItem>
         ))}
       </List>
