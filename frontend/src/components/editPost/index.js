@@ -11,11 +11,13 @@ const EditPost = () => {
 
     };
   });
-  const edit = () => {
-    const handleChangeTitle = (e) => {
+  const handleChangeTitle = (e) => {
       setTitle(e.target.value);
     };
+  const edit = () => {
     
+    
+  }
   return (
     <>
       <div>
