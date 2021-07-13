@@ -59,7 +59,7 @@ const Upload = () => {
        
       }).then((result) => {
         console.log("result", result);
-          setMessage(res.data);
+          setMessage(result.data);
       });
     } catch (error) {
       console.error(error);
