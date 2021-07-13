@@ -7,7 +7,7 @@ const EditPost = () => {
       <div>
         <input type="text" placeholder="Title" />
         <input type="text" placeholder="description" />
-        <button>done</button>
+        <button>Submit</button>
       </div>
     </>
   );
