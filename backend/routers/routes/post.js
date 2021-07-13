@@ -19,7 +19,7 @@ const {
 const postRouter = express.Router();
 const authentication = require("./../middlewares/authentication");
 
-postRouter.post("/api/upload", createPost);
+postRouter.post("/api/upload",authentication, createPost);
 postRouter.get("/", getAllPost);
 postRouter.get("/archive", getArchivePost);
 postRouter.get("/title/:title", getPostByTitle);
