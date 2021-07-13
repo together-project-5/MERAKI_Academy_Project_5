@@ -29,7 +29,8 @@ const Main = () => {
 
   return (
     <>
-      {localStorage.getItem("token") ??
+      {localStorage.getItem("token") &&
+      
         <div className="navBar-filter">
           <div className="left-2en-navBar">
             <button
@@ -78,6 +79,7 @@ const Main = () => {
             </button>
           </div>
         </div>
+        
       }
     </>
   );

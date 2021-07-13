@@ -67,11 +67,12 @@ const EditProfile = () => {
           <div className="UserIdPosts">
             <TextField
               id="outlined-textarea"
-              label="User Name"
+              label="Name"
               multiline
               variant="outlined"
               onChange={handleChange}
-              name="name"
+               name="name"
+              
             />
           </div>
           <div className="typePosts">
@@ -82,6 +83,7 @@ const EditProfile = () => {
               variant="outlined"
               onChange={handleChange}
               name="password"
+              
             />
           </div>
           <div className="uploadImgg">
