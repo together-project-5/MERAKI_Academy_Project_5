@@ -37,8 +37,9 @@ const EditProfile = () => {
     // const reader = new FileReader();
     // reader.readAsDataURL(selectedFile);
   };
-
+  
   const uploadImage = async (base64EncodedImage) => {
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",userData);
     try {
       await fetch(
         `http://localhost:5000/user/edit/${localStorage.getItem("_IdUser")}`,
@@ -48,6 +49,7 @@ const EditProfile = () => {
             data: base64EncodedImage,
             userData: userData,
           }),
+
           headers: { "Content-type": "application/json" },
         }
       ).then((result) => {
@@ -70,7 +72,7 @@ const EditProfile = () => {
               variant="outlined"
               onChange={handleChange}
                name="name"
-              defaultValue={localStorage.getItem("name")}
+              // defaultValue={localStorage.getItem("name")}
             />
           </div>
           <div className="typePosts">
@@ -81,7 +83,7 @@ const EditProfile = () => {
               variant="outlined"
               onChange={handleChange}
               name="password"
-              defaultValue={localStorage.getItem("password")}
+              // defaultValue={localStorage.getItem("password")}
             />
           </div>
           <div className="div-upload-picture">
