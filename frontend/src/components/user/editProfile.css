@@ -1,19 +1,23 @@
 .UserIdPosts {
-  margin-top: 30px;
   margin-left: 40%;
 }
 .typePosts {
-  margin-top: 30px;
   margin-left: 40%;
 }
 
-.uploadImgg {
+.div-upload-picture {
+  display: block;
+  align-content: center;
+  text-align: center;
   width: 250px;
   height: 250px;
   margin-left: 40%;
   margin-top: 3%;
+  margin-bottom: 15px;
 }
-.submitt{
-  margin-left: 85vh;
-  margin-top: 10vh;
+
+.img-upload{
+  width: 200px;
+  border-radius: 5px;
+  height:50px;
 }

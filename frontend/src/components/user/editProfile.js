@@ -32,14 +32,12 @@ const EditProfile = () => {
 
   const handleSubmitFile = (e) => {
     e.preventDefault();
-      if (!previewSource) return;
-      uploadImage(previewSource);
-      // const reader = new FileReader();
-      // reader.readAsDataURL(selectedFile);
-    };
- 
-  
-  
+    if (!previewSource) return;
+    uploadImage(previewSource);
+    // const reader = new FileReader();
+    // reader.readAsDataURL(selectedFile);
+  };
+
   const uploadImage = async (base64EncodedImage) => {
     try {
       await fetch(
@@ -84,28 +82,26 @@ const EditProfile = () => {
               name="password"
             />
           </div>
-          <div className="uploadImgg">
-            <input
-              type="file"
-              name="image"
-              onChange={handleFileInputChange}
-              value={fileInputState}
-            />
-            {previewSource && (
-              <img
-                src={previewSource}
-                alt="chosen"
-                style={{ height: "300px" }}
+          <div className="div-upload-picture">
+              <input
+                type="file"
+                name="image"
+                onChange={handleFileInputChange}
+                value={fileInputState}
               />
-            )}
-          </div>
-          <div className="submitt">
+              {previewSource && (
+                <img
+                className="img-upload"
+                  src={previewSource}
+                  alt="chosen"
+                  style={{ height: "300px" }}
+                />
+              )}
             <button onClick={handleSubmitFile}>Submit</button>
-          </div>
+            </div>
         </form>
       </div>
     </>
   );
 };
 export default EditProfile;
-

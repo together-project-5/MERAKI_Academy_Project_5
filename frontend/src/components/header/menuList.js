@@ -199,21 +199,20 @@ body {
             <SearchIcon
               className="headerSearch-button"
               onClick={(e) => {
-                
                 history.push("/search");
               }}
             >
               search
             </SearchIcon>
-            <div className="dark">
-              <ThemeProvider theme={theme}>
-                <GlobalStyle />
-                <ToggleMode />
-              </ThemeProvider>
-            </div>
 
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
+              <IconButton color="inherit">
+                <ThemeProvider theme={theme}>
+                  <GlobalStyle />
+                  <ToggleMode />
+                </ThemeProvider>
+              </IconButton>
               <IconButton
                 onClick={chat}
                 aria-label="show 4 new mails"
