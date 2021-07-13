@@ -72,9 +72,6 @@
   height: 100%;
   margin-top: 3vh;
   color: black;
-  /* overflow: scroll;
-  overflow-x: hidden;
-  overflow-y: scroll; */
 }
 
 .post-image {
@@ -106,6 +103,7 @@ transform: scale(1.03);
 }
 
 .div-post-comment {
+  /* background-color: rgb(238, 226, 226); */
   display: flex;
   gap: 10px;
   margin-bottom: 1vh;
@@ -123,4 +121,8 @@ transform: scale(1.03);
   margin-top: 2vh;
   cursor: pointer;
   color: black;
+}
+.allpost{
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/12ee6265-e947-474a-a378-6d78ab0d1117/d8fr7iz-082cab4c-3f87-47e1-b2f0-efdb504372e5.jpg/v1/fill/w_1024,h_576,q_75,strp/super_hero_whatsapp_background_by_x_ama_d8fr7iz-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvMTJlZTYyNjUtZTk0Ny00NzRhLWEzNzgtNmQ3OGFiMGQxMTE3XC9kOGZyN2l6LTA4MmNhYjRjLTNmODctNDdlMS1iMmYwLWVmZGI1MDQzNzJlNS5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.BzcKtmJbHcafn-3f4-9tNEiybd-JbKGVeynAsEJFICI");
+/* background-image: url("aa.jpg"); */
 }

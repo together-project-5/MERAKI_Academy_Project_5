@@ -44,22 +44,47 @@
 
 .ce-chat-subtitle-text {
   margin-top: 3vh;
-  color: #770000;
+  color: #fd5050cb;
 }
 .ce-chat-title-text {
-  color: #770000;
+  color: #fd5050cb;
 }
 #ce-send-message-button {
-  background-color: #770000 !important;
+  background-color: #fd5050cb !important;
 }
 .ce-chat-unread-dot {
-  background-color: #770000;
+  background-color: #fd5050cb;
 }
 #new-chat-plus-button {
-  background-color: #770000 !important;
+  background-color: #fd5050cb !important;
 }
 
-.ce-message-bubble.ce-my-message-bubble{
-  background-color: #770000 !important;
+.ce-message-bubble.ce-my-message-bubble {
+  background-color: #fd5050cb !important;
+}
+.ce-chat-list {
+  margin-top: -2vh;
+}
+.ce-chat-feed {
 
+}
+
+.ce-settings {
+  margin-top: -2vh;
+}
+#ce-feed-container{
+  background-image: url(https://i.redd.it/qwd83nc4xxf41.jpg);
+  background-color: white;
+
+}
+
+.ce-chat-title-container{
+margin-bottom: -1vh;
+margin-top: -2vh;
+height: 15vh;
+background-color: white;
+
+}
+.ce-message-date-text{
+  margin-left: 1vh;
 }

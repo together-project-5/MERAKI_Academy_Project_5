@@ -16,7 +16,7 @@ const Save = ({ id, i }) => {
 
   const saveFunction = (postId) => {
     setStatus(!status);
-    let ID = state.user._IdUser;
+    let ID = localStorage.getItem("_IdUser");
     if (status) {
       axios
         .post(`http://localhost:5000/favorite/post`, { postId, userId: ID })
