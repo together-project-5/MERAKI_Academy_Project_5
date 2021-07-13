@@ -66,13 +66,25 @@
   margin-top: -2vh;
 }
 .ce-chat-feed {
-  margin-top: -2vh;
+
 }
+
 .ce-settings {
   margin-top: -2vh;
 }
 #ce-feed-container{
   background-image: url(https://i.redd.it/qwd83nc4xxf41.jpg);
+  background-color: white;
 
 }
 
+.ce-chat-title-container{
+margin-bottom: -1vh;
+margin-top: -2vh;
+height: 15vh;
+background-color: white;
+
+}
+.ce-message-date-text{
+  margin-left: 1vh;
+}
