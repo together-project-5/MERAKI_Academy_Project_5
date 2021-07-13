@@ -1,5 +1,8 @@
 .navBar-filter {
-  background-color: rgba(109, 100, 100, 0.85);
+  /* background-color: rgba(109, 100, 100, 0.85);
+   */
+  background-color: rgb(238, 226, 226);
+
   height: 75px;
   gap: 50px;
   display: flex;
@@ -9,7 +12,7 @@
   align-items: center;
   border: none;
   margin-top: -2.2vh;
-  width: 101.1%;
+  width: 100%;
 }
 
 .left-2en-navBar {
@@ -20,8 +23,8 @@
   height: 40px;
   width: 100px;
   padding: 0;
-  border: solid 1px white;
-  color: white;
+  border: solid 1px rgb(53, 51, 51);
+  color:rgb(53, 51, 51);
   outline: 0;
   cursor: pointer;
   border-radius: 3px;
@@ -52,81 +55,57 @@
   height: 40px;
   cursor: pointer;
 }
-.profile-navb-e {
-  margin-top: 3%;
-  background-color: rgba(221, 221, 221, 0.692);
-  background-repeat: no-repeat;
-  background-size: auto;
-  left: 0;
-  z-index: 3000;
-  height: 15.4vh;
-  top: 14vh;
-  /* height: 20vh;
-  top: 3vh; */
-  width: 50vh;
-  margin-top: 2vh;
-}
-.profile-navb-e:hover {
-  cursor: pointer;
-  transform: scale(1.02);
-}
-.profile-navb-p {
-  margin-top: 3%;
-  background-color: rgba(221, 221, 221, 0.692);
-  width: 28%;
-  height: 15.4vh;
-  background-repeat: no-repeat;
-  background-size: auto;
-  width: 50vh;
-  top: 35vh;
-  left: 0;
-  z-index: 3000;
-  height: 15.4vh;
-  top: 35vh;
-  /* height: 20vh;
-  top: 26vh; */
-  margin-top: 5vh;
+.Advertisement {
+  display: block;
+  /* border-right: 1px solid rgba(90, 85, 85, 0.562); */
+  /* border-bottom: 1px solid rgba(90, 85, 85, 0.562); */
+  padding-bottom: 2rem;
+  width: 400px;
+  height: 75vh;
 }
 
-.profile-navb-p:hover {
-  cursor: pointer;
-  transform: scale(1.02);
-}
-.profile-navb-s {
+.sub-advertisement {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-gap: 1px;
+  padding-bottom: 2rem;
   margin-top: 3%;
-  background-color: rgba(221, 221, 221, 0.692);
-  width: 50vh;
-  background-repeat: no-repeat;
-  background-size: auto;
-  left: 0;
-  z-index: 3000;
-  height: 15.4vh;
-  top: 56vh;
-  /* height: 20vh;
-  top: 51vh; */
-  margin-top: 5vh;
+  background-color: #eee2e2;
+  height: 15vh;
+  margin-top: 2vh;
+  border: solid rgba(90, 85, 85, 0.562) 1px;
+  box-shadow: 1px 1px #b3b1b1e5;
 }
-.profile-navb-s:hover {
+
+.advLabel{
+  display: flex;
+  justify-content: center;
+  border-bottom: double rgba(90, 85, 85, 0.562) 1px;
+}
+
+.sub-advertisement:hover {
   cursor: pointer;
-  transform: scale(1.02);
+  transform: translateY(-1.1rem) scale(1.1);
+
 }
-.profile-navb-c {
-  margin-top: 3%;
-  background-color: rgba(221, 221, 221, 0.692);
-  width: 50vh;
-  background-repeat: no-repeat;
-  background-size: auto;
-  left: 0;
-  z-index: 3000;
-  height: 15.4vh;
-  top: 77vh;
-  /* height: 20vh;
-  top: 77vh; */
-  margin-top: 5vh;
+
+.advertisementImages {
+  padding-top: 10px;
+  height: 10vh;
+  padding-right: 1rem;
+  width: 4vw;
+  margin-left: 7px;
 }
-.profile-navb-c:hover {
-  cursor: pointer;
-  transform: scale(1.02);
+.title_description {
+  padding-top: 10px;
+  margin-right: 2px;
+}
+.title-details {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.description {
+  font-size: 0.9rem;
 }
 .mainPost {
   height: 40px;
@@ -149,19 +128,7 @@
   color: rgb(0, 235, 243);
   font-weight: 600;
 }
-.img-ads {
-  height: 110px;
-  width: 110px;
-}
 
-.title-details {
-  margin-left: 18vh;
-  margin-top: -13vh;
-}
-.descriptionn {
-  margin-top: 1vh;
-  margin-left: 18vh;
-}
 .online {
   color: white;
   margin-left: 75vh;
