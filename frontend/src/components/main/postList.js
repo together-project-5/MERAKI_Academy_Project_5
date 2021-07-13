@@ -75,7 +75,7 @@ export default function LongMenu({ id, userIdP }) {
       <div className="menuList">
         {console.log(localStorage.getItem("_IdUser"))}
         {localStorage.getItem("_IdUser") == userIdP ? (
-
+ 
           <div>
             <IconButton
               aria-label="more"
