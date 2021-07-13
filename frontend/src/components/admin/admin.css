@@ -16,7 +16,7 @@
   height: 300px;
   margin-left: 10px;
   border-radius: 7px;
-  margin-top: 4vh;
+  margin-top: -1vh;
 }
 
 .post-title {
@@ -34,7 +34,7 @@
   font-size: 15px;
   margin-right: 25px;
   height: 100%;
-  margin-top: 5px;
+  margin-top: -4px;
 }
 .keepButton {
   background-color: rgb(18, 77, 18);
