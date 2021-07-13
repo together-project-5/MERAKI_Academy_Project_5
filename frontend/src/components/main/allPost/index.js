@@ -29,7 +29,10 @@ const AllPost = () => {
   useEffect(() => {
     console.log("receiverId", state.receiverId);
     axios
-      .get(`http://localhost:5000/post`)
+      .get(`http://localhost:5000/post`,{
+        headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },})
       .then((res) => {
         dispatch(setPost(res.data));
       })

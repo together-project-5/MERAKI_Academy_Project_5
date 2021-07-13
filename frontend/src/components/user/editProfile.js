@@ -65,11 +65,12 @@ const EditProfile = () => {
           <div className="UserIdPosts">
             <TextField
               id="outlined-textarea"
-              label="User Name"
+              label="Name"
               multiline
               variant="outlined"
               onChange={handleChange}
-              name="name"
+               name="name"
+              defaultValue={localStorage.getItem("name")}
             />
           </div>
           <div className="typePosts">
@@ -80,6 +81,7 @@ const EditProfile = () => {
               variant="outlined"
               onChange={handleChange}
               name="password"
+              defaultValue={localStorage.getItem("password")}
             />
           </div>
           <div className="div-upload-picture">
