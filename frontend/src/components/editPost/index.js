@@ -15,7 +15,19 @@ const EditPost = () => {
       setTitle(e.target.value);
     };
   const edit = () => {
-    
+    axios
+      .put(`http://localhost:5000/post/edit/${state.post[0]._IdPost}`,
+        {
+          title: title,
+          description: description
+        })
+      .then((res) => {
+        console.log(res.data)
+
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     
   }
   return (
