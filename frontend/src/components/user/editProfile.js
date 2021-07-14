@@ -113,7 +113,7 @@ const EditProfile = () => {
                   style={{ height: "300px" }}
                 />
               )}
-            <button onClick={handleSubmitFile}>Submit</button>
+            <button className="buttonSubmits" onClick={handleSubmitFile}>Submit</button>
             </div>
         </form>
       </div>
