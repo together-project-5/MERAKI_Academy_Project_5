@@ -103,9 +103,11 @@ transform: scale(1.01);
 .title-details {
   font-weight: bold;
   font-size: 1.3rem;
+  color: black;
 }
 .description {
   font-size: 0.9rem;
+  color: black;
 }
 .mainPost {
   height: 40px;
