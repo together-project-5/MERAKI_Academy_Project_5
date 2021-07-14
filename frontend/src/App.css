@@ -87,9 +87,15 @@ background-color: white;
   margin-left: 1vh;
 }
 .MuiFormControl-root{
-  margin-top: 5vh !important;
+  margin-top: -1vh !important;
+  margin: -1vh !important;  
 }
-
+.MuiInputLabel-outlined {
+  margin-top: 3vh !important;
+}
+.MuiOutlinedInput-multiline {
+  margin-top: 3vh !important;
+}
 .buttonSubmits {
   margin-right: 21vh;
   margin-top: 5vh;
