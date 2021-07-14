@@ -34,7 +34,7 @@ const Archive = () => {
         }).catch((err) => {
             console.log(err)
         })
-}, [])
+}, [state.archives])
   return (
     <>
         {state.archives.map((post, i) => {
