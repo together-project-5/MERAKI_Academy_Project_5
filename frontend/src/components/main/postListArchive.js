@@ -45,7 +45,7 @@ export default function LongMenu({ id, userIdP }) {
       .catch((err) => {
         console.log(err);
       });
-      };
+  };
 
   const deletePost = (_IdPost) => {
     axios

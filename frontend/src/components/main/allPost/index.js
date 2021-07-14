@@ -26,7 +26,8 @@ const AllPost = () => {
       user: state.login.user,
     };
   });
-  let userInfo = localStorage.getItem("user")
+  let userInfo = JSON.parse(localStorage.getItem("user"))
+
 
   useEffect(() => {
     axios
