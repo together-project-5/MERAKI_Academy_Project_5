@@ -13,7 +13,8 @@ const {
   addComment,
   showComment,
   editLikePost,
-  reportPost
+  reportPost,
+  favoritePost
 } = require("../controllers/post");
 
 const postRouter = express.Router();
@@ -32,6 +33,8 @@ postRouter.get("/:id", getPostById);
 postRouter.post("/report/:id", reportPost);
 postRouter.get("/comment/:id", showComment);
 postRouter.post("/comment/:id", addComment);
+postRouter.post("/favorite/:id", favoritePost);
+
 
 
 

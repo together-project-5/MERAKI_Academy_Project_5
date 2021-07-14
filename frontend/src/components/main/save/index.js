@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setFavorite, deleteFavorite } from "./../.././../reducers/favorite"
 import save from "../img/save.png";
 
-const Save = ({ id, i }) => {
-  const [status, setStatus] = useState(true);
+const Save = ({ id, i ,postId }) => {
+  let status = id;
   const dispatch = useDispatch();
   const state = useSelector((state) => {
     return {
@@ -14,28 +14,21 @@ const Save = ({ id, i }) => {
     };
   });
 
-  const saveFunction = (postId) => {
-    setStatus(!status);
-    let ID = localStorage.getItem("_IdUser");
-    if (status) {
+  const saveFunction = (postId1) => {
+         if(status===0){
+           status =1
+         }else{
+           status =0
+         }
+
       axios
-        .post(`http://localhost:5000/favorite/post`, { postId, userId: ID })
+        .post(`http://localhost:5000/post/favorite/${postId}`, { favorite:status})
         .then((res) => {
           dispatch(setFavorite(res.data));
         })
         .catch((err) => {
           console.log(err);
         });
-    } else {
-      axios
-        .delete(`http://localhost:5000/favorite/post/${postId}`)
-        .then((res) => {
-          dispatch(deleteFavorite(res.data));
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
   };
   return (
     <>

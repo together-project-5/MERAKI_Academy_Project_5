@@ -103,6 +103,18 @@ const archivePost = (req, res) => {
   });
 };
 
+const favoritePost = (req, res) => {
+  const id = req.params.id;
+  const query = `UPDATE post SET favorite=? WHERE _IdPost=${id}`;
+  const { favorite } = req.body;
+  const data = [favorite];
+  db.query(query, data, (err, res) => {
+    if (err)
+      return res.status(400).send("can't add post to favorite try again please");
+    console.log(res);
+  });
+};
+
 const addComment = (req,res) => {
   const id = req.params.id;
   const query = `INSERT INTO comments (userId ,postId , comment) VALUES (?,?,?)`;
@@ -161,4 +173,5 @@ module.exports = {
   showComment,
   editLikePost,
   reportPost,
+  favoritePost
 };
