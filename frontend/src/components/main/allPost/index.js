@@ -5,6 +5,7 @@ import { setPost } from "../../../reducers/post";
 import Comment from "../comment/index";
 import Like from "../like/index";
 import Save from "../save/index";
+import GetFavorites from "../../favorite/favorite.js"
 import MenuItem from "../postList";
 import ShowComment from "../comment/show";
 import "./allPost.css";
@@ -59,7 +60,8 @@ const AllPost = () => {
         </div>
 
         {state.posts.length &&
-          post.map((post, i) => {
+          state.posts.map((post, i) => {
+            <GetFavorites id={post.favorite}/>
             return (
               <>
                 <div className="div-post-comment" key={i}>
@@ -109,7 +111,7 @@ const AllPost = () => {
                           i={i}
                         />
                       </div>
-                      <Save id={post._IdPost} i={i} />
+                      <Save id={post.favorite} i={i} postId={post._IdPost} />
                     </div>
                   </div>
                   <div>

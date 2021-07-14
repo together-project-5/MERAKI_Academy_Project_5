@@ -20,6 +20,7 @@ CREATE TABLE Post  (
     report int (3),
     url VARCHAR(255) NOT NULL, 
     archive iNT(3) DEFAULT 0,
+    favorite iNT(3) DEFAULT 0,
     PRIMARY KEY (_IdPost)
 );
 CREATE TABLE userLike(
@@ -30,14 +31,7 @@ CREATE TABLE userLike(
     FOREIGN KEY (postId) REFERENCES Post(_IdPost),
     PRIMARY KEY (_IdLike)
 );
-CREATE TABLE favorite  (
-    _IdFavorite INT AUTO_INCREMENT NOT NULL,
-    userId INT,
-    postId INT,
-    FOREIGN KEY (userId) REFERENCES user(_IdUser),
-    FOREIGN KEY (postId) REFERENCES Post(_IdPost),
-    PRIMARY KEY (_IdFavorite )
-);
+
 CREATE TABLE comments(
     _IdComment INT AUTO_INCREMENT NOT NULL,
     userId INT,
