@@ -25,7 +25,7 @@ const GetFavorites =  (favoritePost) => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [state.favorites]);
 
   const saveFunction = (postId1) => {
     if(status===0){
