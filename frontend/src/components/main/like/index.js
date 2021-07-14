@@ -25,23 +25,24 @@ const Like = ({ id, i }) => {
     axios
       .get(`http://localhost:5000/post`)
       .then((res) => {
-        res.data.forEach((post, i) => {
+        res.data.reverse().forEach((post, i) => {
 
           ar.push(post.likes);
         });
-        dispatch(setPost(res.data));
+        // dispatch(setPost(res.data));
       })
       .catch((err) => {
         console.log(err);
       });
 
-  }, []);
+  }, [state.posts]);
 
   useEffect(() => {
     setLike(ar);
   }, []);
 
   const likesFunction = (id, index) => {
+    console.log("ar.reverse()",ar)
     let value;
 
     axios

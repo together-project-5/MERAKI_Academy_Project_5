@@ -20,7 +20,8 @@ const AllPost = () => {
   const [userId, setUserId] = useState("");
   const [aref, setAref] = useState(false);
   const [idPost, setIdPost] = useState("");
-
+  const [post, setPost] = useState([ ]);
+  
   const state = useSelector((state) => {
     return {
       posts: state.posts.posts,
@@ -34,6 +35,7 @@ const AllPost = () => {
     axios
       .get(`http://localhost:5000/post`)
       .then((res) => {
+        setPost(res.data.reverse())
         dispatch(setPost(res.data));
       })
       .catch((err) => {
@@ -49,6 +51,7 @@ const AllPost = () => {
         console.log(err);
       });
   }, [state.posts]);
+  
   return (
     <>
       <div className="allpost">
