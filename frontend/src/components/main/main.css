@@ -57,8 +57,6 @@
 }
 .Advertisement {
   display: block;
-  /* border-right: 1px solid rgba(90, 85, 85, 0.562); */
-  /* border-bottom: 1px solid rgba(90, 85, 85, 0.562); */
   padding-bottom: 2rem;
   width: 400px;
   height: 75vh;
@@ -140,12 +138,16 @@
   height: 75px;
   border-radius: 7px;
 }
+.profilePicFavorite{
+  
+}
 
 .postDiv {
   border: black solid 1px;
   width: 35vw;
-  height: 70vh;
+  height: 80vh;
   margin-left: 10px;
+  margin-bottom:10px;
 }
 
 .title_description {
@@ -172,8 +174,8 @@
   color: black;
 }
 .saveImage{
-  width: 500px;
-  height: 300px;
+  width: 75%;
+  height: 40vh;
   margin-left: 10px;
   border-radius: 7px;
   margin-top: 3vh;
