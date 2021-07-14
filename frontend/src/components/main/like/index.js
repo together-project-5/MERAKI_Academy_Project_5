@@ -35,7 +35,7 @@ const Like = ({ id, i }) => {
         console.log(err);
       });
 
-  }, []);
+  }, [state.posts]);
 
   useEffect(() => {
     setLike(ar);
