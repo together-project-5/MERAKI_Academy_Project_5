@@ -85,8 +85,7 @@
 
 .sub-advertisement:hover {
   cursor: pointer;
-  /* transform: translateX(1.5rem) scale(1.1); */
-transform: scale(1.01);
+   transform: translateX(1.5rem) scale(1.1); 
 }
 
 .advertisementImages {
