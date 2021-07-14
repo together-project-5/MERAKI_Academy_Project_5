@@ -10,8 +10,10 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import { useHistory } from "react-router-dom";
 
 const Upload = () => {
+    const history = useHistory();
   const [fileInputState, setFileInputState] = useState("");
   const [selectedFile, setSelectedFile] = useState("");
   const [previewSource, setPreviewSource] = useState();
@@ -41,12 +43,12 @@ const Upload = () => {
       setPreviewSource(reader.result);
     };
   };
-  const handleSubmitFile = (e) => {
+  const handleSubmitFile =async (e) => {
     e.preventDefault();
     if (!previewSource) return;
-    uploadImage(previewSource);
-    // const reader = new FileReader();
-    // reader.readAsDataURL(selectedFile);
+    await uploadImage(previewSource);
+    history.push("/")
+    
   };
 
   const uploadImage = async (base64EncodedImage) => {
