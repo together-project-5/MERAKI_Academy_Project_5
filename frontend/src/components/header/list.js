@@ -16,7 +16,6 @@ import "./header.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setTokenOut, setUserOut } from "./../../reducers/login";
 
-
 const useStyles = makeStyles({
   list: {
     width: 250,
@@ -93,6 +92,8 @@ export default function TemporaryDrawer() {
             <ListItemText primary={text} />
             {/* <Avatar alt="Remy Sharp" src="" />{" "} */}
             <img className="profile-picture" src={userInfo.picture} />
+
+            {console.log("sssssssssssssssssssss", userInfo.picture)}
           </ListItem>
         ))}
       </List>
