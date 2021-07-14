@@ -42,7 +42,7 @@ const AllPost = () => {
         console.log(err);
       });
   }, []);
-  // console.log(state.posts);
+
   useEffect(() => {
     axios
       .get(`http://localhost:5000/post`)
