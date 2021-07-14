@@ -114,7 +114,7 @@ const Upload = () => {
           </div>
         </form>
       </div>
-      <div className="div-upload-picture">
+      <div className="div-upload-pictures">
         <input
           type="file"
           name="image"
