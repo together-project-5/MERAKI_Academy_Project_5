@@ -3,7 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import "./archive.css";
 import { setArchive } from "../../reducers/archive";
-import MenuItem from "../main/postList";
+import MenuItem from "../main/postListArchive";
 import Divider from "@material-ui/core/Divider";
 import Like from "../main/like/index";
 import Comment from "../main/comment/index";
