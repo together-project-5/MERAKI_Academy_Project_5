@@ -105,3 +105,8 @@
 .MuiMenu-paper {
   margin-left: -11vh;
 }
+.profile-picture {
+  width: 75px;
+  height: 75px;
+  border-radius: 7px;
+}
