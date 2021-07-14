@@ -28,10 +28,7 @@ const AllPost = () => {
   });
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/post`,{
-        headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },})
+      .get(`http://localhost:5000/post`)
       .then((res) => {
         dispatch(setPost(res.data));
       })

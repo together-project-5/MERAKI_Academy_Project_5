@@ -4,6 +4,7 @@ const  {cloudinary}  = require('../../utils/cloudinary');
 
 const createPost =async (req, res) => {
   try {
+    console.log("req.body",req.body)
     const fileStr = req.body.data;
     const uploadResponse = await cloudinary.uploader.upload(fileStr, {
       upload_preset: 'ml_default',

@@ -50,16 +50,16 @@ const Upload = () => {
   };
 
   const uploadImage = async (base64EncodedImage) => {
+    console.log(post)
     try {
       await fetch("http://localhost:5000/post/api/upload", {
         method: "post",
         body: JSON.stringify({ data: base64EncodedImage, post: post }),
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }).then((result,res) => {
+        headers: { "Content-type": "application/json" },
+       
+      }).then((result) => {
         console.log("result", result);
-          setMessage(res.data);
+          setMessage(result.data);
       });
     } catch (error) {
       console.error(error);
