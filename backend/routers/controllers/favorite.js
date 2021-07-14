@@ -1,14 +1,6 @@
 const db = require("./../../../backend/db/db");
 
-const insertFavorite = (req, res) => {
-    const query = `INSERT INTO favorite (userId,postId1 ) VALUES (?,?)`;
-    let { userId, postId1 } = req.body;
-    const data = [userId, postId1];
-    db.query(query, data, (err, result) => {
-        if (err) return res.status(400).send("can't add post to favorite");
-        res.status(201).json(result);
-    });
-};
+
 
 const getFavoritePost = (req, res) => {
         const id = req.params.id;
