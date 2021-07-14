@@ -17,6 +17,7 @@ const {
 } = require("../controllers/post");
 
 const postRouter = express.Router();
+const authentication = require("./../middlewares/authentication");
 
 postRouter.post("/api/upload", createPost);
 postRouter.get("/", getAllPost);

@@ -27,8 +27,9 @@ const AllPost = () => {
       user: state.login.user,
     };
   });
+  let userInfo = localStorage.getItem("user")
+
   useEffect(() => {
-    console.log("receiverId", state.receiverId);
     axios
       .get(`http://localhost:5000/post`)
       .then((res) => {
@@ -43,7 +44,7 @@ const AllPost = () => {
   useEffect(() => {
     axios
       .get(`http://localhost:5000/post`)
-      .then((res) => { })
+      .then((res) => {})
       .catch((err) => {
         console.log(err);
       });
@@ -52,10 +53,10 @@ const AllPost = () => {
   return (
     <>
       <div className="allpost">
-          <div className="ads">
-        <MainPage />
+        <div className="ads">
+          <MainPage />
         </div>
-  
+
         {state.posts.length &&
           post.map((post, i) => {
             return (
@@ -64,15 +65,13 @@ const AllPost = () => {
                   <div className="post-div" key={i}>
                     <div className="user-information-list">
                       <div className="user-information">
-                        <img
+                        {/* <img
                           className="profile-picture"
                           src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
-                        />
-                        <p className="user-post-name">{post.name}</p>
-                        
-                     
+                        /> */}
+            <img className="profile-picture" src={userInfo.picture} />
 
-                      
+                        <p className="user-post-name">{post.name}</p>
                       </div>
 
                       <MenuItem

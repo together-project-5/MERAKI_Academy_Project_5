@@ -131,18 +131,6 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
-  let search = "";
-
-  const searchPost = (e) => {
-    axios
-      .get(`http://localhost:5000/post/title/${search}`)
-      .then((res) => {
-        console.log("res", res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   const getBackground = style("mode", {
     light: "#EEE",
@@ -168,14 +156,6 @@ body {
       <div className={classes.grow}>
         <AppBar position="static">
           <Toolbar>
-            {/* <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-
-          </IconButton> */}
             <Typography
               onClick={handleClick}
               className="websiteName"
@@ -199,21 +179,20 @@ body {
             <SearchIcon
               className="headerSearch-button"
               onClick={(e) => {
-                
                 history.push("/search");
               }}
             >
               search
             </SearchIcon>
-            <div className="dark">
-              <ThemeProvider theme={theme}>
-                <GlobalStyle />
-                <ToggleMode />
-              </ThemeProvider>
-            </div>
 
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
+              <IconButton color="inherit">
+                <ThemeProvider theme={theme}>
+                  <GlobalStyle />
+                  <ToggleMode />
+                </ThemeProvider>
+              </IconButton>
               <IconButton
                 onClick={chat}
                 aria-label="show 4 new mails"
@@ -227,7 +206,7 @@ body {
                 aria-label="show 17 new notifications"
                 color="inherit"
               >
-                <Badge badgeContent={17} color="secondary">
+                <Badge color="secondary">
                   <NotificationsIcon />
                 </Badge>
               </IconButton>

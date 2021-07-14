@@ -37,7 +37,8 @@ const editProfile = async (req, res) => {
     const uploadResponse = await cloudinary.uploader.upload(fileStr, {
       upload_preset: 'ml_default',
     });
-
+    
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",req.body);
     const id = req.params.id;
     const query = `UPDATE user SET name=?,password=? ,picture=? WHERE _IdUser=${id}`;
     let { name, password } = req.body.userData;

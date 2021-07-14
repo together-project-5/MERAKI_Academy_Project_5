@@ -2,7 +2,7 @@
   margin: 0;
 } */
 
-.MuiToolbar-r{
+.MuiToolbar-r {
   margin-top: -12.7vh;
 }
 .websiteName {
@@ -59,6 +59,9 @@
 
 .headerSearch-bar {
   margin-left: 50px;
+  border: solid 1px rgb(223, 223, 223);
+  border-radius: 5px;
+  margin-right: 5px;
 }
 
 .headerSearch-button:hover {
@@ -75,8 +78,7 @@
   margin-left: -87vh;
   width: 25.5vh;
   height: 5vh;
-  background-color: #fd5050cb
-  ;
+  background-color: #fd5050cb;
   color: white;
 }
 .button-err:hover {
@@ -100,6 +102,11 @@
 .err-moved {
   font-size: 2vh;
 }
-.MuiMenu-paper{
-margin-left: -11vh;
+.MuiMenu-paper {
+  margin-left: -11vh;
+}
+.profile-picture {
+  width: 75px;
+  height: 75px;
+  border-radius: 7px;
 }

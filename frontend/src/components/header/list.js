@@ -65,6 +65,8 @@ export default function TemporaryDrawer() {
     history.push("/archive");
   };
   const dispatch = useDispatch();
+  let userInfo = localStorage.getItem("user")
+  console.log(userInfo);
   const Logout = (event) => {
     localStorage.setItem("token", "");
     localStorage.setItem("user", "");
@@ -75,7 +77,7 @@ export default function TemporaryDrawer() {
     localStorage.setItem("theme", "");
     dispatch(setTokenOut(""));
     dispatch(setUserOut({}));
-    history.push("/together");
+    history.push("/login");
   };
 
   const list = (anchor) => (
@@ -89,7 +91,8 @@ export default function TemporaryDrawer() {
         {[`${localStorage.getItem("name")}`].map((text, index) => (
           <ListItem button key={text}>
             <ListItemText primary={text} />
-            <Avatar alt="Remy Sharp" src="" />{" "}
+            {/* <Avatar alt="Remy Sharp" src="" />{" "} */}
+            <img className="profile-picture" src={userInfo.picture} />
           </ListItem>
         ))}
       </List>

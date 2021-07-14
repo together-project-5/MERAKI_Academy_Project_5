@@ -32,15 +32,14 @@ const EditProfile = () => {
 
   const handleSubmitFile = (e) => {
     e.preventDefault();
-      if (!previewSource) return;
-      uploadImage(previewSource);
-      // const reader = new FileReader();
-      // reader.readAsDataURL(selectedFile);
-    };
- 
-  
+    if (!previewSource) return;
+    uploadImage(previewSource);
+    // const reader = new FileReader();
+    // reader.readAsDataURL(selectedFile);
+  };
   
   const uploadImage = async (base64EncodedImage) => {
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",userData);
     try {
       await fetch(
         `http://localhost:5000/user/edit/${localStorage.getItem("_IdUser")}`,
@@ -50,6 +49,7 @@ const EditProfile = () => {
             data: base64EncodedImage,
             userData: userData,
           }),
+
           headers: { "Content-type": "application/json" },
         }
       ).then((result) => {
@@ -67,11 +67,12 @@ const EditProfile = () => {
           <div className="UserIdPosts">
             <TextField
               id="outlined-textarea"
-              label="User Name"
+              label="Name"
               multiline
               variant="outlined"
               onChange={handleChange}
-              name="name"
+               name="name"
+              // defaultValue={localStorage.getItem("name")}
             />
           </div>
           <div className="typePosts">
@@ -82,30 +83,29 @@ const EditProfile = () => {
               variant="outlined"
               onChange={handleChange}
               name="password"
+              // defaultValue={localStorage.getItem("password")}
             />
           </div>
-          <div className="uploadImgg">
-            <input
-              type="file"
-              name="image"
-              onChange={handleFileInputChange}
-              value={fileInputState}
-            />
-            {previewSource && (
-              <img
-                src={previewSource}
-                alt="chosen"
-                style={{ height: "300px" }}
+          <div className="div-upload-picture">
+              <input
+                type="file"
+                name="image"
+                onChange={handleFileInputChange}
+                value={fileInputState}
               />
-            )}
-          </div>
-          <div className="submitt">
+              {previewSource && (
+                <img
+                className="img-upload"
+                  src={previewSource}
+                  alt="chosen"
+                  style={{ height: "300px" }}
+                />
+              )}
             <button onClick={handleSubmitFile}>Submit</button>
-          </div>
+            </div>
         </form>
       </div>
     </>
   );
 };
 export default EditProfile;
-

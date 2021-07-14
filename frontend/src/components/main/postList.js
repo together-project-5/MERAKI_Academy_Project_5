@@ -18,15 +18,9 @@ export default function LongMenu({ id, userIdP }) {
   const history = useHistory();
   const [_IdPost, set_IdPost] = useState("");
   const [report, setReport] = useState(0);
+
   const dispatch = useDispatch();
 
-  const state = useSelector((state) => {
-    return {
-      user: state.login.user,
-      getPost: state.getPost.getPost,
-    };
-  });
-  let ID = state.user._IdUser;
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -54,8 +48,9 @@ export default function LongMenu({ id, userIdP }) {
   const editPost = (id) => {
     history.push("/editPost");
     axios
-      .get(`http://localhost:5000/post/${_IdPost}`)
+      .get(`http://localhost:5000/post/${id}`)
       .then((result) => {
+        console.log("result", result)
         dispatch(setPost(result.data));
       })
       .catch((err) => {
@@ -64,7 +59,15 @@ export default function LongMenu({ id, userIdP }) {
   };
 
   const archivePost = (_IdPost) => {
-    history.push("/archive");
+    let archive = 1;
+    axios
+      .post(`http://localhost:5000/post/archive/${_IdPost}`, { archive })
+      .then((res) => {
+        set_IdPost(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const deletePost = (_IdPost) => {
@@ -80,7 +83,8 @@ export default function LongMenu({ id, userIdP }) {
   return (
     <>
       <div className="menuList">
-        {localStorage.getItem("user")._IdUser === ID ? (
+        {localStorage.getItem("_IdUser") == userIdP ? (
+
           <div>
             <IconButton
               aria-label="more"

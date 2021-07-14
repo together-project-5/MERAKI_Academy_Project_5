@@ -10,12 +10,15 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import { useHistory } from "react-router-dom";
 
 const Upload = () => {
+    const history = useHistory();
   const [fileInputState, setFileInputState] = useState("");
   const [selectedFile, setSelectedFile] = useState("");
   const [previewSource, setPreviewSource] = useState();
-  const [post, setPost] = useState({userId:localStorage.getItem("_IdUser")});
+  const [post, setPost] = useState({ userId: localStorage.getItem("_IdUser") });
+  const [message, setMessage] = useState("");
 
   const dispatch = useDispatch();
 
@@ -40,22 +43,25 @@ const Upload = () => {
       setPreviewSource(reader.result);
     };
   };
-  const handleSubmitFile = (e) => {
+  const handleSubmitFile =async (e) => {
     e.preventDefault();
     if (!previewSource) return;
-    uploadImage(previewSource);
-    // const reader = new FileReader();
-    // reader.readAsDataURL(selectedFile);
+    await uploadImage(previewSource);
+    history.push("/")
+    
   };
 
   const uploadImage = async (base64EncodedImage) => {
+    console.log(post)
     try {
       await fetch("http://localhost:5000/post/api/upload", {
         method: "post",
         body: JSON.stringify({ data: base64EncodedImage, post: post }),
         headers: { "Content-type": "application/json" },
+       
       }).then((result) => {
         console.log("result", result);
+          setMessage(result.data);
       });
     } catch (error) {
       console.error(error);
@@ -108,19 +114,26 @@ const Upload = () => {
           </div>
         </form>
       </div>
-      <div className="uploadImg">
+      <div className="div-upload-picture">
         <input
           type="file"
           name="image"
           onChange={handleFileInputChange}
           value={fileInputState}
         />
-        <button onClick={handleSubmitFile}>Submit</button>
         {previewSource && (
-          <img src={previewSource} alt="chosen" style={{ height: "300px" }} />
+          <img
+            className="img-upload"
+            src={previewSource}
+            alt="chosen"
+            style={{ height: "300px" }}
+          />
         )}
       </div>
+
+        <button className="buttonSubmit" onClick={handleSubmitFile}>Submit</button>
     </div>
+
   );
 };
 export default Upload;

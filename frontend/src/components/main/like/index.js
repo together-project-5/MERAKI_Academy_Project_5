@@ -42,9 +42,6 @@ const Like = ({ id, i }) => {
   }, []);
 
   const likesFunction = (id, index) => {
-    console.log("user id", index)
-    console.log("post id", id)
-    console.log("aaaaaaaaaaaaaaaa", ar[0])
     let value;
 
     axios
@@ -83,8 +80,8 @@ const Like = ({ id, i }) => {
               setLike(
                 like.map((post, i) => {
                   if (i === index) {
-                    value = post -1;
-                    return post -1 ;
+                    value = post - 1;
+                    return post - 1;
                   }
                   return post;
                 })
