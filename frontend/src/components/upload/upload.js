@@ -13,7 +13,7 @@ import Select from "@material-ui/core/Select";
 import { useHistory } from "react-router-dom";
 
 const Upload = () => {
-    const history = useHistory();
+  const history = useHistory();
   const [fileInputState, setFileInputState] = useState("");
   const [selectedFile, setSelectedFile] = useState("");
   const [previewSource, setPreviewSource] = useState();
@@ -43,25 +43,23 @@ const Upload = () => {
       setPreviewSource(reader.result);
     };
   };
-  const handleSubmitFile =async (e) => {
+  const handleSubmitFile = async (e) => {
     e.preventDefault();
     if (!previewSource) return;
     await uploadImage(previewSource);
-    history.push("/")
-    
+    history.push("/");
   };
 
   const uploadImage = async (base64EncodedImage) => {
-    console.log(post)
+    console.log(post);
     try {
       await fetch("http://localhost:5000/post/api/upload", {
         method: "post",
         body: JSON.stringify({ data: base64EncodedImage, post: post }),
         headers: { "Content-type": "application/json" },
-       
       }).then((result) => {
         console.log("result", result);
-          setMessage(result.data);
+        setMessage(result.data);
       });
     } catch (error) {
       console.error(error);
@@ -130,10 +128,9 @@ const Upload = () => {
           />
         )}
         <button className="buttonSubmits" onClick={handleSubmitFile}>Post</button>
+
       </div>
-
     </div>
-
   );
 };
 export default Upload;

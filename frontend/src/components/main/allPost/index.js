@@ -18,7 +18,7 @@ const AllPost = () => {
   const dispatch = useDispatch();
   const [_IdPost, set_IdPost] = useState("");
   const [userId, setUserId] = useState("");
-  const [aref, setAref] = useState(false);
+  const [show, setShow] = useState(false);
   const [idPost, setIdPost] = useState("");
   const [post, setPost] = useState([ ]);
   
@@ -59,7 +59,7 @@ const AllPost = () => {
           <MainPage />
         </div>
 
-        {state.posts.length &&
+        {state.posts.length && 
           state.posts.map((post, i) => {
             <GetFavorites id={post.favorite}/>
             return (
@@ -105,8 +105,8 @@ const AllPost = () => {
                         <Like id={post._IdPost} i={i} />
                         <Comment
                           setIdPost={setIdPost}
-                          setAref={setAref}
-                          aref={aref}
+                          setShow={setShow}
+                          show={show}
                           id={post._IdPost}
                           i={i}
                         />
@@ -118,7 +118,7 @@ const AllPost = () => {
                     <ShowComment
                       idPost={idPost}
                       id={post._IdPost}
-                      aref={aref}
+                      show={show}
                     />
                   </div>
                 </div>
