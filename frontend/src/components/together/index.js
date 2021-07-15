@@ -8,7 +8,7 @@ const Together = () => {
     const history = useHistory();
 
     const pushToLogin = () => {
-        history.push("/login")
+        history.push("/sign")
     }
 
     return (
