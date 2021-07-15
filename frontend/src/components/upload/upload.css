@@ -1,5 +1,6 @@
 .typePosts {
   margin-left: 40%;
+  margin-top: 20px;
 }
 .descriptionPosts {
   margin-top: 30px;
@@ -39,11 +40,16 @@
   margin-top: 10vh;
 }
 .img-upload{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border:solid black 1px;
   height: 240px !important;
   width: 400px;
+  border-radius: 3px;
 }
 
 .buttonSubmit {
+  margin-top: 5px;
   margin-left: 85vh;
   height: 40px;
   width: 100px;
