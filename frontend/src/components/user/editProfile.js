@@ -46,7 +46,7 @@ const EditProfile = () => {
       localStorage.setItem("theme", "");
       dispatch(setTokenOut(""));
       dispatch(setUserOut({}));
-      history.push("/login");
+      history.push("/sign");
   
   };
 
