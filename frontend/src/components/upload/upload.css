@@ -1,8 +1,12 @@
-.typePosts {
+.typePost {
   margin-left: 40%;
+  margin-top: 20px;
 }
-.descriptionPosts {
-  margin-top: 30px;
+.div-upload-pictures{
+  margin-top: 65px;
+}
+.descriptionPost {
+  margin-top: 20px;
   margin-left: 40%;
 }
 .MuiOutlinedInput-multiline-d {
@@ -17,8 +21,8 @@
   margin-top: 75px;
   margin-left: 40%;
 }
-.TitlePosts {
-  margin-top: 30px;
+.TitlePost {
+  margin-top: 20px;
   margin-left: 40%;
 }
 .uploadImg {
@@ -39,11 +43,16 @@
   margin-top: 10vh;
 }
 .img-upload{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border:solid black 1px;
   height: 240px !important;
   width: 400px;
+  border-radius: 3px;
 }
 
 .buttonSubmit {
+  margin-top: 5px;
   margin-left: 85vh;
   height: 40px;
   width: 100px;
@@ -55,3 +64,4 @@
   font-weight: 400px;
   background-color: transparent;
 }
+

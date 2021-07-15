@@ -9,6 +9,7 @@ const getBackground = style.variants('mode', 'variant', {
   primary: {
     light: 'papayawhip',
     dark: 'pink'
+    
   }
 });
 

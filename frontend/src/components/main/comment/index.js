@@ -4,10 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { setComments } from "../../../reducers/comment";
 import comments from "../img/comment.png";
 
-const Comment = ({ id, i, aref, setAref, setIdPost }) => {
+const Comment = ({ id, i, show, setShow, setIdPost }) => {
   const dispatch = useDispatch();
   const [commentId, setCommentId] = useState("");
-  const [show, setShow] = useState(false);
 
   const showComment = (id) => {
     setCommentId(id);
@@ -30,8 +29,8 @@ const Comment = ({ id, i, aref, setAref, setIdPost }) => {
     <>
       <img
         onClick={() => {
-          setAref(!aref);
-          setIdPost(id)
+          setShow(!show);
+          setIdPost(id);
           // showAllComment(id);
         }}
         className="comment-icon"

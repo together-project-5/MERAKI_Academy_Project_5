@@ -5,6 +5,7 @@ import { setPost } from "../../../reducers/post";
 import Comment from "../comment/index";
 import Like from "../like/index";
 import Save from "../save/index";
+import GetFavorites from "../../favorite/favorite.js"
 import MenuItem from "../postList";
 import ShowComment from "../comment/show";
 import "./allPost.css";
@@ -17,7 +18,7 @@ const AllPost = () => {
   const dispatch = useDispatch();
   const [_IdPost, set_IdPost] = useState("");
   const [userId, setUserId] = useState("");
-  const [aref, setAref] = useState(false);
+  const [show, setShow] = useState(false);
   const [idPost, setIdPost] = useState("");
   const [post, setPost] = useState([ ]);
   
@@ -27,7 +28,8 @@ const AllPost = () => {
       user: state.login.user,
     };
   });
-  let userInfo = localStorage.getItem("user")
+  let userInfo = JSON.parse(localStorage.getItem("user"))
+
 
   useEffect(() => {
     axios
@@ -40,7 +42,7 @@ const AllPost = () => {
         console.log(err);
       });
   }, []);
-  // console.log(state.posts);
+
   useEffect(() => {
     axios
       .get(`http://localhost:5000/post`)
@@ -57,8 +59,9 @@ const AllPost = () => {
           <MainPage />
         </div>
 
-        {state.posts.length &&
-          post.map((post, i) => {
+        {state.posts.length && 
+          state.posts.map((post, i) => {
+            <GetFavorites id={post.favorite}/>
             return (
               <>
                 <div className="div-post-comment" key={i}>
@@ -102,20 +105,20 @@ const AllPost = () => {
                         <Like id={post._IdPost} i={i} />
                         <Comment
                           setIdPost={setIdPost}
-                          setAref={setAref}
-                          aref={aref}
+                          setShow={setShow}
+                          show={show}
                           id={post._IdPost}
                           i={i}
                         />
                       </div>
-                      <Save id={post._IdPost} i={i} />
+                      <Save id={post.favorite} i={i} postId={post._IdPost} />
                     </div>
                   </div>
                   <div>
                     <ShowComment
                       idPost={idPost}
                       id={post._IdPost}
-                      aref={aref}
+                      show={show}
                     />
                   </div>
                 </div>

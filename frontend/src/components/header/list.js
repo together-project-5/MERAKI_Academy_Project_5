@@ -16,7 +16,6 @@ import "./header.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setTokenOut, setUserOut } from "./../../reducers/login";
 
-
 const useStyles = makeStyles({
   list: {
     width: 250,
@@ -65,8 +64,7 @@ export default function TemporaryDrawer() {
     history.push("/archive");
   };
   const dispatch = useDispatch();
-  let userInfo = localStorage.getItem("user")
-  console.log(userInfo);
+  let userInfo = JSON.parse(localStorage.getItem("user"))
   const Logout = (event) => {
     localStorage.setItem("token", "");
     localStorage.setItem("user", "");
@@ -93,6 +91,8 @@ export default function TemporaryDrawer() {
             <ListItemText primary={text} />
             {/* <Avatar alt="Remy Sharp" src="" />{" "} */}
             <img className="profile-picture" src={userInfo.picture} />
+            {console.log("sssssssssssssssssssss", userInfo.picture)}
+
           </ListItem>
         ))}
       </List>

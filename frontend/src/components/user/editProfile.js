@@ -5,6 +5,7 @@ import setUser from "../../reducers/login";
 import TextField from "@material-ui/core/TextField";
 import editProfile from "./editProfile.css";
 import { useHistory } from "react-router-dom";
+import { setTokenOut, setUserOut } from "./../../reducers/login";
 
 const EditProfile = () => {
   const [userData, setUserData] = useState({});
@@ -36,10 +37,21 @@ const EditProfile = () => {
     uploadImage(previewSource);
     // const reader = new FileReader();
     // reader.readAsDataURL(selectedFile);
-  };
+      localStorage.setItem("token", "");
+      localStorage.setItem("user", "");
+      localStorage.setItem("name", "");
+      localStorage.setItem("_IdUser", "");
+      localStorage.setItem("password", "");
+      localStorage.setItem("username", "");
+      localStorage.setItem("theme", "");
+      dispatch(setTokenOut(""));
+      dispatch(setUserOut({}));
+      history.push("/sign");
   
+  };
+
   const uploadImage = async (base64EncodedImage) => {
-    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",userData);
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", userData);
     try {
       await fetch(
         `http://localhost:5000/user/edit/${localStorage.getItem("_IdUser")}`,
@@ -71,7 +83,7 @@ const EditProfile = () => {
               multiline
               variant="outlined"
               onChange={handleChange}
-               name="name"
+              name="name"
               // defaultValue={localStorage.getItem("name")}
             />
           </div>
@@ -86,24 +98,29 @@ const EditProfile = () => {
               // defaultValue={localStorage.getItem("password")}
             />
           </div>
-          <div className="div-upload-picture">
-              <input
-                type="file"
-                name="image"
-                onChange={handleFileInputChange}
-                value={fileInputState}
-              />
-              {previewSource && (
-                <img
-                className="img-upload"
-                  src={previewSource}
-                  alt="chosen"
-                  style={{ height: "300px" }}
-                />
-              )}
-            <button onClick={handleSubmitFile}>Submit</button>
-            </div>
         </form>
+      </div>
+      <div>
+        <div className="div-upload-picture">
+          <input
+            type="file"
+            name="image"
+            onChange={handleFileInputChange}
+            value={fileInputState}
+          />
+          {previewSource && (
+            <img
+              className="img-upload"
+              src={previewSource}
+              alt="chosen"
+              style={{ height: "300px" }}
+            />
+          )}
+        </div>
+
+        <button className="buttonSubmit" onClick={handleSubmitFile}>
+          Submit
+        </button>
       </div>
     </>
   );

@@ -29,7 +29,6 @@ const Like = ({ id, i }) => {
 
           ar.push(post.likes);
         });
-        dispatch(setPost(res.data));
       })
       .catch((err) => {
         console.log(err);
@@ -41,6 +40,7 @@ const Like = ({ id, i }) => {
   }, []);
 
   const likesFunction = (id, index) => {
+    console.log("ar.reverse()",ar)
     let value;
 
     axios
