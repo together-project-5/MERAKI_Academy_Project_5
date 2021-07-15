@@ -129,7 +129,7 @@ const Upload = () => {
             style={{ height: "300px" }}
           />
         )}
-        <button className="buttonSubmits" onClick={handleSubmitFile}>Submit</button>
+        <button className="buttonSubmits" onClick={handleSubmitFile}>Post</button>
       </div>
 
     </div>
