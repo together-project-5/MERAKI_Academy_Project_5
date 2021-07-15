@@ -3,6 +3,7 @@
 }
 .typePosts {
   margin-left: 40%;
+  margin-top: 3vh;
 }
 
 .div-upload-picture {
@@ -11,11 +12,20 @@
   text-align: center;
   width: 250px;
   height: 250px;
-  margin-left: 40%;
+  margin-left: 39.5%;
   margin-top: 3%;
   margin-bottom: 15px;
 }
-
+.div-upload-pictures {
+  display: block;
+  align-content: center;
+  text-align: center;
+  width: 250px;
+  height: 250px;
+  margin-left: 39.5%;
+  margin-top: 3%;
+  margin-bottom: 15px;
+}
 .img-upload{
   width: 200px;
   border-radius: 5px;

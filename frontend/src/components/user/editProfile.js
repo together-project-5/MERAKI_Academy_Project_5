@@ -5,6 +5,7 @@ import setUser from "../../reducers/login";
 import TextField from "@material-ui/core/TextField";
 import editProfile from "./editProfile.css";
 import { useHistory } from "react-router-dom";
+import { setTokenOut, setUserOut } from "./../../reducers/login";
 
 const EditProfile = () => {
   const [userData, setUserData] = useState({});
@@ -36,6 +37,17 @@ const EditProfile = () => {
     uploadImage(previewSource);
     // const reader = new FileReader();
     // reader.readAsDataURL(selectedFile);
+      localStorage.setItem("token", "");
+      localStorage.setItem("user", "");
+      localStorage.setItem("name", "");
+      localStorage.setItem("_IdUser", "");
+      localStorage.setItem("password", "");
+      localStorage.setItem("username", "");
+      localStorage.setItem("theme", "");
+      dispatch(setTokenOut(""));
+      dispatch(setUserOut({}));
+      history.push("/login");
+  
   };
   
   const uploadImage = async (base64EncodedImage) => {
@@ -101,7 +113,7 @@ const EditProfile = () => {
                   style={{ height: "300px" }}
                 />
               )}
-            <button onClick={handleSubmitFile}>Submit</button>
+            <button className="buttonSubmits" onClick={handleSubmitFile}>Submit</button>
             </div>
         </form>
       </div>

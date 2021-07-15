@@ -71,7 +71,7 @@ const Upload = () => {
     <div>
       <div className="createPostStyle">
         <form>
-          <div className="typePosts">
+          <div className="typePost">
             <FormControl>
               <InputLabel id="demo-simple-select-label">Type</InputLabel>
               <Select
@@ -88,7 +88,7 @@ const Upload = () => {
               </Select>
             </FormControl>
           </div>
-          <div className="TitlePosts">
+          <div className="TitlePost">
             <TextField
               id="outlined-textarea"
               label="Title"
@@ -100,7 +100,7 @@ const Upload = () => {
             />
           </div>
 
-          <div className="descriptionPosts">
+          <div className="descriptionPost">
             <TextField
               onChange={handleChange}
               className="MuiOutlinedInput-multiline-d"
@@ -114,7 +114,7 @@ const Upload = () => {
           </div>
         </form>
       </div>
-      <div className="div-upload-picture">
+      <div className="div-upload-pictures">
         <input
           type="file"
           name="image"
@@ -129,9 +129,9 @@ const Upload = () => {
             style={{ height: "300px" }}
           />
         )}
+        <button className="buttonSubmits" onClick={handleSubmitFile}>Submit</button>
       </div>
 
-        <button className="buttonSubmit" onClick={handleSubmitFile}>Submit</button>
     </div>
 
   );
