@@ -59,7 +59,7 @@ const AllPost = () => {
           <MainPage />
         </div>
 
-        {state.posts.length &&
+        {state.posts.length && 
           state.posts.map((post, i) => {
             <GetFavorites id={post.favorite}/>
             return (
