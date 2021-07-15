@@ -9,6 +9,7 @@ const ShowComment = ({ id, i, aref, idPost }) => {
   const [comment, setComment] = useState("");
   const dispatch = useDispatch();
   const [show, setShow] = useState(true);
+  const [comm, setComm] = useState(1);
 
   const state = useSelector((state) => {
     return {
@@ -17,19 +18,6 @@ const ShowComment = ({ id, i, aref, idPost }) => {
       comment: state.comments.comment,
     };
   });
-
-  // useEffect(() => {
-  //   let postId = id;
-  //   axios
-  //     .get(`http://localhost:5000/post/comment/${postId}`)
-  //     .then((res) => {
-  //       // dispatch(setComments(res.data));
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, [commentId]);
-
 
   useEffect(() => {
     let postId = id;
@@ -41,8 +29,19 @@ const ShowComment = ({ id, i, aref, idPost }) => {
       .catch((err) => {
         console.log(err);
       });
+  }, [comm]);
+  
+  useEffect(() => {
+    let postId = id;
+    axios
+      .get(`http://localhost:5000/post/comment/${postId}`)
+      .then((res) => {
+        dispatch(setComments(res.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
-
 
   const sendComment = (id) => {
     let userId = localStorage.getItem("_IdUser");
@@ -87,6 +86,7 @@ const ShowComment = ({ id, i, aref, idPost }) => {
             <input
               className="write-comment"
               onChange={(e) => {
+
                 setComment(e.target.value);
               }}
               type="text"
@@ -95,6 +95,7 @@ const ShowComment = ({ id, i, aref, idPost }) => {
             <button
               className="send-comment-button"
               onClick={() => {
+                setComm(comm + 1)
                 sendComment(id);
               }}
             >

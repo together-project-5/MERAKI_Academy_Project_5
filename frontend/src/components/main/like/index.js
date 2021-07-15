@@ -25,7 +25,7 @@ const Like = ({ id, i }) => {
     axios
       .get(`http://localhost:5000/post`)
       .then((res) => {
-        res.data.forEach((post, i) => {
+        res.data.reverse().forEach((post, i) => {
 
           ar.push(post.likes);
         });
@@ -34,7 +34,6 @@ const Like = ({ id, i }) => {
       .catch((err) => {
         console.log(err);
       });
-
   }, []);
 
   useEffect(() => {

@@ -6,7 +6,7 @@ const initialState = {
 const comments = (state = initialState, { type, payload }) => {
     switch (type) {
       case "SET_COMMENT":
-        return { comment: [...state.comment ,...payload] };
+        return { comment: [...payload] };
   
       default:
         return state;

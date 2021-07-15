@@ -30,7 +30,7 @@ const SearchTitl = () => {
       .get(`http://localhost:5000/post/title/${state.title}`)
       .then((res) => {
         console.log(res.data)
-        setPosts(res.data);
+        setPosts(res.data.reverse());
       })
       .catch((err) => {
         console.log(err);
