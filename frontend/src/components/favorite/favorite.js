@@ -6,8 +6,8 @@ import likes from "./../main/img/like.png";
 import save from "./../main/img/save.png";
 import "./../main/main.css";
 
-const GetFavorites = () => {
-  const [status, setStatus] = useState(true)
+const GetFavorites =  (favoritePost) => {
+  let status=favoritePost
   const dispatch = useDispatch();
   const state = useSelector((state) => {
     return {
@@ -17,8 +17,6 @@ const GetFavorites = () => {
     };
   });
   useEffect(() => {
-    if(status){
-      setStatus(!status)
     axios
       .get(`http://localhost:5000/favorite/post/${localStorage.getItem("_IdUser")}`)
       .then((res) => {
@@ -27,24 +25,24 @@ const GetFavorites = () => {
       .catch((err) => {
         console.log(err);
       });
-    }
-  }, []);
+  }, [state.favorites]);
 
-  const saveFunction = (postId) => {
-    console.log("post",postId);
-    if(!status){
-      setStatus(status)
-    axios
-      .delete(`http://localhost:5000/favorite/post/${postId}`)
-      .then((res) => {
-        dispatch(deleteFavorite(res.data));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    }
+  const saveFunction = (postId1) => {
+    if(status===0){
+           status =1
+         }else{
+           status =0
+         }
+
+      axios
+        .post(`http://localhost:5000/post/favorite/${postId1}`, { favorite:status})
+        .then((res) => {
+          dispatch(setFavorite(res.data));
+        })
+        .catch((err) => {
+          console.log(err);
+        });
   };
-  console.log("state.favorites",state.favorites);
   return (
     <>
       {state.favorites.map((post, i) => {
@@ -64,7 +62,7 @@ const GetFavorites = () => {
             <img 
               onClick={(e) => {
                 e.preventDefault();
-                saveFunction(post.postId);
+                saveFunction(post._IdPost);
               }}
               className="save-icon"
               src={save}

@@ -65,16 +65,14 @@
 .ce-chat-list {
   margin-top: -2vh;
 }
-.ce-chat-feed {
 
-}
 
 .ce-settings {
   margin-top: -2vh;
 }
 #ce-feed-container{
   background-image: url(https://i.redd.it/qwd83nc4xxf41.jpg);
-  background-color: white;
+ background-color: white;
 
 }
 
@@ -88,3 +86,29 @@ background-color: white;
 .ce-message-date-text{
   margin-left: 1vh;
 }
+.MuiFormControl-root{
+  margin-top: -1vh !important;
+  margin: -1vh !important;  
+}
+.MuiInputLabel-outlined {
+  margin-top: 3vh !important;
+}
+.MuiOutlinedInput-multiline {
+  margin-top: 3vh !important;
+}
+.buttonSubmits {
+  margin-right: 21vh;
+  margin-top: 5vh;
+  height: 40px;
+  width: 100px;
+  border: solid 1px rgb(53, 51, 51);
+  color:rgb(53, 51, 51);
+  outline: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 400px; 
+  background-color: transparent;
+}
+
+
+

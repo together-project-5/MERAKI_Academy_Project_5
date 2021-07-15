@@ -5,6 +5,7 @@ import { setPost } from "../../../reducers/post";
 import Comment from "../comment/index";
 import Like from "../like/index";
 import Save from "../save/index";
+import GetFavorites from "../../favorite/favorite.js"
 import MenuItem from "../postList";
 import ShowComment from "../comment/show";
 import "./allPost.css";
@@ -19,26 +20,29 @@ const AllPost = () => {
   const [userId, setUserId] = useState("");
   const [aref, setAref] = useState(false);
   const [idPost, setIdPost] = useState("");
-
+  const [post, setPost] = useState([ ]);
+  
   const state = useSelector((state) => {
     return {
       posts: state.posts.posts,
       user: state.login.user,
     };
   });
-  let userInfo = localStorage.getItem("user")
+  let userInfo = JSON.parse(localStorage.getItem("user"))
+
 
   useEffect(() => {
     axios
       .get(`http://localhost:5000/post`)
       .then((res) => {
+        setPost(res.data.reverse())
         dispatch(setPost(res.data));
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
-  // console.log(state.posts);
+
   useEffect(() => {
     axios
       .get(`http://localhost:5000/post`)
@@ -47,6 +51,7 @@ const AllPost = () => {
         console.log(err);
       });
   }, [state.posts]);
+  
   return (
     <>
       <div className="allpost">
@@ -56,6 +61,7 @@ const AllPost = () => {
 
         {state.posts.length &&
           state.posts.map((post, i) => {
+            <GetFavorites id={post.favorite}/>
             return (
               <>
                 <div className="div-post-comment" key={i}>
@@ -105,7 +111,7 @@ const AllPost = () => {
                           i={i}
                         />
                       </div>
-                      <Save id={post._IdPost} i={i} />
+                      <Save id={post.favorite} i={i} postId={post._IdPost} />
                     </div>
                   </div>
                   <div>

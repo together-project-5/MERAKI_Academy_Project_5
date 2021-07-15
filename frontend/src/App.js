@@ -39,7 +39,7 @@ const App = () => {
         <Route path="/editPost" component={EditPost} />
         <Route path="/admin" component={AdminBoard} />
         <Route exact path="/together" component={Together} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/sign" component={Login} />
         <Route component={Erorr} />
       </Switch>
     </>

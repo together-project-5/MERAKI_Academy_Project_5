@@ -1,9 +1,12 @@
-.typePosts {
+.typePost {
   margin-left: 40%;
   margin-top: 20px;
 }
-.descriptionPosts {
-  margin-top: 30px;
+.div-upload-pictures{
+  margin-top: 65px;
+}
+.descriptionPost {
+  margin-top: 20px;
   margin-left: 40%;
 }
 .MuiOutlinedInput-multiline-d {
@@ -18,8 +21,8 @@
   margin-top: 75px;
   margin-left: 40%;
 }
-.TitlePosts {
-  margin-top: 30px;
+.TitlePost {
+  margin-top: 20px;
   margin-left: 40%;
 }
 .uploadImg {
