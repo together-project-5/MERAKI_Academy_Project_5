@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { setComments } from "../../../reducers/comment";
 import "./comment.css";
 
-const ShowComment = ({ id, i, aref, idPost }) => {
+const ShowComment = ({ id, i, show, idPost }) => {
   const [commentId, setCommentId] = useState("");
   const [comment, setComment] = useState("");
   const dispatch = useDispatch();
-  const [show, setShow] = useState(true);
+  // const [show, setShow] = useState(true);
 
   const state = useSelector((state) => {
     return {
@@ -66,7 +66,7 @@ const ShowComment = ({ id, i, aref, idPost }) => {
 
   return (
     <>
-      {idPost === id && aref && (
+      {idPost === id && show && (
         <div className="post-comment-div">
           {console.log("state.comment", state.comment)}
           {state.comment
