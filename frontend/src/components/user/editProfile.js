@@ -49,9 +49,9 @@ const EditProfile = () => {
       history.push("/login");
   
   };
-  
+
   const uploadImage = async (base64EncodedImage) => {
-    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",userData);
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", userData);
     try {
       await fetch(
         `http://localhost:5000/user/edit/${localStorage.getItem("_IdUser")}`,
@@ -83,7 +83,7 @@ const EditProfile = () => {
               multiline
               variant="outlined"
               onChange={handleChange}
-               name="name"
+              name="name"
               // defaultValue={localStorage.getItem("name")}
             />
           </div>
@@ -98,24 +98,29 @@ const EditProfile = () => {
               // defaultValue={localStorage.getItem("password")}
             />
           </div>
-          <div className="div-upload-picture">
-              <input
-                type="file"
-                name="image"
-                onChange={handleFileInputChange}
-                value={fileInputState}
-              />
-              {previewSource && (
-                <img
-                className="img-upload"
-                  src={previewSource}
-                  alt="chosen"
-                  style={{ height: "300px" }}
-                />
-              )}
-            <button className="buttonSubmits" onClick={handleSubmitFile}>Submit</button>
-            </div>
         </form>
+      </div>
+      <div>
+        <div className="div-upload-picture">
+          <input
+            type="file"
+            name="image"
+            onChange={handleFileInputChange}
+            value={fileInputState}
+          />
+          {previewSource && (
+            <img
+              className="img-upload"
+              src={previewSource}
+              alt="chosen"
+              style={{ height: "300px" }}
+            />
+          )}
+        </div>
+
+        <button className="buttonSubmit" onClick={handleSubmitFile}>
+          Submit
+        </button>
       </div>
     </>
   );
