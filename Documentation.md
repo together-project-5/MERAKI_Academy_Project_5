@@ -44,6 +44,8 @@ gender VARCHAR(255),
 picture TEXT,
 PRIMARY KEY (\_IdUser)
 );
+<br>
+
 CREATE TABLE Post (
 \_IdPost INT AUTO_INCREMENT NOT NULL,
 userId INT,
@@ -58,6 +60,8 @@ archive iNT(3) DEFAULT 0,
 favorite iNT(3) DEFAULT 0,
 PRIMARY KEY (\_IdPost)
 );
+<br>
+
 CREATE TABLE userLike(
 \_IdLike INT AUTO_INCREMENT NOT NULL,
 userId INT,
@@ -66,6 +70,7 @@ postId INT,
 FOREIGN KEY (postId) REFERENCES Post(\_IdPost),
 PRIMARY KEY (\_IdLike)
 );
+<br>
 
 CREATE TABLE comments(
 \_IdComment INT AUTO_INCREMENT NOT NULL,
