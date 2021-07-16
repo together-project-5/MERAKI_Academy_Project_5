@@ -47,7 +47,7 @@ const Upload = () => {
     e.preventDefault();
     if (!previewSource) return;
     await uploadImage(previewSource);
-    history.push("/");
+    history.push("/main");
   };
 
   const uploadImage = async (base64EncodedImage) => {

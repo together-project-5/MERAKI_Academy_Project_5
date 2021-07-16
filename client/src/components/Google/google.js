@@ -17,7 +17,7 @@ const Google = () => {
 
         console.log("result",result);
       });
-    history.push("/");
+    history.push("/main");
   };
 
   

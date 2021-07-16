@@ -42,7 +42,7 @@ const Login = () => {
         localStorage.setItem("user", JSON.stringify(response.data.user));
       localStorage.setItem("name", response.data.user.name);
       localStorage.setItem("_IdUser", response.data.user._IdUser);
-        history.push("/");
+        history.push("/main");
       }
     });
     const authObject = {
