@@ -10,7 +10,7 @@ export default function PrimarySearchAppBarErr() {
   const history = useHistory();
 
   const handleClick = (e) => {
-    history.push("/together");
+    history.push("/");
   };
 
   return (
