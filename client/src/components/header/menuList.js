@@ -60,7 +60,7 @@ export default function PrimarySearchAppBar() {
         console.log(err);
       });
 
-    history.push("/");
+    history.push("/main");
   };
 
   const handleMobileMenuClose = () => {

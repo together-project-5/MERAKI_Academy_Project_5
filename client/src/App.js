@@ -24,11 +24,11 @@ require("dotenv").config();
 const App = () => {
   return (
     <>
-      <Route path="/" component={Header} />
-      <Route exact path="/" component={Main} />
+      <Route path="/main" component={Header} />
+      <Route exact path="/main" component={Main} />
       <Switch>
         <Route path="/search" component={SearchTitle} />
-        <Route exact path="/" component={GetPost} />
+        <Route exact path="/main" component={GetPost} />
         <Route exact path="/Chat" component={Chat} />
         <Route path="/profile" component={MyProfile} />
         <Route path="/archive" component={Archive} />

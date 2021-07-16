@@ -13,7 +13,7 @@ export const Header = () => {
     const history = useHistory();
   
     const back = () => {
-      history.push("/");
+      history.push("/main");
     };
   return (
     <>
