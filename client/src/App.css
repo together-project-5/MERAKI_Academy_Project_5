@@ -109,6 +109,19 @@ background-color: white;
   font-weight: 400px; 
   background-color: transparent;
 }
-
+.postSubmits{
+  margin-right: 21vh;
+  margin-top: 6vh;
+  margin-left: 84vh;
+  height: 40px;
+  width: 100px;
+  border: solid 1px rgb(53, 51, 51);
+  color:rgb(53, 51, 51);
+  outline: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 400px; 
+  background-color: transparent;
+}
 
 
