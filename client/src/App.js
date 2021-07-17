@@ -25,6 +25,16 @@ const App = () => {
   return (
     <>
       <Route path="/main" component={Header} />
+      <Route path="/Chat" component={Header} />
+      <Route path="/search" component={Header} />
+      <Route path="/createPost" component={Header} />
+      <Route path="/editPost" component={Header} />
+      <Route path="/favorite" component={Header} />
+      <Route path="/archive" component={Header} />
+      <Route path="/profile" component={Header} />
+      <Route path="/editProfile" component={Header} />
+      
+      
       <Route exact path="/main" component={Main} />
       <Switch>
         <Route path="/search" component={SearchTitle} />
