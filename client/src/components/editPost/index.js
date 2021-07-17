@@ -47,8 +47,6 @@ const EditPost = () => {
             type="text"
           />
         </div>
-        {/* <input type="text" placeholder="Title" 
-         onChange={handleChangeTitle}/> */}
         <div className="TitlePost">
           <TextField
             id="outlined-textarea"
@@ -60,8 +58,7 @@ const EditPost = () => {
             type="text"
           />
         </div>
-        {/* <input type="text" placeholder="description"
-         onChange={handleChangeDescription} /> */}
+     
         <button className="postSubmits" onClick={edit}>Submit</button>
       </div>
     </>
