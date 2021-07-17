@@ -17,8 +17,8 @@ const Upload = () => {
   const [fileInputState, setFileInputState] = useState("");
   const [selectedFile, setSelectedFile] = useState("");
   const [previewSource, setPreviewSource] = useState();
-  const [post, setPost] = useState({ userId: localStorage.getItem("_IdUser") });
   const [message, setMessage] = useState("");
+  const [post, setPost] = useState({ userId: localStorage.getItem("_IdUser") });
 
   const dispatch = useDispatch();
 
@@ -45,13 +45,14 @@ const Upload = () => {
   };
   const handleSubmitFile = async (e) => {
     e.preventDefault();
-    if (!previewSource) return;
+    if (!previewSource) {
+      setMessage("Cant create post , please try again later")
+    }else{
     await uploadImage(previewSource);
     history.push("/main");
-  };
+  }};
 
   const uploadImage = async (base64EncodedImage) => {
-    console.log(post);
     try {
       await fetch(`${process.env.REACT_APP_BACKEND_SERVER}/post/api/upload`, {
         method: "post",
@@ -127,6 +128,8 @@ const Upload = () => {
             style={{ height: "300px" }}
           />
         )}
+        {message && <p className="msg">{message}</p>}
+
         <button className="buttonSubmits" onClick={handleSubmitFile}>Post</button>
 
       </div>

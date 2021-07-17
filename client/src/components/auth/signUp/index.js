@@ -18,6 +18,13 @@ const User = () => {
       // .then((res) => {
       //   setMessage(res.data);
       // })
+      .then((res) => {
+        console.log("res.data",res.data.affectedRows);
+        if(res.data.affectedRows==1){
+          setMessage("The user was added , pleas login now")
+        }else{
+        setMessage(res.data);}
+      })
       .catch((err) => {
         throw err;
       }); 

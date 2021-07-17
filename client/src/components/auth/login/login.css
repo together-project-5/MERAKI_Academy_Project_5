@@ -322,5 +322,7 @@ body {
 }
 .msggg {
   margin-top: -10vh;
-  margin-right: 9vh;
+  /* margin-right: 9vh; */
+  color: red;
+  font-size: 15px;
 }
