@@ -6,7 +6,7 @@ import MenuList from "@material-ui/core/MenuList";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setPost } from "../../reducers/getPost";
+import { setPostId } from "../../reducers/editPost";
 
 import axios from "axios";
 import { useSelector } from "react-redux";
@@ -46,16 +46,9 @@ export default function LongMenu({ id, userIdP }) {
   };
 
   const editPost = (id) => {
+    console.log("id",id)
     history.push("/editPost");
-    axios
-      .get(`${process.env.REACT_APP_BACKEND_SERVER}/post/${id}`)
-      .then((result) => {
-        console.log("result", result)
-        dispatch(setPost(result.data));
-      })
-      .catch((err) => {
-        throw err;
-      });
+    dispatch(setPostId(id));
   };
 
   const archivePost = (_IdPost) => {
