@@ -14,7 +14,7 @@ const AdminBoard = () => {
 
     useEffect(() => {
         axios
-            .get(`${process.env.BACKEND_SERVER}/admin`)
+            .get(`${process.env.REACT_APP_BACKEND_SERVER}/admin`)
             .then((result) => {
                 dispatch(setReportingPost(result.data));
             })
