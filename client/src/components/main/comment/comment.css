@@ -12,9 +12,7 @@
   margin-right: 5px;
 }
 
-.post-comment-div:hover {
-  transform: scale(1.01);
-}
+
 .commenter-name {
   font-family: "Times New Roman", Times, serif;
   font-size: 15px;
@@ -31,6 +29,7 @@
 .comments {
   gap: 3px;
   display: flex;
+  color: black;
 }
 .write-comment {
   outline: none;

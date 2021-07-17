@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import { useHistory } from "react-router-dom";
 const projectID = "25237e63-d052-4459-a86e-631bba96f16d";
 
 const User = () => {
@@ -9,18 +9,18 @@ const User = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [username, setUsername] = useState("");
-
+  const history = useHistory();
   const createUser = (e) => {
     e.preventDefault();
     const register = { name, email, password, username };
     axios
       .post(`${process.env.REACT_APP_BACKEND_SERVER}/user/register`, register)
-      .then((res) => {
-        setMessage(res.data);
-      })
+      // .then((res) => {
+      //   setMessage(res.data);
+      // })
       .catch((err) => {
-        throw err
-      });
+        throw err;
+      }); 
 
     const data = { username: username, secret: password, email: email };
 
@@ -38,7 +38,7 @@ const User = () => {
         console.log(JSON.stringify(response.data));
       })
       .catch(function (error) {
-        throw error
+        throw error;
       });
   };
 
@@ -53,7 +53,6 @@ const User = () => {
                 type="text"
                 placeholder="Full Name"
                 class="forms_field-input input-login-reg"
-                
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
@@ -64,7 +63,6 @@ const User = () => {
                 type="email"
                 placeholder="Email"
                 class="forms_field-input input-login-reg"
-                
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
@@ -75,19 +73,17 @@ const User = () => {
                 type="password"
                 placeholder="Password"
                 class="forms_field-input input-login-reg"
-                
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
               />
             </div>
-           
+
             <div class="forms_field">
               <input
                 type="username"
                 placeholder="username"
                 class="forms_field-input input-login-reg"
-                
                 onChange={(e) => {
                   setUsername(e.target.value);
                 }}
@@ -98,7 +94,7 @@ const User = () => {
             <button onClick={createUser} class="forms_buttons-action">
               Sign up
             </button>
-            <br />  
+            <br />
             <br />
             <br />
 

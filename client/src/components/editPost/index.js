@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import TextField from "@material-ui/core/TextField";
+import { useHistory } from "react-router-dom";
 
 const EditPost = () => {
   const [description, setDescription] = useState("");
   const [title, setTitle] = useState("");
+    const history = useHistory();
   const state = useSelector((state) => {
     return {
       post: state.getPost.getPost,
@@ -32,6 +34,7 @@ const EditPost = () => {
       .catch((err) => {
         console.log(err);
       });
+      history.push("/main")
   };
   return (
     <>
