@@ -9,6 +9,7 @@ const EditPost = () => {
   const state = useSelector((state) => {
     return {
       post: state.getPost.getPost,
+      id:state.editPost.postId
     };
   });
   const handleChangeTitle = (e) => {
@@ -18,9 +19,10 @@ const EditPost = () => {
     setDescription(e.target.value);
   };
   const edit = () => {
+    console.log("state.id",state.id);
     axios
       .put(
-        `${process.env.REACT_APP_BACKEND_SERVER}/post/edit/${state.post[0]._IdPost}`,
+        `${process.env.REACT_APP_BACKEND_SERVER}/post/edit/${state.id}`,
         {
           title: title,
           description: description,
