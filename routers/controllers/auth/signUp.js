@@ -6,23 +6,23 @@ const salt = Number(process.env.SALT);
 const createUser = async (req, res) => {
   let { name, email, password, username } = req.body;
   if (!name) {
-    res.status(400).send("please fill name text");
+    res.json("please fill name text").status(400);
   }
-  if (!email) {
-    res.status(400).send("please fill email text");
+  else if (!email) {
+    res.json("please fill email text").status(400);
   }
-  if (!password) {
-    res.status(400).send("please fill password text");
+  else if (!password) {
+    res.json("please fill password text").status(400);
   }
-  if (!username) {
-    res.status(400).send("please fill username text");
+  else if (!username) {
+    res.json("please fill username text").status(400);
   } else {
     const query = `INSERT INTO user (name ,email,password,username) VALUES (?,?,?,?)`;
     password = await bcrypt.hash(password, salt);
     email = await email.toLowerCase();
     const data = [name, email, password, username];
     db.query(query, data, (err, result) => {
-      if (err) res.send("Please fill all text");
+      if (err) res.send("Please fill all text").status(400);
       res.status(201).json(result);
     });
   }
