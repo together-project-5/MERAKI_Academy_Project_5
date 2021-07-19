@@ -78,7 +78,7 @@ const SearchTitl = () => {
                     </div>
 
                     <div className="post-information">
-                      <img className="post-image" src={post.url} />
+                    <img className="post-image" src={post.url} />
                       <div className="post-information-2"></div>
                     </div>
                     <br />

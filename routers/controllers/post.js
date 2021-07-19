@@ -15,7 +15,6 @@ const createPost =async (req, res) => {
       if (err) return res.status(400).send("can't create post try again please ");
       res.status(201).json(result);
     });
-    // res.status(201).json({ uploadResponse });
   } catch (err) {
     console.error(err);
     res.status(500).json({ err: 'Something went wrong' });
