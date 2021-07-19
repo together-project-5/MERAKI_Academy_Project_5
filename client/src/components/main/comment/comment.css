@@ -2,7 +2,7 @@
   /* border: solid 0.2px; */
   display: inline-block;
   margin-left: 5px;
-  height: 79vh;
+  height: 105vh;
   width: 64ch;
   margin-top: 4vh;
   border-radius: 5px;
@@ -12,9 +12,7 @@
   margin-right: 5px;
 }
 
-.post-comment-div:hover {
-  transform: scale(1.01);
-}
+
 .commenter-name {
   font-family: "Times New Roman", Times, serif;
   font-size: 15px;
@@ -31,6 +29,7 @@
 .comments {
   gap: 3px;
   display: flex;
+  color: black;
 }
 .write-comment {
   outline: none;

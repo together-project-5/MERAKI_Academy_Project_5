@@ -32,13 +32,13 @@
   display: block;
   border: solid rgba(104, 104, 104, 0.233) 0.1px;
   border-radius: 5px;
-  height: 80vh;
+  height: 105vh;
   margin-bottom: 3px;
   margin-left: 25px;
   margin-top: 25px;
   background-color: white;
   float: left ;
-  
+  width: 85vh;
 }
 
 .ads {

@@ -68,11 +68,7 @@ const AllPost = () => {
                   <div className="post-div" key={i}>
                     <div className="user-information-list">
                       <div className="user-information">
-                        {/* <img
-                          className="profile-picture"
-                          src="https://www.attendit.net/images/easyblog_shared/July_2018/7-4-18/b2ap3_large_totw_network_profile_400.jpg"
-                        /> */}
-            <img className="profile-picture" src={userInfo.picture} />
+            <img className="profile-picture" src={post.picture} />
 
                         <p className="user-post-name">{post.name}</p>
                       </div>
